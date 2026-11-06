@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
 import { Navbar } from '../components/Navbar'
-import { Footer } from '../components/Footer'
+import { FooterStandard } from '../graphics/footer/FooterStandard'
 import { CustomCursor } from '../components/ui/custom-cursor'
 
 export function MainLayout() {
@@ -22,7 +22,7 @@ export function MainLayout() {
           </motion.div>
         </AnimatePresence>
       </main>
-      <Footer />
+      <FooterStandard />
     </div>
   )
 }

@@ -166,23 +166,7 @@ function ProjectsBrands() {
 }
 
 function FinalCTA() {
-  return (
-    <section data-surface="dark" className="relative overflow-hidden bg-[linear-gradient(135deg,#014EB6,#0868D8)] text-white">
-      <div className="pointer-events-none absolute inset-0 opacity-20" aria-hidden="true" style={{backgroundImage:'radial-gradient(circle at 1px 1px, rgba(255,255,255,.38) 1px, transparent 0)',backgroundSize:'24px 24px'}} />
-      <div className="pointer-events-none absolute -left-10 bottom-0 h-48 w-48 rounded-full bg-[#FF5A52]/15 blur-2xl" aria-hidden="true" />
-      <div className="absolute inset-0 pointer-events-none opacity-[0.08]" aria-hidden="true">
-        <svg className="absolute right-8 top-1/2 -translate-y-1/2 h-[180px] w-auto" viewBox="0 0 320 380" fill="none"><path d="M160 18 48 62v108c0 78 48 136 112 172 64-36 112-94 112-172V62L160 18Z" stroke="white" strokeWidth="3"/></svg>
-      </div>
-      <div className="relative container section py-16 md:py-20 text-center">
-        <h2 className="font-heading text-[28px] md:text-[40px] font-bold uppercase leading-[1.15]" style={{ color: '#FFFFFF', WebkitTextFillColor: '#FFFFFF' }}>Need a Fire Safety Solution?</h2>
-        <p className="mt-4 text-[16px] md:text-[18px] max-w-2xl mx-auto leading-[1.65]" style={{ color: '#FFFFFF', WebkitTextFillColor: '#FFFFFF' }}>Talk to Heat Shield Engineering about fire detection, fire protection, utility products, and maintenance support.</p>
-        <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <Link to="/contact" className="inline-flex items-center justify-center rounded-lg bg-[#D00000] border border-[#D00000] px-8 py-4 font-heading text-[14px] font-semibold uppercase tracking-[0.06em] shadow-[0_8px_22px_rgba(208,0,0,0.28)] hover:bg-[#B00000] hover:-translate-y-0.5 transition" style={{ color: '#FFFFFF', WebkitTextFillColor: '#FFFFFF' }}>Get a Free Quote</Link>
-          <a href="https://wa.me/8801788585741" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#25D366] px-8 py-4 font-heading text-[14px] font-semibold uppercase tracking-[0.06em] hover:bg-[#20bd5a] transition text-white" aria-label="Contact us on WhatsApp" style={{ color: '#FFFFFF', WebkitTextFillColor: '#FFFFFF' }}>{/* TODO: official WhatsApp */}<MessageCircle className="h-5 w-5 text-white" style={{ color: '#FFFFFF' }} aria-hidden="true" /> <span style={{ color: '#FFFFFF', WebkitTextFillColor: '#FFFFFF' }}>Contact Us on WhatsApp</span></a>
-        </div>
-      </div>
-    </section>
-  )
+  return null
 }
 
 export default Home

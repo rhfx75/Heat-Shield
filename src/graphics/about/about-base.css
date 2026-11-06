@@ -1,0 +1,20 @@
+/* About page only - hse-ab- prefix */
+.hse-ab-page{--ab-brand:var(--hse-blue);--ab-brand-light:var(--hse-blue-light,#2B7FE6);--ab-navy:#0B1F44;--ab-red:var(--hse-red);--ab-red-light:var(--hse-red-light,#FF5A52);--ab-white:#fff;--ab-pale:var(--hse-blue-pale,#EAF2FF);--ab-surface:var(--hse-surface,#F7F9FC)}
+.hse-ab-page [data-surface="light"]{background:var(--ab-surface);color:var(--ab-brand)}
+.hse-ab-page [data-surface="pale"]{background:var(--ab-pale);color:var(--ab-brand)}
+.hse-ab-page [data-surface="brand"]{background:linear-gradient(135deg,var(--ab-brand-light),var(--ab-brand));color:var(--ab-white)}
+.hse-ab-page [data-surface="dark"]{background:linear-gradient(180deg,var(--ab-navy),var(--ab-brand));color:var(--ab-white)}
+.hse-ab-page [data-surface="brand"] :where(h1,h2,h3,h4,p,li,a,span,strong,button),
+.hse-ab-page [data-surface="dark"] :where(h1,h2,h3,h4,p,li,a,span,strong,button){color:var(--ab-white);-webkit-text-fill-color:currentColor}
+.hse-ab-page [data-surface="light"] :where(h1,h2,h3,h4),
+.hse-ab-page [data-surface="pale"] :where(h1,h2,h3,h4){color:var(--ab-brand);-webkit-text-fill-color:currentColor}
+.hse-ab-page [data-surface="light"] :where(p,li,span),
+.hse-ab-page [data-surface="pale"] :where(p,li,span){color:var(--hse-text-secondary,#2457A6);-webkit-text-fill-color:currentColor}
+.hse-ab-container{width:min(1280px,calc(100% - 40px));margin:0 auto}
+.hse-ab-progress{position:fixed;left:0;top:var(--header-h,84px);width:100%;height:3px;z-index:40;transform-origin:left;transform:scaleX(0);background:linear-gradient(90deg,var(--ab-red),var(--ab-red-light));pointer-events:none}
+.hse-ab-section{position:relative;overflow:clip}
+.hse-ab-wipe{clip-path:polygon(0 0,100% 0,100% calc(100% - 48px),0 100%)}
+.hse-ab-wipe-inv{clip-path:polygon(0 48px,100% 0,100% 100%,0 100%);margin-top:-48px;padding-top:calc(64px + 48px)}
+@media (max-width:767px){.hse-ab-wipe{clip-path:polygon(0 0,100% 0,100% calc(100% - 24px),0 100%)}.hse-ab-wipe-inv{clip-path:polygon(0 24px,100% 0,100% 100%,0 100%);margin-top:-24px;padding-top:calc(48px + 24px)}}
+.hse-ab-reveal-safe{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){.hse-ab-progress{display:none}.hse-ab-page *{animation:none !important;transition:none !important}}
