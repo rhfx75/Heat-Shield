@@ -2,9 +2,9 @@ import { useState, useRef, useEffect, useCallback, useMemo } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
 import { Menu, X, Phone, ChevronDown, MessageCircle, Mail } from 'lucide-react'
+import { company, mailHref, telHref, whatsappLink } from '../data/company'
 
 const LOGO_SRC = '/images/heatshield-logo.png'
-const WHATSAPP_URL = 'https://wa.me/8801788585741' // TODO: replace with official WhatsApp number
 
 const NAV_ITEMS = [
   { label: 'Home', to: '/', hasDropdown: false },
@@ -50,9 +50,10 @@ const DROPDOWN_ITEMS: Record<string, { label: string; to: string }[]> = {
 export function Navbar() {
   const location = useLocation()
   const pathname = location.pathname
+  const isHome = pathname === '/'
   const [isOpen, setIsOpen] = useState(false)
   const [openDropdown, setOpenDropdown] = useState<string | null>(null)
-  const [scrolled, setScrolled] = useState(false)
+  const [scrolled, setScrolled] = useState(() => (typeof window !== 'undefined' ? window.scrollY > 40 : false))
 
   const navRef = useRef<HTMLDivElement>(null)
   const hamburgerRef = useRef<HTMLButtonElement>(null)
@@ -100,19 +101,21 @@ export function Navbar() {
     return () => { document.removeEventListener('keydown', onKey); document.removeEventListener('mousedown', onDown) }
   }, [openDropdown, isOpen, closeDrawer])
 
+  const transparent = isHome && !scrolled && !isOpen
+
   return (
     <header ref={navRef} className="fixed top-0 left-0 right-0 z-50">
       {/* TODO: replace placeholder phone/email with official contact details */}
-      <div className="hidden lg:flex h-[36px] items-center justify-between bg-[linear-gradient(90deg,#0868D8,#014EB6)] px-6 text-[12px] font-medium text-white relative overflow-hidden">
+      <div className={`hidden lg:flex h-[36px] items-center justify-between px-6 text-[12px] font-medium text-white relative overflow-hidden transition-colors duration-300 ${transparent ? 'bg-[rgba(1,48,136,0.22)] border-b border-white/10 backdrop-blur-[2px]' : 'bg-[linear-gradient(90deg,#0868D8,#014EB6)]'}`}>
         <span className="pointer-events-none absolute inset-0 opacity-20" aria-hidden="true" style={{backgroundImage:'radial-gradient(circle at 1px 1px, rgba(255,255,255,.45) 1px, transparent 0)',backgroundSize:'18px 18px'}} />
-        <span className="font-heading tracking-[0.04em] uppercase relative">Fire Detection | Fire Protection | Utility Products</span>
+        <span className="font-heading tracking-[0.04em] uppercase relative">{company.tagline}</span>
         <span className="flex items-center gap-5 relative">
-          <a href="tel:+880XXXXXXXXXX" className="hover:text-hse-red-pale transition">Phone: +880 XXXX-XXXXXX</a>
-          <a href="mailto:info@heatshieldengineering.com" className="hover:text-hse-red-pale transition">Email: info@heatshieldengineering.com</a>
+          <a href={telHref()} className="hover:text-hse-red-pale transition">Phone: {company.phones[0]?.display}</a>
+          <a href={mailHref()} className="hover:text-hse-red-pale transition">Email: {company.emails[0]?.address}</a>
         </span>
       </div>
       <nav
-        className={`w-full border-b border-hse-border bg-white transition-all duration-300 ${scrolled ? 'h-[68px] bg-white/95 backdrop-blur shadow-[0_4px_16px_rgba(1,78,182,0.08)]' : 'h-[80px] shadow-none'}`}
+        className={`w-full border-b transition-all duration-300 ${transparent ? 'h-[80px] bg-transparent border-white/10 shadow-none' : scrolled ? 'h-[68px] bg-white/95 border-hse-border backdrop-blur shadow-[0_4px_16px_rgba(1,78,182,0.08)]' : 'h-[80px] bg-white border-hse-border shadow-none'}`}
         aria-label="Main navigation"
       >
         <div className="mx-auto grid h-full max-w-7xl grid-cols-[auto_1fr_auto] items-center gap-4 px-4 sm:px-6 lg:px-8">
@@ -131,7 +134,7 @@ export function Navbar() {
                     <>
                       <button
                         type="button"
-                        className={`group relative inline-flex items-center gap-1 px-3 py-2 font-heading text-[14px] font-semibold uppercase tracking-[0.05em] transition-colors ${isActive || open ? 'text-hse-blue' : 'text-hse-blue hover:text-hse-red'}`}
+                        className={`group relative inline-flex items-center gap-1 px-3 py-2 font-heading text-[14px] font-semibold uppercase tracking-[0.05em] transition-colors ${transparent ? (isActive || open ? 'text-white' : 'text-white/90 hover:text-white') : (isActive || open ? 'text-hse-blue' : 'text-hse-blue hover:text-hse-red')}`}
                         aria-haspopup="menu"
                         aria-expanded={open}
                         onClick={() => setOpenDropdown(open ? null : item.label)}
@@ -164,7 +167,7 @@ export function Navbar() {
                   ) : (
                     <Link
                       to={item.to}
-                      className={`group relative inline-flex items-center px-3 py-2 font-heading text-[14px] font-semibold uppercase tracking-[0.05em] transition-colors ${isActive ? 'text-hse-blue' : 'text-hse-blue hover:text-hse-red'}`}
+                      className={`group relative inline-flex items-center px-3 py-2 font-heading text-[14px] font-semibold uppercase tracking-[0.05em] transition-colors ${transparent ? (isActive ? 'text-white' : 'text-white/90 hover:text-white') : (isActive ? 'text-hse-blue' : 'text-hse-blue hover:text-hse-red')}`}
                       aria-current={isActive ? 'page' : undefined}
                       onClick={closeAll}
                     >
@@ -181,13 +184,14 @@ export function Navbar() {
             <Link to="/contact" className="hidden lg:inline-flex items-center justify-center rounded-lg bg-[linear-gradient(135deg,#E53935,#FF5A52)] px-5 py-2.5 font-heading text-[13px] font-semibold uppercase tracking-[0.05em] text-white shadow-[0_6px_18px_rgba(229,57,53,0.22)] hover:brightness-110 transition">
               Get a Quote
             </Link>
-            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="hidden sm:inline-flex items-center gap-2 rounded-lg bg-[#25D366] px-4 py-2.5 font-heading text-[13px] font-semibold uppercase tracking-[0.04em] text-white hover:bg-[#20ad5a] transition" aria-label="Contact Heat Shield Engineering on WhatsApp" style={{ color: '#FFFFFF', WebkitTextFillColor: '#FFFFFF' }}>
-              <MessageCircle className="h-4 w-4 text-white" aria-hidden="true" /><span className="text-white" style={{ color: '#FFFFFF', WebkitTextFillColor: '#FFFFFF' }}>WhatsApp</span>
+            <a href={whatsappLink()} target="_blank" rel="noopener noreferrer" className={`hidden sm:inline-flex items-center gap-2 rounded-lg px-4 py-2.5 font-heading text-[13px] font-semibold uppercase tracking-[0.04em] transition hover:brightness-110 ${transparent ? 'bg-[#0f766e]/92 border border-white/15' : 'bg-[#0f766e]'}`} aria-label={`Contact ${company.name} on WhatsApp`} data-surface="dark" style={{ color: '#FFFFFF', WebkitTextFillColor: '#FFFFFF' } as React.CSSProperties}>
+              <MessageCircle className="h-4 w-4" style={{ color: '#FFFFFF' }} aria-hidden="true" />
+              <span style={{ color: '#FFFFFF', WebkitTextFillColor: '#FFFFFF' }}>WhatsApp</span>
             </a>
             <button
               ref={hamburgerRef}
               type="button"
-              className="lg:hidden inline-flex items-center justify-center rounded-md p-2 text-hse-blue hover:bg-hse-blue-pale focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-hse-blue"
+              className={`lg:hidden inline-flex items-center justify-center rounded-md p-2 focus-visible:outline-none focus-visible:ring-2 ${transparent ? 'text-white hover:bg-white/10 focus-visible:ring-white' : 'text-hse-blue hover:bg-hse-blue-pale focus-visible:ring-hse-blue'}`}
               onClick={() => setIsOpen(true)}
               aria-label="Open navigation menu"
               aria-expanded={isOpen}
@@ -246,10 +250,10 @@ export function Navbar() {
               </div>
               <div className="border-t border-hse-border p-4 space-y-3">
                 <Link to="/contact" className="flex w-full items-center justify-center rounded-lg bg-[linear-gradient(135deg,#E53935,#FF5A52)] px-4 py-3 font-heading text-[14px] font-semibold uppercase text-white" onClick={closeAll}>Get a Quote</Link>
-                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="flex w-full items-center justify-center gap-2 rounded-lg bg-[#25D366] px-4 py-3 font-heading text-[14px] font-semibold uppercase text-white" onClick={closeAll}><MessageCircle className="h-4 w-4" /> WhatsApp</a>
+                <a href={whatsappLink()} target="_blank" rel="noopener noreferrer" className="flex w-full items-center justify-center gap-2 rounded-lg bg-[#25D366] px-4 py-3 font-heading text-[14px] font-semibold uppercase text-white" onClick={closeAll}><MessageCircle className="h-4 w-4" /> WhatsApp</a>
                 <div className="pt-1 text-[13px] text-hse-muted space-y-1">
-                  <a href="tel:+880XXXXXXXXXX" className="flex items-center gap-2"><Phone className="h-4 w-4 text-hse-blue" />+880 XXXX-XXXXXX {/* TODO */}</a>
-                  <a href="mailto:info@heatshieldengineering.com" className="flex items-center gap-2"><Mail className="h-4 w-4 text-hse-blue" />info@heatshieldengineering.com {/* TODO */}</a>
+                  <a href={telHref()} className="flex items-center gap-2"><Phone className="h-4 w-4 text-hse-blue" />{company.phones[0]?.display}</a>
+                  <a href={mailHref()} className="flex items-center gap-2"><Mail className="h-4 w-4 text-hse-blue" />{company.emails[0]?.address}</a>
                 </div>
               </div>
             </motion.div>
