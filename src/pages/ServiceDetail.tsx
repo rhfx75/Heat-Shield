@@ -1,12 +1,22 @@
-﻿import { useParams, Link } from 'react-router-dom'
+﻿import { useState } from 'react'
+import { useParams, Link } from 'react-router-dom'
 import { getServiceById } from '../data/services'
+import { rsc } from '../data/rsc'
 import { Shield, ShieldCheck, CheckCircle, Wrench } from 'lucide-react'
 import { ServiceDetailGraphic } from '../graphics/service-detail/ServiceDetailGraphic'
 import '../graphics/service-detail/service-detail.css'
 
+const RSC_BY_SERVICE: Record<string, (typeof rsc.services)[number]> = {
+  'fire-detection-alarm-installation': rsc.services[0],
+  'fire-pump-hydrant': rsc.services[1],
+  'electrical-lightning-safety': rsc.services[2],
+}
+
 export function ServiceDetail() {
   const { id } = useParams<{ id: string }>()
   const service = getServiceById(id ?? '')
+  const serviceRsc = service ? RSC_BY_SERVICE[service.id] : undefined
+  const [docsOpen, setDocsOpen] = useState(false)
 
   if (!service) {
     return (
@@ -49,6 +59,35 @@ export function ServiceDetail() {
               <Link to="/contact" className="hse-sd-btn hse-sd-btn--primary" data-surface="dark">Get a Quote for This Service</Link>
               <Link to="/services" className="hse-sd-btn hse-sd-btn--ghost">Back to Services</Link>
             </div>
+
+            {serviceRsc ? (
+              <section className="hse-sd-rsc" aria-labelledby="hse-sd-rsc-title">
+                <p className="hse-sd-rsc__kicker">{serviceRsc.number} · RSC Compliance</p>
+                <h2 id="hse-sd-rsc-title">RSC / Accord Technical Compliance</h2>
+                <p className="hse-sd-rsc__sub">{serviceRsc.subtitle}</p>
+                {serviceRsc.intro.map((p, i) => <p key={i} className="hse-sd-rsc__body">{p}</p>)}
+                <div className="hse-sd-rsc__block">
+                  <h3>Our scope of services</h3>
+                  <ul className="hse-sd-rsc__list">{serviceRsc.scope.map((item) => <li key={item}>{item}</li>)}</ul>
+                </div>
+                <div className="hse-sd-rsc__block">
+                  <h3>{serviceRsc.documentationTitle}</h3>
+                  <button type="button" className="hse-sd-rsc__toggle" aria-expanded={docsOpen} onClick={() => setDocsOpen(v => !v)}>
+                    <span>Documentation list ({serviceRsc.documentation.length})</span><span aria-hidden="true">{docsOpen ? '−' : '+'}</span>
+                  </button>
+                  {docsOpen ? <ol className="hse-sd-rsc__docs">{serviceRsc.documentation.map((item) => <li key={item}>{item}</li>)}</ol> : <p className="hse-sd-rsc__muted">Open to view all required technical documentation categories.</p>}
+                </div>
+                <div className="hse-sd-rsc__standards" data-surface="brand">
+                  <h3>{serviceRsc.standardsTitle}</h3>
+                  <ul>{serviceRsc.standards.map((item) => <li key={item}>{item}</li>)}</ul>
+                </div>
+                <div className="hse-sd-rsc__block">
+                  <h3>Service deliverables</h3>
+                  <div className="hse-sd-rsc__deliver">{serviceRsc.deliverables.map((item) => <div key={item} className="hse-sd-rsc__deliver-item"><CheckCircle aria-hidden="true" /><span>{item}</span></div>)}</div>
+                </div>
+                <p className="hse-sd-rsc__disclaimer"><strong>Note:</strong> {rsc.disclaimer}</p>
+              </section>
+            ) : null}
           </article>
 
           <aside className="hse-sd-side" aria-label="Service details">
