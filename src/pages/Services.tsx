@@ -68,7 +68,7 @@ export function Services() {
   }
 
   return (
-    <div className="hse-sv-page" data-custom-cursor>
+    <div className="hse-sv-page">
       <div className="hse-sv-progressbar" aria-hidden="true"><span /></div>
       <section ref={heroRef} className="hse-sv-hero" data-surface="brand" aria-labelledby="services-hero-title">
         <div className="hse-sv-hero__grid" aria-hidden="true" />
