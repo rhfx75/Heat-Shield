@@ -1,4 +1,4 @@
-﻿import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { findCategory, productImage, productImageOriginal } from '../data/products'
 import { brands } from '../data/brands'
 import { company, whatsappLink } from '../data/company'
