@@ -77,13 +77,13 @@ export function Navbar() {
   const closeDrawer = useCallback(() => setIsOpen(false), [])
 
 // Scroll-driven header shadow: vanilla passive listener, toggles after 10px
-  // Scroll-driven header: toggles after 40px per spec
+  // Scroll-driven header: toggles after 40px per spec; recheck on route changes (SPA scroll restore)
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40)
     window.addEventListener('scroll', onScroll, { passive: true })
     onScroll()
     return () => window.removeEventListener('scroll', onScroll)
-  }, [])
+  }, [pathname])
 
   const closeAll = useCallback(() => { setOpenDropdown(null); closeDrawer() }, [closeDrawer])
 
