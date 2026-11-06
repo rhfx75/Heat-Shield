@@ -1,4 +1,4 @@
-﻿/* Services page â€” scoped hse-sv-* (Phases 0-6). No global overrides, no !important. */
+﻿/* Services page — scoped hse-sv-* (Phases 0-6). No global overrides, no !important. */
 .hse-sv-page{position:relative;isolation:isolate;overflow-x:clip;--hse-sv-quote-bg:var(--color-hse-red-700,#C62828);--hse-sv-wa-bg:#0F766E}
 .hse-sv-progressbar{position:sticky;top:0;z-index:60;height:3px;background:rgba(255,255,255,0);pointer-events:none}
 .hse-sv-progressbar span{display:block;width:100%;height:100%;transform-origin:left center;transform:scaleX(0);background:linear-gradient(90deg,#014EB6,rgba(255,156,96,.95),#E53935)}
@@ -6,7 +6,7 @@
 .hse-sv-hero[data-surface=brand],.hse-sv-hero[data-surface=brand] *,.hse-sv-life[data-surface=brand],.hse-sv-life[data-surface=brand] *{color:#fff}
 .hse-sv-hero__grid{position:absolute;inset:0;z-index:0;opacity:.14;background-image:linear-gradient(rgba(255,255,255,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.08) 1px,transparent 1px);background-size:36px 36px;pointer-events:none}
 .hse-sv-hero__scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(1,35,90,.78) 0%,rgba(1,78,182,.46) 46%,rgba(1,78,182,.14) 100%);pointer-events:none}
-.hse-sv-hero__inner{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1.02fr) minmax(280px,.98fr);gap:28px;align-items:center;padding:calc(var(--header-h,84px) + 34px) 0 56px}
+.hse-sv-hero__inner{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,.92fr) minmax(320px,1.08fr);gap:28px;align-items:center;padding:calc(var(--header-h,84px) + 28px) 0 48px}
 .hse-sv-hero__copy{max-width:680px}
 .hse-sv-breadcrumb{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;background:rgba(1,48,136,.58);border:1px solid rgba(255,255,255,.22);font-size:13px;font-weight:600;margin-bottom:18px;color:#fff}
 .hse-sv-breadcrumb a{color:#fff;text-decoration:none}
@@ -20,8 +20,8 @@
 .hse-sv-btn--quote{background:var(--hse-sv-quote-bg);color:#fff}
 .hse-sv-btn--wa{background:var(--hse-sv-wa-bg);color:#fff}
 .hse-sv-btn:hover{transform:translateY(-1px)}
-.hse-sv-hero__visual{min-height:420px;display:grid;place-items:center}
-.hse-sv-layers{width:min(560px,100%);aspect-ratio:1/1;position:relative}
+.hse-sv-hero__visual{min-height:560px;display:grid;place-items:center}
+.hse-sv-layers{width:min(760px,100%);aspect-ratio:1/1;position:relative}
 .hse-sv-layers svg{width:100%;height:100%;overflow:visible;display:block}
 .hse-sv-filters-wrap{position:sticky;top:var(--header-h,84px);z-index:20;padding:14px 0;background:rgba(255,255,255,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--hse-border,rgba(1,78,182,.14))}
 .hse-sv-filters{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:center}
@@ -92,7 +92,7 @@
 .hse-sv-marquee__static img{max-width:110px;max-height:36px;object-fit:contain}
 @keyframes hse-sv-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media (max-width:1023px){.hse-sv-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hse-sv-life__nodes{grid-template-columns:repeat(2,minmax(0,1fr))}.hse-sv-life__svg{display:none}}
-@media (max-width:900px){.hse-sv-hero__inner{grid-template-columns:1fr}.hse-sv-hero__visual{min-height:320px}}
+@media (max-width:900px){.hse-sv-hero__inner{grid-template-columns:1fr}.hse-sv-hero__visual{min-height:400px}.hse-sv-layers{width:min(620px,100%)}}
 @media (max-width:639px){.hse-sv-grid,.hse-sv-options,.hse-sv-life__nodes{grid-template-columns:1fr}.hse-sv-hero{min-height:auto}.hse-sv-hero__scrim{background:linear-gradient(180deg,rgba(1,35,90,.72),rgba(1,78,182,.56))}.hse-sv-filters{justify-content:flex-start;flex-wrap:nowrap;overflow-x:auto;padding-bottom:2px}.hse-sv-life{clip-path:none}}
 @media (prefers-reduced-motion:reduce){.hse-sv-btn,.hse-sv-card,.hse-sv-card__media img,.hse-sv-card__more svg,.hse-sv-progress span{transition:none}.hse-sv-marquee__track{animation:none;display:none}.hse-sv-marquee__static{display:flex}.hse-sv-layers__stack animate{display:none}}.hse-sv-hero-finder{margin-top:22px;padding:16px 16px 14px;border-radius:18px;border:1px solid rgba(255,255,255,.22);background:#013c8f;max-width:760px}
 .hse-sv-hero-finder__title{margin:0 0 12px;font-family:var(--font-heading);font-size:1.05rem;font-weight:700;color:#fff}

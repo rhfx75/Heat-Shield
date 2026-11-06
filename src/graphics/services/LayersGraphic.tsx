@@ -54,18 +54,20 @@ export function LayersGraphic({ activeCategory }: { activeCategory: string | nul
 
   return (
     <div ref={ref} className="hse-sv-layers" aria-hidden="true">
-      <svg viewBox="0 0 560 560" fill="none" role="img">
+      <svg viewBox="0 0 720 720" fill="none" role="img">
         <g className="hse-sv-layers__stack">
           {LAYERS.map((l, i) => {
-            const y = 390 - i * 54
-            const w = 260 - i * 6
-            const x = 280 - w / 2
+            const y = 500 - i * 70
+            const w = 380 - i * 8
+            const h = 48
+            const d = 22
+            const x = 360 - w / 2
             return (
               <g key={l.cat} data-slab data-filter={l.filter || ''} style={{ opacity: 1 }}>
-                <path d={`M${x} ${y} L${x + w / 2} ${y - 34} L${x + w} ${y} L${x + w / 2} ${y + 34} Z`} fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.42)" strokeWidth="1.2" />
-                <path d={`M${x} ${y} L${x} ${y + 16} L${x + w / 2} ${y + 50} L${x + w} ${y + 16} L${x + w} ${y}`} fill="rgba(1,78,182,0.16)" stroke="rgba(255,255,255,0.18)" />
-                <text x={280} y={y + 5} textAnchor="middle" fill="rgba(255,255,255,0.82)" fontSize="11" fontWeight="700">{l.label}</text>
-                <circle cx={280} cy={y - 8} r="4" fill="rgba(255,156,96,0.95)"><animate attributeName="opacity" values=".45;1;.45" dur={`${2.4 + i * 0.2}s`} repeatCount="indefinite" /></circle>
+                <path d={`M${x} ${y} L${x + w / 2} ${y - h} L${x + w} ${y} L${x + w / 2} ${y + h} Z`} fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.48)" strokeWidth="1.6" />
+                <path d={`M${x} ${y} L${x} ${y + d} L${x + w / 2} ${y + h + d} L${x + w} ${y + d} L${x + w} ${y}`} fill="rgba(1,78,182,0.2)" stroke="rgba(255,255,255,0.22)" strokeWidth="1.2" />
+                <text x={360} y={y + 6} textAnchor="middle" fill="rgba(255,255,255,0.9)" fontSize="14" fontWeight="700">{l.label}</text>
+                <circle cx={360} cy={y - 12} r="5.5" fill="rgba(255,156,96,0.98)"><animate attributeName="opacity" values=".45;1;.45" dur={`${2.4 + i * 0.2}s`} repeatCount="indefinite" /></circle>
               </g>
             )
           })}
