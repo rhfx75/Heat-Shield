@@ -1,4 +1,4 @@
-export type CompanyHours = { days: string; open: string; close: string; tz: string; openDays: number[] };
+﻿export type CompanyHours = { days: string; open: string; close: string; tz: string; openDays: number[] };
 
 export const company = {
   name: 'Heat Shield Engineering',
@@ -27,7 +27,7 @@ export const company = {
   mapEmbedUrl:
     'https://www.google.com/maps?q=House-12%2C+Road-04%2C+Block-C%2C+Banani%2C+Dhaka-1213&output=embed',
   hours: {
-    days: 'Sat–Thu',
+    days: 'Satâ€“Thu',
     open: '09:00',
     close: '18:00',
     tz: 'Asia/Dhaka',

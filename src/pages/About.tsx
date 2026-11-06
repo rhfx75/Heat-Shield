@@ -36,8 +36,8 @@ function SectionFallback() { return <div style={{ minHeight: 160 }} aria-hidden=
 export function About() {
   useEffect(() => {
     const prevTitle = document.title
-    const desc = 'RSC Compliance & Technical Engineering Services. Heat Shield Engineering provides fire protection, fire detection and electrical safety engineering services to support Ready-Made Garment (RMG) factories in Bangladesh in meeting applicable RMG Sustainability Council (RSC) safety requirements.'
-    document.title = 'About Us | Heat Shield Engineering'
+    const desc = 'RSC Compliance & Technical Engineering Services. HEAT SHIELD ENGINEERING provides fire protection, fire detection and electrical safety engineering services to support Ready-Made Garment (RMG) factories in Bangladesh in meeting applicable RMG Sustainability Council (RSC) safety requirements.'
+    document.title = 'About Us | HEAT SHIELD ENGINEERING'
     let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null
     const prevDesc = meta?.getAttribute('content') ?? null
     if (!meta) { meta = document.createElement('meta'); meta.name = 'description'; document.head.appendChild(meta) }

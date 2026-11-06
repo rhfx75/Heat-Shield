@@ -1,0 +1,9 @@
+/* Why Choose — scoped to hse-ab-why-* */
+.hse-ab-why-card{transform-style:preserve-3d}
+.hse-ab-why-shine{transition:opacity 0.4s ease,transform 0.4s ease}
+@keyframes hse-ab-why-ring{to{transform:translate(-50%,-50%) rotate(360deg)}}
+@media (prefers-reduced-motion: reduce){
+  .hse-ab-why-card{transform:none !important}
+  .hse-ab-why-shine{display:none}
+  [style*="hse-ab-why-ring"]{animation:none}
+}

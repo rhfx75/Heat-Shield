@@ -1,5 +1,8 @@
 ﻿import { useEffect, useRef, useState } from 'react'
 import { rsc } from '../../data/rsc'
+import FASDiagram from './FASDiagram'
+import FPSDiagram from './FPSDiagram'
+import ElectricalDiagram from './ElectricalDiagram'
 
 export default function AboutServiceSection({ index }: { index: number }) {
   const service = rsc.services[index]
@@ -64,6 +67,13 @@ export default function AboutServiceSection({ index }: { index: number }) {
                 <p className="hse-ab-body" style={{ margin: 0 }}>{item}</p>
               </div>
             ))}
+          </div>
+        </div>
+        <div data-reveal style={{ marginTop: 24 }}>
+          <div style={{ background: '#fff', border: '1px solid var(--ab-border)', borderRadius: 20, padding: 24, overflow: 'hidden' }}>
+            {index === 0 && <FASDiagram />}
+            {index === 1 && <FPSDiagram />}
+            {index === 2 && <ElectricalDiagram />}
           </div>
         </div>
       </div>

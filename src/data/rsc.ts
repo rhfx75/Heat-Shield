@@ -1,4 +1,4 @@
-// TODO(confirm): content originates from another company's brief; business must confirm each service, standard, and document list applies to Heat Shield Engineering.
+﻿// TODO(confirm): content originates from another company's brief; business must confirm each service, standard, and document list applies to HEAT SHIELD ENGINEERING.
 export type RscService = {
   number: '01' | '02' | '03'
   id: string
@@ -66,7 +66,7 @@ export const rsc = {
       ],
       standardsTitle: 'Applicable Technical Standard',
       standards: [
-        'NFPA 72 – National Fire Alarm and Signaling Code.',
+        'NFPA 72 â€“ National Fire Alarm and Signaling Code.',
         'Applicable RSC technical requirements.',
         'Approved fire alarm system design and manufacturer requirements.',
       ],
@@ -120,9 +120,9 @@ export const rsc = {
       ],
       standardsTitle: 'Applicable Technical Standards',
       standards: [
-        'NFPA 20 – Installation of Stationary Pumps for Fire Protection.',
-        'NFPA 13 – Installation of Sprinkler Systems, where applicable.',
-        'NFPA 14 – Installation of Standpipe and Hose Systems, where applicable.',
+        'NFPA 20 â€“ Installation of Stationary Pumps for Fire Protection.',
+        'NFPA 13 â€“ Installation of Sprinkler Systems, where applicable.',
+        'NFPA 14 â€“ Installation of Standpipe and Hose Systems, where applicable.',
         'Applicable RSC technical requirements.',
         'Approved fire protection system design.',
       ],

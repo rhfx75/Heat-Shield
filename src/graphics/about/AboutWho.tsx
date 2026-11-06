@@ -6,7 +6,7 @@ import { useVisibilityFallback } from './useVisibilityFallback'
 
 gsap.registerPlugin(ScrollTrigger, DrawSVGPlugin)
 
-const WHO_TEXT = 'HEAT SHIELD ENGINEERING is a Bangladesh-based engineering solutions provider specializing in fire safety, fire protection, electrical safety, and industrial technology services.'
+const WHO_TEXT = 'SAFRON TECHNOLOGY is a Bangladesh-based engineering solutions provider specializing in fire safety, fire protection, electrical safety, and industrial technology services.'
 const MARKS = ['fire safety', 'fire protection', 'electrical safety']
 
 function marked(text: string) {
@@ -59,7 +59,7 @@ export default function AboutWho() {
           </svg>
         </div>
       </div>
-      <style>{`.hse-ab-who{display:grid;grid-template-columns:1fr 1.05fr;gap:36px;align-items:center;padding:88px 0}.hse-ab-eyebrow{font-family:var(--font-heading);font-size:13px;font-weight:700;letter-spacing:.12em;margin:0 0 10px}.hse-ab-who h2{font-family:var(--font-heading);font-size:clamp(1.8rem,3vw,2.6rem);margin:0 0 14px}.hse-ab-lead{font-size:1.05rem;line-height:1.8;margin:0}.hse-ab-mark{background:none;color:inherit;padding:0}.hse-ab-mark span{background-image:linear-gradient(transparent 62%,rgba(229,57,53,.35) 62%);background-repeat:no-repeat;background-size:100% 100%;padding:0 2px}.hse-ab-blue-svg{width:100%;height:auto;display:block;border-radius:16px;box-shadow:var(--hse-shadow-card)}@media (max-width:900px){.hse-ab-who{grid-template-columns:1fr;padding:64px 0}}`}</style>
+      <style>{`.hse-ab-who{display:grid;grid-template-columns:1fr 1.05fr;gap:40px;align-items:center;padding:96px 0}.hse-ab-eyebrow{font-family:var(--font-heading);font-size:14px;font-weight:700;letter-spacing:.14em;margin:0 0 12px}.hse-ab-who h2{font-family:var(--font-heading);font-size:clamp(2.15rem,3.6vw,3.15rem);margin:0 0 16px;line-height:1.08}.hse-ab-lead{font-size:clamp(1.1rem,1.35vw,1.3rem);line-height:1.85;margin:0;max-width:62ch}.hse-ab-mark{background:none;color:inherit;padding:0}.hse-ab-mark span{background-image:linear-gradient(transparent 62%,rgba(229,57,53,.35) 62%);background-repeat:no-repeat;background-size:100% 100%;padding:0 2px}.hse-ab-blue-svg{width:100%;height:auto;display:block;border-radius:16px;box-shadow:var(--hse-shadow-card)}@media (max-width:900px){.hse-ab-who{grid-template-columns:1fr;padding:68px 0}}`}</style>
     </section>
   )
 }
