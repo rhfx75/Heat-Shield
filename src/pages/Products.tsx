@@ -1,607 +1,254 @@
-import { useState, useCallback, useMemo, useEffect, useRef } from 'react'
+﻿import { useEffect, useMemo, useRef, useState } from 'react'
 import { useSearchParams, useNavigate } from 'react-router-dom'
-import { ProductCard } from '../components/ProductCard'
-import {
-  productCategories,
-  products,
-  getProductsByCategory,
-  getProductCount,
-  findCategory,
-  getProductIcon,
-  getCategoryProductCount,
-} from '../data/products'
-import { Search, Grid, ChevronRight } from 'lucide-react'
+import { whatsappLink } from '../data/company'
+import { findCategory, getProductIcon, productCategories, products, productImage, productImageOriginal } from '../data/products'
+import type { Product } from '../data/products'
+import { ProductInquiryForm } from '../components/ProductInquiryForm'
+import ProductsHero from '../graphics/products/ProductsHero'
+import '../graphics/products/products-base.css'
+import type { SyntheticEvent } from 'react'
 
-const SORT_OPTIONS = [
-  { value: 'featured', label: 'Featured Products' },
-  { value: 'name-asc', label: 'Product Name: A–Z' },
-  { value: 'name-desc', label: 'Product Name: Z–A' },
-  { value: 'recent', label: 'Recently Added' },
-] as const
+type SortKey = 'featured' | 'name-asc' | 'name-desc' | 'brand'
+const SORTS: { value: SortKey; label: string }[] = [
+  { value: 'featured', label: 'Featured' },
+  { value: 'name-asc', label: 'Name A to Z' },
+  { value: 'name-desc', label: 'Name Z to A' },
+  { value: 'brand', label: 'Brand' },
+]
+const FALLBACK_IMG = '/images/products/placeholder-product.svg'
 
-interface ProductsProps {
-  category?: string
+function onImgError(e: SyntheticEvent<HTMLImageElement>, orig?: string) {
+  const t = e.currentTarget
+  if (t.dataset.step === '2') return
+  t.removeAttribute('srcset')
+  if (t.dataset.step !== '1' && orig && orig !== t.src && !orig.startsWith('data:image/svg')) { t.dataset.step = '1'; t.src = orig; return }
+  t.dataset.step = '2'; t.onerror = null; t.alt = ''; t.src = FALLBACK_IMG
 }
 
-export function Products({ category: initialCategory }: ProductsProps) {
-  const [searchParams] = useSearchParams()
-  const [openCategory, setOpenCategory] = useState<string | null>(null)
-
+function useProductFilters(initialCategory?: string) {
+  const [sp, setSp] = useSearchParams()
   const navigate = useNavigate()
+  const q = sp.get('q') || ''
+  const category = sp.get('category') || initialCategory || ''
+  const brand = sp.get('brand') || ''
+  const model = sp.get('model') || ''
+  const availability = sp.get('availability') || ''
+  const sort = (sp.get('sort') as SortKey) || 'featured'
+  const patch = (next: Record<string, string>, replace = false) => {
+    const n = new URLSearchParams(sp)
+    Object.entries(next).forEach(([k, v]) => { if (v) n.set(k, v); else n.delete(k) })
+    if (replace) setSp(n, { replace: true }); else setSp(n)
+  }
+  return { sp, navigate, q, category, brand, model, availability, sort, patch }
+}
 
-  const urlCategory = searchParams.get('category') || initialCategory || ''
-  const urlSubcategory = searchParams.get('subcategory') || ''
-  const urlSearch = searchParams.get('search') || ''
-  const urlSort = searchParams.get('sort') || 'featured'
-  const urlBrand = searchParams.get('brand') || ''
-  const urlModel = searchParams.get('model') || ''
-  const urlAvailability = searchParams.get('availability') || ''
+function Drawer({ open, title, onClose, children }: { open: boolean; title: string; onClose: () => void; children: React.ReactNode }) {
+  const ref = useRef<HTMLDivElement>(null)
+  useEffect(() => { if (!open) return; const prev = document.body.style.overflow; document.body.style.overflow = 'hidden'; const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose() }; window.addEventListener('keydown', onKey); ref.current?.focus(); return () => { document.body.style.overflow = prev; window.removeEventListener('keydown', onKey) } }, [open, onClose])
+  if (!open) return null
+  return (
+    <div role="dialog" aria-modal="true" aria-label={title} style={{ position: 'fixed', inset: 0, zIndex: 80 }}>
+      <button type="button" aria-label="Close filters" onClick={onClose} style={{ position: 'absolute', inset: 0, background: 'rgba(1,28,70,.38)', border: 0 }} />
+      <div ref={ref} tabIndex={-1} data-surface="light" style={{ position: 'absolute', top: 0, right: 0, bottom: 0, width: 'min(420px,94vw)', background: '#fff', color: 'var(--pr-blue)', padding: 20, overflow: 'auto', boxShadow: '-18px 0 40px rgba(1,78,182,.14)' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', gap: 12, alignItems: 'center' }}><h2 style={{ margin: 0, font: '700 1.2rem/1.2 Montserrat,sans-serif' }}>{title}</h2><button type="button" className="hse-pr-btn hse-pr-btn--ghost" onClick={onClose}>Close</button></div>
+        <div style={{ marginTop: 16 }}>{children}</div>
+      </div>
+    </div>
+  )
+}
 
-  const activeCategoryKey = useMemo(() => {
-    if (!urlCategory) return null
-    const cat = findCategory(urlCategory)
-    return cat ? cat.key : urlCategory
-  }, [urlCategory])
+function Card({ p, onQuote, onCompare, compared }: { p: Product; onQuote: (p: Product) => void; onCompare: (p: Product) => void; compared: boolean }) {
+  const cat = findCategory(p.category)?.label || p.category
+  const src = productImage(p, 960)
+  const srcOrig = productImageOriginal(p)
+  const srcSet = productImage(p, 480) !== src && !src.startsWith('data:') ? `${productImage(p, 480)} 480w, ${src} 960w` : undefined
+  return (
+    <article id={`product-${p.slug}`} data-surface="light" style={{ display: 'flex', flexDirection: 'column', height: '100%', minWidth: 0, background: '#fff', border: '1px solid var(--pr-border)', borderRadius: 16, overflow: 'hidden', boxShadow: '0 6px 18px rgba(1,78,182,.05)' }}>
+      <div style={{ position: 'relative', width: '100%', aspectRatio: '4 / 3', background: 'radial-gradient(circle at 50% 35%, #fff, var(--pr-pale) 76%)', borderBottom: '1px solid rgba(1,78,182,.06)' }}>
+        <div style={{ position: 'absolute', top: 10, left: 10, right: 10, display: 'flex', justifyContent: 'space-between', gap: 8, zIndex: 2, pointerEvents: 'none' }}>
+          <span style={{ display: 'inline-flex', alignItems: 'center', maxWidth: 'calc(100% - 92px)', padding: '5px 9px', borderRadius: 999, background: 'var(--pr-pale2)', color: 'var(--pr-blue)', font: '700 .68rem/1.1 Montserrat,sans-serif' }}>{cat}</span>
+          <button type="button" aria-pressed={compared} aria-label={compared ? `Remove ${p.name} from compare` : `Compare ${p.name}`} onClick={() => onCompare(p)} style={{ pointerEvents: 'auto', minHeight: 32, padding: '0 10px', borderRadius: 999, border: '1px solid var(--pr-border)', background: compared ? 'var(--pr-blue)' : '#fff', color: compared ? '#fff' : 'var(--pr-blue)', font: '600 .72rem/1 Inter,sans-serif', cursor: 'pointer', flex: '0 0 auto' }}>{compared ? 'Added' : 'Compare'}</button>
+        </div>
+        <a href={`/products/${p.slug}`} style={{ display: 'grid', placeItems: 'center', width: '100%', height: '100%', padding: 14 }}>
+          <img src={src} srcSet={srcSet} sizes="(max-width:640px) 92vw, (max-width:1024px) 46vw, 23vw" onError={(e) => onImgError(e, srcOrig)} onLoad={(e) => { const t = e.currentTarget; if (t.complete && t.naturalWidth === 0) onImgError({ currentTarget: t } as SyntheticEvent<HTMLImageElement>, srcOrig) }} alt={p.name} loading="lazy" decoding="async" width="960" height="720" style={{ display: 'block', width: '100%', height: '100%', maxWidth: '100%', maxHeight: '100%', objectFit: 'contain', objectPosition: 'center' }} />
+        </a>
+      </div>
+      <div style={{ padding: 16, display: 'flex', flexDirection: 'column', gap: 8, flex: 1, minWidth: 0 }}>
+        {(p.brand || p.model) && <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>{p.brand ? <span className="hse-pr-chip">{p.brand}</span> : null}{p.model ? <span className="hse-pr-chip">Model: {p.model}</span> : null}</div>}
+        <h3 style={{ margin: 0, font: '700 1rem/1.3 Montserrat,sans-serif' }}><a href={`/products/${p.slug}`} style={{ color: 'var(--pr-blue)', textDecoration: 'none' }}>{p.name}</a></h3>
+        <p className="hse-pr-muted" style={{ margin: 0, font: '400 .92rem/1.65 Inter,sans-serif', display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>{p.shortDescription}</p>
+        <div style={{ marginTop: 'auto', paddingTop: 8, display: 'grid', gridTemplateColumns: 'repeat(2,minmax(0,1fr))', gap: 8 }}>
+          <a className="hse-pr-btn hse-pr-btn--blue" href={`/products/${p.slug}`} style={{ minHeight: 44, minWidth: 0 }}>View Details</a>
+          <button type="button" className="hse-pr-btn hse-pr-btn--red" style={{ minHeight: 44, minWidth: 0 }} onClick={() => onQuote(p)}>Get Quote</button>
+        </div>
+      </div>
+    </article>
+  )
+}
 
-  const activeSubKey = urlSubcategory || null
+export function Products({ category: initialCategory }: { category?: string }) {
+  const { q, category, brand, model, availability, sort, patch, navigate } = useProductFilters(initialCategory)
+  const [localQ, setLocalQ] = useState(q)
+  const [drawer, setDrawer] = useState(false)
+  const [visible, setVisible] = useState(24)
+  const [quote, setQuote] = useState<Product | null>(null)
+  const [compare, setCompare] = useState<Product[]>([])
+  const [compareOpen, setCompareOpen] = useState(false)
+  const sentinel = useRef<HTMLDivElement>(null)
 
-  const [searchQuery, setSearchQuery] = useState(urlSearch)
-  const [sort, setSort] = useState(urlSort)
-  const [brandFilter, setBrandFilter] = useState(urlBrand || '')
-  const [modelFilter, setModelFilter] = useState(urlModel)
-  const [availabilityFilter, setAvailabilityFilter] = useState(urlAvailability)
-  const [sidebarWidth, setSidebarWidth] = useState(() => {
-    try {
-      const saved = localStorage.getItem('hse-sidebar-width')
-      return saved ? parseInt(saved, 10) : 300
-    } catch {
-      return 300
-    }
-  })
+  useEffect(() => { setLocalQ(q) }, [q])
+  useEffect(() => { document.title = category ? `${findCategory(category)?.label || 'Category'} | Heat Shield Engineering` : 'All Products | Heat Shield Engineering' }, [category])
+  useEffect(() => { setVisible(24) }, [q, category, brand, model, availability, sort])
 
-  const sidebarRef = useRef<HTMLDivElement>(null)
-  const startYRef = useRef(0)
-  const startScrollTopRef = useRef(0)
+  const brands = useMemo(() => Array.from(new Set(products.map(p => p.brand).filter(Boolean) as string[])).sort((a,b)=>a.localeCompare(b)), [])
+  const models = useMemo(() => Array.from(new Set(products.map(p => p.model).filter(Boolean) as string[])).sort((a,b)=>a.localeCompare(b)), [])
+  const availOpts = useMemo(() => Array.from(new Set(products.map(p => p.availability).filter(Boolean) as string[])), [])
 
-  // Available brands (normalized to lowercase for consistent matching; labels keep original case)
-  const availableBrands = useMemo(() => {
-    const brandMap = new Map<string, string>()
-    products.forEach((p) => {
-      if (p.brand) {
-        const key = p.brand.toLowerCase().trim()
-        if (!brandMap.has(key)) brandMap.set(key, p.brand)
-      }
+  const suggestions = useMemo(() => {
+    const t = localQ.trim().toLowerCase(); if (!t) return []
+    return products.filter(p => [p.name, p.brand, p.model, p.slug].filter(Boolean).some(v => String(v).toLowerCase().includes(t))).slice(0, 6)
+  }, [localQ])
+
+  const filtered = useMemo(() => {
+    const t = q.trim().toLowerCase()
+    let list = products.filter(p => {
+      if (category && p.category !== category && findCategory(p.category)?.slug !== category) return false
+      if (brand && p.brand !== brand) return false
+      if (model && p.model !== model) return false
+      if (availability && p.availability !== availability) return false
+      if (t && ![p.name,p.brand,p.model,p.shortDescription,p.subcategory,p.category,...(p.keywords||[])].filter(Boolean).some(v => String(v).toLowerCase().includes(t))) return false
+      return true
     })
-    return Array.from(brandMap.entries())
-      .map(([value, label]) => ({ value, label }))
-      .sort((a, b) => a.label.localeCompare(b.label))
-  }, [])
-
-  // Available models
-  const availableModels = useMemo(() => {
-    const models = new Set<string>()
-    products.forEach((p) => {
-      if (p.model) models.add(p.model)
-    })
-    return Array.from(models).sort()
-  }, [])
-
-  // Filtered products
-  const filteredProducts = useMemo(() => {
-    let list = products
-
-    if (activeCategoryKey) {
-      list = getProductsByCategory(activeCategoryKey)
-    }
-    if (activeSubKey) {
-      list = list.filter((p) => p.subcategory === activeSubKey)
-    }
-    if (searchQuery) {
-      const q = searchQuery.toLowerCase()
-      list = list.filter(
-        (p) =>
-          p.name.toLowerCase().includes(q) ||
-          p.model?.toLowerCase().includes(q) ||
-          p.brand?.toLowerCase().includes(q) ||
-          findCategory(p.category)?.label.toLowerCase().includes(q) ||
-          p.subcategory.toLowerCase().includes(q) ||
-          p.keywords?.some((k) => k.toLowerCase().includes(q)) ||
-          p.shortDescription.toLowerCase().includes(q) ||
-          p.description.toLowerCase().includes(q)
-      )
-    }
-    if (brandFilter) {
-      const bf = brandFilter.toLowerCase().trim()
-      list = list.filter((p) => p.brand?.toLowerCase().trim() === bf)
-    }
-    if (modelFilter) {
-      list = list.filter((p) => p.model === modelFilter)
-    }
-    if (availabilityFilter) {
-      list = list.filter((p) => p.availability === availabilityFilter)
-    }
-
-    // Sort
-    const sorted = [...list].sort((a, b) => {
+    list = [...list].sort((a,b) => {
       if (sort === 'name-asc') return a.name.localeCompare(b.name)
       if (sort === 'name-desc') return b.name.localeCompare(a.name)
-      if (sort === 'recent') return 0
-      // featured: featured first, then by name
-      const aFeatured = a.featured ? 0 : 1
-      const bFeatured = b.featured ? 0 : 1
-      if (aFeatured !== bFeatured) return aFeatured - bFeatured
-      return a.name.localeCompare(b.name)
+      if (sort === 'brand') return (a.brand || 'ZZZ').localeCompare(b.brand || 'ZZZ') || a.name.localeCompare(b.name)
+      return Number(!!b.featured) - Number(!!a.featured) || a.name.localeCompare(b.name)
     })
-    return sorted
-  }, [activeCategoryKey, activeSubKey, searchQuery, brandFilter, modelFilter, availabilityFilter, sort])
+    return list
+  }, [q, category, brand, model, availability, sort])
 
-  const totalCount = getProductCount()
-
-  const updateUrl = useCallback(
-    (params: Record<string, string>) => {
-      const newParams = new URLSearchParams(searchParams)
-      Object.entries(params).forEach(([key, value]) => {
-        if (value) newParams.set(key, value)
-        else newParams.delete(key)
-      })
-      navigate(`?${newParams.toString()}`)
-    },
-    [navigate, searchParams]
-  )
-
-  // Keep brand filter in sync with the URL so brand links from the Brands page work
   useEffect(() => {
-    const currentBrand = searchParams.get('brand') || ''
-    const desiredBrand = brandFilter ? brandFilter.toLowerCase().trim() : ''
-    if (currentBrand !== desiredBrand) {
-      updateUrl({ brand: desiredBrand || '' })
-    }
-  }, [brandFilter, updateUrl, searchParams])
+    const el = sentinel.current; if (!el) return
+    const io = new IntersectionObserver((es) => { if (es.some(e => e.isIntersecting)) setVisible(v => Math.min(v + 24, filtered.length || 24)) }, { rootMargin: '300px' })
+    io.observe(el); return () => io.disconnect()
+  }, [filtered.length])
 
-  // Sidebar drag-to-scroll and resize
-  useEffect(() => {
-    const el = sidebarRef.current
-    if (!el) return
-
-    // Drag-to-scroll (mouse/touch)
-    let down = false
-    let moved = false
-
-    const onPointerDown = (e: PointerEvent) => {
-      const target = e.target as Element | null
-      if (target?.closest('input, select, button, a, [contenteditable="true"]')) return
-      down = true
-      moved = false
-      startYRef.current = e.clientY
-      startScrollTopRef.current = el.scrollTop
-      el.classList.add('sidebar-dragging')
-    }
-
-    const onPointerMove = (e: PointerEvent) => {
-      if (!down) return
-      const dy = e.clientY - startYRef.current
-      if (Math.abs(dy) > 5) {
-        moved = true
-        el.classList.add('sidebar-dragging')
-      }
-      if (moved) {
-        e.preventDefault()
-        el.scrollTop = startScrollTopRef.current - dy
-      }
-    }
-
-    const onPointerUp = () => {
-      down = false
-      el.classList.remove('sidebar-dragging')
-    }
-
-    el.addEventListener('pointerdown', onPointerDown as EventListener)
-    window.addEventListener('pointermove', onPointerMove as EventListener)
-    window.addEventListener('pointerup', onPointerUp as EventListener)
-    el.addEventListener('pointerleave', onPointerUp as EventListener)
-
-    // Resize handle
-    const handle = el.querySelector('.sidebar-resizer')
-    let onResizeDown: ((e: PointerEvent) => void) | null = null
-
-    if (handle) {
-      onResizeDown = (e: PointerEvent) => {
-        e.preventDefault()
-        const startX = e.clientX
-        const startWidth = sidebarWidth
-
-        const onResizeMove = (ev: PointerEvent) => {
-          const dx = ev.clientX - startX
-          let newWidth = startWidth + dx
-          newWidth = Math.min(420, Math.max(240, newWidth))
-          setSidebarWidth(newWidth)
-          try { localStorage.setItem('hse-sidebar-width', String(newWidth)) } catch { }
-        }
-
-        const onResizeUp = () => {
-          window.removeEventListener('pointermove', onResizeMove as EventListener)
-          window.removeEventListener('pointerup', onResizeUp as EventListener)
-          window.removeEventListener('pointercancel', onResizeUp as EventListener)
-        }
-
-        window.addEventListener('pointermove', onResizeMove as EventListener)
-        window.addEventListener('pointerup', onResizeUp as EventListener)
-        window.addEventListener('pointercancel', onResizeUp as EventListener)
-      }
-      handle?.addEventListener('pointerdown', onResizeDown as EventListener)
-    }
-
-    return () => {
-      el.removeEventListener('pointerdown', onPointerDown as EventListener)
-      window.removeEventListener('pointermove', onPointerMove as EventListener)
-      window.removeEventListener('pointerup', onPointerUp as EventListener)
-      el.removeEventListener('pointerleave', onPointerUp as EventListener)
-      if (handle && onResizeDown) {
-        handle.removeEventListener('pointerdown', onResizeDown as EventListener)
-      }
-    }
-  }, [sidebarWidth])
-
-  // Apply sidebar width via inline style
-  useEffect(() => {
-    const el = sidebarRef.current
-    if (el) {
-      el.style.width = `${sidebarWidth}px`
-      el.style.flex = `0 0 ${sidebarWidth}px`
-      el.style.maxWidth = `${sidebarWidth}px`
-    }
-  }, [sidebarWidth])
-
-  const setSearch = useCallback(
-    (value: string) => {
-      setSearchQuery(value)
-      updateUrl({ search: value })
-    },
-    [updateUrl]
-  )
-
-  const setSortOption = useCallback(
-    (value: string) => {
-      setSort(value)
-      updateUrl({ sort: value })
-    },
-    [updateUrl]
-  )
-
-  const selectCategory = useCallback((key: string, slug: string) => {
-    setOpenCategory(key)
-    updateUrl({ category: slug, subcategory: '', search: '' })
-  }, [updateUrl])
-
-  const selectSubCategory = useCallback(
-    (catKey: string, subSlug: string) => {
-      setOpenCategory(catKey)
-      updateUrl({ category: findCategory(catKey)?.slug || '', subcategory: subSlug, search: '' })
-    },
-    [updateUrl]
-  )
-
-  const clearFilters = useCallback(() => {
-    setOpenCategory(null)
-    setSearchQuery('')
-    setSort('featured')
-    setBrandFilter('')
-    setModelFilter('')
-    setAvailabilityFilter('')
-    updateUrl({})
-  }, [updateUrl])
-
-  const toggleCategory = useCallback((key: string) => {
-    setOpenCategory((prev) => (prev === key ? null : key))
-  }, [])
+  const shown = filtered.slice(0, visible)
+  const title = category ? (findCategory(category)?.label || 'Products') : 'All Products'
+  const activeFilters = [['q',q],['brand',brand],['model',model],['availability',availability]].filter(([,v])=>v)
+  const activeCount = activeFilters.length + (category ? 1 : 0)
+  const toggleCompare = (p: Product) => setCompare(cur => cur.find(x => x.id === p.id) ? cur.filter(x => x.id !== p.id) : cur.length >= 3 ? cur : [...cur, p])
+  const helpMsg = `Hello Heat Shield Engineering, I need help finding a product.${activeFilters.length ? ` Filters: ${activeFilters.map(([k,v]) => `${k}=${v}`).join(', ')}.` : ''}`
 
   return (
-    <div className="listing-page relative min-h-screen">
-      <div className="listing-page-bg absolute inset-0 z-[-1]" />
+    <div className="hse-pr-page">
+      <ProductsHero title={title} search={localQ} onSearch={(v) => { setLocalQ(v); patch({ q: v }, true) }} suggestions={suggestions} onSelectSuggestion={(p) => { setLocalQ(''); patch({ q: '' }, true); if (filtered.find(x => x.id === p.id)) document.getElementById(`product-${p.slug}`)?.scrollIntoView({ behavior: 'smooth', block: 'center' }); else navigate(`/products/${p.slug}`) }} />
 
-      {/* HERO – full width edge to edge */}
-      <section className="relative isolate z-1 overflow-hidden listing-hero">
-        <div className="absolute inset-0 z-[-2] listing-gradient-bg" />
-        <div className="absolute inset-0 z-[-1] listing-blueprint" />
-        <svg className="listing-wave" viewBox="0 0 1440 70" preserveAspectRatio="none">
-          <path d="M0 35 Q 360 0 720 35 T 1440 35 V70 H0 Z" fill="var(--hse-surface,#F7F9FC)" />
-        </svg>
-        <div className="relative z-10 container section pt-[calc(var(--header-h)+64px)] pb-24 text-center">
-          <div className="listing-stat-grid grid grid-cols-1 md:grid-cols-3 gap-6 mb-10 animate-stats">
-            <div className="listing-stat-card">
-              <div className="listing-stat-value">{totalCount}</div>
-              <div className="listing-stat-label">Products</div>
-            </div>
-            <div className="listing-stat-card">
-              <div className="listing-stat-value">{productCategories.length}</div>
-              <div className="listing-stat-label">Categories</div>
-            </div>
-            <div className="listing-stat-card">
-              <div className="listing-stat-value">{availableBrands.length}</div>
-              <div className="listing-stat-label">Brands</div>
-            </div>
+      <section data-surface="light" style={{ position: 'sticky', top: 'var(--header-h,72px)', zIndex: 25, background: 'rgba(255,255,255,.96)', borderBottom: '1px solid var(--pr-border)' }} aria-label="Product categories and filters">
+        <div className="hse-pr-wrap" style={{ padding: '10px 20px' }}>
+          <div role="navigation" aria-label="Product categories" style={{ display: 'flex', gap: 8, overflowX: 'auto', paddingBottom: 2 }}>
+            <button type="button" onClick={() => patch({ category: '' })} style={{ flex: '0 0 auto', minHeight: 42, padding: '0 14px', borderRadius: 999, border: '1px solid var(--pr-border)', background: !category ? 'var(--pr-blue)' : '#fff', color: !category ? '#fff' : 'var(--pr-blue)', font: '600 .88rem/1 Inter,sans-serif', cursor: 'pointer' }}>All ({products.length})</button>
+            {productCategories.map(c => { const Icon = getProductIcon(c.icon); const count = products.filter(p => p.category === c.key).length; const active = category === c.key || category === c.slug; return <button key={c.key} type="button" onClick={() => patch({ category: c.key })} style={{ flex: '0 0 auto', minHeight: 42, padding: '0 14px', borderRadius: 999, border: '1px solid var(--pr-border)', background: active ? 'var(--pr-blue)' : '#fff', color: active ? '#fff' : 'var(--pr-blue)', font: '600 .88rem/1 Inter,sans-serif', cursor: 'pointer', display: 'inline-flex', alignItems: 'center', gap: 8 }}>{Icon ? <Icon size={16} /> : null}{c.label} ({count})</button> })}
           </div>
-          <span className="listing-badge">OUR PRODUCTS</span>
-          <h1 className="hero-title text-4xl md:text-6xl font-bold mb-4">All Products</h1>
-          <p className="text-lg text-white max-w-[700px] mx-auto">
-            Browse our complete range of fire protection, fire detection, fire suppression, passive fire protection, and electrical safety products.
-          </p>
+          <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginTop: 10, alignItems: 'center' }}>
+            <button type="button" className="hse-pr-btn hse-pr-btn--ghost" onClick={() => setDrawer(true)}>More filters{activeCount ? ` (${activeCount})` : ''}</button>
+            <label style={{ display: 'inline-flex', alignItems: 'center', gap: 8, color: 'var(--pr-blue)', font: '600 .85rem/1 Inter,sans-serif' }}>Sort
+              <select value={sort} onChange={(e) => patch({ sort: e.target.value })} aria-label="Sort products" style={{ minHeight: 42, borderRadius: 12, border: '1px solid var(--pr-border)', padding: '0 12px', color: 'var(--pr-blue)', background: '#fff' }}>
+                {SORTS.map(s => <option key={s.value} value={s.value}>{s.label}</option>)}
+              </select>
+            </label>
+            {activeFilters.map(([k,v]) => <button key={k} type="button" className="hse-pr-chip" onClick={() => patch({ [k]: '' })} aria-label={`Remove ${k} filter ${v}`} style={{ cursor: 'pointer' }}>{k}: {v} ×</button>)}
+            {activeFilters.length ? <button type="button" className="hse-pr-btn hse-pr-btn--ghost" onClick={() => patch({ q:'',brand:'',model:'',availability:'' })}>Clear filters</button> : null}
+          </div>
         </div>
       </section>
 
-      {/* Content below – constrained width */}
-      <div className="product-container page-container relative">
-        <section className="listing-body">
-          <div className="container-inner">
-            <div className="listing-layout">
-            {/* SIDEBAR */}
-            <aside
-              ref={sidebarRef}
-              className="listing-sidebar"
-              style={{ width: sidebarWidth, flex: `0 0 ${sidebarWidth}px`, maxWidth: sidebarWidth }}
-            >
-              <div className="sidebar-card">
-                <div className="sidebar-search">
-                  <div className="search-wrapper">
-                    <Search className="search-icon" />
-                    <input
-                      type="text"
-                      placeholder="Search products by name, model, brand, or category…"
-                      value={searchQuery}
-                      onChange={(e) => setSearch(e.target.value)}
-                      className="sidebar-search-input"
-                    />
-                  </div>
-                  {searchQuery && (
-                    <button
-                      onClick={() => setSearch('')}
-                      className="sidebar-clear"
-                    >
-                      Clear
-                    </button>
-                  )}
-                </div>
+      <Drawer open={drawer} title="More filters" onClose={() => setDrawer(false)}>
+        <div style={{ display: 'grid', gap: 14 }}>
+          <label style={{ display: 'grid', gap: 6, color: 'var(--pr-blue)', font: '600 .9rem/1.2 Inter,sans-serif' }}>Brand
+            <select value={brand} onChange={(e) => patch({ brand: e.target.value })} style={{ minHeight: 44, borderRadius: 12, border: '1px solid var(--pr-border)', padding: '0 12px', color: 'var(--pr-blue)' }}><option value="">All brands</option>{brands.map(b => <option key={b} value={b}>{b}</option>)}</select>
+          </label>
+          <label style={{ display: 'grid', gap: 6, color: 'var(--pr-blue)', font: '600 .9rem/1.2 Inter,sans-serif' }}>Model
+            <select value={model} onChange={(e) => patch({ model: e.target.value })} style={{ minHeight: 44, borderRadius: 12, border: '1px solid var(--pr-border)', padding: '0 12px', color: 'var(--pr-blue)' }}><option value="">All models</option>{models.map(m => <option key={m} value={m}>{m}</option>)}</select>
+          </label>
+          <label style={{ display: 'grid', gap: 6, color: 'var(--pr-blue)', font: '600 .9rem/1.2 Inter,sans-serif' }}>Availability
+            <select value={availability} onChange={(e) => patch({ availability: e.target.value })} style={{ minHeight: 44, borderRadius: 12, border: '1px solid var(--pr-border)', padding: '0 12px', color: 'var(--pr-blue)' }}><option value="">All</option>{availOpts.map(a => <option key={a} value={a}>{a}</option>)}</select>
+          </label>
+          <button type="button" className="hse-pr-btn hse-pr-btn--red" onClick={() => { patch({ brand:'',model:'',availability:'',q:'' }); setDrawer(false) }}>Clear all</button>
+        </div>
+      </Drawer>
 
-                <div className="sidebar-view-all">
-                  <button
-                    onClick={clearFilters}
-                    className={`view-all-button ${!activeCategoryKey && !activeSubKey && !searchQuery && !brandFilter && !modelFilter && !availabilityFilter ? 'view-all-active' : ''}`}
-                  >
-                    <Grid className="w-4 h-4" />
-                    <span>View All Products</span>
-                    <span className="view-all-count">{totalCount}</span>
-                  </button>
-                </div>
-
-                <div className="sidebar-filters">
-                  <h3 className="sidebar-filter-title">Filters</h3>
-
-                  <div className="sidebar-filter-group">
-                    <label className="sidebar-filter-label">Brand</label>
-                    <select
-                      value={brandFilter}
-                      onChange={(e) => setBrandFilter(e.target.value)}
-                      className="sidebar-filter-select"
-                    >
-                      <option value="">All Brands</option>
-                      {availableBrands.map((b) => (
-                        <option key={b.value} value={b.value}>
-                          {b.label}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
-
-                  <div className="sidebar-filter-group">
-                    <label className="sidebar-filter-label">Model</label>
-                    <select
-                      value={modelFilter}
-                      onChange={(e) => setModelFilter(e.target.value)}
-                      className="sidebar-filter-select"
-                    >
-                      <option value="">All Models</option>
-                      {availableModels.map((m) => (
-                        <option key={m} value={m}>
-                          {m}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
-
-                  <div className="sidebar-filter-group">
-                    <label className="sidebar-filter-label">Availability</label>
-                    <select
-                      value={availabilityFilter}
-                      onChange={(e) => setAvailabilityFilter(e.target.value)}
-                      className="sidebar-filter-select"
-                    >
-                      <option value="">All</option>
-                      <option value="available">Available</option>
-                      <option value="inquiry-required">Inquiry Required</option>
-                      <option value="not-specified">Not Specified</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div className="sidebar-categories">
-                  <h3 className="sidebar-filter-title">Categories</h3>
-                  {productCategories.map((cat) => {
-                    const isActive = activeCategoryKey === cat.key
-                    const isExpanded = openCategory === cat.key
-                    const catCount = getCategoryProductCount(cat.key)
-                    const CatIcon = getProductIcon(cat.icon)
-
-                    return (
-                      <div key={cat.key} className="category-item">
-                        <button
-                          onClick={() => {
-                            if (isActive) {
-                              selectCategory(cat.key, cat.slug)
-                            } else {
-                              toggleCategory(cat.key)
-                              selectCategory(cat.key, cat.slug)
-                            }
-                          }}
-                          className={`category-button ${isActive ? 'category-active' : ''} ${isExpanded ? '' : 'collapsed'}`}
-                          aria-expanded={isExpanded}
-                          aria-controls={`category-${cat.key}`}
-                        >
-                          <span className="category-icon">
-                            {CatIcon && <CatIcon />}
-                          </span>
-                          <span className="category-label">{cat.label}</span>
-                          <span className="category-count">{catCount}</span>
-                          <ChevronRight className="category-chevron" />
-                        </button>
-                        {isExpanded && (
-                          <div className="category-subcategories" id={`category-${cat.key}`}>
-                            {cat.subCategories.map((sub) => {
-                              const isSubActive = activeSubKey === sub.key || activeSubKey === sub.slug
-                              const subCount = getProductCount(cat.key, sub.key)
-                              const SubIcon = getProductIcon(sub.icon)
-                              const isEmpty = subCount === 0
-                              return (
-                                <button
-                                  key={sub.key}
-                                  onClick={() =>
-                                    !isEmpty && selectSubCategory(cat.key, sub.slug)
-                                  }
-                                  className={`subcategory-button ${isSubActive ? 'subcategory-active' : ''} ${isEmpty ? 'subcategory-empty' : ''}`}
-                                >
-                                  <span className="subcategory-icon">
-                                    {SubIcon && <SubIcon />}
-                                  </span>
-                                  <span className="subcategory-label">{sub.label}</span>
-                                  <span className="subcategory-count">{subCount}</span>
-                                  {!isEmpty && <ChevronRight className="subcategory-chevron" />}
-                                </button>
-                              )
-                            })}
-                          </div>
-                        )}
-                      </div>
-                    )
-                  })}
-                </div>
-
-                <button
-                  onClick={clearFilters}
-                  className="clear-filters"
-                >
-                  <Grid className="w-4 h-4" /> Clear filters
-                </button>
+      <section data-surface="pale" style={{ padding: '24px 0 72px' }} aria-labelledby="hse-pr-results">
+        <div className="hse-pr-wrap">
+          <div style={{ display: 'flex', justifyContent: 'space-between', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 14 }}>
+            <h2 id="hse-pr-results" style={{ margin: 0, font: '700 1.15rem/1.2 Montserrat,sans-serif', color: 'var(--pr-blue)' }}>Showing {filtered.length} products</h2>
+            <div aria-live="polite" className="hse-pr-live">Showing {filtered.length} products</div>
+          </div>
+          {filtered.length === 0 ? (
+            <div data-surface="light" style={{ background: '#fff', border: '1px solid var(--pr-border)', borderRadius: 22, padding: 28, textAlign: 'center' }}>
+              <h3 style={{ margin: 0, color: 'var(--pr-blue)', font: '700 1.25rem/1.2 Montserrat,sans-serif' }}>No products match these filters</h3>
+              <p className="hse-pr-muted" style={{ margin: '10px 0 16px' }}>Try clearing filters or searching by a different name, brand, or model.</p>
+              <button type="button" className="hse-pr-btn hse-pr-btn--blue" onClick={() => patch({ q:'',brand:'',model:'',availability:'',category:'' })}>Clear filters</button>
+            </div>
+          ) : (
+            <>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(min(100%,280px),1fr))', gap: 18 }}>
+                {shown.map(p => <Card key={p.id} p={p} onQuote={setQuote} onCompare={toggleCompare} compared={!!compare.find(x => x.id === p.id)} />)}
               </div>
-              <div className="sidebar-resizer" />
-            </aside>
+              {visible < filtered.length && <div ref={sentinel} style={{ display: 'flex', justifyContent: 'center', marginTop: 22 }}><button type="button" className="hse-pr-btn hse-pr-btn--ghost" onClick={() => setVisible(v => Math.min(v + 24, filtered.length))}>Load more</button></div>}
+            </>
+          )}
+        </div>
+      </section>
 
-            {/* MAIN */}
-            <main className="listing-main">
-              <div className="listing-toolbar">
-                <div>
-                  <p className="listing-toolbar-count">
-                    {filteredProducts.length} product{filteredProducts.length !== 1 ? 's' : ''} found
-                  </p>
-                  {brandFilter && (
-                    <div className="listing-active-brand">
-                      <span className="active-brand-label">Showing brand:</span>
-                      <span className="active-brand-value">{brandFilter}</span>
-                        <button
-                          onClick={() => {
-                            setBrandFilter('')
-                            updateUrl({ brand: '' })
-                          }}
-                          className="clear-brand-button"
-                        >
-                        Clear brand filter / All brands
-                      </button>
-                    </div>
-                  )}
-                </div>
-                <div className="listing-sort">
-                  <label htmlFor="sort-select" className="sort-label">Sort by:</label>
-                  <select
-                    id="sort-select"
-                    value={sort}
-                    onChange={(e) => setSortOption(e.target.value)}
-                    className="sort-select"
-                  >
-                    {SORT_OPTIONS.map((o) => (
-                      <option key={o.value} value={o.value}>
-                        {o.label}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-              </div>
+      {compare.length > 0 && (
+        <div data-surface="light" style={{ position: 'fixed', left: 12, right: 12, bottom: 12, zIndex: 70, background: '#fff', border: '1px solid var(--pr-border)', borderRadius: 18, boxShadow: '0 18px 44px rgba(1,78,182,.16)', padding: 12 }}>
+          <div className="hse-pr-wrap" style={{ display: 'flex', gap: 10, alignItems: 'center', flexWrap: 'wrap', padding: 0 }}>
+            <strong style={{ color: 'var(--pr-blue)' }}>Compare ({compare.length}/3)</strong>
+            {compare.map(p => <span key={p.id} className="hse-pr-chip">{p.name}<button type="button" onClick={() => toggleCompare(p)} aria-label={`Remove ${p.name}`} style={{ border: 0, background: 'transparent', color: 'var(--pr-blue)', cursor: 'pointer' }}>×</button></span>)}
+            <button type="button" className="hse-pr-btn hse-pr-btn--blue" onClick={() => setCompareOpen(true)} disabled={compare.length < 2}>Compare</button>
+            <button type="button" className="hse-pr-btn hse-pr-btn--ghost" onClick={() => setCompare([])}>Clear</button>
+          </div>
+        </div>
+      )}
 
-              <div className="listing-grid">
-                {filteredProducts.length > 0 ? (
-                  filteredProducts.map((p) => (
-                    <ProductCard
-                      key={p.id}
-                      slug={p.slug}
-                      name={p.name}
-                      category={p.category}
-                      brand={p.brand}
-                      model={p.model}
-                      shortDescription={p.shortDescription}
-                      image={p.image}
-                      availability={p.availability}
-                    />
-                  ))
-                ) : (
-                  <div className="empty-state">
-                    <div className="empty-icon">🔍</div>
-                    {brandFilter ? (
-                      <>
-                        <h3 className="empty-title">
-                          No products available for <span className="empty-brand">{brandFilter}</span> yet
-                        </h3>
-                        <p className="empty-description">
-                          We don't have any listed products for this brand at the moment. Contact us for a
-                          quotation or browse other brands.
-                        </p>
-                        <button
-                          onClick={() => {
-                            setBrandFilter('')
-                            updateUrl({ brand: '' })
-                          }}
-                          className="empty-button"
-                        >
-                          <Grid className="w-4 h-4 mr-2" />
-                          Contact us for a quote
-                        </button>
-                        <button
-                          onClick={clearFilters}
-                          className="empty-button empty-button--outline"
-                        >
-                          <Grid className="w-4 h-4 mr-2" />
-                          View All Brands
-                        </button>
-                      </>
-                    ) : (
-                      <>
-                        <h3 className="empty-title">No products found</h3>
-                        <p className="empty-description">
-                          Try adjusting your search or removing some filters to find the products you need.
-                        </p>
-                        <button
-                          onClick={clearFilters}
-                          className="empty-button"
-                        >
-                          <Grid className="w-4 h-4 mr-2" />
-                          View All Products
-                        </button>
-                      </>
-                    )}
-                  </div>
-                )}
-              </div>
-            </main>
+      {compareOpen && (
+        <div role="dialog" aria-modal="true" aria-label="Compare products" style={{ position: 'fixed', inset: 0, zIndex: 90, background: 'rgba(1,28,70,.42)', padding: 16, overflow: 'auto' }} onClick={() => setCompareOpen(false)}>
+          <div data-surface="light" onClick={(e) => e.stopPropagation()} style={{ maxWidth: 1100, margin: '24px auto', background: '#fff', borderRadius: 20, padding: 18, color: 'var(--pr-blue)' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', gap: 12 }}><h2 style={{ margin: 0 }}>Comparison</h2><button type="button" className="hse-pr-btn hse-pr-btn--ghost" onClick={() => setCompareOpen(false)}>Close</button></div>
+            {/* // TODO(confirm): Comparison labels and values must come only from specifications supplied in the product data. */}
+            <div style={{ overflowX: 'auto', marginTop: 12 }}>
+              <table style={{ width: '100%', borderCollapse: 'collapse', font: '400 .92rem/1.5 Inter,sans-serif' }}>
+                <thead><tr>{['Specification', ...compare.map(p => p.name)].map(h => <th key={h} style={{ textAlign: 'left', padding: 10, borderBottom: '1px solid var(--pr-border)', background: 'var(--pr-pale2)' }}>{h}</th>)}</tr></thead>
+                <tbody>{Array.from(new Set(compare.flatMap(p => (p.specifications || []).map(s => s.label)))).map(label => <tr key={label}>{[label, ...compare.map(p => p.specifications?.find(s => s.label === label)?.value || '-')].map((v, i) => <td key={i} style={{ padding: 10, borderBottom: '1px solid var(--pr-border)', verticalAlign: 'top' }}>{v}</td>)}</tr>)}{compare.every(p => !(p.specifications || []).length) ? <tr><td colSpan={compare.length + 1} style={{ padding: 12 }}>No supplied specifications available for selected products.</td></tr> : null}</tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {quote && (
+        <div role="dialog" aria-modal="true" aria-label="Request a quote" style={{ position: 'fixed', inset: 0, zIndex: 90, background: 'rgba(1,28,70,.42)', padding: 16, overflow: 'auto' }} onClick={() => setQuote(null)}>
+          <div data-surface="light" onClick={(e) => e.stopPropagation()} style={{ maxWidth: 720, margin: '24px auto', background: '#fff', borderRadius: 20, padding: 18, color: 'var(--pr-blue)' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', gap: 12, marginBottom: 10 }}><h2 style={{ margin: 0, font: '700 1.2rem/1.2 Montserrat,sans-serif' }}>Get Quote</h2><button type="button" className="hse-pr-btn hse-pr-btn--ghost" onClick={() => setQuote(null)}>Close</button></div>
+            <ProductInquiryForm initialProductName={quote.name} initialProductModel={quote.model} />
+          </div>
+        </div>
+      )}
+
+      <section data-surface="brand" style={{ padding: '42px 0' }} aria-labelledby="hse-pr-help">
+        <div className="hse-pr-wrap" style={{ display: 'flex', gap: 16, alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap' }}>
+          <div>
+            <h2 id="hse-pr-help" style={{ margin: 0, font: '700 clamp(1.4rem,2.5vw,2rem)/1.15 Montserrat,sans-serif', color: '#fff' }}>Can&apos;t find the product?</h2>
+            <p style={{ margin: '8px 0 0', color: 'rgba(255,255,255,.92)', font: '400 1rem/1.65 Inter,sans-serif' }}>Share your requirement and we&apos;ll help you identify suitable products and options.</p>
+          </div>
+          <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
+            <a className="hse-pr-btn hse-pr-btn--red" href="/contact">Request a Quote</a>
+            <a className="hse-pr-btn hse-pr-btn--wa" href={whatsappLink(helpMsg)} target="_blank" rel="noopener noreferrer">WhatsApp</a>
           </div>
         </div>
       </section>
     </div>
-  </div>
-)
+  )
 }
