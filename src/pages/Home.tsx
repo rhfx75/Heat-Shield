@@ -38,7 +38,7 @@ export function Home() {
 
 function AboutIntro() {
   return (
-    <section className="bg-hse-white">
+    <section id="hero-next" className="bg-hse-white">
       <div className="container section">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="order-2 lg:order-1">
