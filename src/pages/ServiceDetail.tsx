@@ -1,9 +1,8 @@
-import { useParams } from 'react-router-dom'
+﻿import { useParams, Link } from 'react-router-dom'
 import { getServiceById } from '../data/services'
-import { SectionTitle } from '../components/SectionTitle'
-import { Button } from '../components/ui/Button'
-import { Link } from 'react-router-dom'
-import { ShieldCheck, Wrench, Shield, CheckCircle } from 'lucide-react'
+import { Shield, ShieldCheck, CheckCircle, Wrench } from 'lucide-react'
+import { ServiceDetailGraphic } from '../graphics/service-detail/ServiceDetailGraphic'
+import '../graphics/service-detail/service-detail.css'
 
 export function ServiceDetail() {
   const { id } = useParams<{ id: string }>()
@@ -11,84 +10,68 @@ export function ServiceDetail() {
 
   if (!service) {
     return (
-      <div className="container section text-center py-24">
-        <h1 className="text-2xl font-bold text-hse-primary mb-4">Service Not Found</h1>
-          <Link to="/services" className="text-hse-red hover:underline">
-            Back to Services
-          </Link>
+      <div className="container hse-sd-empty">
+        <h1>Service Not Found</h1>
+        <Link to="/services">Back to Services</Link>
       </div>
     )
   }
+
   return (
-    <div>
-      <section className="relative overflow-hidden hero">
-        <div className="absolute inset-0 z-0">
-          <img
-            src={service.image}
-            alt={service.title}
-            className="w-full h-[400px] object-cover"
-            loading="lazy"
-          />
-          <div className="absolute inset-0 bg-hse-primary/70" />
+    <div className="hse-sd-page">
+      <section className="hse-sd-hero" data-surface="brand" aria-labelledby="service-detail-title">
+        <div className="hse-sd-hero__media" aria-hidden="true">
+          <img src={service.image} alt="" loading="lazy" />
+          <div className="hse-sd-hero__scrim" />
+          <div className="hse-sd-hero__grid" />
         </div>
-        <div className="relative z-10 container section pt-20 pb-16 text-center">
-          <span className="px-3 py-1 rounded-full bg-white/10 text-white text-xs font-bold border border-white/20 mb-6 inline-block">
-            Engineering Service
-          </span>
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">{service.title}</h1>
-          <p className="text-lg text-white max-w-2xl mx-auto">{service.description}</p>
+        <div className="container hse-sd-hero__inner">
+          <nav className="hse-sd-breadcrumb" aria-label="Breadcrumb">
+            <Link to="/">Home</Link><span aria-hidden="true">/</span><Link to="/services">Services</Link><span aria-hidden="true">/</span><span aria-current="page">{service.category}</span>
+          </nav>
+          <p className="hse-sd-kicker">Engineering Service</p>
+          <h1 id="service-detail-title">{service.title}</h1>
+          <p className="hse-sd-hero__desc">{service.description}</p>
         </div>
       </section>
 
-      <section>
-        <div className="container section">
-          <div className="grid lg:grid-cols-3 gap-12">
-            <div className="lg:col-span-2 space-y-8">
-              <SectionTitle title="Overview" className="text-left mb-0" />
-              <div className="space-y-6">
-                {service.detailContent.map((paragraph, i) => (
-                  <p key={i} className="text-hse-muted leading-relaxed text-base">{paragraph}</p>
+      <section className="hse-sd-main" data-surface="light">
+        <div className="container hse-sd-layout">
+          <article className="hse-sd-card">
+            <h2>Overview</h2>
+            <div className="hse-sd-prose">
+              {service.detailContent.map((paragraph, i) => (
+                <p key={i}>{paragraph}</p>
+              ))}
+            </div>
+            <ServiceDetailGraphic serviceId={service.id} title={service.title} />
+            <div className="hse-sd-actions">
+              <Link to="/contact" className="hse-sd-btn hse-sd-btn--primary" data-surface="dark">Get a Quote for This Service</Link>
+              <Link to="/services" className="hse-sd-btn hse-sd-btn--ghost">Back to Services</Link>
+            </div>
+          </article>
+
+          <aside className="hse-sd-side" aria-label="Service details">
+            <section className="hse-sd-panel">
+              <h3><span className="hse-sd-icon" aria-hidden="true"><Shield className="w-5 h-5" /></span>Systems Covered</h3>
+              <ul className="hse-sd-list">
+                {service.detailSystems.map((sys, i) => (
+                  <li key={i}><CheckCircle aria-hidden="true" />{sys}</li>
                 ))}
-              </div>
-            </div>
-            <div className="space-y-6">
-              <div className="p-6 rounded-xl border border-hse-border bg-white">
-                <h3 className="font-bold text-hse-primary mb-4 flex items-center gap-2">
-                  <Shield className="w-5 h-5 text-hse-red-600" /> Systems Covered
-                </h3>
-                <ul className="space-y-3">
-                  {service.detailSystems.map((sys, i) => (
-                    <li key={i} className="flex items-start gap-2 text-sm text-hse-muted">
-                      <CheckCircle className="w-4 h-4 text-hse-red-600 mt-0.5 flex-shrink-0" />
-                      {sys}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="p-6 rounded-xl border border-hse-border bg-white">
-                <h3 className="font-bold text-hse-primary mb-4 flex items-center gap-2">
-                  <ShieldCheck className="w-5 h-5 text-hse-red-600" /> Key Features
-                </h3>
-                <ul className="space-y-3">
-                  {service.features.map((f, i) => (
-                    <li key={i} className="flex items-start gap-2 text-sm text-hse-muted">
-                      <Wrench className="w-4 h-4 text-hse-red-600 mt-0.5 flex-shrink-0" />
-                      {f}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div className="text-center mt-12">
-            <Link to="/contact">
-              <Button variant="primary" className="w-auto px-8">
-                Get a Quote for This Service
-              </Button>
-            </Link>
-          </div>
+              </ul>
+            </section>
+            <section className="hse-sd-panel">
+              <h3><span className="hse-sd-icon" aria-hidden="true"><ShieldCheck className="w-5 h-5" /></span>Key Features</h3>
+              <ul className="hse-sd-list">
+                {service.features.map((f, i) => (
+                  <li key={i}><Wrench aria-hidden="true" />{f}</li>
+                ))}
+              </ul>
+            </section>
+          </aside>
         </div>
       </section>
     </div>
   )
 }
+
