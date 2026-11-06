@@ -1,19 +1,16 @@
-﻿import { useEffect, useMemo, useState } from 'react'
+﻿import { useEffect, useMemo, useRef, useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { motion, AnimatePresence } from 'framer-motion'
 import { services } from '../data/services'
 import { whatsappLink } from '../data/company'
 import { ServiceCard } from '../components/ServiceCard'
+import { LayersGraphic } from '../graphics/services/LayersGraphic'
+import { ServiceFilters, FILTERS, type FilterKey } from '../graphics/services/ServiceFilters'
+import { ServiceFinder } from '../graphics/services/ServiceFinder'
+import { ServiceLifecycle } from '../graphics/services/ServiceLifecycle'
+import { ServiceMarquee } from '../graphics/services/ServiceMarquee'
+import { gsap, ScrollTrigger } from '../components/ui/use-gsap'
 import '../graphics/services/services.css'
-
-type FilterKey = 'all' | 'Fire Protection' | 'Detection & Alarm' | 'Electrical Safety' | 'Maintenance'
-
-const FILTERS: { key: FilterKey; label: string; hash: string }[] = [
-  { key: 'all', label: 'All', hash: '' },
-  { key: 'Fire Protection', label: 'Fire Protection', hash: 'fire-protection' },
-  { key: 'Detection & Alarm', label: 'Detection & Alarm', hash: 'detection-alarm' },
-  { key: 'Electrical Safety', label: 'Electrical Safety', hash: 'electrical-safety' },
-  { key: 'Maintenance', label: 'Maintenance', hash: 'maintenance' },
-]
 
 function filterFromHash(hash: string): FilterKey {
   const h = hash.replace(/^#/, '')
@@ -24,11 +21,36 @@ function filterFromHash(hash: string): FilterKey {
 export function Services() {
   const location = useLocation()
   const navigate = useNavigate()
+  const heroRef = useRef<HTMLElement>(null)
   const [active, setActive] = useState<FilterKey>(() => filterFromHash(location.hash))
 
+  useEffect(() => { setActive(filterFromHash(location.hash)) }, [location.hash])
+
   useEffect(() => {
-    setActive(filterFromHash(location.hash))
-  }, [location.hash])
+    const root = heroRef.current
+    if (!root || typeof window === 'undefined') return
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    const lines = Array.from(root.querySelectorAll<HTMLElement>('.hse-sv-reveal'))
+    if (reduce) return
+    const ctx = gsap.context(() => {
+      gsap.fromTo(lines, { opacity: 1, y: 18 }, { opacity: 1, y: 0, duration: 0.75, stagger: 0.09, ease: 'expo.out', immediateRender: false, clearProps: 'opacity,transform' })
+    }, root)
+    const t = window.setTimeout(() => lines.forEach((el) => { el.style.opacity = '1'; el.style.transform = 'none' }), 1500)
+    return () => { window.clearTimeout(t); ctx.revert() }
+  }, [])
+
+  useEffect(() => {
+    const onScroll = () => {
+      const bar = document.querySelector<HTMLElement>('.hse-sv-progressbar span')
+      if (!bar) return
+      const h = document.documentElement.scrollHeight - window.innerHeight
+      bar.style.transform = `scaleX(${h > 0 ? Math.min(1, window.scrollY / h) : 0})`
+    }
+    onScroll(); window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  useEffect(() => () => { ScrollTrigger.getAll().forEach((t: any) => t.kill()) }, [])
 
   const counts = useMemo(() => {
     const base = { all: services.length } as Record<string, number>
@@ -42,49 +64,36 @@ export function Services() {
     const f = FILTERS.find((x) => x.key === key)
     setActive(key)
     navigate({ pathname: '/services', hash: f?.hash ? `#${f.hash}` : '' }, { replace: true })
+    window.requestAnimationFrame(() => ScrollTrigger.refresh())
   }
 
   return (
     <div className="hse-sv-page" data-custom-cursor>
-      <section className="hse-sv-hero" data-surface="brand" aria-labelledby="services-hero-title">
+      <div className="hse-sv-progressbar" aria-hidden="true"><span /></div>
+      <section ref={heroRef} className="hse-sv-hero" data-surface="brand" aria-labelledby="services-hero-title">
+        <div className="hse-sv-hero__grid" aria-hidden="true" />
         <div className="hse-sv-hero__scrim" aria-hidden="true" />
         <div className="container hse-sv-hero__inner">
           <div className="hse-sv-hero__copy">
-            <nav className="hse-sv-breadcrumb" aria-label="Breadcrumb">
+            <nav className="hse-sv-breadcrumb hse-sv-reveal" aria-label="Breadcrumb">
               <Link to="/">Home</Link><span aria-hidden="true">/</span><span aria-current="page">Services</span>
             </nav>
-            <h1 id="services-hero-title"><span className="hse-sv-line">Our Services</span></h1>
-            <p className="hse-sv-hero__subtitle">Comprehensive fire safety and engineering solutions tailored to your facility.</p>
-            <div className="hse-sv-hero__actions">
-              <Link to="/contact" className="hse-sv-btn hse-sv-btn--quote">Get a Quote</Link>
+            <h1 id="services-hero-title"><span className="hse-sv-line hse-sv-reveal">Our Services</span></h1>
+            <p className="hse-sv-hero__subtitle hse-sv-reveal">Comprehensive fire safety and engineering solutions tailored to your facility.</p>
+            <div className="hse-sv-hero__actions hse-sv-reveal">
+              <Link to="/contact" className="hse-sv-btn hse-sv-btn--quote" data-surface="dark">Get a Quote</Link>
               <a href={whatsappLink('Hello, I would like to inquire about Heat Shield Engineering services.')} target="_blank" rel="noopener noreferrer" className="hse-sv-btn hse-sv-btn--wa" data-surface="dark">WhatsApp</a>
             </div>
           </div>
-          <div className="hse-sv-hero__visual" aria-hidden="true">
-            <div className="hse-sv-layers">
-              <svg viewBox="0 0 520 520" fill="none">
-                <g opacity=".9">
-                  {[0,1,2,3,4,5].map((i) => (
-                    <g key={i} transform={`translate(${260 - (120 - i * 4)} ${330 - i * 38})`}>
-                      <path d={`M0 ${24 - i} L${120 - i * 4} ${-8} L${240 - i * 8} ${24 - i} L${120 - i * 4} ${56 - i * 2} Z`} fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.38)" />
-                    </g>
-                  ))}
-                </g>
-              </svg>
-            </div>
+          <div className="hse-sv-hero__visual hse-sv-reveal">
+            <LayersGraphic activeCategory={active === 'all' ? null : active} />
           </div>
         </div>
       </section>
 
       <div className="hse-sv-filters-wrap" data-surface="light">
         <div className="container">
-          <div className="hse-sv-filters" role="group" aria-label="Filter services">
-            {FILTERS.map((f) => (
-              <button key={f.key} type="button" className="hse-sv-chip" aria-pressed={active === f.key} onClick={() => select(f.key)}>
-                <span>{f.label}</span><span className="hse-sv-chip__count">{counts[f.key] ?? 0}</span>
-              </button>
-            ))}
-          </div>
+          <ServiceFilters active={active} counts={counts} onSelect={select} />
           <div className="hse-sv-live" aria-live="polite">Showing {visible.length} services</div>
         </div>
       </div>
@@ -92,24 +101,28 @@ export function Services() {
       <section className="hse-sv-grid-section" data-surface="light" aria-label="Services">
         <div className="container">
           {visible.length ? (
-            <div className="hse-sv-grid">
-              {visible.map((s, i) => (
-                <ServiceCard key={s.id} {...s} index={i} />
-              ))}
-            </div>
+            <motion.div id="hse-sv-grid" className="hse-sv-grid" layout>
+              <AnimatePresence mode="popLayout">
+                {visible.map((s, i) => (
+                  <motion.div key={s.id} layout initial={{ opacity: 1, scale: 0.98 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0.001, scale: 0.98 }} transition={{ duration: 0.22 }}>
+                    <ServiceCard {...s} index={i} />
+                  </motion.div>
+                ))}
+              </AnimatePresence>
+            </motion.div>
           ) : (
             <div className="hse-sv-empty">
               <p>No services match this filter.</p>
-              <button type="button" className="hse-sv-chip" aria-pressed="true" onClick={() => select('all')}>Show all services</button>
+              <button type="button" className="hse-sv-chip hse-sv-chip--solid" aria-pressed="true" onClick={() => select('all')}>Show all services</button>
             </div>
           )}
           {/* TODO(confirm): no verified company counters in src/data/company.ts; counter strip omitted. */}
-          {/* TODO(confirm): finder/lifecycle/marquee matching and process details require business confirmation in later phases. */}
         </div>
       </section>
-      
+
+      <ServiceFinder />
+      <ServiceLifecycle />
+      <ServiceMarquee />
     </div>
   )
 }
-
-
