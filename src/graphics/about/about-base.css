@@ -36,7 +36,38 @@
 .hse-ab-page .hse-ab-standards,.hse-ab-page .hse-ab-standards *{color:#fff;-webkit-text-fill-color:#fff}
 .hse-ab-page #about-process *{ -webkit-text-fill-color: currentColor; }
 @media (max-width:1023px){.hse-ab-sticky-nav{display:flex}}
-@media (prefers-reduced-motion:reduce){.hse-ab-marker{transition:none;background-size:100% 100%}.hse-ab-btn{transition:none}}
+@media (prefers-reduced-motion:reduce){.hse-ab-marker{transition:none;background-size:100% 100%}.hse-ab-btn{transition:none}.hse-ab-fas circle[data-pulse]{transition:none}.hse-ab-fps path[data-flow]{transition:none}.hse-ab-electrical circle[data-pulse]{transition:none}.hse-ab-electrical path[data-arc]{transition:none}}
+
+/* Technical diagrams — scoped, aria-hidden */
+.hse-ab-fas circle[data-pulse]{transition:opacity .3s ease,r .3s ease}
+.hse-ab-fps path[data-flow]{transition:stroke-dashoffset .1s linear}
+.hse-ab-electrical path[data-arc]{fill:none}
+.hse-ab-electrical circle[data-pulse]{transition:opacity .3s ease,r .3s ease}
+@media (prefers-reduced-motion: reduce){
+  .hse-ab-fas circle[data-pulse]{transition:none}
+  .hse-ab-fps path[data-flow]{transition:none}
+  .hse-ab-electrical circle[data-pulse]{transition:none}
+  .hse-ab-electrical path[data-arc]{transition:none}
+}
+
+/* Process — zig-zag path (scoped) */
+.hse-ab-process-path{overflow:visible}
+.hse-ab-page [data-surface="brand"] .hse-ab-h3{color:#fff;-webkit-text-fill-color:#fff}
+@media (max-width:1023px){
+  .hse-ab-section#about-process ol{grid-template-columns:1fr}
+}
+
+/* Technical diagrams — scoped, aria-hidden */
+.hse-ab-fas circle[data-pulse]{transition:opacity .3s ease,r .3s ease}
+.hse-ab-fps path[data-flow]{transition:stroke-dashoffset .1s linear}
+.hse-ab-electrical path[data-arc]{fill:none}
+.hse-ab-electrical circle[data-pulse]{transition:opacity .3s ease,r .3s ease}
+@media (prefers-reduced-motion: reduce){
+  .hse-ab-fas circle[data-pulse]{transition:none}
+  .hse-ab-fps path[data-flow]{transition:none}
+  .hse-ab-electrical circle[data-pulse]{transition:none}
+  .hse-ab-electrical path[data-arc]{transition:none}
+}
 
 /* Hero — large logo, lighting, motion graphics (scoped) */
 .hse-ab-hero{overflow:hidden;padding-top:clamp(72px,9vw,110px);padding-bottom:clamp(56px,8vw,96px)}
