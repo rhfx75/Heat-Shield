@@ -112,7 +112,7 @@ export interface CatalogueDocument {
 }
 
 export const whatsAppConfig: WhatsAppConfig = {
-  number: '8801788585741',
+  number: '8801788585741', // keep in sync with company.whatsapp.digits
   messageTemplate: (productName: string) =>
     `Hello HEAT SHIELD ENGINEERING, I would like to request a quotation for ${productName}. Please share the price, specifications, availability, and delivery details.`,
 }
@@ -3737,3 +3737,28 @@ products.forEach((p) => {
   }
 })
 
+
+// -- image helper (additive; preserves existing product records/wording) --
+export type ProductImageSize = 480 | 960;
+export function productImage(product: Pick<Product, 'image'> | { image?: string | null } | null | undefined, size: ProductImageSize = 960): string {
+  const img = product?.image ?? null;
+  const placeholder = '/images/products/placeholder-product.svg';
+  if (!img || typeof img !== 'string') return placeholder;
+  const rel = img.replace(/^\/+/, '');
+  if (!rel.startsWith('images/products/')) return img.startsWith('/') ? img : `/${img}`;
+  const base = rel.replace(/^images\/products\/?/i, '').replace(/[\\/:*?"<>|]+/g, '-').replace(/\s+/g, '-').replace(/\.(png|jpe?g|webp|avif)$/i, '');
+  return `/images/products/thumbs/${base}-${size}.webp`;
+}
+export function productImageSrcSet(product: Pick<Product, 'image'> | { image?: string | null } | null | undefined): string | undefined {
+  const img = product?.image ?? null;
+  if (!img || typeof img !== 'string') return undefined;
+  const a = productImage(product, 480);
+  const b = productImage(product, 960);
+  if (a.includes('placeholder-product')) return undefined;
+  return `${a} 480w, ${b} 960w`;
+}
+export function productImageOriginal(product: Pick<Product, 'image'> | { image?: string | null } | null | undefined): string {
+  const img = product?.image ?? null;
+  if (!img || typeof img !== 'string') return '/images/products/placeholder-product.svg';
+  return img.startsWith('/') ? img : `/${img}`;
+}
