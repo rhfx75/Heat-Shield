@@ -1,0 +1,8 @@
+.hse-gfx-scanline{position:absolute;left:0;right:0;bottom:0;height:2px;transform-origin:left;background:linear-gradient(90deg,#2B7FE6,#E53935,#FFB300);z-index:60;pointer-events:none}
+.hse-nav-ember{display:inline-block;width:6px;height:6px;border-radius:999px;background:#FF3D00;box-shadow:0 0 8px #FFB300;margin-right:6px;vertical-align:middle}
+@keyframes hse-quote-pulse{0%,100%{box-shadow:0 6px 18px rgba(229,57,53,.22)}50%{box-shadow:0 6px 26px rgba(255,61,0,.42),0 0 0 6px rgba(229,57,53,.08)}}
+.hse-quote-pulse{animation:hse-quote-pulse 4s ease-in-out infinite}
+.hse-tilt-card{transform-style:preserve-3d;will-change:transform}
+.hse-tilt-card::after{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(240px circle at var(--mx,50%) var(--my,50%),rgba(255,255,255,.22),transparent 45%);opacity:0;transition:opacity .25s;pointer-events:none}
+.hse-tilt-card:hover::after{opacity:1}
+@media (prefers-reduced-motion: reduce){.hse-quote-pulse{animation:none}}
