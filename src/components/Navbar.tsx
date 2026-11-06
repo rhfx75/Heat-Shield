@@ -1,58 +1,25 @@
 import { useState, useRef, useEffect, useCallback, useMemo } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
-import { Menu, X, Phone, ChevronDown, MessageCircle, Mail } from 'lucide-react'
+import { Menu, X, Phone, MessageCircle, Mail } from 'lucide-react'
 import { company, mailHref, telHref, whatsappLink } from '../data/company'
 
 const LOGO_SRC = '/images/heatshield-logo.png'
 
 const NAV_ITEMS = [
-  { label: 'Home', to: '/', hasDropdown: false },
-  { label: 'About Us', to: '/about', hasDropdown: false },
-  { label: 'Services', to: '/services', hasDropdown: true },
-  { label: 'Products', to: '/products', hasDropdown: true },
-  { label: 'Projects', to: '/projects', hasDropdown: true },
-  { label: 'Brands', to: '/brands', hasDropdown: false },
+  { label: 'Home', to: '/' },
+  { label: 'About Us', to: '/about' },
+  { label: 'Services', to: '/services' },
+  { label: 'Products', to: '/products' },
+  { label: 'Projects', to: '/projects' },
+  { label: 'Brands', to: '/brands' },
 ] as const
-
-const DROPDOWN_ITEMS: Record<string, { label: string; to: string }[]> = {
-  Services: [
-    { label: 'All Services', to: '/services' },
-    { label: 'Fire Protection Design', to: '/services/fire-protection-system-design' },
-    { label: 'Fire Detection & Alarm', to: '/services/fire-detection-alarm-installation' },
-    { label: 'Fire Suppression', to: '/services/fire-suppression-extinguishing' },
-    { label: 'Fire Pump & Hydrant', to: '/services/fire-pump-hydrant' },
-    { label: 'Fire Door & Exit', to: '/services/fire-door-emergency-exit' },
-    { label: 'Electrical & Lightning', to: '/services/electrical-lightning-safety' },
-    { label: 'Inspection & Commissioning', to: '/services/inspection-testing-commissioning' },
-    { label: 'Maintenance (AMC)', to: '/services/maintenance-amc' },
-    { label: 'Equipment Supply', to: '/services/fire-safety-equipment-supply' },
-    { label: 'Fire Safety Audit', to: '/services/fire-safety-audit-compliance' },
-  ],
-  Products: [
-    { label: 'All Products', to: '/products' },
-    { label: 'Fire Protection System', to: '/products/fire-protection' },
-    { label: 'Fire Detection & Alarm', to: '/products/fire-detection' },
-    { label: 'Fire-Rated Doors', to: '/products/fire-rated-doors' },
-    { label: 'Passive Fire Protection', to: '/products/passive-fire-protection' },
-    { label: 'Electrical & Lightning', to: '/products/electrical-safety' },
-  ],
-  Projects: [
-    { label: 'All Projects', to: '/projects' },
-    { label: 'Industrial Facilities', to: '/projects?category=industrial' },
-    { label: 'Commercial Buildings', to: '/projects?category=commercial' },
-    { label: 'Healthcare Facilities', to: '/projects?category=healthcare' },
-    { label: 'Educational Institutions', to: '/projects?category=educational' },
-    { label: 'Textile & Manufacturing', to: '/projects?category=textile' },
-  ],
-}
 
 export function Navbar() {
   const location = useLocation()
   const pathname = location.pathname
   const isHome = pathname === '/'
   const [isOpen, setIsOpen] = useState(false)
-  const [openDropdown, setOpenDropdown] = useState<string | null>(null)
   const [scrolled, setScrolled] = useState(() => (typeof window !== 'undefined' ? window.scrollY > 40 : false))
 
   const navRef = useRef<HTMLDivElement>(null)
@@ -61,22 +28,14 @@ export function Navbar() {
   const logoRef = useRef<HTMLImageElement>(null)
 
   const activeKey = useMemo(() => {
-    const exact = NAV_ITEMS.find((i) => i.to === pathname)
-    if (exact) return exact.label
-    const dropdown = NAV_ITEMS.find(
-      (i) => i.hasDropdown && pathname.startsWith(i.to + '/')
-    )
-    if (dropdown) return dropdown.label
-    return 'Home'
+    if (pathname === '/') return 'Home'
+    const match = NAV_ITEMS.find((i) => i.to !== '/' && (pathname === i.to || pathname.startsWith(i.to + '/')))
+    return match?.label ?? 'Home'
   }, [pathname])
 
-  const toggleDropdown = useCallback((key: string) => {
-    setOpenDropdown((prev) => (prev === key ? null : key))
-  }, [])
-
   const closeDrawer = useCallback(() => setIsOpen(false), [])
+  const closeAll = useCallback(() => { closeDrawer() }, [closeDrawer])
 
-// Scroll-driven header shadow: vanilla passive listener, toggles after 10px
   // Scroll-driven header: toggles after 40px per spec; recheck on route changes (SPA scroll restore)
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40)
@@ -85,27 +44,18 @@ export function Navbar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [pathname])
 
-  const closeAll = useCallback(() => { setOpenDropdown(null); closeDrawer() }, [closeDrawer])
-
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') { setOpenDropdown(null); if (isOpen) closeDrawer() }
-    }
-    const onDown = (e: MouseEvent) => {
-      if (!openDropdown) return
-      const target = e.target as Node
-      if (navRef.current && !navRef.current.contains(target)) setOpenDropdown(null)
+      if (e.key === 'Escape' && isOpen) closeDrawer()
     }
     document.addEventListener('keydown', onKey)
-    document.addEventListener('mousedown', onDown)
-    return () => { document.removeEventListener('keydown', onKey); document.removeEventListener('mousedown', onDown) }
-  }, [openDropdown, isOpen, closeDrawer])
+    return () => document.removeEventListener('keydown', onKey)
+  }, [isOpen, closeDrawer])
 
   const transparent = isHome && !scrolled && !isOpen
 
   return (
     <header ref={navRef} className="fixed top-0 left-0 right-0 z-50">
-      {/* TODO: replace placeholder phone/email with official contact details */}
       <div className={`hidden lg:flex h-[36px] items-center justify-between px-6 text-[12px] font-medium text-white relative overflow-hidden transition-colors duration-300 ${transparent ? 'bg-[rgba(1,48,136,0.22)] border-b border-white/10 backdrop-blur-[2px]' : 'bg-[linear-gradient(90deg,#0868D8,#014EB6)]'}`}>
         <span className="pointer-events-none absolute inset-0 opacity-20" aria-hidden="true" style={{backgroundImage:'radial-gradient(circle at 1px 1px, rgba(255,255,255,.45) 1px, transparent 0)',backgroundSize:'18px 18px'}} />
         <span className="font-heading tracking-[0.04em] uppercase relative">{company.tagline}</span>
@@ -125,57 +75,18 @@ export function Navbar() {
 
           <div className="hidden lg:flex items-center justify-center gap-1 min-w-0">
             {NAV_ITEMS.map((item) => {
-              const hasDropdown = item.hasDropdown
               const isActive = activeKey === item.label
-              const open = openDropdown === item.label
               return (
-                <div key={item.label} className="relative">
-                  {hasDropdown ? (
-                    <>
-                      <button
-                        type="button"
-                        className={`group relative inline-flex items-center gap-1 px-3 py-2 font-heading text-[14px] font-semibold uppercase tracking-[0.05em] transition-colors ${transparent ? (isActive || open ? 'text-white' : 'text-white/90 hover:text-white') : (isActive || open ? 'text-hse-blue' : 'text-hse-blue hover:text-hse-red')}`}
-                        aria-haspopup="menu"
-                        aria-expanded={open}
-                        onClick={() => setOpenDropdown(open ? null : item.label)}
-                        onMouseEnter={() => setOpenDropdown(item.label)}
-                      >
-                        {item.label}
-                        <ChevronDown className={`h-3.5 w-3.5 transition-transform duration-200 ${open ? 'rotate-180' : ''}`} aria-hidden="true" />
-                        <span className={`absolute left-3 right-3 bottom-0 h-[3px] bg-hse-red transition-transform duration-200 origin-left ${isActive || open ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`} />
-                      </button>
-                      <AnimatePresence>
-                        {open && (
-                          <motion.div
-                            initial={{ opacity: 1, y: 0 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.12 }}
-                            className="absolute left-1/2 top-full z-50 mt-2 w-[280px] -translate-x-1/2 rounded-xl border border-hse-border bg-white p-2 shadow-[0_12px_32px_rgba(1,78,182,0.12)]"
-                            role="menu"
-                            onMouseLeave={() => setOpenDropdown(null)}
-                          >
-                            {DROPDOWN_ITEMS[item.label].map((d) => (
-                              <Link key={d.label} to={d.to} role="menuitem" className="block rounded-lg border-l-2 border-transparent px-3 py-2.5 text-[14px] font-medium text-hse-text hover:border-hse-red hover:bg-hse-blue-pale hover:text-hse-blue transition" onClick={closeAll}>
-                                {d.label}
-                              </Link>
-                            ))}
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
-                    </>
-                  ) : (
-                    <Link
-                      to={item.to}
-                      className={`group relative inline-flex items-center px-3 py-2 font-heading text-[14px] font-semibold uppercase tracking-[0.05em] transition-colors ${transparent ? (isActive ? 'text-white' : 'text-white/90 hover:text-white') : (isActive ? 'text-hse-blue' : 'text-hse-blue hover:text-hse-red')}`}
-                      aria-current={isActive ? 'page' : undefined}
-                      onClick={closeAll}
-                    >
-                      {item.label}
-                      <span className={`absolute left-3 right-3 bottom-0 h-[3px] bg-hse-red transition-transform duration-200 origin-left ${isActive ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`} />
-                    </Link>
-                  )}
-                </div>
+                <Link
+                  key={item.label}
+                  to={item.to}
+                  className={`group relative inline-flex items-center px-3 py-2 font-heading text-[14px] font-semibold uppercase tracking-[0.05em] transition-colors ${transparent ? (isActive ? 'text-white' : 'text-white/90 hover:text-white') : (isActive ? 'text-hse-blue' : 'text-hse-blue hover:text-hse-red')}`}
+                  aria-current={isActive ? 'page' : undefined}
+                  onClick={closeAll}
+                >
+                  {item.label}
+                  <span className={`absolute left-3 right-3 bottom-0 h-[3px] bg-hse-red transition-transform duration-200 origin-left ${isActive ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`} />
+                </Link>
               )
             })}
           </div>
@@ -221,32 +132,11 @@ export function Navbar() {
                 <button type="button" className="rounded-md p-2 text-hse-blue hover:bg-hse-blue-pale" onClick={closeDrawer} aria-label="Close navigation menu"><X className="h-5 w-5" /></button>
               </div>
               <div className="flex-1 overflow-y-auto px-4 py-4">
-                {NAV_ITEMS.map((item) => {
-                  const hasDropdown = item.hasDropdown
-                  const open = openDropdown === item.label
-                  return (
-                    <div key={item.label} className="border-b border-hse-border/70">
-                      {hasDropdown ? (
-                        <>
-                          <button type="button" className="flex w-full items-center justify-between py-3.5 font-heading text-[14px] font-semibold uppercase tracking-[0.05em] text-hse-blue" onClick={() => toggleDropdown(item.label)} aria-expanded={open}>
-                            {item.label}<ChevronDown className={`h-4 w-4 transition-transform ${open ? 'rotate-180' : ''}`} />
-                          </button>
-                          <AnimatePresence initial={false}>
-                            {open && (
-                              <motion.div initial={{ height: 'auto', opacity: 1 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 1 }} className="overflow-hidden pb-2">
-                                {DROPDOWN_ITEMS[item.label].map((d) => (
-                                  <Link key={d.label} to={d.to} className="block rounded-md px-3 py-2 text-[14px] text-hse-text hover:bg-hse-blue-pale hover:text-hse-blue" onClick={closeAll}>{d.label}</Link>
-                                ))}
-                              </motion.div>
-                            )}
-                          </AnimatePresence>
-                        </>
-                      ) : (
-                        <Link to={item.to} className="block py-3.5 font-heading text-[14px] font-semibold uppercase tracking-[0.05em] text-hse-blue" onClick={closeAll}>{item.label}</Link>
-                      )}
-                    </div>
-                  )
-                })}
+                {NAV_ITEMS.map((item) => (
+                  <div key={item.label} className="border-b border-hse-border/70">
+                    <Link to={item.to} className={`block py-3.5 font-heading text-[14px] font-semibold uppercase tracking-[0.05em] ${activeKey === item.label ? 'text-hse-red' : 'text-hse-blue'}`} onClick={closeAll}>{item.label}</Link>
+                  </div>
+                ))}
               </div>
               <div className="border-t border-hse-border p-4 space-y-3">
                 <Link to="/contact" className="flex w-full items-center justify-center rounded-lg bg-[linear-gradient(135deg,#E53935,#FF5A52)] px-4 py-3 font-heading text-[14px] font-semibold uppercase text-white" onClick={closeAll}>Get a Quote</Link>

@@ -6,11 +6,23 @@ import { whatsappLink } from '../data/company'
 import { ServiceCard } from '../components/ServiceCard'
 import { LayersGraphic } from '../graphics/services/LayersGraphic'
 import { ServiceFilters, FILTERS, type FilterKey } from '../graphics/services/ServiceFilters'
-import { ServiceFinder } from '../graphics/services/ServiceFinder'
 import { ServiceLifecycle } from '../graphics/services/ServiceLifecycle'
 import { ServiceMarquee } from '../graphics/services/ServiceMarquee'
 import { gsap, ScrollTrigger } from '../components/ui/use-gsap'
 import '../graphics/services/services.css'
+
+type Facility = 'Factory' | 'Commercial building' | 'Warehouse' | 'Residential / Other'
+type Need = 'New system' | 'Upgrade' | 'Inspection or maintenance'
+
+// TODO(confirm): matching rules are simple heuristics; business should verify mappings.
+function matchServices(facility: Facility, need: Need) {
+  let cats: string[] = ['Fire Protection', 'Detection & Alarm']
+  if (need === 'Inspection or maintenance') cats = ['Maintenance']
+  if (need === 'Upgrade') cats = ['Fire Protection', 'Detection & Alarm', 'Electrical Safety']
+  if (facility === 'Factory' || facility === 'Warehouse') cats = Array.from(new Set([...cats, 'Fire Protection']))
+  const ids = services.filter((s) => cats.includes(s.category)).map((s) => s.id)
+  return services.filter((s) => ids.includes(s.id)).slice(0, 4)
+}
 
 function filterFromHash(hash: string): FilterKey {
   const h = hash.replace(/^#/, '')
@@ -23,6 +35,10 @@ export function Services() {
   const navigate = useNavigate()
   const heroRef = useRef<HTMLElement>(null)
   const [active, setActive] = useState<FilterKey>(() => filterFromHash(location.hash))
+  const [facility, setFacility] = useState<Facility>('Factory')
+  const [need, setNeed] = useState<Need>('New system')
+  const heroMatches = useMemo(() => matchServices(facility, need), [facility, need])
+  const heroMsg = `Hello, I would like to request a quote. Facility: ${facility}. Need: ${need}.`
 
   useEffect(() => { setActive(filterFromHash(location.hash)) }, [location.hash])
 
@@ -84,6 +100,33 @@ export function Services() {
               <Link to="/contact" className="hse-sv-btn hse-sv-btn--quote" data-surface="dark">Get a Quote</Link>
               <a href={whatsappLink('Hello, I would like to inquire about Heat Shield Engineering services.')} target="_blank" rel="noopener noreferrer" className="hse-sv-btn hse-sv-btn--wa" data-surface="dark">WhatsApp</a>
             </div>
+
+            <div className="hse-sv-hero-finder hse-sv-reveal" aria-label="Find your service">
+              <p className="hse-sv-hero-finder__title">Find Your Service</p>
+              <div className="hse-sv-hero-finder__groups">
+                <div className="hse-sv-hero-finder__group">
+                  <span className="hse-sv-hero-finder__label">Facility</span>
+                  <div className="hse-sv-hero-finder__opts">
+                    {(['Factory', 'Commercial building', 'Warehouse', 'Residential / Other'] as Facility[]).map((o) => (
+                      <button key={o} type="button" className="hse-sv-hero-opt" aria-pressed={facility === o} onClick={() => setFacility(o)}>{o}</button>
+                    ))}
+                  </div>
+                </div>
+                <div className="hse-sv-hero-finder__group">
+                  <span className="hse-sv-hero-finder__label">Need</span>
+                  <div className="hse-sv-hero-finder__opts">
+                    {(['New system', 'Upgrade', 'Inspection or maintenance'] as Need[]).map((o) => (
+                      <button key={o} type="button" className="hse-sv-hero-opt" aria-pressed={need === o} onClick={() => setNeed(o)}>{o}</button>
+                    ))}
+                  </div>
+                </div>
+              </div>
+              <p className="hse-sv-hero-finder__summary"><strong>Suggested services</strong> · {facility} · {need}</p>
+              <div className="hse-sv-matchchips hse-sv-matchchips--hero">
+                {heroMatches.map((s) => <Link key={s.id} to={`/services/${s.id}`} className="hse-sv-matchchip hse-sv-matchchip--hero">{s.title}</Link>)}
+              </div>
+              <a href={whatsappLink(heroMsg)} target="_blank" rel="noopener noreferrer" className="hse-sv-linkbtn hse-sv-linkbtn--hero">Request via WhatsApp</a>
+            </div>
           </div>
           <div className="hse-sv-hero__visual hse-sv-reveal">
             <LayersGraphic activeCategory={active === 'all' ? null : active} />
@@ -120,7 +163,6 @@ export function Services() {
         </div>
       </section>
 
-      <ServiceFinder />
       <ServiceLifecycle />
       <ServiceMarquee />
     </div>
