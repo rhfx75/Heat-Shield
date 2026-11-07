@@ -16,9 +16,15 @@ export type ProductsQuery = {
 }
 
 const CERT_RE = /\b(UL(?:[\s-]?(?:\d+|listed|FM))?|FM(?:[\s-]?\d+|[\s-]?200)?|NFPA(?:[\s-]?\d+)?|LPCB|BS\s?\d*|EN\s?\d*|ISO\s?\d*|CE)\b/gi
+const PLACEHOLDER_IMAGE = '/images/products/placeholder-product.svg'
 
 export function normalizeText(v: unknown): string {
   return String(v ?? '').toLowerCase().replace(/\s+/g, ' ').trim()
+}
+
+function hasDisplayImage(p: Product): boolean {
+  const img = typeof p.image === 'string' ? p.image.trim() : ''
+  return img.length > 0 && img !== PLACEHOLDER_IMAGE
 }
 
 export function productCertTokens(p: Product): string[] {
@@ -66,12 +72,14 @@ export function matchesQuery(p: Product, query: ProductsQuery): boolean {
 
 export function sortProducts(list: Product[], sort: ProductsSort): Product[] {
   const out = [...list]
-  out.sort((a, b) => {
-    if (sort === 'name-asc') return a.name.localeCompare(b.name)
+  const byNameAsc = (a: Product, b: Product) => a.name.localeCompare(b.name)
+  const bySort = (a: Product, b: Product) => {
+    if (sort === 'name-asc') return byNameAsc(a, b)
     if (sort === 'name-desc') return b.name.localeCompare(a.name)
-    if (sort === 'brand') return (a.brand || '\uffff').localeCompare(b.brand || '\uffff') || a.name.localeCompare(b.name)
-    return Number(!!b.featured) - Number(!!a.featured) || a.name.localeCompare(b.name)
-  })
+    if (sort === 'brand') return (a.brand || '\uffff').localeCompare(b.brand || '\uffff') || byNameAsc(a, b)
+    return Number(!!b.featured) - Number(!!a.featured) || byNameAsc(a, b)
+  }
+  out.sort((a, b) => Number(hasDisplayImage(b)) - Number(hasDisplayImage(a)) || bySort(a, b))
   return out
 }
 

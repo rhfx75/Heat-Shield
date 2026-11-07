@@ -7780,7 +7780,1378 @@ export const products: Product[] = [
       "valve"
     ]
   }
-]
+,
+  // ---- Siemens / Cerberus PRO (source: ARC Group arcgroup-bd.com, factual listing) ----
+  {
+    "id": "arc-siemens-ooh941-fdoot441-multi-sensor-detector",
+    "slug": "siemens-ooh941-fdoot441-multi-sensor-detector",
+    "name": "Multi-Sensor Detector",
+    "category": "fire-detection-system",
+    "subcategory": "multi-sensor-detectors",
+    "brand": "Siemens",
+    "model": "OOH941 / FDOOT441",
+    "shortDescription": "Siemens addressable multi-sensor detector listed by ARC Group for fire detection systems.",
+    "description": "Siemens multi-sensor detector (model OOH941 / FDOOT441) as listed by ARC Group. Source page describes a two-wire, addressable multi-purpose detector with smoke-and-heat detection and built-in ISOtechnology features. Confirm exact specifications, approvals, and compatibility for the project. (Source: arcgroup-bd.com)",
+    "image": "https://arcgroup-bd.com/upload/product_page/1785534466432990.webp",
+    "availability": "inquiry-required",
+    "features": [
+      "Addressable multi-sensor detector",
+      "Model OOH941 / FDOOT441"
+    ],
+    "applications": [
+      "Fire detection and alarm systems"
+    ],
+    "certifications": [],
+    "dataSource": "ARC Group (arcgroup-bd.com)"
+  },
+  {
+    "id": "arc-siemens-oh921-fdot421-multi-criteria-detector",
+    "slug": "siemens-oh921-fdot421-multi-criteria-detector",
+    "name": "Multi Criteria Detector",
+    "category": "fire-detection-system",
+    "subcategory": "multi-sensor-detectors",
+    "brand": "Siemens",
+    "model": "OH921 / FDOT421",
+    "shortDescription": "Siemens addressable multi-criteria detector listed by ARC Group.",
+    "description": "Siemens multi-criteria detector (model OH921 / FDOT421) as listed by ARC Group. Source page describes an intelligent, addressable detector incorporating optical and thermal sensors. Confirm exact specifications, approvals, and compatibility for the project. (Source: arcgroup-bd.com)",
+    "image": "https://arcgroup-bd.com/upload/product_page/1786893419788762.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Addressable multi-criteria detector",
+      "Model OH921 / FDOT421"
+    ],
+    "applications": [
+      "Fire detection and alarm systems"
+    ],
+    "certifications": [],
+    "dataSource": "ARC Group (arcgroup-bd.com)"
+  },
+  {
+    "id": "arc-siemens-op921-fdo421-smoke-detector",
+    "slug": "siemens-op921-fdo421-smoke-detector",
+    "name": "Smoke Detector",
+    "category": "fire-detection-system",
+    "subcategory": "smoke-detectors",
+    "brand": "Siemens",
+    "model": "OP921 / FDO421",
+    "shortDescription": "Siemens photoelectric smoke detector listed by ARC Group.",
+    "description": "Siemens smoke detector (model OP921 / FDO421) as listed by ARC Group. Source page describes a wide-spectrum, photoelectric smoke detector. Confirm exact specifications, approvals, and compatibility for the project. (Source: arcgroup-bd.com)",
+    "image": "https://arcgroup-bd.com/upload/product_page/1785534819479958.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Photoelectric smoke detector",
+      "Model OP921 / FDO421"
+    ],
+    "applications": [
+      "Fire detection and alarm systems"
+    ],
+    "certifications": [],
+    "dataSource": "ARC Group (arcgroup-bd.com)"
+  },
+  {
+    "id": "arc-siemens-hi921-fdt421-thermal-heat-detector",
+    "slug": "siemens-hi921-fdt421-thermal-heat-detector",
+    "name": "Thermal (Heat) Detector",
+    "category": "fire-detection-system",
+    "subcategory": "heat-detectors",
+    "brand": "Siemens",
+    "model": "HI921 / FDT421",
+    "shortDescription": "Siemens intelligent thermal (heat) detector listed by ARC Group.",
+    "description": "Siemens thermal (heat) detector (model HI921 / FDT421) as listed by ARC Group. Source page describes an intelligent thermal detector with configurable temperature settings. Confirm exact specifications, approvals, and compatibility for the project. (Source: arcgroup-bd.com)",
+    "image": "https://arcgroup-bd.com/upload/product_page/1786074118493793.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Intelligent thermal/heat detector",
+      "Model HI921 / FDT421"
+    ],
+    "applications": [
+      "Fire detection and alarm systems"
+    ],
+    "certifications": [],
+    "dataSource": "ARC Group (arcgroup-bd.com)"
+  },
+  {
+    "id": "arc-siemens-xms-s-manual-pull-station",
+    "slug": "siemens-xms-s-manual-pull-station",
+    "name": "Manual Pull Stations",
+    "category": "fire-detection-system",
+    "subcategory": "manual-call-points",
+    "brand": "Siemens",
+    "model": "XMS-S",
+    "shortDescription": "Siemens XMS-S addressable manual pull station listed by ARC Group.",
+    "description": "Siemens manual pull station (model XMS-S) as listed by ARC Group. Source page describes a single-action, addressable pull station for fire alarm systems. Confirm exact specifications, approvals, and compatibility for the project. (Source: arcgroup-bd.com)",
+    "image": "https://arcgroup-bd.com/upload/product_page/1786074459781214.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Addressable manual pull station",
+      "Model XMS-S"
+    ],
+    "applications": [
+      "Fire alarm manual initiation"
+    ],
+    "certifications": [],
+    "dataSource": "ARC Group (arcgroup-bd.com)"
+  },
+  {
+    "id": "arc-siemens-xtri-r-interface-module",
+    "slug": "siemens-xtri-r-interface-module",
+    "name": "Interface Module",
+    "category": "fire-detection-system",
+    "subcategory": "input-output-modules",
+    "brand": "Siemens",
+    "model": "XTRI-R",
+    "shortDescription": "Siemens XTRI-R intelligent interface module listed by ARC Group.",
+    "description": "Siemens interface module (model XTRI-R) as listed by ARC Group. Source page describes an XTRI-series interface module with configurable isolator functionality and relay/contact input capability. Confirm exact specifications, approvals, and compatibility for the project. (Source: arcgroup-bd.com)",
+    "image": "https://arcgroup-bd.com/upload/product_page/1786075233904271.png",
+    "availability": "inquiry-required",
+    "features": [
+      "Intelligent interface module",
+      "Model XTRI-R"
+    ],
+    "applications": [
+      "Fire alarm system interface and control"
+    ],
+    "certifications": [],
+    "dataSource": "ARC Group (arcgroup-bd.com)"
+  },
+  {
+    "id": "arc-siemens-xtri-s-interface-module",
+    "slug": "siemens-xtri-s-interface-module",
+    "name": "Interface Module",
+    "category": "fire-detection-system",
+    "subcategory": "input-output-modules",
+    "brand": "Siemens",
+    "model": "XTRI-S",
+    "shortDescription": "Siemens XTRI-S interface module listed by ARC Group.",
+    "description": "Siemens interface module (model XTRI-S) as listed by ARC Group. Confirm exact specifications, approvals, and compatibility for the project. (Source: arcgroup-bd.com)",
+    "image": "https://arcgroup-bd.com/upload/product_page/1786075443195691.png",
+    "availability": "inquiry-required",
+    "features": [
+      "Interface module",
+      "Model XTRI-S"
+    ],
+    "applications": [
+      "Fire alarm system interface and control"
+    ],
+    "certifications": [],
+    "dataSource": "ARC Group (arcgroup-bd.com)"
+  },
+  {
+    "id": "arc-siemens-cerberus-pro-modular",
+    "slug": "siemens-cerberus-pro-modular",
+    "name": "Cerberus PRO Modular",
+    "category": "fire-detection-system",
+    "subcategory": "fire-alarm-panels",
+    "brand": "Siemens",
+    "model": "Cerberus PRO Modular",
+    "shortDescription": "Siemens Cerberus PRO Modular fire alarm system listed by ARC Group.",
+    "description": "Siemens Cerberus PRO Modular as listed by ARC Group. Source page describes a versatile system for large or complex buildings and campuses. Confirm exact specifications, approvals, capacity, and configuration for the project. (Source: arcgroup-bd.com)",
+    "image": "https://arcgroup-bd.com/upload/product_page/1786076077536885.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Cerberus PRO Modular fire alarm system"
+    ],
+    "applications": [
+      "Fire detection and alarm control for large or complex facilities"
+    ],
+    "certifications": [],
+    "dataSource": "ARC Group (arcgroup-bd.com)"
+  },
+  {
+    "id": "arc-siemens-cerberus-pro-compact-fc922-fc924",
+    "slug": "siemens-cerberus-pro-compact-fc922-fc924",
+    "name": "Cerberus PRO Compact",
+    "category": "fire-detection-system",
+    "subcategory": "fire-alarm-panels",
+    "brand": "Siemens",
+    "model": "FC922 / FC924",
+    "shortDescription": "Siemens Cerberus PRO Compact fire alarm control panel listed by ARC Group.",
+    "description": "Siemens Cerberus PRO Compact (models FC922 / FC924) as listed by ARC Group. Source page describes an intelligent, scalable fire alarm control panel for mid-to-large facilities. Confirm exact specifications, approvals, capacity, and configuration for the project. (Source: arcgroup-bd.com)",
+    "image": "https://arcgroup-bd.com/upload/product_page/1786076393980760.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Cerberus PRO Compact fire alarm control panel",
+      "Models FC922 / FC924"
+    ],
+    "applications": [
+      "Fire detection and alarm control for mid-to-large facilities"
+    ],
+    "certifications": [],
+    "dataSource": "ARC Group (arcgroup-bd.com)"
+  },
+  {
+    "id": "arc-siemens-ssd-system-status-display",
+    "slug": "siemens-ssd-system-status-display",
+    "name": "System-Status Display Series",
+    "category": "fire-detection-system",
+    "subcategory": "input-output-modules",
+    "brand": "Siemens",
+    "model": "SSD / SSD-C",
+    "shortDescription": "Siemens SSD series system-status display listed by ARC Group.",
+    "description": "Siemens System-Status Display Series (models SSD / SSD-C) as listed by ARC Group. Source page describes LEDs/LCD status display for Cerberus PRO Modular system events. Confirm exact specifications, approvals, and compatibility for the project. (Source: arcgroup-bd.com)",
+    "image": "https://arcgroup-bd.com/upload/product_page/1786141418763194.webp",
+    "availability": "inquiry-required",
+    "features": [
+      "System-status display",
+      "Models SSD / SSD-C"
+    ],
+    "applications": [
+      "Fire alarm system status indication"
+    ],
+    "certifications": [],
+    "dataSource": "ARC Group (arcgroup-bd.com)"
+  },
+  {
+    "id": "arc-siemens-slhr-n-notification-appliance",
+    "slug": "siemens-slhr-n-notification-appliance",
+    "name": "Notification Appliances",
+    "category": "fire-detection-system",
+    "subcategory": "sounders-notification",
+    "brand": "Siemens",
+    "model": "SLHR-N",
+    "shortDescription": "Siemens SL-series notification appliance (horn) listed by ARC Group.",
+    "description": "Siemens notification appliance (model SLHR-N) as listed by ARC Group. Source page describes SL-series horn notification appliances. Confirm exact specifications, approvals, and compatibility for the project. (Source: arcgroup-bd.com)",
+    "image": "https://arcgroup-bd.com/upload/product_page/1786142160720864.jpeg",
+    "availability": "inquiry-required",
+    "features": [
+      "Notification appliance (horn)",
+      "Model SLHR-N"
+    ],
+    "applications": [
+      "Fire alarm audible notification"
+    ],
+    "certifications": [],
+    "dataSource": "ARC Group (arcgroup-bd.com)"
+  },
+  {
+    "id": "arc-siemens-slhswr-f-notification-appliance",
+    "slug": "siemens-slhswr-f-notification-appliance",
+    "name": "Notification Appliances",
+    "category": "fire-detection-system",
+    "subcategory": "sounders-notification",
+    "brand": "Siemens",
+    "model": "SLHSWR-F",
+    "shortDescription": "Siemens SL-series notification appliance listed by ARC Group.",
+    "description": "Siemens notification appliance (model SLHSWR-F) as listed by ARC Group. Confirm exact specifications, approvals, and compatibility for the project. (Source: arcgroup-bd.com)",
+    "image": "https://arcgroup-bd.com/upload/product_page/1786142278697938.jpeg",
+    "availability": "inquiry-required",
+    "features": [
+      "Notification appliance",
+      "Model SLHSWR-F"
+    ],
+    "applications": [
+      "Fire alarm notification"
+    ],
+    "certifications": [],
+    "dataSource": "ARC Group (arcgroup-bd.com)"
+  },
+  // ---- Verified web imports: Hochiki (hochikiamerica.com), Finder (safetag.ae), Simplex (simplex-fire.com). No prices shown. ----
+  {
+    "availability": "inquiry-required",
+    "certifications": [],
+    "features": [
+      "Multi-criteria smoke/duct detector head",
+      "Model ALO-V"
+    ],
+    "applications": [
+      "Fire detection and alarm systems"
+    ],
+    "id": "hochiki-alo-v-multi-criteria-detector",
+    "slug": "hochiki-alo-v-multi-criteria-smoke-duct-detector-head",
+    "name": "ALO-V Multi-Criteria Smoke Detector and Duct Detector Head",
+    "category": "fire-detection-system",
+    "subcategory": "multi-sensor-detectors",
+    "brand": "Hochiki",
+    "model": "ALO-V",
+    "shortDescription": "Hochiki ALO-V multi-criteria smoke detector and duct detector head (addressable).",
+    "description": "ALO-V Multi-Criteria Smoke Detector and Duct Detector Head as listed by Hochiki America (code shown as 0200-11250 on source page). Confirm exact specifications, approvals, and compatibility for the project. (Source: hochikiamerica.com) No price shown on web.",
+    "image": "https://hochikiamerica-2.azureedge.net/img/product/0200-11250-4.jpg?fv=8FCC8F161EB9737EB20106411C79DC48",
+    "dataSource": "Hochiki America (hochikiamerica.com)"
+  },
+  {
+    "availability": "inquiry-required",
+    "certifications": [],
+    "features": [
+      "Multi-criteria smoke/heat detector head",
+      "Model ACE-V"
+    ],
+    "applications": [
+      "Fire detection and alarm systems"
+    ],
+    "id": "hochiki-ace-v-multi-criteria-detector",
+    "slug": "hochiki-ace-v-multi-criteria-smoke-heat-detector-head",
+    "name": "ACE-V Multi-Criteria Smoke/Heat Detector Head",
+    "category": "fire-detection-system",
+    "subcategory": "multi-sensor-detectors",
+    "brand": "Hochiki",
+    "model": "ACE-V",
+    "shortDescription": "Hochiki ACE-V multi-criteria smoke/heat detector head (addressable).",
+    "description": "ACE-V Multi-Criteria Smoke/Heat Detector Head as listed by Hochiki America (code shown as 0200-11260 on source page). Confirm exact specifications, approvals, and compatibility for the project. (Source: hochikiamerica.com) No price shown on web.",
+    "image": "https://hochikiamerica-2.azureedge.net/img/product/0200-11260.jpg?fv=2E874FBA90D69B2A5F00828A70F2B000",
+    "dataSource": "Hochiki America (hochikiamerica.com)"
+  },
+  {
+    "availability": "inquiry-required",
+    "certifications": [],
+    "features": [
+      "Fixed temperature/rate-of-rise heat sensor",
+      "Model ATJ-EA"
+    ],
+    "applications": [
+      "Fire detection and alarm systems"
+    ],
+    "id": "hochiki-atj-ea-fixed-temp-ror-heat-sensor",
+    "slug": "hochiki-atj-ea-fixed-temp-rate-of-rise-heat-sensor",
+    "name": "ATJ-EA Fixed Temp/Rate of Rise Heat Sensor",
+    "category": "fire-detection-system",
+    "subcategory": "heat-detectors",
+    "brand": "Hochiki",
+    "model": "ATJ-EA",
+    "shortDescription": "Hochiki ATJ-EA fixed temperature/rate-of-rise heat sensor (addressable).",
+    "description": "ATJ-EA Fixed Temp/Rate of Rise Heat Sensor as listed by Hochiki America (code shown as 0200-06148 on source page). Confirm exact specifications, approvals, and compatibility for the project. (Source: hochikiamerica.com) No price shown on web.",
+    "image": "https://hochikiamerica-1.azureedge.net/img/product/0200-06148.jpg?fv=54CAD99609B518E48D08818A8C7EDC2D",
+    "dataSource": "Hochiki America (hochikiamerica.com)"
+  },
+  {
+    "availability": "inquiry-required",
+    "certifications": [],
+    "features": [
+      "Analog sounder base",
+      "Model ASBL7"
+    ],
+    "applications": [
+      "Fire detection and alarm systems"
+    ],
+    "id": "hochiki-asbl7-analog-sounder-base",
+    "slug": "hochiki-asbl7-analog-sounder-base",
+    "name": "ASBL7 Analog Sounder Base, Low Frequency, 24V",
+    "category": "fire-detection-system",
+    "subcategory": "sounders-notification",
+    "brand": "Hochiki",
+    "model": "ASBL7",
+    "shortDescription": "Hochiki ASBL7 analog sounder base (addressable).",
+    "description": "ASBL7 Analog Sounder Base, Low Frequency, 24V as listed by Hochiki America. Confirm exact specifications, approvals, and compatibility for the project. (Source: hochikiamerica.com) No price shown on web.",
+    "image": "https://hochikiamerica-1.azureedge.net/img/product/0300-06840.jpg?fv=CF48F746D86DAE15F6AACEE18C9BDDC8",
+    "dataSource": "Hochiki America (hochikiamerica.com)"
+  },
+  {
+    "availability": "inquiry-required",
+    "certifications": [],
+    "features": [
+      "Analog sensor base",
+      "Model HSB-NSA-67"
+    ],
+    "applications": [
+      "Fire detection and alarm systems"
+    ],
+    "id": "hochiki-hsb-nsa-67-analog-sensor-base",
+    "slug": "hochiki-hsb-nsa-67-analog-sensor-base",
+    "name": "HSB-NSA-67 Analog Sensor Base, 6\"",
+    "category": "fire-detection-system",
+    "subcategory": "input-output-modules",
+    "brand": "Hochiki",
+    "model": "HSB-NSA-67",
+    "shortDescription": "Hochiki HSB-NSA-67 analog sensor base (addressable).",
+    "description": "HSB-NSA-67 Analog Sensor Base, 6\" as listed by Hochiki America. Confirm exact specifications, approvals, and compatibility for the project. (Source: hochikiamerica.com) No price shown on web.",
+    "image": "https://hochikiamerica-1.azureedge.net/img/product/0300-06820.jpg?fv=6C93BC9D0366BA41B7EDC0DF1170C3F1",
+    "dataSource": "Hochiki America (hochikiamerica.com)"
+  },
+  {
+    "availability": "inquiry-required",
+    "certifications": [],
+    "features": [
+      "Analog sounder base",
+      "Model ASB7"
+    ],
+    "applications": [
+      "Fire detection and alarm systems"
+    ],
+    "id": "hochiki-asb7-analog-sounder-base",
+    "slug": "hochiki-asb7-analog-sounder-base",
+    "name": "ASB7 Analog Sounder Base, 24V",
+    "category": "fire-detection-system",
+    "subcategory": "sounders-notification",
+    "brand": "Hochiki",
+    "model": "ASB7",
+    "shortDescription": "Hochiki ASB7 analog sounder base (addressable).",
+    "description": "ASB7 Analog Sounder Base, 24V as listed by Hochiki America. Confirm exact specifications, approvals, and compatibility for the project. (Source: hochikiamerica.com) No price shown on web.",
+    "image": "https://hochikiamerica-2.azureedge.net/img/product/0300-06810.jpg?fv=1440BC0BADB1E698CFCC5AA374098109",
+    "dataSource": "Hochiki America (hochikiamerica.com)"
+  },
+  {
+    "availability": "inquiry-required",
+    "certifications": [],
+    "features": [
+      "Analog sensor base",
+      "Model YBN-NSA-47"
+    ],
+    "applications": [
+      "Fire detection and alarm systems"
+    ],
+    "id": "hochiki-ybn-nsa-47-analog-sensor-base",
+    "slug": "hochiki-ybn-nsa-47-analog-sensor-base",
+    "name": "YBN-NSA-47 Analog Sensor Base, 4\"",
+    "category": "fire-detection-system",
+    "subcategory": "input-output-modules",
+    "brand": "Hochiki",
+    "model": "YBN-NSA-47",
+    "shortDescription": "Hochiki YBN-NSA-47 analog sensor base (addressable).",
+    "description": "YBN-NSA-47 Analog Sensor Base, 4\" as listed by Hochiki America. Confirm exact specifications, approvals, and compatibility for the project. (Source: hochikiamerica.com) No price shown on web.",
+    "image": "https://hochikiamerica-2.azureedge.net/img/product/0300-06830.jpg?fv=9BE544C862A708C9193417E0886DE8F6",
+    "dataSource": "Hochiki America (hochikiamerica.com)"
+  },
+  {
+    "availability": "inquiry-required",
+    "certifications": [],
+    "features": [
+      "Short circuit isolator base",
+      "Model SCI-B47"
+    ],
+    "applications": [
+      "Fire detection and alarm systems"
+    ],
+    "id": "hochiki-sci-b47-short-circuit-isolator-base",
+    "slug": "hochiki-sci-b47-short-circuit-isolator-base",
+    "name": "SCI-B47 Short Circuit Isolator Base, 4\"",
+    "category": "fire-detection-system",
+    "subcategory": "input-output-modules",
+    "brand": "Hochiki",
+    "model": "SCI-B47",
+    "shortDescription": "Hochiki SCI-B47 short circuit isolator base (addressable).",
+    "description": "SCI-B47 Short Circuit Isolator Base, 4\" as listed by Hochiki America. Confirm exact specifications, approvals, and compatibility for the project. (Source: hochikiamerica.com) No price shown on web.",
+    "image": "https://hochikiamerica-1.azureedge.net/img/product/0300-06850.jpg?fv=586E940B17F0C9E42F479D748108D6C3",
+    "dataSource": "Hochiki America (hochikiamerica.com)"
+  },
+  {
+    "availability": "inquiry-required",
+    "certifications": [],
+    "features": [
+      "Short circuit isolator base",
+      "Model SCI-B67"
+    ],
+    "applications": [
+      "Fire detection and alarm systems"
+    ],
+    "id": "hochiki-sci-b67-short-circuit-isolator-base",
+    "slug": "hochiki-sci-b67-short-circuit-isolator-base",
+    "name": "SCI-B67 Analog Short Circuit Isolator Base, 6\"",
+    "category": "fire-detection-system",
+    "subcategory": "input-output-modules",
+    "brand": "Hochiki",
+    "model": "SCI-B67",
+    "shortDescription": "Hochiki SCI-B67 short circuit isolator base (addressable).",
+    "description": "SCI-B67 Analog Short Circuit Isolator Base, 6\" as listed by Hochiki America. Confirm exact specifications, approvals, and compatibility for the project. (Source: hochikiamerica.com) No price shown on web.",
+    "image": "https://hochikiamerica-2.azureedge.net/img/product/0300-06860.jpg?fv=1BA9D4BD15308EA7135B7865414F1756",
+    "dataSource": "Hochiki America (hochikiamerica.com)"
+  },
+  {
+    "availability": "inquiry-required",
+    "certifications": [],
+    "features": [
+      "Sensor base with isolator",
+      "Model SCI-B4"
+    ],
+    "applications": [
+      "Fire detection and alarm systems"
+    ],
+    "id": "hochiki-sci-b4-sensor-base-isolator",
+    "slug": "hochiki-sci-b4-sensor-base-isolator",
+    "name": "SCI-B4 - 4\" Sensor Base, Bone Color with Isolator",
+    "category": "fire-detection-system",
+    "subcategory": "input-output-modules",
+    "brand": "Hochiki",
+    "model": "SCI-B4",
+    "shortDescription": "Hochiki SCI-B4 sensor base with isolator (addressable).",
+    "description": "SCI-B4 4\" Sensor Base, Bone Color with Isolator as listed by Hochiki America. Confirm exact specifications, approvals, and compatibility for the project. (Source: hochikiamerica.com) No price shown on web.",
+    "image": "https://hochikiamerica-1.azureedge.net/img/product/0300-04790_1.jpg?fv=436D3323472182D3AD648E1462EF51DF",
+    "dataSource": "Hochiki America (hochikiamerica.com)"
+  },
+  {
+    "availability": "inquiry-required",
+    "certifications": [],
+    "features": [
+      "Addressable manual pull station",
+      "Dual action",
+      "Model DCP-AMS-KL-LP"
+    ],
+    "applications": [
+      "Fire detection and alarm systems"
+    ],
+    "id": "hochiki-dcp-ams-kl-lp-addressable-manual-pull-station",
+    "slug": "hochiki-dcp-ams-kl-lp-addressable-manual-pull-station",
+    "name": "DCP-AMS-KL-LP Addressable Manual Pull Station, Dual Action, CAT30 Key",
+    "category": "fire-detection-system",
+    "subcategory": "manual-call-points",
+    "brand": "Hochiki",
+    "model": "DCP-AMS-KL-LP",
+    "shortDescription": "Hochiki addressable dual-action manual pull station.",
+    "description": "DCP-AMS-KL-LP Addressable Manual Pull Station, Dual Action, CAT30 Key as listed by Hochiki America. Confirm exact specifications, approvals, and compatibility for the project. (Source: hochikiamerica.com) No price shown on web.",
+    "image": "https://hochikiamerica-2.azureedge.net/img/product/kl-lp.jpg?fv=D7C6B9C31BA0D7027D696C916AEE416A",
+    "dataSource": "Hochiki America (hochikiamerica.com)"
+  },
+  {
+    "availability": "inquiry-required",
+    "certifications": [],
+    "features": [
+      "Addressable manual pull station",
+      "Single action",
+      "Model DCP-AMS"
+    ],
+    "applications": [
+      "Fire detection and alarm systems"
+    ],
+    "id": "hochiki-dcp-ams-single-action-addressable-manual-pull-station",
+    "slug": "hochiki-dcp-ams-single-action-addressable-manual-pull-station",
+    "name": "DCP-AMS Single Action Addressable Manual Pull Station",
+    "category": "fire-detection-system",
+    "subcategory": "manual-call-points",
+    "brand": "Hochiki",
+    "model": "DCP-AMS",
+    "shortDescription": "Hochiki single-action addressable manual pull station.",
+    "description": "DCP-AMS Single Action Addressable Manual Pull Station as listed by Hochiki America. Confirm exact specifications, approvals, and compatibility for the project. (Source: hochikiamerica.com) No price shown on web.",
+    "image": "https://hochikiamerica-2.azureedge.net/img/product/0600-01490_1.jpg?fv=464FD64D7465CED0B5B2B4F7A75EF489",
+    "dataSource": "Hochiki America (hochikiamerica.com)"
+  },
+  {
+    "availability": "inquiry-required",
+    "certifications": [],
+    "features": [
+      "Addressable manual pull station",
+      "Key lock",
+      "Model DCP-AMS-KL"
+    ],
+    "applications": [
+      "Fire detection and alarm systems"
+    ],
+    "id": "hochiki-dcp-ams-kl-addressable-manual-pull-station",
+    "slug": "hochiki-dcp-ams-kl-addressable-manual-pull-station",
+    "name": "DCP-AMS-KL Addressable Manual Pull Station with Key Lock",
+    "category": "fire-detection-system",
+    "subcategory": "manual-call-points",
+    "brand": "Hochiki",
+    "model": "DCP-AMS-KL",
+    "shortDescription": "Hochiki addressable manual pull station with key lock.",
+    "description": "DCP-AMS-KL Addressable Manual Pull Station with Key Lock as listed by Hochiki America. Confirm exact specifications, approvals, and compatibility for the project. (Source: hochikiamerica.com) No price shown on web.",
+    "image": "https://hochikiamerica-1.azureedge.net/img/product/0600-01510_1.jpg?fv=BC8F914C0CFC67C2BCD6020E5BADE5BA",
+    "dataSource": "Hochiki America (hochikiamerica.com)"
+  },
+  {
+    "availability": "inquiry-required",
+    "certifications": [],
+    "features": [
+      "Backbox for manual pull station",
+      "Model HPS-BB"
+    ],
+    "applications": [
+      "Fire detection and alarm systems"
+    ],
+    "id": "hochiki-hps-bb-backbox-manual-pull-station",
+    "slug": "hochiki-hps-bb-backbox-manual-pull-station",
+    "name": "HPS-BB Backbox, Red for HPS & AMS Series Manual Pull Station",
+    "category": "fire-detection-system",
+    "subcategory": "manual-call-points",
+    "brand": "Hochiki",
+    "model": "HPS-BB",
+    "shortDescription": "Hochiki red backbox for HPS & AMS series manual pull stations.",
+    "description": "HPS-BB Backbox, Red for HPS & AMS Series Manual Pull Station as listed by Hochiki America. Confirm exact specifications and compatibility for the project. (Source: hochikiamerica.com) No price shown on web.",
+    "image": "https://hochikiamerica-2.azureedge.net/img/product/0600-01430.jpg?fv=5690BA1C55B3287E21C457DEE3D7A2E1",
+    "dataSource": "Hochiki America (hochikiamerica.com)"
+  },
+  {
+    "availability": "inquiry-required",
+    "certifications": [],
+    "features": [
+      "Intelligent addressable duct detector",
+      "Model DH-101-A"
+    ],
+    "applications": [
+      "Fire detection and alarm systems"
+    ],
+    "id": "hochiki-dh-101-a-duct-detector",
+    "slug": "hochiki-dh-101-a-duct-detector",
+    "name": "DH-101-A Duct Detector",
+    "category": "fire-detection-system",
+    "subcategory": "smoke-detectors",
+    "brand": "Hochiki",
+    "model": "DH-101-A",
+    "shortDescription": "Hochiki DH-101-A intelligent addressable duct detector.",
+    "description": "DH-101-A Duct Detector as listed by Hochiki America (Intelligent Addressable Duct Detectors). Confirm exact specifications, approvals, and compatibility for the project. (Source: hochikiamerica.com) No price shown on web.",
+    "image": "https://hochikiamerica-2.azureedge.net/img/product/DH-101-A-B.jpg?fv=CFB33CBDC0C0B6204C0A1F98871FB90A",
+    "dataSource": "Hochiki America (hochikiamerica.com)"
+  },
+  {
+    "availability": "inquiry-required",
+    "certifications": [],
+    "features": [
+      "Fire alarm control panel family"
+    ],
+    "applications": [
+      "Fire detection and alarm systems"
+    ],
+    "id": "hochiki-firenet-latitude",
+    "slug": "hochiki-firenet-latitude-fire-alarm-control-panel",
+    "name": "FireNET L@titude",
+    "category": "fire-detection-system",
+    "subcategory": "fire-alarm-panels",
+    "brand": "Hochiki",
+    "model": "FireNET L@titude",
+    "shortDescription": "Hochiki FireNET L@titude fire alarm control panel family.",
+    "description": "FireNET L@titude as listed by Hochiki America. Source page states it is a UL Listed fire alarm panel. Confirm exact model variant, specifications, approvals, and configuration for the project. (Source: hochikiamerica.com) No price shown on web.",
+    "image": "https://hochikiamerica-1.azureedge.net/img/product/new_red_L@titude.jpg?fv=0EF6A4071556EC3C3B84016BB874C537",
+    "dataSource": "Hochiki America (hochikiamerica.com)"
+  },
+  {
+    "availability": "inquiry-required",
+    "certifications": [],
+    "features": [
+      "Intelligent addressable manual call point",
+      "Model FF CP500"
+    ],
+    "applications": [
+      "Fire detection and alarm systems"
+    ],
+    "id": "finder-ff-cp500-intelligent-addressable-manual-call-point",
+    "slug": "finder-ff-cp500-intelligent-addressable-fire-alarm-call-point",
+    "name": "Finder FF CP500 Intelligent Addressable Fire Alarm Call Point",
+    "category": "fire-detection-system",
+    "subcategory": "manual-call-points",
+    "brand": "Finder",
+    "model": "FF CP500",
+    "shortDescription": "Finder FF CP500 intelligent addressable fire alarm call point.",
+    "description": "Finder FF CP500 Intelligent Addressable Fire Alarm Call Point as listed by Safetag. Confirm exact specifications, approvals, and compatibility for the project. (Source: safetag.ae) No price shown on web.",
+    "image": "https://safetag.ae/wp-content/uploads/2024/06/Finder-FF-CP500-Intelligent-Addressable-Fire-Alarm-Call-Point.jpg",
+    "dataSource": "Safetag (safetag.ae)"
+  },
+  {
+    "availability": "inquiry-required",
+    "certifications": [],
+    "features": [
+      "Intelligent addressable fire control panel",
+      "1 loop",
+      "Model FF FCP500-1L"
+    ],
+    "applications": [
+      "Fire detection and alarm systems"
+    ],
+    "id": "finder-ff-fcp500-1l-addressable-fire-control-panel",
+    "slug": "finder-ff-fcp500-1l-intelligent-addressable-fire-control-panel",
+    "name": "Finder FF FCP500-1L 1 Loop Intelligent Addressable Fire Control Panel",
+    "category": "fire-detection-system",
+    "subcategory": "fire-alarm-panels",
+    "brand": "Finder",
+    "model": "FF FCP500-1L",
+    "shortDescription": "Finder FF FCP500-1L 1-loop intelligent addressable fire control panel.",
+    "description": "Finder FF FCP500-1L 1 Loop Intelligent Addressable Fire Control Panel as listed by Safetag. Confirm exact specifications, approvals, and compatibility for the project. (Source: safetag.ae) No price shown on web.",
+    "image": "https://safetag.ae/wp-content/uploads/2024/06/Finder-FF-FCP500-1L-1-Loop-Intelligent-Addressable-Fire-Control-Panel.jpg",
+    "dataSource": "Safetag (safetag.ae)"
+  },
+  {
+    "availability": "inquiry-required",
+    "certifications": [],
+    "features": [
+      "Intelligent addressable sounder strobe",
+      "Model FF LSB550"
+    ],
+    "applications": [
+      "Fire detection and alarm systems"
+    ],
+    "id": "finder-ff-lsb550-intelligent-addressable-sounder-strobe",
+    "slug": "finder-ff-lsb550-intelligent-addressable-fire-alarm-sounder-strobe",
+    "name": "Finder FF LSB550 Intelligent Addressable Fire Alarm Sounder Strobe",
+    "category": "fire-detection-system",
+    "subcategory": "sounders-notification",
+    "brand": "Finder",
+    "model": "FF LSB550",
+    "shortDescription": "Finder FF LSB550 intelligent addressable sounder strobe.",
+    "description": "Finder FF LSB550 Intelligent Addressable Fire Alarm Sounder Strobe as listed by Safetag. Confirm exact specifications, approvals, and compatibility for the project. (Source: safetag.ae) No price shown on web.",
+    "image": "https://safetag.ae/wp-content/uploads/2024/06/Finder-FF-LSB550-Intelligent-Addressable-Fire-Alarm-Sounder-Strobe.jpg",
+    "dataSource": "Safetag (safetag.ae)"
+  },
+  {
+    "availability": "inquiry-required",
+    "certifications": [],
+    "features": [
+      "Intelligent addressable I/O module",
+      "Model FF MIC500"
+    ],
+    "applications": [
+      "Fire detection and alarm systems"
+    ],
+    "id": "finder-ff-mic500-intelligent-addressable-io-module",
+    "slug": "finder-ff-mic500-intelligent-addressable-fire-alarm-io-module",
+    "name": "Finder FF MIC500 Intelligent Addressable Fire Alarm I/O Module",
+    "category": "fire-detection-system",
+    "subcategory": "input-output-modules",
+    "brand": "Finder",
+    "model": "FF MIC500",
+    "shortDescription": "Finder FF MIC500 intelligent addressable fire alarm I/O module.",
+    "description": "Finder FF MIC500 Intelligent Addressable Fire Alarm I/O Module as listed by Safetag. Confirm exact specifications, approvals, and compatibility for the project. (Source: safetag.ae) No price shown on web.",
+    "image": "https://safetag.ae/wp-content/uploads/2024/06/Finder-FF-MIC500-Intelligent-Addressable-Fire-Alarm-IO-Module.jpg",
+    "dataSource": "Safetag (safetag.ae)"
+  },
+  {
+    "availability": "inquiry-required",
+    "certifications": [],
+    "features": [
+      "Intelligent addressable optical smoke detector",
+      "Model FF O500"
+    ],
+    "applications": [
+      "Fire detection and alarm systems"
+    ],
+    "id": "finder-ff-o500-intelligent-addressable-optical-smoke-detector",
+    "slug": "finder-ff-o500-intelligent-addressable-optical-smoke-detector",
+    "name": "Finder FF O500 Intelligent Addressable Fire Alarm Optical Smoke Detector",
+    "category": "fire-detection-system",
+    "subcategory": "smoke-detectors",
+    "brand": "Finder",
+    "model": "FF O500",
+    "shortDescription": "Finder FF O500 intelligent addressable optical smoke detector.",
+    "description": "Finder FF O500 Intelligent Addressable Fire Alarm Optical Smoke Detector as listed by Safetag. Confirm exact specifications, approvals, and compatibility for the project. (Source: safetag.ae) No price shown on web.",
+    "image": "https://safetag.ae/wp-content/uploads/2024/06/Finder-FF-O500-Intelligent-Addressable-Fire-Alarm-Optical-Smoke-Detector.jpg",
+    "dataSource": "Safetag (safetag.ae)"
+  },
+  {
+    "availability": "inquiry-required",
+    "certifications": [],
+    "features": [
+      "Intelligent addressable heat detector",
+      "Model FF T500"
+    ],
+    "applications": [
+      "Fire detection and alarm systems"
+    ],
+    "id": "finder-ff-t500-intelligent-addressable-heat-detector",
+    "slug": "finder-ff-t500-intelligent-addressable-heat-detector",
+    "name": "Finder FF T500 Intelligent Addressable Fire Alarm Heat Detector",
+    "category": "fire-detection-system",
+    "subcategory": "heat-detectors",
+    "brand": "Finder",
+    "model": "FF T500",
+    "shortDescription": "Finder FF T500 intelligent addressable heat detector.",
+    "description": "Finder FF T500 Intelligent Addressable Fire Alarm Heat Detector as listed by Safetag. Confirm exact specifications, approvals, and compatibility for the project. (Source: safetag.ae) No price shown on web.",
+    "image": "https://safetag.ae/wp-content/uploads/2024/06/Finder-FF-T500-Intelligent-Addressable-Fire-Alarm-Heat-Detector.jpg",
+    "dataSource": "Safetag (safetag.ae)"
+  },
+  {
+    "availability": "inquiry-required",
+    "certifications": [],
+    "features": [
+      "Addressable fire alarm control unit family"
+    ],
+    "applications": [
+      "Fire detection and alarm systems"
+    ],
+    "id": "simplex-foundation-series-addressable-fire-alarm-control-units",
+    "slug": "simplex-foundation-series-addressable-fire-alarm-control-units",
+    "name": "Foundation Series Addressable Fire Alarm Control Units",
+    "category": "fire-detection-system",
+    "subcategory": "fire-alarm-panels",
+    "brand": "Simplex",
+    "model": "Foundation Series",
+    "shortDescription": "Simplex Foundation Series addressable fire alarm control units (product family).",
+    "description": "Foundation Series Addressable Fire Alarm Control Units as listed on Simplex Addressable Systems. Confirm exact model, specifications, approvals, and configuration for the project. (Source: simplex-fire.com) No price shown on web.",
+    "image": "/images/products/placeholder-product.svg",
+    "dataSource": "Simplex (simplex-fire.com)"
+  },
+  {
+    "availability": "inquiry-required",
+    "certifications": [],
+    "features": [
+      "Addressable fire alarm control system",
+      "Model 4100ES"
+    ],
+    "applications": [
+      "Fire detection and alarm systems"
+    ],
+    "id": "simplex-4100es-fire-alarm-control-system",
+    "slug": "simplex-4100es-fire-alarm-control-system",
+    "name": "4100ES Fire Alarm Control System",
+    "category": "fire-detection-system",
+    "subcategory": "fire-alarm-panels",
+    "brand": "Simplex",
+    "model": "4100ES",
+    "shortDescription": "Simplex 4100ES addressable fire alarm control system.",
+    "description": "4100ES Fire Alarm Control System as listed on Simplex Addressable Systems. Confirm exact model variant, specifications, approvals, and configuration for the project. (Source: simplex-fire.com) No price shown on web.",
+    "image": "/images/products/placeholder-product.svg",
+    "dataSource": "Simplex (simplex-fire.com)"
+  },
+  {
+    "availability": "inquiry-required",
+    "certifications": [],
+    "features": [
+      "Addressable fire alarm control system",
+      "Model 4007ES"
+    ],
+    "applications": [
+      "Fire detection and alarm systems"
+    ],
+    "id": "simplex-4007es-fire-alarm-control-system",
+    "slug": "simplex-4007es-fire-alarm-control-system",
+    "name": "4007ES Fire Alarm Control System",
+    "category": "fire-detection-system",
+    "subcategory": "fire-alarm-panels",
+    "brand": "Simplex",
+    "model": "4007ES",
+    "shortDescription": "Simplex 4007ES addressable fire alarm control system.",
+    "description": "4007ES Fire Alarm Control System as listed on Simplex Addressable Systems. Confirm exact model variant, specifications, approvals, and configuration for the project. (Source: simplex-fire.com) No price shown on web.",
+    "image": "/images/products/placeholder-product.svg",
+    "dataSource": "Simplex (simplex-fire.com)"
+  },
+  {
+    "availability": "inquiry-required",
+    "certifications": [],
+    "features": [
+      "Addressable fire alarm control system",
+      "Model 4010ES"
+    ],
+    "applications": [
+      "Fire detection and alarm systems"
+    ],
+    "id": "simplex-4010es-fire-alarm-control-system",
+    "slug": "simplex-4010es-fire-alarm-control-system",
+    "name": "4010ES Fire Alarm Control System",
+    "category": "fire-detection-system",
+    "subcategory": "fire-alarm-panels",
+    "brand": "Simplex",
+    "model": "4010ES",
+    "shortDescription": "Simplex 4010ES addressable fire alarm control system.",
+    "description": "4010ES Fire Alarm Control System as listed on Simplex Addressable Systems. Confirm exact model variant, specifications, approvals, and configuration for the project. (Source: simplex-fire.com) No price shown on web.",
+    "image": "/images/products/placeholder-product.svg",
+    "dataSource": "Simplex (simplex-fire.com)"
+  },
+  {
+    "availability": "inquiry-required",
+    "certifications": [],
+    "features": [
+      "Addressable fire alarm control system",
+      "Model 4017ES"
+    ],
+    "applications": [
+      "Fire detection and alarm systems"
+    ],
+    "id": "simplex-4017es-fire-alarm-control-system",
+    "slug": "simplex-4017es-fire-alarm-control-system",
+    "name": "4017ES Fire Alarm Control System",
+    "category": "fire-detection-system",
+    "subcategory": "fire-alarm-panels",
+    "brand": "Simplex",
+    "model": "4017ES",
+    "shortDescription": "Simplex 4017ES addressable fire alarm control system.",
+    "description": "4017ES Fire Alarm Control System as listed on Simplex Addressable Systems. Confirm exact model variant, specifications, approvals, and configuration for the project. (Source: simplex-fire.com) No price shown on web.",
+    "image": "/images/products/placeholder-product.svg",
+    "dataSource": "Simplex (simplex-fire.com)"
+  },
+  {
+    "availability": "inquiry-required",
+    "certifications": [],
+    "features": [
+      "Addressable sensors and bases family"
+    ],
+    "applications": [
+      "Fire detection and alarm systems"
+    ],
+    "id": "simplex-truealarm-addressable-sensors-bases",
+    "slug": "simplex-truealarm-addressable-sensors-bases",
+    "name": "TrueAlarm Addressable Sensors and Bases",
+    "category": "fire-detection-system",
+    "subcategory": "multi-sensor-detectors",
+    "brand": "Simplex",
+    "model": "TrueAlarm",
+    "shortDescription": "Simplex TrueAlarm addressable sensors and bases (product family).",
+    "description": "TrueAlarm Addressable Sensors and Bases as listed on Simplex addressable sensors. Confirm exact models, specifications, approvals, and compatibility for the project. (Source: simplex-fire.com) No price shown on web.",
+    "image": "/images/products/placeholder-product.svg",
+    "dataSource": "Simplex (simplex-fire.com)"
+  },
+  {
+    "availability": "inquiry-required",
+    "certifications": [],
+    "features": [
+      "Addressable sensors and bases family"
+    ],
+    "applications": [
+      "Fire detection and alarm systems"
+    ],
+    "id": "simplex-mx-addressable-sensors-bases",
+    "slug": "simplex-mx-addressable-sensors-bases",
+    "name": "MX Addressable Sensors and Bases",
+    "category": "fire-detection-system",
+    "subcategory": "multi-sensor-detectors",
+    "brand": "Simplex",
+    "model": "MX",
+    "shortDescription": "Simplex MX addressable sensors and bases (product family).",
+    "description": "MX Addressable Sensors and Bases as listed on Simplex addressable sensors. Confirm exact models, specifications, approvals, and compatibility for the project. (Source: simplex-fire.com) No price shown on web.",
+    "image": "/images/products/placeholder-product.svg",
+    "dataSource": "Simplex (simplex-fire.com)"
+  },
+  {
+    "availability": "inquiry-required",
+    "certifications": [],
+    "features": [
+      "Addressable callpoints family"
+    ],
+    "applications": [
+      "Fire detection and alarm systems"
+    ],
+    "id": "simplex-mx-addressable-callpoints",
+    "slug": "simplex-mx-addressable-callpoints",
+    "name": "MX Addressable Callpoints",
+    "category": "fire-detection-system",
+    "subcategory": "manual-call-points",
+    "brand": "Simplex",
+    "model": "MX",
+    "shortDescription": "Simplex MX addressable callpoints (product family).",
+    "description": "MX Addressable Callpoints as listed on Simplex addressable pull stations/callpoints. Confirm exact models, specifications, approvals, and compatibility for the project. (Source: simplex-fire.com) No price shown on web.",
+    "image": "/images/products/placeholder-product.svg",
+    "dataSource": "Simplex (simplex-fire.com)"
+  },
+  {
+    "availability": "inquiry-required",
+    "certifications": [],
+    "features": [
+      "Addressable pull stations family"
+    ],
+    "applications": [
+      "Fire detection and alarm systems"
+    ],
+    "id": "simplex-truealarm-addressable-pull-stations",
+    "slug": "simplex-truealarm-addressable-pull-stations",
+    "name": "TrueAlarm Addressable Pull Stations",
+    "category": "fire-detection-system",
+    "subcategory": "manual-call-points",
+    "brand": "Simplex",
+    "model": "TrueAlarm",
+    "shortDescription": "Simplex TrueAlarm addressable pull stations (product family).",
+    "description": "TrueAlarm Addressable Pull Stations as listed on Simplex addressable pull stations/callpoints. Confirm exact models, specifications, approvals, and compatibility for the project. (Source: simplex-fire.com) No price shown on web.",
+    "image": "/images/products/placeholder-product.svg",
+    "dataSource": "Simplex (simplex-fire.com)"
+  },
+  {
+    "availability": "inquiry-required",
+    "certifications": [],
+    "features": [
+      "Addressable I/O modules and peripherals family"
+    ],
+    "applications": [
+      "Fire detection and alarm systems"
+    ],
+    "id": "simplex-mx-io-modules-peripherals",
+    "slug": "simplex-mx-io-modules-peripherals",
+    "name": "MX I/O Modules and Peripherals",
+    "category": "fire-detection-system",
+    "subcategory": "input-output-modules",
+    "brand": "Simplex",
+    "model": "MX",
+    "shortDescription": "Simplex MX I/O modules and peripherals (product family).",
+    "description": "MX I/O Modules and Peripherals as listed on Simplex addressable peripheral devices. Confirm exact models, specifications, approvals, and compatibility for the project. (Source: simplex-fire.com) No price shown on web.",
+    "image": "/images/products/placeholder-product.svg",
+    "dataSource": "Simplex (simplex-fire.com)"
+  },
+  {
+    "availability": "inquiry-required",
+    "certifications": [],
+    "features": [
+      "Addressable I/O modules and peripherals family"
+    ],
+    "applications": [
+      "Fire detection and alarm systems"
+    ],
+    "id": "simplex-truealarm-io-modules-peripherals",
+    "slug": "simplex-truealarm-io-modules-peripherals",
+    "name": "TrueAlarm I/O Modules and Peripherals",
+    "category": "fire-detection-system",
+    "subcategory": "input-output-modules",
+    "brand": "Simplex",
+    "model": "TrueAlarm",
+    "shortDescription": "Simplex TrueAlarm I/O modules and peripherals (product family).",
+    "description": "TrueAlarm I/O Modules and Peripherals as listed on Simplex addressable peripheral devices. Confirm exact models, specifications, approvals, and compatibility for the project. (Source: simplex-fire.com) No price shown on web.",
+    "image": "/images/products/placeholder-product.svg",
+    "dataSource": "Simplex (simplex-fire.com)"
+  },
+  {
+    "availability": "inquiry-required",
+    "certifications": [],
+    "features": [
+      "Addressable notification appliances and speakers family"
+    ],
+    "applications": [
+      "Fire detection and alarm systems"
+    ],
+    "id": "simplex-truealert-es-addressable-notification-appliances-speakers",
+    "slug": "simplex-truealert-es-addressable-notification-appliances-speakers",
+    "name": "TrueAlert ES Addressable Notification Appliances & Speakers",
+    "category": "fire-detection-system",
+    "subcategory": "sounders-notification",
+    "brand": "Simplex",
+    "model": "TrueAlert ES",
+    "shortDescription": "Simplex TrueAlert ES addressable notification appliances and speakers (product family).",
+    "description": "TrueAlert ES Addressable Notification Appliances & Speakers as listed on Simplex addressable notification. Confirm exact models, specifications, approvals, and compatibility for the project. (Source: simplex-fire.com) No price shown on web.",
+    "image": "/images/products/placeholder-product.svg",
+    "dataSource": "Simplex (simplex-fire.com)"
+  },
+  {
+    "availability": "inquiry-required",
+    "certifications": [],
+    "features": [
+      "Visual messaging solutions family"
+    ],
+    "applications": [
+      "Fire detection and alarm systems"
+    ],
+    "id": "simplex-truealert-visual-messaging-solutions",
+    "slug": "simplex-truealert-visual-messaging-solutions",
+    "name": "TrueAlert Visual Messaging Solutions",
+    "category": "fire-detection-system",
+    "subcategory": "sounders-notification",
+    "brand": "Simplex",
+    "model": "TrueAlert",
+    "shortDescription": "Simplex TrueAlert visual messaging solutions (product family).",
+    "description": "TrueAlert Visual Messaging Solutions as listed on Simplex addressable notification. Confirm exact models, specifications, approvals, and compatibility for the project. (Source: simplex-fire.com) No price shown on web.",
+    "image": "/images/products/placeholder-product.svg",
+    "dataSource": "Simplex (simplex-fire.com)"
+  },
+  // ---- Additional verified web imports: Hochiki/Bosch/Simplex families/models (no prices shown) ----
+  {
+    "availability": "inquiry-required",
+    "certifications": [],
+    "image": null,
+    "applications": [
+      "Fire detection and alarm systems"
+    ],
+    "id": "hochiki-firenet-plus-intelligent-addressable-panel",
+    "slug": "hochiki-firenet-plus-intelligent-addressable-panel",
+    "name": "FireNET Plus Intelligent Addressable Fire Alarm Panel",
+    "category": "fire-detection-system",
+    "subcategory": "fire-alarm-panels",
+    "brand": "Hochiki",
+    "model": "FireNET Plus",
+    "shortDescription": "Hochiki FireNET Plus intelligent addressable fire alarm panel family.",
+    "description": "FireNET Plus Intelligent Addressable panel family as listed on Hochiki America FireNET L@titude pages. Confirm exact variant, loop/dialer/expandability, specifications, approvals, and configuration for the project. (Source: hochikiamerica.com) No price shown on web.",
+    "features": [
+      "Intelligent addressable fire alarm panel family"
+    ],
+    "dataSource": "Hochiki America (hochikiamerica.com)"
+  },
+  {
+    "availability": "inquiry-required",
+    "certifications": [],
+    "image": "https://hochikiamerica-1.azureedge.net/img/product/0100-16340_1.jpg?fv=BF97417CBDF31B35318B067B65D0C5A7",
+    "applications": [
+      "Fire detection and alarm systems"
+    ],
+    "id": "hochiki-fnlcdsus00r024-serial-annunciator",
+    "slug": "hochiki-fnlcdsus00r024-serial-annunciator",
+    "name": "FNLCDSUS00R024 Serial Annunciator, Red",
+    "category": "fire-detection-system",
+    "subcategory": "input-output-modules",
+    "brand": "Hochiki",
+    "model": "FNLCDSUS00R024",
+    "shortDescription": "Hochiki serial annunciator for FireNET/FireNET Plus.",
+    "description": "FNLCDSUS00R024 2015 Ed. Serial Annunciator, Red for FireNET and FireNET Plus FACP as listed by Hochiki America. Confirm exact specifications, approvals, and compatibility for the project. (Source: hochikiamerica.com) No price shown on web.",
+    "features": [
+      "Serial annunciator",
+      "Compatible with FireNET/FireNET Plus FACP (as listed)"
+    ],
+    "dataSource": "Hochiki America (hochikiamerica.com)"
+  },
+  {
+    "availability": "inquiry-required",
+    "certifications": [],
+    "image": "https://hochikiamerica-1.azureedge.net/img/product/0100-16260_1.jpg?fv=55D21F945D7916F88216772786CE2FA5",
+    "applications": [
+      "Fire detection and alarm systems"
+    ],
+    "id": "hochiki-fn-4127-nic-network-interface-card",
+    "slug": "hochiki-fn-4127-nic-network-interface-card",
+    "name": "FN-4127-NIC Network Interface Card",
+    "category": "fire-detection-system",
+    "subcategory": "input-output-modules",
+    "brand": "Hochiki",
+    "model": "FN-4127-NIC",
+    "shortDescription": "Hochiki network interface card for FireNET/FireNET Plus.",
+    "description": "FN-4127-NIC Network Interface Card for FireNET and FireNET Plus as listed by Hochiki America. Confirm exact specifications, approvals, and compatibility for the project. (Source: hochikiamerica.com) No price shown on web.",
+    "features": [
+      "Network interface card"
+    ],
+    "dataSource": "Hochiki America (hochikiamerica.com)"
+  },
+  {
+    "availability": "inquiry-required",
+    "certifications": [],
+    "image": "https://hochikiamerica-2.azureedge.net/img/product/0100-16360_1.jpg?fv=602A6BB6DD17F3EEF5E53B8584528648",
+    "applications": [
+      "Fire detection and alarm systems"
+    ],
+    "id": "hochiki-fnp-1127-slc-single-loop-expander-card",
+    "slug": "hochiki-fnp-1127-slc-single-loop-expander-card",
+    "name": "FNP-1127-SLC Single Loop Expander Card",
+    "category": "fire-detection-system",
+    "subcategory": "input-output-modules",
+    "brand": "Hochiki",
+    "model": "FNP-1127-SLC",
+    "shortDescription": "Hochiki single loop expander card for FireNET Plus.",
+    "description": "FNP-1127-SLC Single Loop Expander Card for FireNET Plus as listed by Hochiki America. Confirm exact specifications, approvals, and compatibility for the project. (Source: hochikiamerica.com) No price shown on web.",
+    "features": [
+      "Single loop expander card"
+    ],
+    "dataSource": "Hochiki America (hochikiamerica.com)"
+  },
+  {
+    "availability": "inquiry-required",
+    "certifications": [],
+    "image": "https://hochikiamerica-2.azureedge.net/img/product/0100-27230.jpg?fv=EAB793BB6F94B0DFC3C5ECD431C877DC",
+    "applications": [
+      "Fire detection and alarm systems"
+    ],
+    "id": "hochiki-fn-4127-io-16-channel-input-output-board",
+    "slug": "hochiki-fn-4127-io-16-channel-input-output-board",
+    "name": "FN-4127-IO 16 Channel Input/Output Board",
+    "category": "fire-detection-system",
+    "subcategory": "input-output-modules",
+    "brand": "Hochiki",
+    "model": "FN-4127-IO",
+    "shortDescription": "Hochiki 16-channel input/output board.",
+    "description": "FN-4127-IO 16 Channel Input/Output Board as listed by Hochiki America. Confirm exact specifications, approvals, and compatibility for the project. (Source: hochikiamerica.com) No price shown on web.",
+    "features": [
+      "16 channel input/output board"
+    ],
+    "dataSource": "Hochiki America (hochikiamerica.com)"
+  },
+  {
+    "availability": "inquiry-required",
+    "certifications": [],
+    "image": "https://hochikiamerica-1.azureedge.net/img/product/0100-15670.jpg?fv=70DCF4379D142742E751669B522CB736",
+    "applications": [
+      "Fire detection and alarm systems"
+    ],
+    "id": "bosch-avenar-panel-2000",
+    "slug": "bosch-avenar-panel-2000",
+    "name": "AVENAR Panel 2000",
+    "category": "fire-detection-system",
+    "subcategory": "fire-alarm-panels",
+    "brand": "Bosch",
+    "model": "AVENAR panel 2000",
+    "shortDescription": "Bosch AVENAR panel 2000 fire alarm control panel.",
+    "description": "AVENAR panel 2000 as referenced in Bosch AVENAR panel documentation/results. Confirm exact model variant, specifications, approvals, and configuration for the project. (Source: boschsecurity.com) No price shown on web.",
+    "features": [
+      "Fire alarm control panel"
+    ],
+    "dataSource": "Bosch Security (boschsecurity.com)"
+  },
+  {
+    "availability": "inquiry-required",
+    "certifications": [],
+    "image": "/images/products/placeholder-product.svg",
+    "applications": [
+      "Fire detection and alarm systems"
+    ],
+    "id": "bosch-avenar-panel-8000",
+    "slug": "bosch-avenar-panel-8000",
+    "name": "AVENAR Panel 8000",
+    "category": "fire-detection-system",
+    "subcategory": "fire-alarm-panels",
+    "brand": "Bosch",
+    "model": "AVENAR panel 8000",
+    "shortDescription": "Bosch AVENAR panel 8000 fire alarm control panel.",
+    "description": "AVENAR panel 8000 as referenced in Bosch AVENAR panel documentation/results. Confirm exact model variant, specifications, approvals, and configuration for the project. (Source: boschsecurity.com) No price shown on web.",
+    "features": [
+      "Fire alarm control panel"
+    ],
+    "dataSource": "Bosch Security (boschsecurity.com)"
+  },
+  {
+    "availability": "inquiry-required",
+    "certifications": [],
+    "image": "/images/products/placeholder-product.svg",
+    "applications": [
+      "Fire detection and alarm systems"
+    ],
+    "id": "bosch-avenar-keypad-8000",
+    "slug": "bosch-avenar-keypad-8000",
+    "name": "AVENAR Keypad 8000",
+    "category": "fire-detection-system",
+    "subcategory": "input-output-modules",
+    "brand": "Bosch",
+    "model": "AVENAR keypad 8000",
+    "shortDescription": "Bosch AVENAR keypad 8000 for AVENAR panel systems.",
+    "description": "AVENAR keypad 8000 as referenced in Bosch AVENAR panel documentation/results. Confirm exact specifications, approvals, and compatibility for the project. (Source: boschsecurity.com) No price shown on web.",
+    "features": [
+      "Panel keypad/accessory"
+    ],
+    "dataSource": "Bosch Security (boschsecurity.com)"
+  },
+  {
+    "availability": "inquiry-required",
+    "certifications": [],
+    "image": "/images/products/placeholder-product.svg",
+    "applications": [
+      "Fire detection and alarm systems"
+    ],
+    "id": "bosch-avenar-detector-4000-series",
+    "slug": "bosch-avenar-detector-4000-series",
+    "name": "AVENAR Detector 4000 Series",
+    "category": "fire-detection-system",
+    "subcategory": "multi-sensor-detectors",
+    "brand": "Bosch",
+    "model": "AVENAR detector 4000",
+    "shortDescription": "Bosch AVENAR detector 4000 series (product family).",
+    "description": "AVENAR detector 4000 series as referenced in Bosch AVENAR documentation/results. Confirm exact detector model, specifications, approvals, and compatibility for the project. (Source: boschsecurity.com) No price shown on web.",
+    "features": [
+      "Fire detector family"
+    ],
+    "dataSource": "Bosch Security (boschsecurity.com)"
+  },
+  {
+    "availability": "inquiry-required",
+    "certifications": [],
+    "image": "/images/products/placeholder-product.svg",
+    "applications": [
+      "Fire detection and alarm systems"
+    ],
+    "id": "bosch-fap-425-detector",
+    "slug": "bosch-fap-425-detector",
+    "name": "FAP-425 Detector",
+    "category": "fire-detection-system",
+    "subcategory": "smoke-detectors",
+    "brand": "Bosch",
+    "model": "FAP-425",
+    "shortDescription": "Bosch FAP-425 detector (AVENAR/LSN context).",
+    "description": "FAP-425 detector as referenced in Bosch AVENAR/LSN documentation excerpts. Confirm exact variant, specifications, approvals, and compatibility for the project. (Source: boschsecurity.com) No price shown on web.",
+    "features": [
+      "Fire detector",
+      "Model FAP-425"
+    ],
+    "dataSource": "Bosch Security (boschsecurity.com)"
+  },
+  {
+    "availability": "inquiry-required",
+    "certifications": [],
+    "image": "/images/products/placeholder-product.svg",
+    "applications": [
+      "Fire detection and alarm systems"
+    ],
+    "id": "bosch-fap-520-detector",
+    "slug": "bosch-fap-520-detector",
+    "name": "FAP-520 Detector",
+    "category": "fire-detection-system",
+    "subcategory": "smoke-detectors",
+    "brand": "Bosch",
+    "model": "FAP-520",
+    "shortDescription": "Bosch FAP-520 detector (AVENAR/LSN context).",
+    "description": "FAP-520 detector as referenced in Bosch AVENAR/LSN documentation excerpts. Confirm exact variant, specifications, approvals, and compatibility for the project. (Source: boschsecurity.com) No price shown on web.",
+    "features": [
+      "Fire detector",
+      "Model FAP-520"
+    ],
+    "dataSource": "Bosch Security (boschsecurity.com)"
+  },
+  {
+    "availability": "inquiry-required",
+    "certifications": [],
+    "image": "/images/products/placeholder-product.svg",
+    "applications": [
+      "Fire detection and alarm systems"
+    ],
+    "id": "bosch-fcp-500-detector",
+    "slug": "bosch-fcp-500-detector",
+    "name": "FCP-500 Detector",
+    "category": "fire-detection-system",
+    "subcategory": "smoke-detectors",
+    "brand": "Bosch",
+    "model": "FCP-500",
+    "shortDescription": "Bosch FCP-500 detector (conventional/interface context).",
+    "description": "FCP-500 detector as referenced in Bosch AVENAR panel wiring/system documentation excerpts. Confirm exact variant, specifications, approvals, and compatibility for the project. (Source: boschsecurity.com) No price shown on web.",
+    "features": [
+      "Fire detector",
+      "Model FCP-500"
+    ],
+    "dataSource": "Bosch Security (boschsecurity.com)"
+  },
+  {
+    "availability": "inquiry-required",
+    "certifications": [],
+    "image": "/images/products/placeholder-product.svg",
+    "applications": [
+      "Fire detection and alarm systems"
+    ],
+    "id": "bosch-fmc-420rw-manual-call-point",
+    "slug": "bosch-fmc-420rw-manual-call-point",
+    "name": "FMC-420RW Manual Call Point",
+    "category": "fire-detection-system",
+    "subcategory": "manual-call-points",
+    "brand": "Bosch",
+    "model": "FMC-420RW",
+    "shortDescription": "Bosch FMC-420RW manual call point.",
+    "description": "FMC-420RW manual call point as referenced in Bosch AVENAR panel system documentation excerpts. Confirm exact variant, specifications, approvals, and compatibility for the project. (Source: boschsecurity.com) No price shown on web.",
+    "features": [
+      "Manual call point",
+      "Model FMC-420RW"
+    ],
+    "dataSource": "Bosch Security (boschsecurity.com)"
+  },
+  {
+    "availability": "inquiry-required",
+    "certifications": [],
+    "image": "/images/products/placeholder-product.svg",
+    "applications": [
+      "Fire detection and alarm systems"
+    ],
+    "id": "simplex-specialty-addressable-sensing-solutions",
+    "slug": "simplex-specialty-addressable-sensing-solutions",
+    "name": "Specialty Addressable Sensing Solutions",
+    "category": "fire-detection-system",
+    "subcategory": "multi-sensor-detectors",
+    "brand": "Simplex",
+    "model": "Specialty Addressable Sensing",
+    "shortDescription": "Simplex specialty addressable sensing solutions (product family).",
+    "description": "Specialty Addressable Sensing Solutions as listed on Simplex addressable sensors. Confirm exact models, specifications, approvals, and compatibility for the project. (Source: simplex-fire.com) No price shown on web.",
+    "features": [
+      "Specialty addressable sensing family"
+    ],
+    "dataSource": "Simplex (simplex-fire.com)"
+  },
+  {
+    "availability": "inquiry-required",
+    "certifications": [],
+    "image": "/images/products/placeholder-product.svg",
+    "applications": [
+      "Fire detection and alarm systems"
+    ],
+    "id": "simplex-truesite-workstation-management-solutions",
+    "slug": "simplex-truesite-workstation-management-solutions",
+    "name": "TrueSite Workstation Management Solutions",
+    "category": "fire-detection-system",
+    "subcategory": "input-output-modules",
+    "brand": "Simplex",
+    "model": "TrueSite Workstation",
+    "shortDescription": "Simplex TrueSite workstation management solutions (product family).",
+    "description": "TrueSite Workstation Management Solutions as listed on Simplex networks and workstations. Confirm exact model, specifications, approvals, and compatibility for the project. (Source: simplex-fire.com) No price shown on web.",
+    "features": [
+      "Workstation/management solution family"
+    ],
+    "dataSource": "Simplex (simplex-fire.com)"
+  },
+  {
+    "availability": "inquiry-required",
+    "certifications": [],
+    "image": "/images/products/placeholder-product.svg",
+    "applications": [
+      "Fire detection and alarm systems"
+    ],
+    "id": "simplex-es-net-high-speed-networks",
+    "slug": "simplex-es-net-high-speed-networks",
+    "name": "ES Net High Speed Networks",
+    "category": "fire-detection-system",
+    "subcategory": "input-output-modules",
+    "brand": "Simplex",
+    "model": "ES Net",
+    "shortDescription": "Simplex ES Net high speed networks (product family).",
+    "description": "ES Net High Speed Networks as listed on Simplex networks and workstations. Confirm exact model, specifications, approvals, and compatibility for the project. (Source: simplex-fire.com) No price shown on web.",
+    "features": [
+      "Fire alarm network family"
+    ],
+    "dataSource": "Simplex (simplex-fire.com)"
+  }]
 
 /*  Helper functions                                                  */
 /* ------------------------------------------------------------------ */
