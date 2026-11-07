@@ -2414,8 +2414,11 @@ body.nav-drawer-open {
    ============================================================ */
 
 [data-custom-cursor],
-.has-custom-cursor [data-custom-cursor] {
+.has-custom-cursor @media (hover: hover) and (pointer: fine) {
+[data-custom-cursor] {
   cursor: none !important;
+}
+
 }
 
 [data-custom-cursor] a,
@@ -3416,10 +3419,7 @@ h6 {
 }
 /* ---------- Lenis smooth scroll ---------- */
 
-html.lenis,
-html.lenis body {
-  overflow-x: hidden !important;
-  overflow-y: auto !important;
+html, body, html.lenis, html.lenis body { overflow-x: clip; overflow-y: auto !important; max-width: 100%;
   scroll-behavior: unset !important;
 }
 

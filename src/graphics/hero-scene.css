@@ -1,4 +1,4 @@
-.hse-hero-scene{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none;background:#0868D8}
+(m)=>m
 .hse-hero-scene__base{position:absolute;inset:0;background:linear-gradient(135deg,#0868D8 0%,#014EB6 45%,#2B7FE6 75%,#0868D8 100%)}
 .hse-hero-scene__layer{position:absolute;inset:0;width:100%;height:100%}
 .hse-hero-scene__shield{position:absolute;right:6%;top:50%;transform:translateY(-50%);width:min(440px,42vw);height:auto;opacity:.14}
