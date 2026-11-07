@@ -1,0 +1,766 @@
+{
+  "generatedAt": "2026-11-07T17:13:59.854Z",
+  "sourceFile": "src/data/products.ts",
+  "note": "Phase 0.2 discovery audit only. No product data edited. Counts derived from current file; verify before future destructive actions.",
+  "totals": {
+    "products": 305,
+    "categoriesReferenced": 8,
+    "brands": 34,
+    "localImageAssetFiles": 40,
+    "localThumbFiles": 26
+  },
+  "declaredTopLevelCategoriesBestEffort": [
+    {
+      "key": "fire-protection-system",
+      "slug": "fire-protection",
+      "label": "Fire Protection System"
+    },
+    {
+      "key": "fire-fighting-pumps",
+      "slug": "fire-fighting-pumps",
+      "label": "Fire Fighting Pumps"
+    },
+    {
+      "key": "fire-sprinkler-systems",
+      "slug": "fire-sprinkler-systems",
+      "label": "Fire Sprinkler Systems"
+    },
+    {
+      "key": "fire-protection-valves",
+      "slug": "fire-protection-valves",
+      "label": "Fire Protection Valves"
+    },
+    {
+      "key": "fire-hydrant-accessories",
+      "slug": "fire-hydrant-accessories",
+      "label": "Fire Hydrant & Standpipe Accessories"
+    },
+    {
+      "key": "pipes-fittings-accessories",
+      "slug": "pipes-fittings-accessories",
+      "label": "Pipes, Fittings & Accessories"
+    },
+    {
+      "key": "fire-extinguishers",
+      "slug": "fire-extinguishers",
+      "label": "Fire Extinguishers"
+    },
+    {
+      "key": "fire-suppression-systems",
+      "slug": "fire-suppression-systems",
+      "label": "Fire Suppression Systems"
+    },
+    {
+      "key": "fire-detection-system",
+      "slug": "fire-detection",
+      "label": "Fire Detection & Alarm System"
+    },
+    {
+      "key": "fire-alarm-panels",
+      "slug": "fire-alarm-panels",
+      "label": "Fire Alarm Control Panels"
+    },
+    {
+      "key": "smoke-detectors",
+      "slug": "smoke-detectors",
+      "label": "Smoke Detectors"
+    },
+    {
+      "key": "heat-detectors",
+      "slug": "heat-detectors",
+      "label": "Heat Detectors"
+    },
+    {
+      "key": "multi-sensor-detectors",
+      "slug": "multi-sensor-detectors",
+      "label": "Multi-Sensor Detectors"
+    },
+    {
+      "key": "manual-call-points",
+      "slug": "manual-call-points",
+      "label": "Manual Call Points"
+    },
+    {
+      "key": "sounders-notification",
+      "slug": "sounders-notification",
+      "label": "Sounders & Notification Appliances"
+    },
+    {
+      "key": "input-output-modules",
+      "slug": "input-output-modules",
+      "label": "Input, Output & Interface Modules"
+    },
+    {
+      "key": "fire-alarm-cables",
+      "slug": "fire-alarm-cables",
+      "label": "Fire Alarm Cables & Accessories"
+    },
+    {
+      "key": "fire-rated-doors",
+      "slug": "fire-rated-doors",
+      "label": "Fire-Rated Doors & Emergency Exit Solutions"
+    },
+    {
+      "key": "steel-fire-doors",
+      "slug": "steel-fire-doors",
+      "label": "Steel Fire-Rated Doors"
+    },
+    {
+      "key": "single-double-leaf-fire-doors",
+      "slug": "single-double-leaf-fire-doors",
+      "label": "Single-Leaf & Double-Leaf Fire Doors"
+    },
+    {
+      "key": "glazed-fire-doors",
+      "slug": "glazed-fire-doors",
+      "label": "Glazed Fire-Rated Doors"
+    },
+    {
+      "key": "acoustic-fire-doors",
+      "slug": "acoustic-fire-doors",
+      "label": "Acoustic Fire Doors"
+    },
+    {
+      "key": "fire-smoke-curtains",
+      "slug": "fire-smoke-curtains",
+      "label": "Fire & Smoke Curtains"
+    },
+    {
+      "key": "fire-rolling-shutters",
+      "slug": "fire-rolling-shutters",
+      "label": "Fire-Rated Rolling Shutters"
+    },
+    {
+      "key": "fire-door-hardware",
+      "slug": "fire-door-hardware",
+      "label": "Fire Door Hardware"
+    },
+    {
+      "key": "fire-door-frames",
+      "slug": "fire-door-frames",
+      "label": "Fire Door Frames & Accessories"
+    },
+    {
+      "key": "passive-fire-protection",
+      "slug": "passive-fire-protection",
+      "label": "Passive Fire Protection System"
+    },
+    {
+      "key": "intumescent-paint",
+      "slug": "intumescent-paint",
+      "label": "Intumescent Fire-Retardant Paint"
+    },
+    {
+      "key": "cementitious-fireproofing",
+      "slug": "cementitious-fireproofing",
+      "label": "Cementitious Fireproofing"
+    },
+    {
+      "key": "fire-rated-wall-systems",
+      "slug": "fire-rated-wall-systems",
+      "label": "Fire-Rated Wall Systems"
+    },
+    {
+      "key": "firestop-sealants-mortars-collars",
+      "slug": "firestop-sealants-mortars-collars",
+      "label": "Firestop Sealants, Mortars & Collars"
+    },
+    {
+      "key": "fire-rated-building-panels",
+      "slug": "fire-rated-building-panels",
+      "label": "Fire-Rated Building Panels"
+    },
+    {
+      "key": "fire-rated-sandwich-panels",
+      "slug": "fire-rated-sandwich-panels",
+      "label": "Fire-Rated Sandwich Panels"
+    },
+    {
+      "key": "fire-smoke-dampers",
+      "slug": "fire-smoke-dampers",
+      "label": "Fire & Smoke Dampers"
+    },
+    {
+      "key": "volume-control-dampers",
+      "slug": "volume-control-dampers",
+      "label": "Volume Control Dampers"
+    },
+    {
+      "key": "electrical-safety",
+      "slug": "electrical-safety",
+      "label": "Electrical & Lightning Safety System"
+    },
+    {
+      "key": "lightning-protection-systems",
+      "slug": "lightning-protection-systems",
+      "label": "Lightning Protection Systems"
+    },
+    {
+      "key": "air-terminals",
+      "slug": "air-terminals",
+      "label": "Air Terminals"
+    },
+    {
+      "key": "lightning-conductors",
+      "slug": "lightning-conductors",
+      "label": "Lightning Protection Conductors"
+    },
+    {
+      "key": "down-conductors",
+      "slug": "down-conductors",
+      "label": "Down Conductors"
+    },
+    {
+      "key": "earth-electrodes",
+      "slug": "earth-electrodes",
+      "label": "Earth Electrodes"
+    },
+    {
+      "key": "earthing-accessories",
+      "slug": "earthing-accessories",
+      "label": "Earthing Accessories"
+    },
+    {
+      "key": "surge-protection-devices",
+      "slug": "surge-protection-devices",
+      "label": "Surge Protection Devices"
+    },
+    {
+      "key": "electrical-protection-accessories",
+      "slug": "electrical-protection-accessories",
+      "label": "Electrical Protection Accessories"
+    },
+    {
+      "key": "mcb-mccb",
+      "slug": "mcb-mccb",
+      "label": "MCB & MCCB"
+    },
+    {
+      "key": "rcbo-rccb",
+      "slug": "rcbo-rccb",
+      "label": "RCBO & RCCB"
+    },
+    {
+      "key": "electrical-system",
+      "slug": "electrical-system",
+      "label": "Electrical System"
+    },
+    {
+      "key": "busbar-trunking",
+      "slug": "busbar-trunking",
+      "label": "Busbar Trunking System"
+    },
+    {
+      "key": "switchgear-panels",
+      "slug": "switchgear-panels",
+      "label": "Switchgear & Panels"
+    },
+    {
+      "key": "transformers",
+      "slug": "transformers",
+      "label": "Transformers"
+    },
+    {
+      "key": "generators-power",
+      "slug": "generators-power",
+      "label": "Generators & Power Equipment"
+    },
+    {
+      "key": "solar-equipment",
+      "slug": "solar-equipment",
+      "label": "Solar Equipment"
+    },
+    {
+      "key": "building-equipment",
+      "slug": "building-equipment",
+      "label": "Building & Utility Equipment"
+    },
+    {
+      "key": "industrial-safety-equipment",
+      "slug": "industrial-safety-equipment",
+      "label": "Industrial Safety Equipment"
+    },
+    {
+      "key": "ppe-safety-wear",
+      "slug": "ppe-safety-wear",
+      "label": "PPE & Safety Wear"
+    },
+    {
+      "key": "fire-safety-tools",
+      "slug": "fire-safety-tools",
+      "label": "Fire Safety Tools & Accessories"
+    },
+    {
+      "key": "emergency-signage-lighting",
+      "slug": "emergency-signage-lighting",
+      "label": "Emergency Signage & Lighting"
+    },
+    {
+      "key": "rescue-safety-equipment",
+      "slug": "rescue-safety-equipment",
+      "label": "Rescue & Safety Equipment"
+    },
+    {
+      "key": "industrial-automation",
+      "slug": "industrial-automation",
+      "label": "Industrial Automation"
+    },
+    {
+      "key": "plc-hmi-controllers",
+      "slug": "plc-hmi-controllers",
+      "label": "PLC, HMI & Controllers"
+    },
+    {
+      "key": "variable-frequency-drives",
+      "slug": "variable-frequency-drives",
+      "label": "Variable Frequency Drives"
+    },
+    {
+      "key": "sensors-transmitters",
+      "slug": "sensors-transmitters",
+      "label": "Sensors & Transmitters"
+    },
+    {
+      "key": "instrumentation-controls",
+      "slug": "instrumentation-controls",
+      "label": "Instrumentation & Controls"
+    }
+  ],
+  "facets": {
+    "categoryCounts": {
+      "fire-protection-system": 108,
+      "fire-detection-system": 94,
+      "industrial-safety-equipment": 28,
+      "electrical-system": 27,
+      "fire-rated-doors": 22,
+      "industrial-automation": 22,
+      "passive-fire-protection": 3,
+      "electrical-safety": 1
+    },
+    "subcategoryCounts": {
+      "fire-protection-system :: fire-protection-valves": 32,
+      "fire-detection-system :: fire-alarm-panels": 21,
+      "fire-protection-system :: fire-hydrant-accessories": 18,
+      "fire-rated-doors :: fire-door-hardware": 18,
+      "fire-protection-system :: fire-fighting-pumps": 17,
+      "fire-detection-system :: input-output-modules": 16,
+      "fire-detection-system :: sounders-notification": 15,
+      "fire-protection-system :: fire-sprinkler-systems": 13,
+      "industrial-safety-equipment :: fire-safety-tools": 12,
+      "fire-protection-system :: fire-extinguishers": 11,
+      "fire-protection-system :: fire-suppression-systems": 11,
+      "industrial-automation :: sensors-transmitters": 10,
+      "electrical-system :: busbar-trunking": 9,
+      "fire-detection-system :: smoke-detectors": 9,
+      "electrical-system :: solar-equipment": 8,
+      "fire-detection-system :: manual-call-points": 8,
+      "industrial-safety-equipment :: ppe-safety-wear": 8,
+      "fire-detection-system :: control-panels": 7,
+      "fire-detection-system :: multi-sensor-detectors": 7,
+      "fire-detection-system :: heat-detectors": 6,
+      "fire-protection-system :: pipes-fittings-accessories": 6,
+      "industrial-automation :: plc-hmi-controllers": 5,
+      "industrial-safety-equipment :: rescue-safety-equipment": 5,
+      "electrical-system :: switchgear-panels": 4,
+      "industrial-automation :: instrumentation-controls": 4,
+      "electrical-system :: building-equipment": 3,
+      "industrial-automation :: variable-frequency-drives": 3,
+      "industrial-safety-equipment :: emergency-signage-lighting": 3,
+      "passive-fire-protection :: firestop-sealants-mortars-collars": 3,
+      "electrical-system :: generators-power": 2,
+      "fire-detection-system :: fire-alarm-cables": 2,
+      "fire-rated-doors :: steel-fire-doors": 2,
+      "electrical-safety :: lightning-protection-systems": 1,
+      "electrical-system :: transformers": 1,
+      "fire-detection-system :: addressable-modules": 1,
+      "fire-detection-system :: beam-detectors": 1,
+      "fire-detection-system :: notification-devices": 1,
+      "fire-rated-doors :: fire-door-frames": 1,
+      "fire-rated-doors :: fire-smoke-curtains": 1
+    },
+    "availabilityCounts": {
+      "inquiry-required": 305
+    },
+    "topBrands": [
+      [
+        "(missing)",
+        242
+      ],
+      [
+        "NAFFCO",
+        12
+      ],
+      [
+        "EAE",
+        6
+      ],
+      [
+        "NOTIFIER",
+        4
+      ],
+      [
+        "LS",
+        3
+      ],
+      [
+        "Maple Armor",
+        3
+      ],
+      [
+        "Weishaupt",
+        3
+      ],
+      [
+        "Hochiki",
+        2
+      ],
+      [
+        "Honeywell",
+        2
+      ],
+      [
+        "Patterson",
+        2
+      ],
+      [
+        "Potter",
+        2
+      ],
+      [
+        "3M",
+        1
+      ],
+      [
+        "ABB",
+        1
+      ],
+      [
+        "Allen-Bradley",
+        1
+      ],
+      [
+        "Crown",
+        1
+      ],
+      [
+        "D&D",
+        1
+      ],
+      [
+        "FRD",
+        1
+      ],
+      [
+        "Kilargo",
+        1
+      ],
+      [
+        "Kunshan",
+        1
+      ],
+      [
+        "Likcoo",
+        1
+      ],
+      [
+        "Metacaulk",
+        1
+      ],
+      [
+        "NAFFCO (authorized distributor stated by source)",
+        1
+      ],
+      [
+        "National Motors",
+        1
+      ],
+      [
+        "Notifier",
+        1
+      ],
+      [
+        "Prowell",
+        1
+      ],
+      [
+        "Runner",
+        1
+      ],
+      [
+        "SETEX",
+        1
+      ],
+      [
+        "Shield",
+        1
+      ],
+      [
+        "SISEN",
+        1
+      ],
+      [
+        "Strong Chung",
+        1
+      ],
+      [
+        "Tyco",
+        1
+      ],
+      [
+        "Vaisala",
+        1
+      ],
+      [
+        "Viking",
+        1
+      ],
+      [
+        "Yaskawa",
+        1
+      ],
+      [
+        "Zilly",
+        1
+      ]
+    ]
+  },
+  "images": {
+    "localRefCount": 13,
+    "externalRefCount": 292,
+    "missingRefCount": 0,
+    "externalHosts": {
+      "www.nesbd.com": 136,
+      "ptel.com.bd": 156
+    },
+    "missingSample": [],
+    "localAssetExtCounts": {
+      "png": 2,
+      "jpg": 7,
+      "webp": 30,
+      "svg": 1
+    }
+  },
+  "duplicates": {
+    "duplicateIds": [],
+    "duplicateSlugs": [],
+    "duplicateNames": [
+      {
+        "name": "flow meter",
+        "count": 2
+      },
+      {
+        "name": "proximity sensors",
+        "count": 2
+      }
+    ]
+  },
+  "certTokensFromExistingFields": [
+    "FM",
+    "FM-200",
+    "LPCB",
+    "NFPA",
+    "NFPA-compliant",
+    "UL",
+    "UL-listed",
+    "UL/FM"
+  ],
+  "samples12": [
+    {
+      "id": "diesel-engine-fire-pump-set",
+      "slug": "diesel-engine-fire-pump-set",
+      "name": "Diesel Engine Fire Pump Set",
+      "category": "fire-protection-system",
+      "subcategory": "fire-fighting-pumps",
+      "brand": "Patterson",
+      "model": "VDF-150",
+      "availability": "inquiry-required",
+      "image": "/images/products/fire-protection/patterson-vdf-150.png",
+      "imageHost": "local",
+      "shortDescription": "High-pressure diesel fire pump with controller.",
+      "description": "High-pressure diesel fire pump with controller for reliable water supply during power failure. Compliant with NFPA 20 standards.",
+      "specCount": 4,
+      "featured": true
+    },
+    {
+      "id": "conventional-fire-alarm-panel",
+      "slug": "conventional-fire-alarm-panel",
+      "name": "Conventional Fire Alarm Panel",
+      "category": "fire-detection-system",
+      "subcategory": "fire-alarm-panels",
+      "brand": "Hochiki",
+      "model": "CHQ-ZC",
+      "availability": "inquiry-required",
+      "image": "/images/products/fire-detection/hochiki-chq-zc.png",
+      "imageHost": "local",
+      "shortDescription": "Conventional zone-based fire alarm panel for small to medium installations.",
+      "description": "Conventional zone-based fire alarm panel for small to medium installations.",
+      "specCount": 4,
+      "featured": false
+    },
+    {
+      "id": "addressable-fire-alarm-control-panel",
+      "slug": "addressable-fire-alarm-control-panel",
+      "name": "Addressable Fire Alarm Control Panel",
+      "category": "fire-detection-system",
+      "subcategory": "fire-alarm-panels",
+      "brand": "Notifier",
+      "model": "NFS2-3030",
+      "availability": "inquiry-required",
+      "image": "/images/products/fire-detection/notifier-nfs2-3030.jpg",
+      "imageHost": "local",
+      "shortDescription": "Intelligent fire alarm control panel with loop-based device management.",
+      "description": "Intelligent fire alarm control panel with loop-based device management and real-time event monitoring.",
+      "specCount": 5,
+      "featured": true
+    },
+    {
+      "id": "nesbd-automatic-fire-curtain-33",
+      "slug": "automatic-fire-curtain",
+      "name": "Automatic Fire Curtain",
+      "category": "fire-rated-doors",
+      "subcategory": "fire-smoke-curtains",
+      "brand": null,
+      "model": null,
+      "availability": "inquiry-required",
+      "image": "https://www.nesbd.com/images/products/automatic_fire_curtain_c0ffcc3534bfdea411ad62d95b4e4d05.jpg",
+      "imageHost": "www.nesbd.com",
+      "shortDescription": "Automatic fire curtain for compartmentation/openings.",
+      "description": "Automatic fire curtain as listed by source. Confirm fire rating, size, controls, and approvals per project. (Source: nesbd.com)",
+      "specCount": 0,
+      "featured": false
+    },
+    {
+      "id": "nesbd-intumescent-firestop-sealant-207",
+      "slug": "intumescent-firestop-sealant",
+      "name": "Intumescent Firestop Sealant",
+      "category": "passive-fire-protection",
+      "subcategory": "firestop-sealants-mortars-collars",
+      "brand": null,
+      "model": null,
+      "availability": "inquiry-required",
+      "image": "https://www.nesbd.com/images/products/intumescent_firestop_sealant_cbf31c7c7d51f8535bd33f639ec38fd6.jpg",
+      "imageHost": "www.nesbd.com",
+      "shortDescription": "Intumescent firestop sealant for penetration/joint sealing.",
+      "description": "Intumescent firestop sealant as listed by source. Confirm tested system, fire rating, and application details per project. (Source: nesbd.co",
+      "specCount": 0,
+      "featured": false
+    },
+    {
+      "id": "nesbd-lightning-protection-system-lps-242",
+      "slug": "lightning-protection-system-lps",
+      "name": "Lightning Protection System (LPS)",
+      "category": "electrical-safety",
+      "subcategory": "lightning-protection-systems",
+      "brand": null,
+      "model": "LPS",
+      "availability": "inquiry-required",
+      "image": "https://www.nesbd.com/images/products/lightning_protection_system_lps_a87832eb2e695c2e34513d154020f6a1.jpg",
+      "imageHost": "www.nesbd.com",
+      "shortDescription": "Lightning protection system components/solution (as listed).",
+      "description": "Lightning Protection System (LPS) as listed by source. Confirm components, standard (e.g., IEC/NFPA as applicable), earthing design, and app",
+      "specCount": 0,
+      "featured": false
+    },
+    {
+      "id": "nesbd-air-compressor-001-15",
+      "slug": "air-compressor-001",
+      "name": "Air Compressor 001",
+      "category": "electrical-system",
+      "subcategory": "building-equipment",
+      "brand": null,
+      "model": "001",
+      "availability": "inquiry-required",
+      "image": "https://www.nesbd.com/images/products/air_compressor_001_7194624fe6cbbfe17adcec36c716b981.jpg",
+      "imageHost": "www.nesbd.com",
+      "shortDescription": "Air compressor equipment (as listed by source).",
+      "description": "Air compressor as listed by source. Confirm capacity, pressure, motor, and application suitability per project. (Source: nesbd.com)",
+      "specCount": 0,
+      "featured": false
+    },
+    {
+      "id": "nesbd-fire-safety-hand-gloves-14",
+      "slug": "fire-safety-hand-gloves",
+      "name": "Fire Safety Hand Gloves",
+      "category": "industrial-safety-equipment",
+      "subcategory": "ppe-safety-wear",
+      "brand": null,
+      "model": null,
+      "availability": "inquiry-required",
+      "image": "https://www.nesbd.com/images/products/fire_safety_hand_gloves_a2c9dd7a1ad029d3fe525528d46c50b5.jpg",
+      "imageHost": "www.nesbd.com",
+      "shortDescription": "Fire safety hand gloves (as listed).",
+      "description": "Fire safety hand gloves as listed by source. Confirm material, rating, size, and applicable safety standards per project. (Source: nesbd.com",
+      "specCount": 0,
+      "featured": false
+    },
+    {
+      "id": "nesbd-plc-system-16",
+      "slug": "plc-system",
+      "name": "PLC System",
+      "category": "industrial-automation",
+      "subcategory": "plc-hmi-controllers",
+      "brand": null,
+      "model": null,
+      "availability": "inquiry-required",
+      "image": "https://www.nesbd.com/images/products/electronics_system_ab2d31c6e7936a6eaf808cb931ea22f8.jpg",
+      "imageHost": "www.nesbd.com",
+      "shortDescription": "PLC system (as listed by source).",
+      "description": "PLC system as listed by source. Confirm CPU, I/O, communication, and application requirements per project. (Source: nesbd.com)",
+      "specCount": 0,
+      "featured": false
+    },
+    {
+      "id": "nesbd-open-drip-proof-motor-6",
+      "slug": "open-drip-proof-motor",
+      "name": "Open Drip Proof Motor",
+      "category": "fire-protection-system",
+      "subcategory": "fire-fighting-pumps",
+      "brand": "National Motors",
+      "model": "NM",
+      "availability": "inquiry-required",
+      "image": "https://www.nesbd.com/images/products/open_drip_proof_motor_cec17df5f7a2f0f644c514af42f7d437.jpg",
+      "imageHost": "www.nesbd.com",
+      "shortDescription": "Open drip proof motor for fire pump applications.",
+      "description": "Three-phase horizontal low-voltage squirrel-cage induction motor for fire pump applications, described for use in accordance with NFPA 20 re",
+      "specCount": 0,
+      "featured": false
+    },
+    {
+      "id": "nesbd-heat-exchanger-engine-21",
+      "slug": "heat-exchanger-engine",
+      "name": "Heat Exchanger Engine",
+      "category": "fire-protection-system",
+      "subcategory": "fire-fighting-pumps",
+      "brand": null,
+      "model": null,
+      "availability": "inquiry-required",
+      "image": "https://www.nesbd.com/images/products/heat_exchanger_engine_04c7d40bc894e087047ff8eb1822790b.jpg",
+      "imageHost": "www.nesbd.com",
+      "shortDescription": "Heat exchanger engine for diesel fire pump applications.",
+      "description": "Heat exchanger engine component used in diesel-driven fire pump systems. (Source: nesbd.com)",
+      "specCount": 0,
+      "featured": false
+    },
+    {
+      "id": "electric-motor-driven-fire-pump",
+      "slug": "electric-motor-driven-fire-pump",
+      "name": "Electric Motor Driven Fire Pump",
+      "category": "fire-protection-system",
+      "subcategory": "fire-fighting-pumps",
+      "brand": "Patterson",
+      "model": "VEF-200",
+      "availability": "inquiry-required",
+      "image": "/images/products/fire-protection/patterson-vef-200.webp",
+      "imageHost": "local",
+      "shortDescription": "Electric fire pump with UL-listed motor and controller.",
+      "description": "Electric fire pump with UL-listed motor and controller for reliable water supply in fire protection systems.",
+      "specCount": 4,
+      "featured": true
+    }
+  ],
+  "issues": [
+    "duplicate names (case-insensitive): 2",
+    "image refs: 13 local, 292 external, 0 missing/null",
+    "brand missing: 242; model missing: 262"
+  ]
+}
