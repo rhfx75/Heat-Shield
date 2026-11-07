@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { useVisibilityFallback } from './useVisibilityFallback'
+import { COMPANY_LOGO, COMPANY_LOGO_ALT } from '../../config/brandAssets'
 
 export default function HeroShieldAssemble() {
   const wrap = useRef<HTMLDivElement>(null)
@@ -51,7 +52,7 @@ export default function HeroShieldAssemble() {
       </div>
       <span className="hse-ab-shield-glow" aria-hidden="true" />
       <span className="hse-ab-shield-glow hse-ab-shield-glow--outer" aria-hidden="true" />
-      <img src="/images/heatshield-logo.png" alt="Safron Technology logo" className="hse-ab-shield-logo" data-ab-animate width="520" height="520" loading="eager" decoding="async" />
+      <img src={COMPANY_LOGO} alt={COMPANY_LOGO_ALT} className="hse-ab-shield-logo" data-ab-animate width="520" height="520" loading="eager" decoding="async" />
       <svg className="hse-ab-shield-fx" viewBox="0 0 360 420" aria-hidden="true" focusable="false">
         <circle className="hse-ab-shock" cx="180" cy="210" r="36" fill="none" stroke="rgba(255,255,255,.55)" />
       </svg>

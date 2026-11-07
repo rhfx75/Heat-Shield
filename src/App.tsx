@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+﻿import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { MainLayout } from './layouts/MainLayout'
 import { Home } from './pages/Home'
 import { About } from './pages/About'
@@ -13,6 +13,7 @@ import { Brands } from './pages/Brands'
 import { BrandDetail } from './pages/BrandDetail'
 import { Resources } from './pages/Resources'
 import { Contact } from './pages/Contact'
+import StandardsPage from './pages/Standards/StandardsPage'
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
           <Route path="products/electrical-safety" element={<Products category="electrical-safety" />} />
           <Route path="products/:slug" element={<ProductDetail />} />
           <Route path="product-catalogues" element={<ProductCatalogues />} />
+          <Route path="standards" element={<StandardsPage />} />
           <Route path="projects" element={<Projects />} />
           <Route path="projects/:id" element={<ProjectDetail />} />
           <Route path="brands" element={<Brands />} />
@@ -44,3 +46,4 @@ function App() {
 }
 
 export default App
+

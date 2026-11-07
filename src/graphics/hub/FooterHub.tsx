@@ -4,6 +4,7 @@ import { company, isOpenNow, mailHref, telHref, whatsappLink } from '../../data/
 import { services } from '../../data/services';
 import { BlueprintSheet } from '../hub/BlueprintSheet';
 import { hubIcons } from '../icons/hub-icons';
+import { COMPANY_LOGO, COMPANY_LOGO_ALT } from '../../config/brandAssets';
 import '../hub/hub.css';
 
 function useProgress() {
@@ -50,7 +51,7 @@ export function FooterHub() {
       <div className="hse-hub-footer__wrap">
         <div className="hse-hub-bento">
           <article className="hse-hub-card hse-hub-span-5">
-            <img src="/images/heatshield-logo.png" alt={`${company.name} logo`} width="180" height="60" loading="lazy" style={{ maxWidth: 180, height: 'auto', display: 'block' }} />
+            <img src={COMPANY_LOGO} alt={COMPANY_LOGO_ALT} width="180" height="60" loading="lazy" style={{ maxWidth: 180, height: 'auto', display: 'block' }} />
             <p style={{ margin: '14px 0 0', color: 'var(--hse-text-secondary)' }}>
               {company.name} delivers fire detection, fire protection, electrical safety and industrial utility solutions across Bangladesh.
             </p>

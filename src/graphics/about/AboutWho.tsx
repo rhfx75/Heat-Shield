@@ -3,10 +3,11 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import DrawSVGPlugin from 'gsap/DrawSVGPlugin'
 import { useVisibilityFallback } from './useVisibilityFallback'
+import { COMPANY_NAME } from '../../config/brandAssets'
 
 gsap.registerPlugin(ScrollTrigger, DrawSVGPlugin)
 
-const WHO_TEXT = 'SAFRON TECHNOLOGY is a Bangladesh-based engineering solutions provider specializing in fire safety, fire protection, electrical safety, and industrial technology services.'
+const WHO_TEXT = `${COMPANY_NAME} is a Bangladesh-based engineering solutions provider specializing in fire safety, fire protection, electrical safety, and industrial technology services.`
 const MARKS = ['fire safety', 'fire protection', 'electrical safety']
 
 function marked(text: string) {

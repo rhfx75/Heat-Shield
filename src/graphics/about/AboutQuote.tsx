@@ -1,3 +1,4 @@
+import { COMPANY_LOGO, COMPANY_NAME } from '../../config/brandAssets'
 import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -35,9 +36,9 @@ export default function AboutQuote() {
         </blockquote>
         <div className="hse-ab-quote__badge" aria-hidden="true">
           <span className="hse-ab-quote__ring" />
-          <img src="/images/heatshield-logo.png" alt="" width="88" height="88" loading="lazy" />
+          <img src={COMPANY_LOGO} alt="" width="88" height="88" loading="lazy" />
         </div>
-        <p className="hse-ab-quote__loc">SAFRON TECHNOLOGY — Dhaka, Bangladesh</p>
+        <p className="hse-ab-quote__loc">{COMPANY_NAME} — Dhaka, Bangladesh</p>
       </div>
       <div className="hse-ab-marquee" aria-label={MARQUEE}>
         <div className="hse-ab-marquee__track" aria-hidden="true">

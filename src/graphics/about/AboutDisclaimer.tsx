@@ -1,6 +1,6 @@
 ﻿import { rsc } from '../../data/rsc'
 
-// TODO(confirm): Confirm that this disclaimer reflects Safron Technology's actual legal position.
+// TODO(confirm): Confirm that this disclaimer reflects this company's actual legal position.
 export default function AboutDisclaimer() {
   return (
     <section id="about-disclaimer" className="hse-ab-section" data-surface="pale" aria-labelledby="about-disclaimer-title" style={{ paddingTop: 28, paddingBottom: 28 }}>

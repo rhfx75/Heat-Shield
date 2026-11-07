@@ -1,9 +1,9 @@
-import { Outlet, useLocation } from 'react-router-dom'
+﻿import { Outlet, useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
-import { AnimatePresence, motion } from 'framer-motion'
 import { Navbar } from '../components/Navbar'
 import { FooterStandard } from '../graphics/footer/FooterStandard'
 import { CustomCursor } from '../components/ui/custom-cursor'
+import { ErrorBoundary } from '../components/ErrorBoundary'
 
 export function MainLayout() {
   const location = useLocation()
@@ -19,18 +19,12 @@ export function MainLayout() {
     <div className="min-h-screen flex flex-col bg-white text-hse-text">
       <CustomCursor />
       <Navbar />
-      <main className="flex-grow pt-[var(--header-h)]">
-        <AnimatePresence mode="wait">
-            <motion.div
-            key="page"
-            initial={{ opacity: 1, y: 0 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0 }}
-            className="min-h-[calc(100vh-var(--header-h))]"
-          >
+      <main className="flex-grow">
+        <ErrorBoundary>
+          <div key={location.pathname} className={location.pathname === '/' ? 'min-h-[calc(100vh-var(--header-h))]' : 'pt-[var(--header-h)] min-h-[calc(100vh-var(--header-h))]'}>
             <Outlet />
-          </motion.div>
-        </AnimatePresence>
+          </div>
+        </ErrorBoundary>
       </main>
       <FooterStandard />
     </div>

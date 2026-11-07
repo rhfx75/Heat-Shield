@@ -1,33 +1,31 @@
-﻿export type CompanyHours = { days: string; open: string; close: string; tz: string; openDays: number[] };
+import { CONTACT } from '../config/contact';
+
+export type CompanyHours = { days: string; open: string; close: string; tz: string; openDays: number[] };
 
 export const company = {
-  name: 'Heat Shield Engineering',
+  name: CONTACT.company,
   shortName: 'HSE',
   tagline: 'Fire Detection | Fire Protection | Utility Products',
   taglines: [
     'Fire Detection | Fire Protection | Utility Products',
     'Sales | Installation | Maintenance',
   ],
-  phones: [
-    { label: 'Phone', display: '01788585741', tel: '+8801788585741' },
-  ],
+  phones: CONTACT.phones.map((p) => ({ label: p.label, display: p.display, tel: p.tel })),
   whatsapp: {
-    digits: '8801788585741',
-    display: '+880 1788-585741',
+    digits: '8801954823265',
+    display: CONTACT.phones[0].display,
+    url: CONTACT.whatsapp,
   },
-  emails: [
-    { label: 'Email', address: 'heatshieldengineering01@gmail.com' },
-  ],
+  emails: [{ label: 'Email', address: CONTACT.email }],
   address: {
-    lines: ['House-12, Road-04, Block-C', 'Banani, Dhaka-1213'],
-    oneLine: 'House-12, Road-04, Block-C, Banani, Dhaka-1213',
-    country: 'Bangladesh',
+    lines: [CONTACT.address.street, `${CONTACT.address.city} ${CONTACT.address.postalCode}`],
+    oneLine: CONTACT.addressLine,
+    country: CONTACT.address.country,
   },
-  mapUrl: 'https://www.google.com/maps/search/?api=1&query=House-12%2C+Road-04%2C+Block-C%2C+Banani%2C+Dhaka-1213',
-  mapEmbedUrl:
-    'https://www.google.com/maps?q=House-12%2C+Road-04%2C+Block-C%2C+Banani%2C+Dhaka-1213&output=embed',
+  mapUrl: CONTACT.mapsUrl,
+  mapEmbedUrl: `https://www.google.com/maps?q=${encodeURIComponent(CONTACT.addressLine)}&output=embed`,
   hours: {
-    days: 'Satâ€“Thu',
+    days: 'Sat–Thu',
     open: '09:00',
     close: '18:00',
     tz: 'Asia/Dhaka',
@@ -44,15 +42,14 @@ export const company = {
 } as const;
 
 export function whatsappLink(message?: string) {
-  const base = `https://wa.me/${company.whatsapp.digits}`;
-  return message ? `${base}?text=${encodeURIComponent(message)}` : base;
+  return message ? `${CONTACT.whatsapp}?text=${encodeURIComponent(message)}` : CONTACT.whatsapp;
 }
 
-export function telHref(tel = company.phones[0]?.tel || '') {
+export function telHref(tel: string = CONTACT.phones[0]?.tel || '') {
   return `tel:${tel.replace(/\s+/g, '')}`;
 }
 
-export function mailHref(email = company.emails[0]?.address || '') {
+export function mailHref(email: string = CONTACT.email) {
   return `mailto:${email}`;
 }
 

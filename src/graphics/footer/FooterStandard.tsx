@@ -2,9 +2,11 @@ import { useEffect, useState, type ReactNode } from 'react'
 import { createPortal } from 'react-dom'
 import { Link } from 'react-router-dom'
 import { Clock, Mail, MapPin, Phone } from 'lucide-react'
-import { company, isOpenNow, mailHref, telHref, whatsappLink } from '../../data/company'
+import { CONTACT } from '../../config/contact'
+import { company, isOpenNow, mailHref, whatsappLink } from '../../data/company'
 import { services } from '../../data/services'
 import { FacebookIcon, LinkedInIcon, MailIcon, WhatsAppIcon, YouTubeIcon } from '../icons/SocialIcons'
+import { COMPANY_LOGO, COMPANY_LOGO_ALT } from '../../config/brandAssets'
 import './footer.css'
 
 const COMPANY_LINKS = [
@@ -77,14 +79,14 @@ function MapModal({ onClose }: { onClose: () => void }) {
     <div className="hse-ft-modal" role="presentation" onMouseDown={(e) => { if (e.target === e.currentTarget) onClose() }}>
       <div className="hse-ft-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="hse-ft-map-title" data-hse-ft-modal="true">
         <div className="hse-ft-modal__head">
-          <h3 id="hse-ft-map-title">Heat Shield Engineering Location</h3>
+          <h3 id="hse-ft-map-title">Heat Shield Engineering location</h3>
           <button type="button" className="hse-ft-modal__close" data-hse-ft-close="true" onClick={onClose} aria-label="Close map">Close</button>
         </div>
         <div className="hse-ft-modal__body">
           <iframe title={`${company.name} map`} src={company.mapEmbedUrl} loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
         </div>
         <div className="hse-ft-modal__foot">
-          <a className="hse-ft-modal__dir" href={company.mapUrl} target="_blank" rel="noopener noreferrer">Get Directions</a>
+          <a className="hse-ft-modal__dir" href={company.mapUrl} target="_blank" rel="noopener noreferrer">Get directions</a>
         </div>
       </div>
     </div>,
@@ -115,8 +117,9 @@ export function FooterStandard() {
             <p>Talk to our engineers for a site assessment and quotation.</p>
           </div>
           <div className="hse-ft-cta__actions">
-            <Link to="/contact" className="hse-ft-btn hse-ft-btn--quote">Request a Quote</Link>
-            <a href={whatsappLink(`Hello ${company.name}, I would like a site assessment and quotation.`)} target="_blank" rel="noopener noreferrer" className="hse-ft-btn hse-ft-btn--wa">WhatsApp</a>
+            <Link to="/contact" className="hse-ft-btn hse-ft-btn--quote">Request a quote</Link>
+            <a href={CONTACT.whatsapp} target="_blank" rel="noopener noreferrer" className="hse-ft-btn hse-ft-btn--wa" aria-label={`WhatsApp ${CONTACT.company}`}>WhatsApp</a>
+            {CONTACT.phones[0] ? <a href={`tel:${CONTACT.phones[0].tel}`} className="hse-ft-cta__phone" style={{whiteSpace:'nowrap'}} aria-label={`Call ${CONTACT.company} ${CONTACT.phones[0].display}`}>{CONTACT.phones[0].display}</a> : null}
           </div>
         </div>
       </section>
@@ -125,7 +128,7 @@ export function FooterStandard() {
         <div className="hse-ft__wrap">
           <div className="hse-ft__grid">
             <div className="hse-ft__col hse-ft__brand">
-              <img src="/images/heatshield-logo.png" alt={`${company.name} logo`} width="220" height="56" loading="lazy" />
+              <img src={COMPANY_LOGO} alt={COMPANY_LOGO_ALT} width="220" height="56" loading="lazy" />
               <p className="hse-ft__desc">Fire detection, fire protection, electrical safety and industrial engineering across Bangladesh.</p>
               <div className="hse-ft__social" aria-label="Social links">
                 {socials.map(({ key, href, label, Icon, external }) => (
@@ -140,13 +143,15 @@ export function FooterStandard() {
             <section className="hse-ft__col" aria-label="Contact">
               <FooterHeading>Contact</FooterHeading>
               <ul className="hse-ft__contact">
-                {company.phones[0] && <li><Phone className="hse-ft__icon" size={16} aria-hidden="true" /><a href={telHref(company.phones[0].tel)}>{company.phones[0].display}</a></li>}
-                {company.emails[0] && <li><Mail className="hse-ft__icon" size={16} aria-hidden="true" /><a href={mailHref(company.emails[0].address)}>{company.emails[0].address}</a></li>}
-                <li><MapPin className="hse-ft__icon" size={16} aria-hidden="true" /><span>{company.address.oneLine}, {company.address.country}</span></li>
+                {CONTACT.phones.map((p) => (
+                  <li key={p.tel}><Phone className="hse-ft__icon" size={16} aria-hidden="true" /><a href={`tel:${p.tel}`} style={{whiteSpace:'nowrap'}} aria-label={`Call ${CONTACT.company} ${p.label} ${p.display}`}><span style={{fontWeight:600}}>{p.label}:</span> {p.display}</a></li>
+                ))}
+                <li><Mail className="hse-ft__icon" size={16} aria-hidden="true" /><a href={`mailto:${CONTACT.email}`} className="hse-ft__contact-text"><span>{CONTACT.email.split('@')[0]}@</span><wbr /><span>{CONTACT.email.split('@')[1] || ''}</span></a></li>
+                <li><MapPin className="hse-ft__icon" size={16} aria-hidden="true" /><a href={CONTACT.mapsUrl} target="_blank" rel="noopener noreferrer" className="hse-ft__contact-text">{CONTACT.addressLine}</a></li>
                 <li>
                   <Clock className="hse-ft__icon" size={16} aria-hidden="true" />
                   <div>
-                    <div><span>{company.hours.days}: {company.hours.open} AM – 6:00 PM</span></div>
+                    <div><span>Sat-Thu: 09:00 AM - 6:00 PM</span></div>
                     <div className={`hse-ft__status${open ? '' : ' is-closed'}`}><span className="hse-ft__status-dot" aria-hidden="true" /><span className="hse-ft__status-text" data-open="Open now" data-closed="Closed" aria-label={open ? 'Open now' : 'Closed'} /></div>
                     <button type="button" className="hse-ft__maplink" onClick={() => setMapOpen(true)}>View on map</button>
                   </div>

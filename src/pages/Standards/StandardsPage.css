@@ -1,0 +1,29 @@
+﻿.hse-st{background:#fff;color:#0a1e3f;padding:56px 0 80px}
+.hse-st__wrap{max-width:1240px;margin:0 auto;padding:0 24px}
+.hse-st__crumb{font:400 14px/1.4 Inter,system-ui,sans-serif;color:#5b6b85;margin:0 0 18px}
+.hse-st__crumb a{color:#5b6b85;text-decoration:underline;text-underline-offset:3px}
+.hse-st__crumb a:hover{color:#0a1e3f}
+.hse-st__crumb a:focus-visible{outline:3px solid #0b4fc4;outline-offset:2px;border-radius:4px}
+.hse-st__head{margin:0 0 28px}
+.hse-st__bar{width:40px;height:3px;background:#e63a2e;margin:0 0 12px}
+.hse-st__head h1{margin:0;font:700 clamp(34px,5vw,56px)/1.05 "Barlow Condensed","Montserrat",sans-serif;color:#0a1e3f}
+.hse-st__head p{margin:12px 0 0;color:#5b6b85;font:400 16px/1.6 Inter,system-ui,sans-serif;max-width:60ch}
+.hse-st__grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:24px}
+.hse-st__card{background:#fff;border:1px solid #dde3ee;border-radius:14px;padding:24px;box-shadow:0 6px 20px rgba(10,30,63,.08);transition:border-color .4s ease,box-shadow .4s ease;scroll-margin-top:110px}
+.hse-st__card:focus-visible{outline:3px solid #0b4fc4;outline-offset:2px}
+.hse-st__card.is-highlight{border-color:#0b4fc4;box-shadow:0 0 0 4px rgba(11,79,196,.18),0 6px 20px rgba(10,30,63,.08)}
+.hse-st__card.is-fading{transition:border-color .4s ease,box-shadow .4s ease}
+.hse-st__plate{height:130px;background:#eef2f9;border-radius:10px;display:grid;place-items:center;margin:0 0 14px;padding:12px}
+.hse-st__img{max-height:80px;max-width:80%;width:auto;height:auto;object-fit:contain;display:block}
+.hse-st__img--jpg{mix-blend-mode:multiply}
+.hse-st__short{margin:0;font:700 22px/1.1 "Barlow Condensed","Montserrat",sans-serif;color:#0a1e3f}
+.hse-st__full{margin:8px 0 0;font:400 16px/1.4 Inter,system-ui,sans-serif;color:#0a1e3f}
+.hse-st__desc{margin:10px 0 0;font:400 15px/1.6 Inter,system-ui,sans-serif;color:#5b6b85}
+.hse-st__site{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:0 14px;margin-top:14px;border:1px solid #0b4fc4;border-radius:10px;color:#0b4fc4;text-decoration:none;font:600 14px/1 Inter,system-ui,sans-serif}
+.hse-st__site:hover{background:rgba(11,79,196,.06)}
+.hse-st__site:focus-visible{outline:3px solid #0b4fc4;outline-offset:2px}
+.hse-st__note{margin:28px 0 0;font:400 14px/1.6 Inter,system-ui,sans-serif;color:#5b6b85;max-width:70ch}
+.hse-st__note a{color:#0b4fc4;text-decoration:underline;text-underline-offset:3px}
+.hse-st__note a:focus-visible{outline:3px solid #0b4fc4;outline-offset:2px;border-radius:4px}
+@media (max-width:360px){.hse-st__grid{grid-template-columns:1fr}.hse-st__wrap{padding:0 16px}}
+@media (prefers-reduced-motion:reduce){.hse-st__card{transition:none}.hse-st__card.is-fading{transition:none}}

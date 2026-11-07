@@ -112,7 +112,7 @@ export interface CatalogueDocument {
 }
 
 export const whatsAppConfig: WhatsAppConfig = {
-  number: '8801788585741',
+  number: '8801954823265', // keep in sync with src/config/contact.ts
   messageTemplate: (productName: string) =>
     `Hello HEAT SHIELD ENGINEERING, I would like to request a quotation for ${productName}. Please share the price, specifications, availability, and delivery details.`,
 }
@@ -3737,3 +3737,36 @@ products.forEach((p) => {
   }
 })
 
+
+// -- image helper (additive; preserves existing product records/wording) --
+export type ProductImageSize = 480 | 960;
+const PRODUCT_PLACEHOLDER = '/images/products/placeholder-product.svg';
+function isUsableSrc(img: string | null | undefined): img is string {
+  return typeof img === 'string' && img.trim().length > 0;
+}
+export function productImage(product: Pick<Product, 'image'> | { image?: string | null } | null | undefined, size: ProductImageSize = 960): string {
+  const img = product?.image ?? null;
+  if (!isUsableSrc(img)) return PRODUCT_PLACEHOLDER;
+  const s = img.trim();
+  if (s.startsWith('data:') || s.startsWith('blob:') || /^https?:\/\//i.test(s)) return s;
+  const rel = s.replace(/^\/+/, '');
+  if (!rel.startsWith('images/products/')) return s.startsWith('/') ? s : `/${s}`;
+  const base = rel.replace(/^images\/products\/?/i, '').replace(/[\\/:*?"<>|]+/g, '-').replace(/\s+/g, '-').replace(/\.(png|jpe?g|webp|avif)$/i, '');
+  return `/images/products/thumbs/${base}-${size}.webp`;
+}
+export function productImageSrcSet(product: Pick<Product, 'image'> | { image?: string | null } | null | undefined): string | undefined {
+  const img = product?.image ?? null;
+  if (!isUsableSrc(img)) return undefined;
+  const s = img.trim();
+  if (s.startsWith('data:') || s.startsWith('blob:') || /^https?:\/\//i.test(s)) return undefined;
+  const rel = s.replace(/^\/+/, '');
+  if (!rel.startsWith('images/products/')) return undefined;
+  return `${productImage(product, 480)} 480w, ${productImage(product, 960)} 960w`;
+}
+export function productImageOriginal(product: Pick<Product, 'image'> | { image?: string | null } | null | undefined): string {
+  const img = product?.image ?? null;
+  if (!isUsableSrc(img)) return PRODUCT_PLACEHOLDER;
+  const s = img.trim();
+  if (s.startsWith('data:') || s.startsWith('blob:') || /^https?:\/\//i.test(s)) return s;
+  return s.startsWith('/') ? s : `/${s}`;
+}
