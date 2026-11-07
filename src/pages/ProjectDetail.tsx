@@ -61,7 +61,7 @@ export function ProjectDetail() {
           <path d="M0 30 Q 360 0 720 30 T 1440 30 V60 H0 Z" fill="var(--hse-surface,#F7F9FC)" />
         </svg>
 
-        <div className="relative z-10 container section pt-[calc(var(--header-h)+64px)] pb-24 text-center">
+        <div className="relative z-10 container section pt-16 pb-24 text-center">
           <Link to="/projects" className="project-back-link">
             ← Back to Projects
           </Link>

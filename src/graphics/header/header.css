@@ -1,7 +1,7 @@
 
 /* ===== Header (hse-header) — scoped, light-only, opaque sticky navbar ===== */
 :root{--hse-topbar-h:36px;--hse-navbar-h:80px;--header-h:calc(var(--hse-topbar-h) + var(--hse-navbar-h));--navbar-height:var(--header-h)}
-html{scroll-padding-top:calc(var(--header-h) + 16px)}
+html{scroll-padding-top:var(--header-h)}
 .hse-header{position:relative;z-index:1000}
 .hse-header__container{max-width:1240px;margin:0 auto;padding:0 24px;width:100%}
 .hse-topbar{height:var(--hse-topbar-h);background:#0b4fc4;color:#fff;font:500 13px/1 Inter,system-ui,sans-serif;display:flex;align-items:center}

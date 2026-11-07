@@ -19,9 +19,9 @@ export function MainLayout() {
     <div className="min-h-screen flex flex-col bg-white text-hse-text">
       <CustomCursor />
       <Navbar />
-      <main className="flex-grow">
+      <main className="flex-grow" style={{ margin: 0, padding: 0, display: 'flow-root' }}>
         <ErrorBoundary>
-          <div key={location.pathname} className={location.pathname === '/' ? 'min-h-[calc(100vh-var(--header-h))]' : 'pt-[var(--header-h)] min-h-[calc(100vh-var(--header-h))]'}>
+          <div key={location.pathname} style={{ margin: 0, padding: 0 }}>
             <Outlet />
           </div>
         </ErrorBoundary>

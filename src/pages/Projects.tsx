@@ -70,7 +70,7 @@ export function Projects() {
           <path d="M0 35 Q 360 0 720 35 T 1440 35 V70 H0 Z" fill="var(--hse-surface,#F7F9FC)" />
         </svg>
 
-        <div className="relative z-10 container section pt-[calc(var(--header-h)+64px)] pb-24 text-center">
+        <div className="relative z-10 container section pt-16 pb-24 text-center">
           <div className="projects-stat-grid grid grid-cols-1 md:grid-cols-3 gap-6 mb-10 animate-stats">
             {STATS.map((s) => (
               <div key={s.label} className="project-stat-card">

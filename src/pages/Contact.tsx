@@ -11,7 +11,7 @@ export function Contact() {
           <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1920&q=80" alt="" className="w-full h-[400px] object-cover" loading="lazy" />
           <div className="absolute inset-0 bg-hse-primary/80" />
         </div>
-        <div className="relative z-10 container section pt-[calc(var(--header-h)+64px)] pb-24 text-center">
+        <div className="relative z-10 container section pt-16 pb-24 text-center">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">Contact Us</h1>
           <p className="text-lg text-white max-w-xl mx-auto">Ready to discuss your fire safety and engineering requirements? Get in touch with our team.</p>
         </div>

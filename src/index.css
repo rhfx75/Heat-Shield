@@ -102,7 +102,7 @@ html {
   width: 100%;
   max-width: 100%;
   overflow-x: clip;
-  scroll-padding-top: calc(var(--header-h) + 16px);
+  scroll-padding-top: var(--header-h);
 }
 
 ::selection { background: linear-gradient(135deg,#0868D8,#014EB6); color: #fff; }
@@ -181,7 +181,7 @@ body {
   width: 100%;
   max-width: 100%;
   overflow-x: clip;
-  scroll-padding-top: calc(var(--header-h) + 16px);
+  scroll-padding-top: var(--header-h);
 }
 
 *,
@@ -4510,3 +4510,6 @@ html {
   .card-img--fallback .card-img--icon { transition: none; }
   .card-img--fallback:hover .card-img--icon { transform: none; }
 }
+
+/* shared layout: no header offset gap; sticky navbar */
+main{margin:0;padding:0;display:flow-root}
