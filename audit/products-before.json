@@ -1,0 +1,2205 @@
+{
+  "count": 48,
+  "rows": [
+    {
+      "slug": "addressable-fire-alarm-control-panel",
+      "cardRect": {
+        "x": 63,
+        "y": 819,
+        "w": 315,
+        "h": 706
+      },
+      "imageStageRect": {
+        "x": 64,
+        "y": 820,
+        "w": 313,
+        "h": 480
+      },
+      "renderedImageRect": {
+        "x": 78,
+        "y": 834,
+        "w": 285,
+        "h": 451
+      },
+      "natural": {
+        "w": 193,
+        "h": 305,
+        "src": "http://localhost:5174/images/products/thumbs/fire-detection-notifier-nfs2-3030-480.webp",
+        "complete": true
+      },
+      "y": {
+        "chips": 497,
+        "title": 531,
+        "description": 581,
+        "buttons": 1
+      },
+      "clipped": {
+        "title": false,
+        "description": false,
+        "chips": false
+      }
+    },
+    {
+      "slug": "diesel-engine-fire-pump-set",
+      "cardRect": {
+        "x": 396,
+        "y": 819,
+        "w": 315,
+        "h": 706
+      },
+      "imageStageRect": {
+        "x": 397,
+        "y": 820,
+        "w": 313,
+        "h": 256
+      },
+      "renderedImageRect": {
+        "x": 411,
+        "y": 834,
+        "w": 285,
+        "h": 227
+      },
+      "natural": {
+        "w": 331,
+        "h": 263,
+        "src": "http://localhost:5174/images/products/thumbs/fire-protection-patterson-vdf-150-480.webp",
+        "complete": true
+      },
+      "y": {
+        "chips": 273,
+        "title": 307,
+        "description": 336,
+        "buttons": 1
+      },
+      "clipped": {
+        "title": false,
+        "description": false,
+        "chips": false
+      }
+    },
+    {
+      "slug": "electric-motor-driven-fire-pump",
+      "cardRect": {
+        "x": 729,
+        "y": 819,
+        "w": 315,
+        "h": 706
+      },
+      "imageStageRect": {
+        "x": 730,
+        "y": 820,
+        "w": 313,
+        "h": 361
+      },
+      "renderedImageRect": {
+        "x": 744,
+        "y": 834,
+        "w": 285,
+        "h": 332
+      },
+      "natural": {
+        "w": 331,
+        "h": 386,
+        "src": "http://localhost:5174/images/products/thumbs/fire-protection-patterson-vef-200-480.webp",
+        "complete": true
+      },
+      "y": {
+        "chips": 378,
+        "title": 413,
+        "description": 442,
+        "buttons": 1
+      },
+      "clipped": {
+        "title": false,
+        "description": false,
+        "chips": false
+      }
+    },
+    {
+      "slug": "fm200-clean-agent-suppression-system",
+      "cardRect": {
+        "x": 1062,
+        "y": 819,
+        "w": 315,
+        "h": 706
+      },
+      "imageStageRect": {
+        "x": 1063,
+        "y": 820,
+        "w": 313,
+        "h": 235
+      },
+      "renderedImageRect": {
+        "x": 1077,
+        "y": 834,
+        "w": 285,
+        "h": 206
+      },
+      "natural": {
+        "w": 331,
+        "h": 186,
+        "src": "http://localhost:5174/images/products/thumbs/fire-protection-3m-fm-200-480.webp",
+        "complete": true
+      },
+      "y": {
+        "chips": 252,
+        "title": 286,
+        "description": 336,
+        "buttons": 1
+      },
+      "clipped": {
+        "title": false,
+        "description": false,
+        "chips": false
+      }
+    },
+    {
+      "slug": "wet-pipe-sprinkler-system",
+      "cardRect": {
+        "x": 63,
+        "y": 1543,
+        "w": 315,
+        "h": 588
+      },
+      "imageStageRect": {
+        "x": 64,
+        "y": 1544,
+        "w": 313,
+        "h": 314
+      },
+      "renderedImageRect": {
+        "x": 78,
+        "y": 1558,
+        "w": 285,
+        "h": 285
+      },
+      "natural": {
+        "w": 331,
+        "h": 331,
+        "src": "http://localhost:5174/images/products/thumbs/fire-protection-tyco-tp-100-480.webp",
+        "complete": true
+      },
+      "y": {
+        "chips": 331,
+        "title": 365,
+        "description": 394,
+        "buttons": 1
+      },
+      "clipped": {
+        "title": false,
+        "description": false,
+        "chips": false
+      }
+    },
+    {
+      "slug": "abc-dry-powder-fire-extinguisher-6kg",
+      "cardRect": {
+        "x": 396,
+        "y": 1543,
+        "w": 315,
+        "h": 588
+      },
+      "imageStageRect": {
+        "x": 397,
+        "y": 1544,
+        "w": 313,
+        "h": 361
+      },
+      "renderedImageRect": {
+        "x": 411,
+        "y": 1558,
+        "w": 285,
+        "h": 332
+      },
+      "natural": {
+        "w": 331,
+        "h": 386,
+        "src": "http://localhost:5174/images/products/thumbs/fire-protection-naffco-fhe-6-480.webp",
+        "complete": true
+      },
+      "y": {
+        "chips": 378,
+        "title": 413,
+        "description": 462,
+        "buttons": 1
+      },
+      "clipped": {
+        "title": false,
+        "description": false,
+        "chips": false
+      }
+    },
+    {
+      "slug": "abc-dry-powder-fire-extinguisher-9kg",
+      "cardRect": {
+        "x": 729,
+        "y": 1543,
+        "w": 315,
+        "h": 588
+      },
+      "imageStageRect": {
+        "x": 730,
+        "y": 1544,
+        "w": 313,
+        "h": 235
+      },
+      "renderedImageRect": {
+        "x": 744,
+        "y": 1558,
+        "w": 285,
+        "h": 206
+      },
+      "natural": {
+        "w": 331,
+        "h": 207,
+        "src": "http://localhost:5174/images/products/thumbs/fire-protection-naffco-fhe-9-480.webp",
+        "complete": true
+      },
+      "y": {
+        "chips": 252,
+        "title": 286,
+        "description": 336,
+        "buttons": 1
+      },
+      "clipped": {
+        "title": false,
+        "description": false,
+        "chips": false
+      }
+    },
+    {
+      "slug": "hochiki-acd-v-multi-criteria-sensor",
+      "cardRect": {
+        "x": 1062,
+        "y": 1543,
+        "w": 315,
+        "h": 588
+      },
+      "imageStageRect": {
+        "x": 1063,
+        "y": 1544,
+        "w": 313,
+        "h": 243
+      },
+      "renderedImageRect": {
+        "x": 1077,
+        "y": 1558,
+        "w": 285,
+        "h": 214
+      },
+      "natural": {
+        "w": 600,
+        "h": 450,
+        "src": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22600%22%20height%3D%2245",
+        "complete": true
+      },
+      "y": {
+        "chips": 260,
+        "title": 294,
+        "description": 344,
+        "buttons": 1
+      },
+      "clipped": {
+        "title": false,
+        "description": true,
+        "chips": false
+      }
+    },
+    {
+      "slug": "hochiki-ace-v-multi-criteria-sensor",
+      "cardRect": {
+        "x": 63,
+        "y": 2149,
+        "w": 315,
+        "h": 809
+      },
+      "imageStageRect": {
+        "x": 64,
+        "y": 2150,
+        "w": 313,
+        "h": 243
+      },
+      "renderedImageRect": {
+        "x": 78,
+        "y": 2164,
+        "w": 285,
+        "h": 214
+      },
+      "natural": {
+        "w": 600,
+        "h": 450,
+        "src": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22600%22%20height%3D%2245",
+        "complete": true
+      },
+      "y": {
+        "chips": 260,
+        "title": 294,
+        "description": 344,
+        "buttons": 1
+      },
+      "clipped": {
+        "title": false,
+        "description": false,
+        "chips": false
+      }
+    },
+    {
+      "slug": "afff-foam-fire-extinguisher-6ltr",
+      "cardRect": {
+        "x": 396,
+        "y": 2149,
+        "w": 315,
+        "h": 809
+      },
+      "imageStageRect": {
+        "x": 397,
+        "y": 2150,
+        "w": 313,
+        "h": 603
+      },
+      "renderedImageRect": {
+        "x": 411,
+        "y": 2164,
+        "w": 285,
+        "h": 574
+      },
+      "natural": {
+        "w": 331,
+        "h": 667,
+        "src": "http://localhost:5174/images/products/thumbs/fire-protection-naffco-ff-6-480.webp",
+        "complete": true
+      },
+      "y": {
+        "chips": 620,
+        "title": 654,
+        "description": 683,
+        "buttons": 1
+      },
+      "clipped": {
+        "title": false,
+        "description": false,
+        "chips": false
+      }
+    },
+    {
+      "slug": "hochiki-alo-v-smoke-detector",
+      "cardRect": {
+        "x": 729,
+        "y": 2149,
+        "w": 315,
+        "h": 809
+      },
+      "imageStageRect": {
+        "x": 730,
+        "y": 2150,
+        "w": 313,
+        "h": 243
+      },
+      "renderedImageRect": {
+        "x": 744,
+        "y": 2164,
+        "w": 285,
+        "h": 214
+      },
+      "natural": {
+        "w": 600,
+        "h": 450,
+        "src": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22600%22%20height%3D%2245",
+        "complete": true
+      },
+      "y": {
+        "chips": 260,
+        "title": 294,
+        "description": 344,
+        "buttons": 1
+      },
+      "clipped": {
+        "title": false,
+        "description": true,
+        "chips": false
+      }
+    },
+    {
+      "slug": "analog-addressable-fire-panel",
+      "cardRect": {
+        "x": 1062,
+        "y": 2149,
+        "w": 315,
+        "h": 809
+      },
+      "imageStageRect": {
+        "x": 1063,
+        "y": 2150,
+        "w": 313,
+        "h": 314
+      },
+      "renderedImageRect": {
+        "x": 1077,
+        "y": 2164,
+        "w": 285,
+        "h": 285
+      },
+      "natural": {
+        "w": 276,
+        "h": 276,
+        "src": "http://localhost:5174/images/products/thumbs/fire-detection-hochiki-esp-480.webp",
+        "complete": true
+      },
+      "y": {
+        "chips": 331,
+        "title": 365,
+        "description": 394,
+        "buttons": 1
+      },
+      "clipped": {
+        "title": false,
+        "description": false,
+        "chips": false
+      }
+    },
+    {
+      "slug": "hochiki-atj-ea-heat-sensor",
+      "cardRect": {
+        "x": 63,
+        "y": 2975,
+        "w": 315,
+        "h": 514
+      },
+      "imageStageRect": {
+        "x": 64,
+        "y": 2976,
+        "w": 313,
+        "h": 243
+      },
+      "renderedImageRect": {
+        "x": 78,
+        "y": 2990,
+        "w": 285,
+        "h": 214
+      },
+      "natural": {
+        "w": 600,
+        "h": 450,
+        "src": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22600%22%20height%3D%2245",
+        "complete": true
+      },
+      "y": {
+        "chips": 260,
+        "title": 294,
+        "description": 364,
+        "buttons": 1
+      },
+      "clipped": {
+        "title": false,
+        "description": false,
+        "chips": false
+      }
+    },
+    {
+      "slug": "bosch-fae-3000-fire-alarm-panel",
+      "cardRect": {
+        "x": 396,
+        "y": 2975,
+        "w": 315,
+        "h": 514
+      },
+      "imageStageRect": {
+        "x": 397,
+        "y": 2976,
+        "w": 313,
+        "h": 243
+      },
+      "renderedImageRect": {
+        "x": 411,
+        "y": 2990,
+        "w": 285,
+        "h": 214
+      },
+      "natural": {
+        "w": 600,
+        "h": 450,
+        "src": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22600%22%20height%3D%2245",
+        "complete": true
+      },
+      "y": {
+        "chips": 260,
+        "title": 294,
+        "description": 344,
+        "buttons": 1
+      },
+      "clipped": {
+        "title": false,
+        "description": false,
+        "chips": false
+      }
+    },
+    {
+      "slug": "bosch-detector-heat-ftd",
+      "cardRect": {
+        "x": 729,
+        "y": 2975,
+        "w": 315,
+        "h": 514
+      },
+      "imageStageRect": {
+        "x": 730,
+        "y": 2976,
+        "w": 313,
+        "h": 243
+      },
+      "renderedImageRect": {
+        "x": 744,
+        "y": 2990,
+        "w": 285,
+        "h": 214
+      },
+      "natural": {
+        "w": 600,
+        "h": 450,
+        "src": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22600%22%20height%3D%2245",
+        "complete": true
+      },
+      "y": {
+        "chips": 260,
+        "title": 294,
+        "description": 344,
+        "buttons": 1
+      },
+      "clipped": {
+        "title": false,
+        "description": false,
+        "chips": false
+      }
+    },
+    {
+      "slug": "bosch-manual-call-point",
+      "cardRect": {
+        "x": 1062,
+        "y": 2975,
+        "w": 315,
+        "h": 514
+      },
+      "imageStageRect": {
+        "x": 1063,
+        "y": 2976,
+        "w": 313,
+        "h": 243
+      },
+      "renderedImageRect": {
+        "x": 1077,
+        "y": 2990,
+        "w": 285,
+        "h": 214
+      },
+      "natural": {
+        "w": 600,
+        "h": 450,
+        "src": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22600%22%20height%3D%2245",
+        "complete": true
+      },
+      "y": {
+        "chips": 260,
+        "title": 294,
+        "description": 323,
+        "buttons": 1
+      },
+      "clipped": {
+        "title": false,
+        "description": false,
+        "chips": false
+      }
+    },
+    {
+      "slug": "bosch-detector-smoke-photo",
+      "cardRect": {
+        "x": 63,
+        "y": 3508,
+        "w": 315,
+        "h": 610
+      },
+      "imageStageRect": {
+        "x": 64,
+        "y": 3509,
+        "w": 313,
+        "h": 243
+      },
+      "renderedImageRect": {
+        "x": 78,
+        "y": 3523,
+        "w": 285,
+        "h": 214
+      },
+      "natural": {
+        "w": 600,
+        "h": 450,
+        "src": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22600%22%20height%3D%2245",
+        "complete": true
+      },
+      "y": {
+        "chips": 260,
+        "title": 294,
+        "description": 344,
+        "buttons": 1
+      },
+      "clipped": {
+        "title": false,
+        "description": false,
+        "chips": false
+      }
+    },
+    {
+      "slug": "butterfly-valve",
+      "cardRect": {
+        "x": 396,
+        "y": 3508,
+        "w": 315,
+        "h": 610
+      },
+      "imageStageRect": {
+        "x": 397,
+        "y": 3509,
+        "w": 313,
+        "h": 405
+      },
+      "renderedImageRect": {
+        "x": 411,
+        "y": 3523,
+        "w": 285,
+        "h": 376
+      },
+      "natural": {
+        "w": 166,
+        "h": 220,
+        "src": "http://localhost:5174/images/products/thumbs/fire-protection-viking-bfv-200-480.webp",
+        "complete": true
+      },
+      "y": {
+        "chips": 422,
+        "title": 456,
+        "description": 485,
+        "buttons": 1
+      },
+      "clipped": {
+        "title": false,
+        "description": false,
+        "chips": false
+      }
+    },
+    {
+      "slug": "co2-fire-extinguisher-2kg",
+      "cardRect": {
+        "x": 729,
+        "y": 3508,
+        "w": 315,
+        "h": 610
+      },
+      "imageStageRect": {
+        "x": 730,
+        "y": 3509,
+        "w": 313,
+        "h": 314
+      },
+      "renderedImageRect": {
+        "x": 744,
+        "y": 3523,
+        "w": 285,
+        "h": 285
+      },
+      "natural": {
+        "w": 331,
+        "h": 331,
+        "src": "http://localhost:5174/images/products/thumbs/fire-protection-naffco-fce-2-480.webp",
+        "complete": true
+      },
+      "y": {
+        "chips": 331,
+        "title": 365,
+        "description": 394,
+        "buttons": 1
+      },
+      "clipped": {
+        "title": false,
+        "description": false,
+        "chips": false
+      }
+    },
+    {
+      "slug": "co2-fire-extinguisher-5kg",
+      "cardRect": {
+        "x": 1062,
+        "y": 3508,
+        "w": 315,
+        "h": 610
+      },
+      "imageStageRect": {
+        "x": 1063,
+        "y": 3509,
+        "w": 313,
+        "h": 361
+      },
+      "renderedImageRect": {
+        "x": 1077,
+        "y": 3523,
+        "w": 285,
+        "h": 332
+      },
+      "natural": {
+        "w": 331,
+        "h": 386,
+        "src": "http://localhost:5174/images/products/thumbs/fire-protection-naffco-fce-5-480.webp",
+        "complete": true
+      },
+      "y": {
+        "chips": 378,
+        "title": 413,
+        "description": 442,
+        "buttons": 1
+      },
+      "clipped": {
+        "title": false,
+        "description": false,
+        "chips": false
+      }
+    },
+    {
+      "slug": "conventional-fire-alarm-panel",
+      "cardRect": {
+        "x": 63,
+        "y": 4136,
+        "w": 315,
+        "h": 502
+      },
+      "imageStageRect": {
+        "x": 64,
+        "y": 4137,
+        "w": 313,
+        "h": 296
+      },
+      "renderedImageRect": {
+        "x": 78,
+        "y": 4151,
+        "w": 285,
+        "h": 267
+      },
+      "natural": {
+        "w": 331,
+        "h": 310,
+        "src": "http://localhost:5174/images/products/thumbs/fire-detection-hochiki-chq-zc-480.webp",
+        "complete": true
+      },
+      "y": {
+        "chips": 313,
+        "title": 347,
+        "description": 376,
+        "buttons": 1
+      },
+      "clipped": {
+        "title": false,
+        "description": false,
+        "chips": false
+      }
+    },
+    {
+      "slug": "diesel-jockey-pump",
+      "cardRect": {
+        "x": 396,
+        "y": 4136,
+        "w": 315,
+        "h": 502
+      },
+      "imageStageRect": {
+        "x": 397,
+        "y": 4137,
+        "w": 313,
+        "h": 243
+      },
+      "renderedImageRect": {
+        "x": 411,
+        "y": 4151,
+        "w": 285,
+        "h": 214
+      },
+      "natural": {
+        "w": 600,
+        "h": 450,
+        "src": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22600%22%20height%3D%2245",
+        "complete": true
+      },
+      "y": {
+        "chips": 260,
+        "title": 294,
+        "description": 323,
+        "buttons": 1
+      },
+      "clipped": {
+        "title": false,
+        "description": false,
+        "chips": false
+      }
+    },
+    {
+      "slug": "dry-pipe-sprinkler-system",
+      "cardRect": {
+        "x": 729,
+        "y": 4136,
+        "w": 315,
+        "h": 502
+      },
+      "imageStageRect": {
+        "x": 730,
+        "y": 4137,
+        "w": 313,
+        "h": 243
+      },
+      "renderedImageRect": {
+        "x": 744,
+        "y": 4151,
+        "w": 285,
+        "h": 214
+      },
+      "natural": {
+        "w": 600,
+        "h": 450,
+        "src": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22600%22%20height%3D%2245",
+        "complete": true
+      },
+      "y": {
+        "chips": 260,
+        "title": 294,
+        "description": 323,
+        "buttons": 1
+      },
+      "clipped": {
+        "title": false,
+        "description": false,
+        "chips": false
+      }
+    },
+    {
+      "slug": "duct-mounted-smoke-detector",
+      "cardRect": {
+        "x": 1062,
+        "y": 4136,
+        "w": 315,
+        "h": 502
+      },
+      "imageStageRect": {
+        "x": 1063,
+        "y": 4137,
+        "w": 313,
+        "h": 243
+      },
+      "renderedImageRect": {
+        "x": 1077,
+        "y": 4151,
+        "w": 285,
+        "h": 214
+      },
+      "natural": {
+        "w": 600,
+        "h": 450,
+        "src": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22600%22%20height%3D%2245",
+        "complete": true
+      },
+      "y": {
+        "chips": 260,
+        "title": 294,
+        "description": 323,
+        "buttons": 1
+      },
+      "clipped": {
+        "title": false,
+        "description": false,
+        "chips": false
+      }
+    },
+    {
+      "slug": "fire-hose-reel",
+      "cardRect": {
+        "x": 63,
+        "y": 4656,
+        "w": 315,
+        "h": 448
+      },
+      "imageStageRect": {
+        "x": 64,
+        "y": 4657,
+        "w": 313,
+        "h": 243
+      },
+      "renderedImageRect": {
+        "x": 78,
+        "y": 4671,
+        "w": 285,
+        "h": 214
+      },
+      "natural": {
+        "w": 600,
+        "h": 450,
+        "src": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22600%22%20height%3D%2245",
+        "complete": true
+      },
+      "y": {
+        "chips": 260,
+        "title": 294,
+        "description": 323,
+        "buttons": 1
+      },
+      "clipped": {
+        "title": false,
+        "description": false,
+        "chips": false
+      }
+    },
+    {
+      "slug": "fire-hydrant-cabinet",
+      "cardRect": {
+        "x": 396,
+        "y": 4656,
+        "w": 315,
+        "h": 448
+      },
+      "imageStageRect": {
+        "x": 397,
+        "y": 4657,
+        "w": 313,
+        "h": 243
+      },
+      "renderedImageRect": {
+        "x": 411,
+        "y": 4671,
+        "w": 285,
+        "h": 214
+      },
+      "natural": {
+        "w": 600,
+        "h": 450,
+        "src": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22600%22%20height%3D%2245",
+        "complete": true
+      },
+      "y": {
+        "chips": 260,
+        "title": 294,
+        "description": 323,
+        "buttons": 1
+      },
+      "clipped": {
+        "title": false,
+        "description": false,
+        "chips": false
+      }
+    },
+    {
+      "slug": "fire-hydrant-landing-valve",
+      "cardRect": {
+        "x": 729,
+        "y": 4656,
+        "w": 315,
+        "h": 448
+      },
+      "imageStageRect": {
+        "x": 730,
+        "y": 4657,
+        "w": 313,
+        "h": 243
+      },
+      "renderedImageRect": {
+        "x": 744,
+        "y": 4671,
+        "w": 285,
+        "h": 214
+      },
+      "natural": {
+        "w": 600,
+        "h": 450,
+        "src": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22600%22%20height%3D%2245",
+        "complete": true
+      },
+      "y": {
+        "chips": 260,
+        "title": 294,
+        "description": 323,
+        "buttons": 1
+      },
+      "clipped": {
+        "title": false,
+        "description": false,
+        "chips": false
+      }
+    },
+    {
+      "slug": "fire-rated-steel-door",
+      "cardRect": {
+        "x": 1062,
+        "y": 4656,
+        "w": 315,
+        "h": 448
+      },
+      "imageStageRect": {
+        "x": 1063,
+        "y": 4657,
+        "w": 313,
+        "h": 243
+      },
+      "renderedImageRect": {
+        "x": 1077,
+        "y": 4671,
+        "w": 285,
+        "h": 214
+      },
+      "natural": {
+        "w": 600,
+        "h": 450,
+        "src": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22600%22%20height%3D%2245",
+        "complete": true
+      },
+      "y": {
+        "chips": 260,
+        "title": 294,
+        "description": 323,
+        "buttons": 1
+      },
+      "clipped": {
+        "title": false,
+        "description": false,
+        "chips": false
+      }
+    },
+    {
+      "slug": "fire-rated-timber-door",
+      "cardRect": {
+        "x": 63,
+        "y": 5122,
+        "w": 315,
+        "h": 540
+      },
+      "imageStageRect": {
+        "x": 64,
+        "y": 5123,
+        "w": 313,
+        "h": 243
+      },
+      "renderedImageRect": {
+        "x": 78,
+        "y": 5137,
+        "w": 285,
+        "h": 214
+      },
+      "natural": {
+        "w": 600,
+        "h": 450,
+        "src": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22600%22%20height%3D%2245",
+        "complete": true
+      },
+      "y": {
+        "chips": 260,
+        "title": 294,
+        "description": 323,
+        "buttons": 1
+      },
+      "clipped": {
+        "title": false,
+        "description": false,
+        "chips": false
+      }
+    },
+    {
+      "slug": "firennet-fn-lcd-n-network-lcd-annunciator",
+      "cardRect": {
+        "x": 396,
+        "y": 5122,
+        "w": 315,
+        "h": 540
+      },
+      "imageStageRect": {
+        "x": 397,
+        "y": 5123,
+        "w": 313,
+        "h": 243
+      },
+      "renderedImageRect": {
+        "x": 411,
+        "y": 5137,
+        "w": 285,
+        "h": 214
+      },
+      "natural": {
+        "w": 600,
+        "h": 450,
+        "src": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22600%22%20height%3D%2245",
+        "complete": true
+      },
+      "y": {
+        "chips": 260,
+        "title": 294,
+        "description": 344,
+        "buttons": 1
+      },
+      "clipped": {
+        "title": false,
+        "description": true,
+        "chips": false
+      }
+    },
+    {
+      "slug": "firennet-plus-1127-series",
+      "cardRect": {
+        "x": 729,
+        "y": 5122,
+        "w": 315,
+        "h": 540
+      },
+      "imageStageRect": {
+        "x": 730,
+        "y": 5123,
+        "w": 313,
+        "h": 243
+      },
+      "renderedImageRect": {
+        "x": 744,
+        "y": 5137,
+        "w": 285,
+        "h": 214
+      },
+      "natural": {
+        "w": 600,
+        "h": 450,
+        "src": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22600%22%20height%3D%2245",
+        "complete": true
+      },
+      "y": {
+        "chips": 260,
+        "title": 294,
+        "description": 323,
+        "buttons": 1
+      },
+      "clipped": {
+        "title": false,
+        "description": true,
+        "chips": false
+      }
+    },
+    {
+      "slug": "firennet-plus-remote-annunciator",
+      "cardRect": {
+        "x": 1062,
+        "y": 5122,
+        "w": 315,
+        "h": 540
+      },
+      "imageStageRect": {
+        "x": 1063,
+        "y": 5123,
+        "w": 313,
+        "h": 243
+      },
+      "renderedImageRect": {
+        "x": 1077,
+        "y": 5137,
+        "w": 285,
+        "h": 214
+      },
+      "natural": {
+        "w": 600,
+        "h": 450,
+        "src": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22600%22%20height%3D%2245",
+        "complete": true
+      },
+      "y": {
+        "chips": 260,
+        "title": 341,
+        "description": 390,
+        "buttons": 1
+      },
+      "clipped": {
+        "title": false,
+        "description": true,
+        "chips": false
+      }
+    },
+    {
+      "slug": "fixed-temperature-heat-detector",
+      "cardRect": {
+        "x": 63,
+        "y": 5681,
+        "w": 315,
+        "h": 469
+      },
+      "imageStageRect": {
+        "x": 64,
+        "y": 5682,
+        "w": 313,
+        "h": 243
+      },
+      "renderedImageRect": {
+        "x": 78,
+        "y": 5696,
+        "w": 285,
+        "h": 214
+      },
+      "natural": {
+        "w": 600,
+        "h": 450,
+        "src": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22600%22%20height%3D%2245",
+        "complete": true
+      },
+      "y": {
+        "chips": 260,
+        "title": 294,
+        "description": 323,
+        "buttons": 1
+      },
+      "clipped": {
+        "title": false,
+        "description": false,
+        "chips": false
+      }
+    },
+    {
+      "slug": "intumescent-fire-retardant-paint",
+      "cardRect": {
+        "x": 396,
+        "y": 5681,
+        "w": 315,
+        "h": 469
+      },
+      "imageStageRect": {
+        "x": 397,
+        "y": 5682,
+        "w": 313,
+        "h": 243
+      },
+      "renderedImageRect": {
+        "x": 411,
+        "y": 5696,
+        "w": 285,
+        "h": 214
+      },
+      "natural": {
+        "w": 600,
+        "h": 450,
+        "src": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22600%22%20height%3D%2245",
+        "complete": true
+      },
+      "y": {
+        "chips": 260,
+        "title": 294,
+        "description": 344,
+        "buttons": 1
+      },
+      "clipped": {
+        "title": false,
+        "description": false,
+        "chips": false
+      }
+    },
+    {
+      "slug": "ionization-smoke-detector",
+      "cardRect": {
+        "x": 729,
+        "y": 5681,
+        "w": 315,
+        "h": 469
+      },
+      "imageStageRect": {
+        "x": 730,
+        "y": 5682,
+        "w": 313,
+        "h": 243
+      },
+      "renderedImageRect": {
+        "x": 744,
+        "y": 5696,
+        "w": 285,
+        "h": 214
+      },
+      "natural": {
+        "w": 600,
+        "h": 450,
+        "src": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22600%22%20height%3D%2245",
+        "complete": true
+      },
+      "y": {
+        "chips": 260,
+        "title": 294,
+        "description": 323,
+        "buttons": 1
+      },
+      "clipped": {
+        "title": false,
+        "description": false,
+        "chips": false
+      }
+    },
+    {
+      "slug": "jockey-pump",
+      "cardRect": {
+        "x": 1062,
+        "y": 5681,
+        "w": 315,
+        "h": 469
+      },
+      "imageStageRect": {
+        "x": 1063,
+        "y": 5682,
+        "w": 313,
+        "h": 243
+      },
+      "renderedImageRect": {
+        "x": 1077,
+        "y": 5696,
+        "w": 285,
+        "h": 214
+      },
+      "natural": {
+        "w": 600,
+        "h": 450,
+        "src": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22600%22%20height%3D%2245",
+        "complete": true
+      },
+      "y": {
+        "chips": 260,
+        "title": 294,
+        "description": 323,
+        "buttons": 1
+      },
+      "clipped": {
+        "title": false,
+        "description": false,
+        "chips": false
+      }
+    },
+    {
+      "slug": "manual-call-point-break-glass",
+      "cardRect": {
+        "x": 63,
+        "y": 6168,
+        "w": 315,
+        "h": 469
+      },
+      "imageStageRect": {
+        "x": 64,
+        "y": 6169,
+        "w": 313,
+        "h": 243
+      },
+      "renderedImageRect": {
+        "x": 78,
+        "y": 6183,
+        "w": 285,
+        "h": 214
+      },
+      "natural": {
+        "w": 600,
+        "h": 450,
+        "src": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22600%22%20height%3D%2245",
+        "complete": true
+      },
+      "y": {
+        "chips": 260,
+        "title": 294,
+        "description": 323,
+        "buttons": 1
+      },
+      "clipped": {
+        "title": false,
+        "description": false,
+        "chips": false
+      }
+    },
+    {
+      "slug": "miniature-circuit-breaker-mcb",
+      "cardRect": {
+        "x": 396,
+        "y": 6168,
+        "w": 315,
+        "h": 469
+      },
+      "imageStageRect": {
+        "x": 397,
+        "y": 6169,
+        "w": 313,
+        "h": 243
+      },
+      "renderedImageRect": {
+        "x": 411,
+        "y": 6183,
+        "w": 285,
+        "h": 214
+      },
+      "natural": {
+        "w": 600,
+        "h": 450,
+        "src": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22600%22%20height%3D%2245",
+        "complete": true
+      },
+      "y": {
+        "chips": 260,
+        "title": 294,
+        "description": 323,
+        "buttons": 1
+      },
+      "clipped": {
+        "title": false,
+        "description": false,
+        "chips": false
+      }
+    },
+    {
+      "slug": "moulded-case-circuit-breaker-mccb",
+      "cardRect": {
+        "x": 729,
+        "y": 6168,
+        "w": 315,
+        "h": 469
+      },
+      "imageStageRect": {
+        "x": 730,
+        "y": 6169,
+        "w": 313,
+        "h": 243
+      },
+      "renderedImageRect": {
+        "x": 744,
+        "y": 6183,
+        "w": 285,
+        "h": 214
+      },
+      "natural": {
+        "w": 600,
+        "h": 450,
+        "src": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22600%22%20height%3D%2245",
+        "complete": true
+      },
+      "y": {
+        "chips": 260,
+        "title": 294,
+        "description": 344,
+        "buttons": 1
+      },
+      "clipped": {
+        "title": false,
+        "description": false,
+        "chips": false
+      }
+    },
+    {
+      "slug": "ms-fire-protection-pipe",
+      "cardRect": {
+        "x": 1062,
+        "y": 6168,
+        "w": 315,
+        "h": 469
+      },
+      "imageStageRect": {
+        "x": 1063,
+        "y": 6169,
+        "w": 313,
+        "h": 243
+      },
+      "renderedImageRect": {
+        "x": 1077,
+        "y": 6183,
+        "w": 285,
+        "h": 214
+      },
+      "natural": {
+        "w": 600,
+        "h": 450,
+        "src": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22600%22%20height%3D%2245",
+        "complete": true
+      },
+      "y": {
+        "chips": 260,
+        "title": 294,
+        "description": 323,
+        "buttons": 1
+      },
+      "clipped": {
+        "title": false,
+        "description": false,
+        "chips": false
+      }
+    },
+    {
+      "slug": "naffco-diesel-engine-fire-pump-controller",
+      "cardRect": {
+        "x": 63,
+        "y": 6655,
+        "w": 315,
+        "h": 540
+      },
+      "imageStageRect": {
+        "x": 64,
+        "y": 6656,
+        "w": 313,
+        "h": 243
+      },
+      "renderedImageRect": {
+        "x": 78,
+        "y": 6670,
+        "w": 285,
+        "h": 214
+      },
+      "natural": {
+        "w": 600,
+        "h": 450,
+        "src": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22600%22%20height%3D%2245",
+        "complete": true
+      },
+      "y": {
+        "chips": 260,
+        "title": 326,
+        "description": 376,
+        "buttons": 1
+      },
+      "clipped": {
+        "title": false,
+        "description": true,
+        "chips": false
+      }
+    },
+    {
+      "slug": "naffco-electric-motor-fire-pump-controller",
+      "cardRect": {
+        "x": 396,
+        "y": 6655,
+        "w": 315,
+        "h": 540
+      },
+      "imageStageRect": {
+        "x": 397,
+        "y": 6656,
+        "w": 313,
+        "h": 243
+      },
+      "renderedImageRect": {
+        "x": 411,
+        "y": 6670,
+        "w": 285,
+        "h": 214
+      },
+      "natural": {
+        "w": 600,
+        "h": 450,
+        "src": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22600%22%20height%3D%2245",
+        "complete": true
+      },
+      "y": {
+        "chips": 260,
+        "title": 341,
+        "description": 390,
+        "buttons": 1
+      },
+      "clipped": {
+        "title": false,
+        "description": true,
+        "chips": false
+      }
+    },
+    {
+      "slug": "naffco-end-suction-fire-pump-nf-e",
+      "cardRect": {
+        "x": 729,
+        "y": 6655,
+        "w": 315,
+        "h": 540
+      },
+      "imageStageRect": {
+        "x": 730,
+        "y": 6656,
+        "w": 313,
+        "h": 243
+      },
+      "renderedImageRect": {
+        "x": 744,
+        "y": 6670,
+        "w": 285,
+        "h": 214
+      },
+      "natural": {
+        "w": 600,
+        "h": 450,
+        "src": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22600%22%20height%3D%2245",
+        "complete": true
+      },
+      "y": {
+        "chips": 260,
+        "title": 294,
+        "description": 344,
+        "buttons": 1
+      },
+      "clipped": {
+        "title": false,
+        "description": false,
+        "chips": false
+      }
+    },
+    {
+      "slug": "naffco-fire-pump-fuel-tank",
+      "cardRect": {
+        "x": 1062,
+        "y": 6655,
+        "w": 315,
+        "h": 540
+      },
+      "imageStageRect": {
+        "x": 1063,
+        "y": 6656,
+        "w": 313,
+        "h": 243
+      },
+      "renderedImageRect": {
+        "x": 1077,
+        "y": 6670,
+        "w": 285,
+        "h": 214
+      },
+      "natural": {
+        "w": 600,
+        "h": 450,
+        "src": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22600%22%20height%3D%2245",
+        "complete": true
+      },
+      "y": {
+        "chips": 260,
+        "title": 326,
+        "description": 355,
+        "buttons": 1
+      },
+      "clipped": {
+        "title": false,
+        "description": false,
+        "chips": false
+      }
+    },
+    {
+      "slug": "naffco-fire-rated-steel-door-frame",
+      "cardRect": {
+        "x": 63,
+        "y": 7213,
+        "w": 315,
+        "h": 473
+      },
+      "imageStageRect": {
+        "x": 64,
+        "y": 7214,
+        "w": 313,
+        "h": 243
+      },
+      "renderedImageRect": {
+        "x": 78,
+        "y": 7228,
+        "w": 285,
+        "h": 214
+      },
+      "natural": {
+        "w": 600,
+        "h": 450,
+        "src": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22600%22%20height%3D%2245",
+        "complete": true
+      },
+      "y": {
+        "chips": 260,
+        "title": 294,
+        "description": 344,
+        "buttons": 1
+      },
+      "clipped": {
+        "title": false,
+        "description": false,
+        "chips": false
+      }
+    },
+    {
+      "slug": "naffco-glazed-fire-rated-door",
+      "cardRect": {
+        "x": 396,
+        "y": 7213,
+        "w": 315,
+        "h": 473
+      },
+      "imageStageRect": {
+        "x": 397,
+        "y": 7214,
+        "w": 313,
+        "h": 243
+      },
+      "renderedImageRect": {
+        "x": 411,
+        "y": 7228,
+        "w": 285,
+        "h": 214
+      },
+      "natural": {
+        "w": 600,
+        "h": 450,
+        "src": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22600%22%20height%3D%2245",
+        "complete": true
+      },
+      "y": {
+        "chips": 260,
+        "title": 294,
+        "description": 323,
+        "buttons": 1
+      },
+      "clipped": {
+        "title": false,
+        "description": false,
+        "chips": false
+      }
+    },
+    {
+      "slug": "naffco-honeycomb-core-fire-rated-door",
+      "cardRect": {
+        "x": 729,
+        "y": 7213,
+        "w": 315,
+        "h": 473
+      },
+      "imageStageRect": {
+        "x": 730,
+        "y": 7214,
+        "w": 313,
+        "h": 243
+      },
+      "renderedImageRect": {
+        "x": 744,
+        "y": 7228,
+        "w": 285,
+        "h": 214
+      },
+      "natural": {
+        "w": 600,
+        "h": 450,
+        "src": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22600%22%20height%3D%2245",
+        "complete": true
+      },
+      "y": {
+        "chips": 260,
+        "title": 294,
+        "description": 344,
+        "buttons": 1
+      },
+      "clipped": {
+        "title": false,
+        "description": false,
+        "chips": false
+      }
+    },
+    {
+      "slug": "naffco-horizontal-split-case-fire-pump-nf-s",
+      "cardRect": {
+        "x": 1062,
+        "y": 7213,
+        "w": 315,
+        "h": 473
+      },
+      "imageStageRect": {
+        "x": 1063,
+        "y": 7214,
+        "w": 313,
+        "h": 243
+      },
+      "renderedImageRect": {
+        "x": 1077,
+        "y": 7228,
+        "w": 285,
+        "h": 214
+      },
+      "natural": {
+        "w": 600,
+        "h": 450,
+        "src": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22600%22%20height%3D%2245",
+        "complete": true
+      },
+      "y": {
+        "chips": 260,
+        "title": 294,
+        "description": 344,
+        "buttons": 1
+      },
+      "clipped": {
+        "title": false,
+        "description": false,
+        "chips": false
+      }
+    }
+  ],
+  "hero": {
+    "headingBg": [
+      {
+        "tag": "h1",
+        "class": "",
+        "bg": "rgba(0, 0, 0, 0)",
+        "bgImage": "none",
+        "border": "0px solid rgb(1, 78, 182)",
+        "boxShadow": "none",
+        "rect": {
+          "x": 63,
+          "y": 309,
+          "w": 645,
+          "h": 59
+        }
+      },
+      {
+        "tag": "div",
+        "class": "",
+        "bg": "rgb(255, 255, 255)",
+        "bgImage": "none",
+        "border": "0px solid rgb(1, 78, 182)",
+        "boxShadow": "none",
+        "rect": {
+          "x": 63,
+          "y": 267,
+          "w": 645,
+          "h": 280
+        }
+      },
+      {
+        "tag": "div",
+        "class": "hse-pr-wrap",
+        "bg": "rgba(0, 0, 0, 0)",
+        "bgImage": "none",
+        "border": "0px solid rgb(1, 78, 182)",
+        "boxShadow": "none",
+        "rect": {
+          "x": 43,
+          "y": 202,
+          "w": 1354,
+          "h": 409
+        }
+      },
+      {
+        "tag": "section",
+        "class": "hse-pr-hero",
+        "bg": "rgba(0, 0, 0, 0)",
+        "bgImage": "linear-gradient(rgb(243, 248, 255) 0%, rgb(255, 255, 255) 72%)",
+        "border": "0px solid rgb(1, 78, 182)",
+        "boxShadow": "none",
+        "rect": {
+          "x": 0,
+          "y": 84,
+          "w": 1440,
+          "h": 555
+        }
+      },
+      {
+        "tag": "div",
+        "class": "hse-pr-page",
+        "bg": "rgb(255, 255, 255)",
+        "bgImage": "none",
+        "border": "0px solid rgb(1, 78, 182)",
+        "boxShadow": "none",
+        "rect": {
+          "x": 0,
+          "y": 84,
+          "w": 1440,
+          "h": 7895
+        }
+      }
+    ],
+    "pillBg": [
+      {
+        "tag": "span",
+        "class": "",
+        "bg": "rgb(198, 40, 40)",
+        "bgImage": "none",
+        "border": "0px solid rgb(255, 255, 255)",
+        "boxShadow": "none",
+        "rect": {
+          "x": 63,
+          "y": 267,
+          "w": 146,
+          "h": 28
+        }
+      },
+      {
+        "tag": "div",
+        "class": "",
+        "bg": "rgb(255, 255, 255)",
+        "bgImage": "none",
+        "border": "0px solid rgb(1, 78, 182)",
+        "boxShadow": "none",
+        "rect": {
+          "x": 63,
+          "y": 267,
+          "w": 645,
+          "h": 280
+        }
+      },
+      {
+        "tag": "div",
+        "class": "hse-pr-wrap",
+        "bg": "rgba(0, 0, 0, 0)",
+        "bgImage": "none",
+        "border": "0px solid rgb(1, 78, 182)",
+        "boxShadow": "none",
+        "rect": {
+          "x": 43,
+          "y": 202,
+          "w": 1354,
+          "h": 409
+        }
+      },
+      {
+        "tag": "section",
+        "class": "hse-pr-hero",
+        "bg": "rgba(0, 0, 0, 0)",
+        "bgImage": "linear-gradient(rgb(243, 248, 255) 0%, rgb(255, 255, 255) 72%)",
+        "border": "0px solid rgb(1, 78, 182)",
+        "boxShadow": "none",
+        "rect": {
+          "x": 0,
+          "y": 84,
+          "w": 1440,
+          "h": 555
+        }
+      },
+      {
+        "tag": "div",
+        "class": "hse-pr-page",
+        "bg": "rgb(255, 255, 255)",
+        "bgImage": "none",
+        "border": "0px solid rgb(1, 78, 182)",
+        "boxShadow": "none",
+        "rect": {
+          "x": 0,
+          "y": 84,
+          "w": 1440,
+          "h": 7895
+        }
+      }
+    ]
+  },
+  "strayCompare": [
+    {
+      "text": "Compare",
+      "cause": [
+        {
+          "tag": "button",
+          "class": "",
+          "bg": "rgb(255, 255, 255)",
+          "bgImage": "none",
+          "border": "1px solid rgb(216, 226, 240)",
+          "boxShadow": "none",
+          "rect": {
+            "x": 294,
+            "y": 830,
+            "w": 73,
+            "h": 32
+          }
+        },
+        {
+          "tag": "div",
+          "class": "",
+          "bg": "rgba(0, 0, 0, 0)",
+          "bgImage": "none",
+          "border": "0px solid rgb(1, 78, 182)",
+          "boxShadow": "none",
+          "rect": {
+            "x": 74,
+            "y": 830,
+            "w": 293,
+            "h": 32
+          }
+        },
+        {
+          "tag": "div",
+          "class": "",
+          "bg": "rgba(0, 0, 0, 0)",
+          "bgImage": "radial-gradient(circle at 50% 35%, rgb(255, 255, 255), rgb(243, 248, 255) 76%)",
+          "border": "",
+          "boxShadow": "none",
+          "rect": {
+            "x": 64,
+            "y": 820,
+            "w": 313,
+            "h": 480
+          }
+        },
+        {
+          "tag": "article",
+          "class": "",
+          "bg": "rgb(255, 255, 255)",
+          "bgImage": "none",
+          "border": "1px solid rgb(216, 226, 240)",
+          "boxShadow": "rgba(1, 78, 182, 0.05) 0px 6px 18px 0px",
+          "rect": {
+            "x": 63,
+            "y": 819,
+            "w": 315,
+            "h": 706
+          }
+        },
+        {
+          "tag": "div",
+          "class": "",
+          "bg": "rgba(0, 0, 0, 0)",
+          "bgImage": "none",
+          "border": "0px solid rgb(1, 78, 182)",
+          "boxShadow": "none",
+          "rect": {
+            "x": 63,
+            "y": 819,
+            "w": 1314,
+            "h": 6867
+          }
+        }
+      ],
+      "near": []
+    },
+    {
+      "text": "Compare",
+      "cause": [
+        {
+          "tag": "button",
+          "class": "",
+          "bg": "rgb(255, 255, 255)",
+          "bgImage": "none",
+          "border": "1px solid rgb(216, 226, 240)",
+          "boxShadow": "none",
+          "rect": {
+            "x": 627,
+            "y": 830,
+            "w": 73,
+            "h": 32
+          }
+        },
+        {
+          "tag": "div",
+          "class": "",
+          "bg": "rgba(0, 0, 0, 0)",
+          "bgImage": "none",
+          "border": "0px solid rgb(1, 78, 182)",
+          "boxShadow": "none",
+          "rect": {
+            "x": 407,
+            "y": 830,
+            "w": 293,
+            "h": 32
+          }
+        },
+        {
+          "tag": "div",
+          "class": "",
+          "bg": "rgba(0, 0, 0, 0)",
+          "bgImage": "radial-gradient(circle at 50% 35%, rgb(255, 255, 255), rgb(243, 248, 255) 76%)",
+          "border": "",
+          "boxShadow": "none",
+          "rect": {
+            "x": 397,
+            "y": 820,
+            "w": 313,
+            "h": 256
+          }
+        },
+        {
+          "tag": "article",
+          "class": "",
+          "bg": "rgb(255, 255, 255)",
+          "bgImage": "none",
+          "border": "1px solid rgb(216, 226, 240)",
+          "boxShadow": "rgba(1, 78, 182, 0.05) 0px 6px 18px 0px",
+          "rect": {
+            "x": 396,
+            "y": 819,
+            "w": 315,
+            "h": 706
+          }
+        },
+        {
+          "tag": "div",
+          "class": "",
+          "bg": "rgba(0, 0, 0, 0)",
+          "bgImage": "none",
+          "border": "0px solid rgb(1, 78, 182)",
+          "boxShadow": "none",
+          "rect": {
+            "x": 63,
+            "y": 819,
+            "w": 1314,
+            "h": 6867
+          }
+        }
+      ],
+      "near": []
+    },
+    {
+      "text": "Compare",
+      "cause": [
+        {
+          "tag": "button",
+          "class": "",
+          "bg": "rgb(255, 255, 255)",
+          "bgImage": "none",
+          "border": "1px solid rgb(216, 226, 240)",
+          "boxShadow": "none",
+          "rect": {
+            "x": 960,
+            "y": 830,
+            "w": 73,
+            "h": 32
+          }
+        },
+        {
+          "tag": "div",
+          "class": "",
+          "bg": "rgba(0, 0, 0, 0)",
+          "bgImage": "none",
+          "border": "0px solid rgb(1, 78, 182)",
+          "boxShadow": "none",
+          "rect": {
+            "x": 740,
+            "y": 830,
+            "w": 293,
+            "h": 32
+          }
+        },
+        {
+          "tag": "div",
+          "class": "",
+          "bg": "rgba(0, 0, 0, 0)",
+          "bgImage": "radial-gradient(circle at 50% 35%, rgb(255, 255, 255), rgb(243, 248, 255) 76%)",
+          "border": "",
+          "boxShadow": "none",
+          "rect": {
+            "x": 730,
+            "y": 820,
+            "w": 313,
+            "h": 361
+          }
+        },
+        {
+          "tag": "article",
+          "class": "",
+          "bg": "rgb(255, 255, 255)",
+          "bgImage": "none",
+          "border": "1px solid rgb(216, 226, 240)",
+          "boxShadow": "rgba(1, 78, 182, 0.05) 0px 6px 18px 0px",
+          "rect": {
+            "x": 729,
+            "y": 819,
+            "w": 315,
+            "h": 706
+          }
+        },
+        {
+          "tag": "div",
+          "class": "",
+          "bg": "rgba(0, 0, 0, 0)",
+          "bgImage": "none",
+          "border": "0px solid rgb(1, 78, 182)",
+          "boxShadow": "none",
+          "rect": {
+            "x": 63,
+            "y": 819,
+            "w": 1314,
+            "h": 6867
+          }
+        }
+      ],
+      "near": []
+    }
+  ]
+}
