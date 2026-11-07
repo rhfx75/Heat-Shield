@@ -30,6 +30,9 @@ function App() {
           <Route path="products/fire-rated-doors" element={<Products category="fire-rated-doors" />} />
           <Route path="products/passive-fire-protection" element={<Products category="passive-fire-protection" />} />
           <Route path="products/electrical-safety" element={<Products category="electrical-safety" />} />
+          <Route path="products/electrical-system" element={<Products category="electrical-system" />} />
+          <Route path="products/industrial-safety-equipment" element={<Products category="industrial-safety-equipment" />} />
+          <Route path="products/industrial-automation" element={<Products category="industrial-automation" />} />
           <Route path="products/:slug" element={<ProductDetail />} />
           <Route path="product-catalogues" element={<ProductCatalogues />} />
           <Route path="standards" element={<StandardsPage />} />

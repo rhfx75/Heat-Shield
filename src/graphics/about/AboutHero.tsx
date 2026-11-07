@@ -92,7 +92,7 @@ export default function AboutHero() {
           </svg>
           <div data-ab-float data-ab-parallax className="hse-ab-hero-logo-wrap" data-ab-show data-ab-logo>
             <div className="hse-ab-hero-floor" />
-            <img src={HERO_IMG} alt="Safron Technology" className="hse-ab-hero-logo" width="720" height="720" decoding="async" fetchPriority="high" />
+            <img src={HERO_IMG} alt="HEAT SHIELD ENGINEERING" className="hse-ab-hero-logo" width="720" height="720" decoding="async" fetchPriority="high" />
             <div className="hse-ab-hero-rim" />
           </div>
           <div className="hse-ab-hero-sparks">

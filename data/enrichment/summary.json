@@ -1,0 +1,45 @@
+{
+  "generatedAt": "2026-11-07T16:08:56.924Z",
+  "mode": "dry-run-level1-only",
+  "productsParsed": 292,
+  "existingBrands": [
+    "ABB",
+    "Allen-Bradley",
+    "Crown",
+    "D&D",
+    "EAE",
+    "FRD",
+    "Honeywell",
+    "Kilargo",
+    "Kunshan",
+    "LS",
+    "Likcoo",
+    "Maple Armor",
+    "Metacaulk",
+    "NAFFCO",
+    "NAFFCO (authorized distributor stated by source)",
+    "NOTIFIER",
+    "National Motors",
+    "Potter",
+    "Prowell",
+    "Runner",
+    "SETEX",
+    "SISEN",
+    "Shield",
+    "Strong Chung",
+    "Vaisala",
+    "Weishaupt",
+    "Yaskawa",
+    "Zilly"
+  ],
+  "changeCount": 116,
+  "byConfidence": {
+    "high": 14,
+    "medium": 102
+  },
+  "byMethod": {
+    "name-brand": 92,
+    "name-model": 24
+  },
+  "unresolvedCount": 268
+}

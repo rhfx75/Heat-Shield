@@ -214,20 +214,56 @@ export const productCategories: ProductCategory[] = [
       { key: 'rcbo-rccb', slug: 'rcbo-rccb', label: 'RCBO & RCCB', icon: 'Zap' },
     ],
   },
+  {
+    key: 'electrical-system',
+    slug: 'electrical-system',
+    label: 'Electrical System',
+    icon: 'PlugZap',
+    image: null,
+    description:
+      'Electrical power and building systems including busbar trunking, switchgear, panels, transformers, generators, compressors, solar equipment, boilers, lifts, and related electrical components. Product suitability, ratings, and approvals must be confirmed per project.',
+    subCategories: [
+      { key: 'busbar-trunking', slug: 'busbar-trunking', label: 'Busbar Trunking System', icon: 'PlugZap' },
+      { key: 'switchgear-panels', slug: 'switchgear-panels', label: 'Switchgear & Panels', icon: 'LayoutDashboard' },
+      { key: 'transformers', slug: 'transformers', label: 'Transformers', icon: 'Zap' },
+      { key: 'generators-power', slug: 'generators-power', label: 'Generators & Power Equipment', icon: 'Gauge' },
+      { key: 'solar-equipment', slug: 'solar-equipment', label: 'Solar Equipment', icon: 'Lightbulb' },
+      { key: 'building-equipment', slug: 'building-equipment', label: 'Building & Utility Equipment', icon: 'Shield' },
+    ],
+  },
+  {
+    key: 'industrial-safety-equipment',
+    slug: 'industrial-safety-equipment',
+    label: 'Industrial Safety Equipment',
+    icon: 'Shield',
+    image: null,
+    description:
+      'Industrial and fire safety equipment including PPE, emergency tools, signage, fire extinguishers, and rescue/safety accessories. Suitability, standards, and approvals must be confirmed per project.',
+    subCategories: [
+      { key: 'ppe-safety-wear', slug: 'ppe-safety-wear', label: 'PPE & Safety Wear', icon: 'Shield' },
+      { key: 'fire-safety-tools', slug: 'fire-safety-tools', label: 'Fire Safety Tools & Accessories', icon: 'FireExtinguisher' },
+      { key: 'emergency-signage-lighting', slug: 'emergency-signage-lighting', label: 'Emergency Signage & Lighting', icon: 'Lightbulb' },
+      { key: 'rescue-safety-equipment', slug: 'rescue-safety-equipment', label: 'Rescue & Safety Equipment', icon: 'ShieldCheck' },
+    ],
+  },
+  {
+    key: 'industrial-automation',
+    slug: 'industrial-automation',
+    label: 'Industrial Automation',
+    icon: 'Activity',
+    image: null,
+    description:
+      'Industrial automation and control equipment including PLC/HMI, drives, controllers, sensors, transmitters, and instrumentation. Specifications and suitability must be confirmed per project.',
+    subCategories: [
+      { key: 'plc-hmi-controllers', slug: 'plc-hmi-controllers', label: 'PLC, HMI & Controllers', icon: 'LayoutDashboard' },
+      { key: 'variable-frequency-drives', slug: 'variable-frequency-drives', label: 'Variable Frequency Drives', icon: 'Zap' },
+      { key: 'sensors-transmitters', slug: 'sensors-transmitters', label: 'Sensors & Transmitters', icon: 'Activity' },
+      { key: 'instrumentation-controls', slug: 'instrumentation-controls', label: 'Instrumentation & Controls', icon: 'Gauge' },
+    ],
+  },
 ]
 
-function placeholderImage(label: string, accent: string = '#014EB6'): string {
-  const svg = `
-    <svg xmlns="http://www.w3.org/2000/svg" width="600" height="450" viewBox="0 0 600 450">
-      <rect width="600" height="450" fill="var(--hse-surface,#F7F9FC)" />
-      <rect x="20" y="20" width="560" height="410" rx="12" fill="none" stroke="${accent}" stroke-width="2" />
-      <text x="300" y="210" font-family="Poppins, sans-serif" font-size="14" fill="#52647A" text-anchor="middle" dominant-baseline="middle">${label}</text>
-      <text x="300" y="232" font-family="Poppins, sans-serif" font-size="12" fill="#52647A" text-anchor="middle" dominant-baseline="middle">Product image placeholder</text>
-    </svg>
-  `.trim()
-  return `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`
-}
-
+/* placeholderImage removed: products without real images are excluded from the catalog. */
 export const products: Product[] = [
   // ---- Fire Protection System - Fire Fighting Pumps ----
   {
@@ -278,48 +314,6 @@ export const products: Product[] = [
     applications: ['Fire pump rooms', 'Commercial buildings', 'Industrial facilities'],
     documents: [{ label: 'Installation Guide', url: null }],
   },
-  {
-    id: 'jockey-pump',
-    slug: 'jockey-pump',
-    name: 'Jockey Pump',
-    category: 'fire-protection-system',
-    subcategory: 'fire-fighting-pumps',
-    brand: 'Patterson',
-    model: 'VJP-25',
-    shortDescription: 'Compact jockey pump to maintain system pressure.',
-    description: 'Compact jockey pump to maintain system pressure in fire protection systems.',
-    image: placeholderImage('Jockey Pump'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Product Series', value: 'VJP-25' },
-      { label: 'Type', value: 'Jockey pump' },
-      { label: 'Flow Rate', value: 'Up to 25 GPM' },
-      { label: 'Certification', value: 'NFPA 20' },
-    ],
-    features: ['Pressure maintenance', 'Compact design', 'Electric driven'],
-    applications: ['Pressure maintenance', 'Fire protection systems', 'Commercial buildings'],
-  },
-  {
-    id: 'diesel-jockey-pump',
-    slug: 'diesel-jockey-pump',
-    name: 'Diesel Jockey Pump',
-    category: 'fire-protection-system',
-    subcategory: 'fire-fighting-pumps',
-    brand: 'Patterson',
-    model: 'VDJ-50',
-    shortDescription: 'Compact diesel jockey pump to maintain system pressure.',
-    description: 'Compact diesel jockey pump to maintain system pressure.',
-    image: placeholderImage('Diesel Jockey Pump'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Product Series', value: 'VDJ-50' },
-      { label: 'Type', value: 'Diesel jockey pump' },
-      { label: 'Flow Rate', value: 'Up to 50 GPM' },
-      { label: 'Certification', value: 'NFPA 20' },
-    ],
-    features: ['Pressure maintenance', 'Compact design', 'Diesel driven'],
-    applications: ['Pressure maintenance', 'Fire pump systems', 'Commercial buildings'],
-  },
 
   // ---- Fire Protection System - Fire Sprinkler Systems ----
   {
@@ -346,70 +340,6 @@ export const products: Product[] = [
     documents: [{ label: 'Design Guide', url: null }],
   },
   {
-    id: 'dry-pipe-sprinkler-system',
-    slug: 'dry-pipe-sprinkler-system',
-    name: 'Dry Pipe Sprinkler System',
-    category: 'fire-protection-system',
-    subcategory: 'fire-sprinkler-systems',
-    brand: 'Tyco',
-    model: 'DP-200',
-    shortDescription: 'Dry pipe system for cold storage and unheated areas.',
-    description: 'Dry pipe sprinkler system for cold storage and unheated areas where freezing is a concern.',
-    image: placeholderImage('Dry Pipe Sprinkler System'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Product Series', value: 'DP-200' },
-      { label: 'System Type', value: 'Dry pipe' },
-      { label: 'Operating Pressure', value: 'Up to 175 psi' },
-      { label: 'Certification', value: 'UL 199, NFPA 13' },
-    ],
-    features: ['Dry pipe', 'Freeze protection', 'NFPA 13 compliant'],
-    applications: ['Cold storage', 'Unheated areas', 'Parking garages'],
-  },
-  {
-    id: 'preaction-sprinkler-system',
-    slug: 'preaction-sprinkler-system',
-    name: 'Pre-Action Sprinkler System',
-    category: 'fire-protection-system',
-    subcategory: 'fire-sprinkler-systems',
-    brand: 'Tyco',
-    model: 'PA-300',
-    shortDescription: 'Double-interlock pre-action system for sensitive environments.',
-    description: 'Double-interlock pre-action sprinkler system for sensitive environments such as data centers.',
-    image: placeholderImage('Pre-Action Sprinkler System'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Product Series', value: 'PA-300' },
-      { label: 'System Type', value: 'Pre-action' },
-      { label: 'Interlock Type', value: 'Double-interlock' },
-      { label: 'Certification', value: 'UL 199, NFPA 13' },
-    ],
-    features: ['Double-interlock', 'Sensitive environments', 'False discharge prevention'],
-    applications: ['Server rooms', 'Data centers', 'Museums'],
-  },
-
-  // ---- Fire Protection System - Fire Protection Valves ----
-  {
-    id: 'osy-gate-valve',
-    slug: 'osy-gate-valve',
-    name: 'OS&Y Gate Valve',
-    category: 'fire-protection-system',
-    subcategory: 'fire-protection-valves',
-    brand: 'Viking',
-    model: 'OSY-1',
-    shortDescription: 'Outside screw and yoke gate valve for fire protection systems.',
-    description: 'OS&Y gate valve for fire protection system isolation and control.',
-    image: placeholderImage('OS&Y Gate Valve'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Product Series', value: 'OSY-1' },
-      { label: 'Type', value: 'OS&Y Gate Valve' },
-      { label: 'Certification', value: 'UL listed' },
-    ],
-    features: ['OS&Y design', 'Fire protection rated', 'Isolation control'],
-    applications: ['Fire protection systems', 'Water supply lines', 'Industrial facilities'],
-  },
-  {
     id: 'butterfly-valve',
     slug: 'butterfly-valve',
     name: 'Butterfly Valve',
@@ -428,131 +358,6 @@ export const products: Product[] = [
     ],
     features: ['Quarter-turn operation', 'Fire protection rated', 'Low pressure drop'],
     applications: ['Fire protection piping', 'Flow control', 'Isolation'],
-  },
-  {
-    id: 'swing-check-valve',
-    slug: 'swing-check-valve',
-    name: 'Swing Check Valve',
-    category: 'fire-protection-system',
-    subcategory: 'fire-protection-valves',
-    brand: 'Viking',
-    model: 'SCV-1',
-    shortDescription: 'Swing check valve for backflow prevention in fire systems.',
-    description: 'Swing check valve to prevent backflow in fire protection piping.',
-    image: placeholderImage('Swing Check Valve'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Product Series', value: 'SCV-1' },
-      { label: 'Type', value: 'Swing Check Valve' },
-      { label: 'Certification', value: 'UL listed' },
-    ],
-    features: ['Backflow prevention', 'Fire protection rated', 'Automatic operation'],
-    applications: ['Fire protection systems', 'Pump discharge', 'Water supply'],
-  },
-
-  // ---- Fire Protection System - Fire Hydrant & Standpipe Accessories ----
-  {
-    id: 'fire-hydrant-landing-valve',
-    slug: 'fire-hydrant-landing-valve',
-    name: 'Fire Hydrant Landing Valve',
-    category: 'fire-protection-system',
-    subcategory: 'fire-hydrant-accessories',
-    brand: 'Viking',
-    model: 'F-1',
-    shortDescription: 'Bronze landing valve with instantaneous coupling for fire hydrant systems.',
-    description: 'Bronze landing valve with instantaneous coupling for fire hydrant systems.',
-    image: placeholderImage('Fire Hydrant Landing Valve'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Product Series', value: 'F-1' },
-      { label: 'Material', value: 'Bronze' },
-      { label: 'Connection', value: 'Instantaneous coupling' },
-      { label: 'Certification', value: 'UL 668' },
-    ],
-    features: ['Bronze construction', 'Instantaneous coupling', 'UL listed'],
-    applications: ['Fire hydrant systems', 'Industrial facilities', 'Commercial buildings'],
-  },
-  {
-    id: 'fire-hose-reel',
-    slug: 'fire-hose-reel',
-    name: 'Fire Hose Reel',
-    category: 'fire-protection-system',
-    subcategory: 'fire-hydrant-accessories',
-    brand: 'Viking',
-    model: 'HR-30',
-    shortDescription: 'Wall-mounted fire hose reel with 30m hose and brass nozzle.',
-    description: 'Wall-mounted fire hose reel with 30m hose and brass nozzle.',
-    image: placeholderImage('Fire Hose Reel'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Product Series', value: 'HR-30' },
-      { label: 'Hose Length', value: '30 m' },
-      { label: 'Nozzle', value: 'Brass' },
-      { label: 'Mounting', value: 'Wall-mounted' },
-    ],
-    features: ['30m hose', 'Brass nozzle', 'Wall-mounted'],
-    applications: ['Commercial buildings', 'Industrial facilities', 'Warehouses'],
-  },
-  {
-    id: 'fire-hydrant-cabinet',
-    slug: 'fire-hydrant-cabinet',
-    name: 'Fire Hydrant Cabinet',
-    category: 'fire-protection-system',
-    subcategory: 'fire-hydrant-accessories',
-    brand: 'Viking',
-    model: 'HC-400',
-    shortDescription: 'Fire-rated steel hydrant cabinet with glass door and lock.',
-    description: 'Fire-rated steel hydrant cabinet with glass door and lock.',
-    image: placeholderImage('Fire Hydrant Cabinet'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Product Series', value: 'HC-400' },
-      { label: 'Material', value: 'Fire-rated steel' },
-      { label: 'Door', value: 'Glass with lock' },
-      { label: 'Certification', value: 'UL listed' },
-    ],
-    features: ['Fire-rated steel', 'Glass door', 'Lockable'],
-    applications: ['Building exteriors', 'Industrial facilities', 'Commercial complexes'],
-  },
-
-  // ---- Fire Protection System - Pipes, Fittings & Accessories ----
-  {
-    id: 'ms-fire-protection-pipe',
-    slug: 'ms-fire-protection-pipe',
-    name: 'MS Fire Protection Pipe',
-    category: 'fire-protection-system',
-    subcategory: 'pipes-fittings-accessories',
-    brand: 'To Be Specified',
-    model: 'To Be Specified',
-    shortDescription: 'Mild steel pipe for fire protection systems.',
-    description: 'Mild steel pipe for fire protection systems including sprinkler and hydrant networks.',
-    image: placeholderImage('MS Fire Protection Pipe'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Material', value: 'Mild Steel' },
-      { label: 'Application', value: 'Fire protection piping' },
-    ],
-    features: ['Fire protection rated', 'Durable construction', 'Standard sizes'],
-    applications: ['Sprinkler systems', 'Hydrant systems', 'Standpipe systems'],
-  },
-  {
-    id: 'threaded-fittings',
-    slug: 'threaded-fittings',
-    name: 'Threaded Fittings',
-    category: 'fire-protection-system',
-    subcategory: 'pipes-fittings-accessories',
-    brand: 'To Be Specified',
-    model: 'To Be Specified',
-    shortDescription: 'Threaded pipe fittings for fire protection systems.',
-    description: 'Threaded pipe fittings for fire protection piping connections.',
-    image: placeholderImage('Threaded Fittings'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Material', value: 'Steel' },
-      { label: 'Connection', value: 'Threaded' },
-    ],
-    features: ['Fire protection rated', 'Threaded connection', 'Multiple sizes'],
-    applications: ['Fire protection piping', 'System connections'],
   },
 
   // ---- Fire Protection System - Fire Extinguishers ----
@@ -662,27 +467,6 @@ export const products: Product[] = [
     features: ['AFFF foam', '6 litre capacity', 'Class A & B'],
     applications: ['Flammable liquid storage', 'Workshops', 'Garages'],
   },
-  {
-    id: 'water-extinguisher-9ltr',
-    slug: 'water-fire-extinguisher-9ltr',
-    name: 'Water Fire Extinguisher 9ltr',
-    category: 'fire-protection-system',
-    subcategory: 'fire-extinguishers',
-    brand: 'NAFFCO',
-    model: 'FW-9',
-    shortDescription: '9 litre water extinguisher for Class A fires.',
-    description: '9 litre water extinguisher for Class A fires.',
-    image: placeholderImage('Water Fire Extinguisher 9ltr'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Product Series', value: 'FW-9' },
-      { label: 'Capacity', value: '9 litre' },
-      { label: 'Fire Class', value: 'A' },
-      { label: 'Certification', value: 'UL 299' },
-    ],
-    features: ['Water agent', '9 litre capacity', 'Class A fires'],
-    applications: ['Offices', 'Residential buildings', 'Storage areas'],
-  },
 
   // ---- Fire Protection System - Fire Suppression Systems ----
   {
@@ -707,27 +491,6 @@ export const products: Product[] = [
     features: ['Clean agent', 'Electrically non-conductive', 'No residue'],
     applications: ['Server rooms', 'Data centers', 'Electrical enclosures'],
     documents: [{ label: 'Design Manual', url: null }],
-  },
-  {
-    id: 'novec1230-clean-agent-system',
-    slug: 'novec-1230-clean-agent-system',
-    name: 'Novec 1230 Clean Agent System',
-    category: 'fire-protection-system',
-    subcategory: 'fire-suppression-systems',
-    brand: '3M',
-    model: 'Novec 1230',
-    shortDescription: 'Novec 1230 fluid-based clean agent suppression for data centers.',
-    description: 'Novec 1230 fluid-based clean agent suppression for data centers.',
-    image: placeholderImage('Novec 1230 Clean Agent System'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Product Series', value: 'Novec 1230' },
-      { label: 'Agent Type', value: 'Clean agent (FK-5-1-12)' },
-      { label: 'Application', value: 'Data centers' },
-      { label: 'Certification', value: 'NFPA 2001, UL listed' },
-    ],
-    features: ['Clean agent', 'Environmentally friendly', 'No residue'],
-    applications: ['Data centers', 'Server rooms', 'Control rooms'],
   },
 
   // ---- Fire Detection & Alarm System - Fire Alarm Control Panels ----
@@ -803,2777 +566,7222 @@ export const products: Product[] = [
     applications: ['Commercial buildings', 'Educational institutions'],
     documents: [],
   },
-
-  // ---- Fire Detection & Alarm System - Smoke Detectors ----
+  // ---- NESBD Fire Protection System (source: nesbd.com category, added factual listing) ----
   {
-    id: 'photoelectric-smoke-detector',
-    slug: 'photoelectric-smoke-detector',
-    name: 'Photoelectric Smoke Detector',
-    category: 'fire-detection-system',
-    subcategory: 'smoke-detectors',
-    brand: 'Hochiki',
-    model: 'SLK-Z',
-    shortDescription: 'Ceiling-mounted smoke detector with 360-degree sensing and low-profile design.',
-    description: 'Ceiling-mounted smoke detector with 360-degree sensing and low-profile design.',
-    image: placeholderImage('Photoelectric Smoke Detector'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Product Series', value: 'SLK-Z' },
-      { label: 'Detection Type', value: 'Photoelectric' },
-      { label: 'Operating Voltage', value: '24 VDC' },
-      { label: 'Certification', value: 'UL 268' },
+    "id": "nesbd-open-drip-proof-motor-6",
+    "slug": "open-drip-proof-motor",
+    "name": "Open Drip Proof Motor",
+    "category": "fire-protection-system",
+    "subcategory": "fire-fighting-pumps",
+    "brand": "National Motors",
+    "model": "NM",
+    "shortDescription": "Open drip proof motor for fire pump applications.",
+    "description": "Three-phase horizontal low-voltage squirrel-cage induction motor for fire pump applications, described for use in accordance with NFPA 20 requirements. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/open_drip_proof_motor_cec17df5f7a2f0f644c514af42f7d437.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Open drip proof enclosure",
+      "Designed for fire pump applications",
+      "NEMA energy efficient design (as listed)",
+      "3 phase"
     ],
-    features: ['360-degree sensing', 'Low-profile design', 'Ceiling-mounted'],
-    applications: ['Office buildings', 'Hotels', 'Residential complexes'],
-    documents: [{ label: 'Datasheet', url: null }],
+    "applications": [
+      "Fire pump drivers",
+      "Electric motor driven fire pump sets"
+    ],
+    "keywords": [
+      "open drip proof motor",
+      "fire pump motor",
+      "ODP motor",
+      "NM"
+    ]
   },
   {
-    id: 'ionization-smoke-detector',
-    slug: 'ionization-smoke-detector',
-    name: 'Ionization Smoke Detector',
-    category: 'fire-detection-system',
-    subcategory: 'smoke-detectors',
-    brand: 'Hochiki',
-    model: 'SLK-ZI',
-    shortDescription: 'Fast-response ionization smoke detector for fast-flaming fires.',
-    description: 'Fast-response ionization smoke detector for fast-flaming fires.',
-    image: placeholderImage('Ionization Smoke Detector'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Product Series', value: 'SLK-ZI' },
-      { label: 'Detection Type', value: 'Ionization' },
-      { label: 'Operating Voltage', value: '24 VDC' },
-      { label: 'Certification', value: 'UL 268' },
+    "id": "nesbd-heat-exchanger-engine-21",
+    "slug": "heat-exchanger-engine",
+    "name": "Heat Exchanger Engine",
+    "category": "fire-protection-system",
+    "subcategory": "fire-fighting-pumps",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Heat exchanger engine for diesel fire pump applications.",
+    "description": "Heat exchanger engine component used in diesel-driven fire pump systems. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/heat_exchanger_engine_04c7d40bc894e087047ff8eb1822790b.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Heat exchanger engine",
+      "Diesel fire pump application"
     ],
-    features: ['Fast-response', 'Ionization technology', 'Ceiling-mounted'],
-    applications: ['Storage areas', 'Garages', 'Industrial spaces'],
+    "applications": [
+      "Diesel fire pump sets",
+      "Fire pump rooms"
+    ],
+    "keywords": [
+      "heat exchanger engine",
+      "diesel fire pump engine"
+    ]
   },
   {
-    id: 'duct-mounted-smoke-detector',
-    slug: 'duct-mounted-smoke-detector',
-    name: 'Duct-Mounted Smoke Detector',
-    category: 'fire-detection-system',
-    subcategory: 'smoke-detectors',
-    brand: 'System Sensor',
-    model: 'DH100ACDCL',
-    shortDescription: 'HVAC duct smoke detector for air-handling systems.',
-    description: 'HVAC duct smoke detector for air-handling systems.',
-    image: placeholderImage('Duct-Mounted Smoke Detector'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Product Series', value: 'DH100ACDCL' },
-      { label: 'Detection Type', value: 'Photoelectric' },
-      { label: 'Operating Voltage', value: '24 VDC' },
-      { label: 'Certification', value: 'UL 268A' },
+    "id": "nesbd-vertical-multistage-pumps-38",
+    "slug": "vertical-multistage-pumps",
+    "name": "Vertical Multistage Pump",
+    "category": "fire-protection-system",
+    "subcategory": "fire-fighting-pumps",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Vertical multistage pump for fire/water applications.",
+    "description": "Vertical multistage pump suitable for pressure boosting and water supply applications as specified by project requirements. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/vertical_multistage_pumps_b98203342d5ec0437f65ba3bfaf0d15d.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Vertical multistage design",
+      "Compact footprint"
     ],
-    features: ['Duct-mounted', 'Air-sampling', 'Photoelectric'],
-    applications: ['HVAC systems', 'Air handling units', 'Commercial buildings'],
-  },
-
-  // ---- Fire Detection & Alarm System - Heat Detectors ----
-  {
-    id: 'fixed-temperature-heat-detector',
-    slug: 'fixed-temperature-heat-detector',
-    name: 'Fixed Temperature Heat Detector',
-    category: 'fire-detection-system',
-    subcategory: 'heat-detectors',
-    brand: 'System Sensor',
-    model: '5601',
-    shortDescription: 'Fixed temperature heat detector for kitchens and boiler rooms.',
-    description: 'Fixed temperature heat detector for kitchens and boiler rooms.',
-    image: placeholderImage('Fixed Temperature Heat Detector'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Product Series', value: '5601' },
-      { label: 'Detection Type', value: 'Fixed temperature' },
-      { label: 'Operating Voltage', value: '24 VDC' },
-      { label: 'Certification', value: 'UL 521' },
+    "applications": [
+      "Pressure boosting",
+      "Water supply systems"
     ],
-    features: ['Fixed temperature', 'Ceiling-mounted', 'Rugged design'],
-    applications: ['Kitchens', 'Boiler rooms', 'Mechanical rooms'],
+    "keywords": [
+      "vertical multistage pump"
+    ]
   },
   {
-    id: 'rate-of-rise-heat-detector',
-    slug: 'rate-of-rise-heat-detector',
-    name: 'Rate-of-Rise Heat Detector',
-    category: 'fire-detection-system',
-    subcategory: 'heat-detectors',
-    brand: 'System Sensor',
-    model: '5602',
-    shortDescription: 'Rate-of-rise heat detector detecting rapid temperature increase.',
-    description: 'Rate-of-rise heat detector detecting rapid temperature increase.',
-    image: placeholderImage('Rate-of-Rise Heat Detector'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Product Series', value: '5602' },
-      { label: 'Detection Type', value: 'Rate-of-rise' },
-      { label: 'Operating Voltage', value: '24 VDC' },
-      { label: 'Certification', value: 'UL 521' },
+    "id": "nesbd-flow-meter-198",
+    "slug": "flow-meter-fire-pump",
+    "name": "Flow Meter",
+    "category": "fire-protection-system",
+    "subcategory": "fire-fighting-pumps",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Flow meter for fire pump/test line applications.",
+    "description": "Flow meter used for measuring flow in fire pump and test line applications, subject to project specification. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/flow_meter_881070c849650ad998e22e3dca085780.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Flow measurement",
+      "Fire pump/test application"
     ],
-    features: ['Rate-of-rise detection', 'Rapid temperature response', 'Ceiling-mounted'],
-    applications: ['Furnace rooms', 'Kitchens', 'Dryer rooms'],
-  },
-
-  // ---- Fire Detection & Alarm System - Manual Call Points ----
-  {
-    id: 'manual-call-point-break-glass',
-    slug: 'manual-call-point-break-glass',
-    name: 'Manual Call Point (Break Glass)',
-    category: 'fire-detection-system',
-    subcategory: 'manual-call-points',
-    brand: 'Hochiki',
-    model: 'CHQ-MCP',
-    shortDescription: 'Surface-mounted manual fire alarm call point with resettable element.',
-    description: 'Surface-mounted manual fire alarm call point with resettable element.',
-    image: placeholderImage('Manual Call Point'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Product Series', value: 'CHQ-MCP' },
-      { label: 'Type', value: 'Break glass' },
-      { label: 'Mounting', value: 'Surface-mounted' },
-      { label: 'Certification', value: 'UL 38' },
+    "applications": [
+      "Fire pump test lines",
+      "Pump rooms"
     ],
-    features: ['Break glass activation', 'Resettable element', 'Surface-mounted'],
-    applications: ['Corridors', 'Exit routes', 'Public buildings'],
-    documents: [],
-  },
-
-  // ---- Fire-Rated Doors - Steel Fire-Rated Doors ----
-  {
-    id: 'fire-rated-steel-door',
-    slug: 'fire-rated-steel-door',
-    name: 'Fire Rated Steel Door',
-    category: 'fire-rated-doors',
-    subcategory: 'steel-fire-doors',
-    brand: 'Assa Abloy',
-    model: 'FD-120',
-    shortDescription: '2-hour fire rated steel door with vision panel and self-closing hardware.',
-    description: '2-hour fire rated steel door with vision panel and self-closing hardware.',
-    image: placeholderImage('Fire Rated Steel Door'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Product Series', value: 'FD-120' },
-      { label: 'Fire Rating', value: '2 hours' },
-      { label: 'Material', value: 'Steel' },
-      { label: 'Certification', value: 'UL 10B, NFPA 80' },
-    ],
-    features: ['2-hour fire rating', 'Vision panel', 'Self-closing hardware'],
-    applications: ['Building exits', 'Stairwells', 'Fire-rated walls'],
-    documents: [{ label: 'Datasheet', url: null }],
+    "keywords": [
+      "flow meter",
+      "fire pump flow meter"
+    ]
   },
   {
-    id: 'fire-rated-timber-door',
-    slug: 'fire-rated-timber-door',
-    name: 'Fire Rated Timber Door',
-    category: 'fire-rated-doors',
-    subcategory: 'steel-fire-doors',
-    brand: 'Assa Abloy',
-    model: 'FT-60',
-    shortDescription: '1-hour fire rated timber door with intumescent seals.',
-    description: '1-hour fire rated timber door with intumescent seals.',
-    image: placeholderImage('Fire Rated Timber Door'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Product Series', value: 'FT-60' },
-      { label: 'Fire Rating', value: '1 hour' },
-      { label: 'Material', value: 'Timber' },
-      { label: 'Certification', value: 'UL 10B, NFPA 80' },
+    "id": "nesbd-naffco-battery-charger-197",
+    "slug": "naffco-battery-charger",
+    "name": "NAFFCO Battery Charger",
+    "category": "fire-protection-system",
+    "subcategory": "fire-fighting-pumps",
+    "brand": "NAFFCO",
+    "model": "",
+    "shortDescription": "Battery charger for fire pump controller/engine starting systems.",
+    "description": "Battery charger for fire pump diesel engine/controller starting and charging applications. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/naffco_battery_charger_525a3c5f3303fd977ef744ecf52b574d.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Battery charging",
+      "Fire pump system accessory"
     ],
-    features: ['1-hour fire rating', 'Intumescent seals', 'Timber finish'],
-    applications: ['Building exits', 'Residential corridors', 'Office partitions'],
-  },
-
-  // ---- Passive Fire Protection - Intumescent Paint ----
-  {
-    id: 'intumescent-fire-retardant-paint',
-    slug: 'intumescent-fire-retardant-paint',
-    name: 'Intumescent Fire-Retardant Paint',
-    category: 'passive-fire-protection',
-    subcategory: 'intumescent-paint',
-    brand: 'To Be Specified',
-    model: 'To Be Specified',
-    shortDescription: 'Intumescent fire-retardant paint for structural steel protection.',
-    description: 'Intumescent fire-retardant paint for structural steel protection.',
-    image: placeholderImage('Intumescent Fire-Retardant Paint'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Type', value: 'Intumescent paint' },
-      { label: 'Application', value: 'Structural steel' },
+    "applications": [
+      "Diesel fire pump controllers",
+      "Engine starting systems"
     ],
-    features: ['Fire-retardant', 'Intumescent', 'Structural protection'],
-    applications: ['Commercial buildings', 'Industrial facilities', 'Warehouses'],
-  },
-
-  // ---- Electrical & Lightning - Surge Protection Devices ----
-  {
-    id: 'surge-protection-device-type-2',
-    slug: 'surge-protection-device-type-2',
-    name: 'Surge Protection Device (SPD) Type 2',
-    category: 'electrical-safety',
-    subcategory: 'surge-protection-devices',
-    brand: 'Eaton',
-    model: 'SPD-T2',
-    shortDescription: 'Type 2 surge protection device for electrical panel transient overvoltage protection.',
-    description: 'Type 2 surge protection device for electrical panel transient overvoltage protection.',
-    image: placeholderImage('Surge Protection Device Type 2'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Product Series', value: 'SPD-T2' },
-      { label: 'Type', value: 'Type 2' },
-      { label: 'Application', value: 'Electrical panel' },
-      { label: 'Certification', value: 'UL 1449' },
-    ],
-    features: ['Type 2 SPD', 'Transient overvoltage protection', 'UL 1449'],
-    applications: ['Distribution boards', 'Electrical panels', 'Commercial buildings'],
-    documents: [{ label: 'Datasheet', url: null }],
+    "keywords": [
+      "battery charger",
+      "NAFFCO",
+      "fire pump"
+    ]
   },
   {
-    id: 'surge-protection-device-type-1-2',
-    slug: 'surge-protection-device-type-1-2',
-    name: 'Surge Protection Device Type 1+2',
-    category: 'electrical-safety',
-    subcategory: 'surge-protection-devices',
-    brand: 'Eaton',
-    model: 'SPD-T12',
-    shortDescription: 'Type 1+2 combined SPD for main distribution board protection.',
-    description: 'Type 1+2 combined SPD for main distribution board protection.',
-    image: placeholderImage('Surge Protection Device Type 1+2'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Product Series', value: 'SPD-T12' },
-      { label: 'Type', value: 'Type 1+2' },
-      { label: 'Application', value: 'Main distribution board' },
-      { label: 'Certification', value: 'UL 1449' },
-    ],
-    features: ['Type 1+2 combined', 'Main board protection', 'UL 1449'],
-    applications: ['Main distribution boards', 'Service entrance', 'Industrial facilities'],
-  },
-
-  // ---- Electrical & Lightning - MCB & MCCB ----
-  {
-    id: 'miniature-circuit-breaker-mcb',
-    slug: 'miniature-circuit-breaker-mcb',
-    name: 'Miniature Circuit Breaker (MCB)',
-    category: 'electrical-safety',
-    subcategory: 'mcb-mccb',
-    brand: 'Eaton',
-    model: 'MCB-1P',
-    shortDescription: 'Thermal-magnetic MCB for overload and short-circuit protection.',
-    description: 'Thermal-magnetic MCB for overload and short-circuit protection.',
-    image: placeholderImage('Miniature Circuit Breaker MCB'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Product Series', value: 'MCB-1P' },
-      { label: 'Type', value: 'Thermal-magnetic' },
-      { label: 'Poles', value: '1' },
-      { label: 'Certification', value: 'UL 489' },
-    ],
-    features: ['Thermal-magnetic', 'Overload protection', 'Short-circuit protection'],
-    applications: ['Distribution boards', 'Residential panels', 'Commercial panels'],
-    documents: [{ label: 'Datasheet', url: null }],
-  },
-  {
-    id: 'moulded-case-circuit-breaker-mccb',
-    slug: 'moulded-case-circuit-breaker-mccb',
-    name: 'Moulded Case Circuit Breaker (MCCB)',
-    category: 'electrical-safety',
-    subcategory: 'mcb-mccb',
-    brand: 'Eaton',
-    model: 'MCCB-3P',
-    shortDescription: 'Adjustable MCCB for industrial distribution boards.',
-    description: 'Adjustable MCCB for industrial distribution boards.',
-    image: placeholderImage('Moulded Case Circuit Breaker MCCB'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Product Series', value: 'MCCB-3P' },
-      { label: 'Type', value: 'Thermal-magnetic' },
-      { label: 'Poles', value: '3' },
-      { label: 'Certification', value: 'UL 489' },
-    ],
-    features: ['Adjustable trip', '3-pole', 'Industrial grade'],
-    applications: ['Industrial distribution boards', 'Commercial panels', 'Factories'],
-  },
-
-  // ---- Electrical & Lightning - RCBO & RCCB ----
-  {
-    id: 'residual-current-breaker-with-overcurrent-rcbo',
-    slug: 'residual-current-breaker-with-overcurrent-rcbo',
-    name: 'Residual Current Breaker with Overcurrent (RCBO)',
-    category: 'electrical-safety',
-    subcategory: 'rcbo-rccb',
-    brand: 'Eaton',
-    model: 'RCBO-2P',
-    shortDescription: 'RCBO combining MCB and RCD protection in one device.',
-    description: 'RCBO combining MCB and RCD protection in one device.',
-    image: placeholderImage('Residual Current Breaker with Overcurrent RCBO'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Product Series', value: 'RCBO-2P' },
-      { label: 'Type', value: 'RCBO' },
-      { label: 'Poles', value: '2' },
-      { label: 'Certification', value: 'UL 489' },
-    ],
-    features: ['MCB + RCD combined', '2-pole', 'Shock protection'],
-    applications: ['Distribution boards', 'Residential panels', 'Commercial panels'],
-  },
-  {
-    id: 'residual-current-circuit-breaker-rccb',
-    slug: 'residual-current-circuit-breaker-rccb',
-    name: 'Residual Current Circuit Breaker (RCCB)',
-    category: 'electrical-safety',
-    subcategory: 'rcbo-rccb',
-    brand: 'Eaton',
-    model: 'RCCB-2P',
-    shortDescription: 'RCCB for earth leakage and shock protection.',
-    description: 'RCCB for earth leakage and shock protection.',
-    image: placeholderImage('Residual Current Circuit Breaker RCCB'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Product Series', value: 'RCCB-2P' },
-      { label: 'Type', value: 'RCCB' },
-      { label: 'Poles', value: '2' },
-      { label: 'Certification', value: 'UL 489' },
-    ],
-    features: ['Earth leakage protection', 'Shock protection', '2-pole'],
-    applications: ['Distribution boards', 'Residential panels', 'Commercial panels'],
-  },
-  {
-    id: 'simplex-4006-fire-alarm-control-panel',
-    slug: 'simplex-4006-fire-alarm-control-panel',
-    name: 'Simplex 4006 Fire Alarm Control Panel',
-    category: 'fire-detection-system',
-    subcategory: 'fire-alarm-panels',
-    brand: 'Simplex',
-    model: '4006',
-    shortDescription: 'Conventional fire alarm control panel for smaller facilities.',
-    description:
-      'The Simplex 4006 is a conventional fire alarm control panel designed for smaller facilities requiring dependable fire detection, alarm initiation, and occupant notification.',
-    image: placeholderImage('Simplex 4006'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Product Series', value: '4006' },
-      { label: 'Panel Type', value: 'Conventional' },
-      { label: 'Initiating Architecture', value: 'Conventional IDC zones' },
-      { label: 'Notification', value: 'Conventional NAC outputs' },
-      { label: 'Certification', value: 'UL 864; verify applicable listing' },
-      { label: 'Product Status', value: 'Legacy product family; confirm availability' },
-    ],
-    features: [
-      'Conventional fire alarm control architecture',
-      'Multiple initiating device zones',
-      'Notification appliance circuit outputs',
-      'Fire alarm and supervisory monitoring',
-      'Trouble condition monitoring',
-    ],
-    applications: [
-      'Small commercial buildings',
-      'Retail facilities',
-      'Small industrial premises',
-      'Educational facilities',
-      'Small offices',
-    ],
-    documents: [
-      { label: 'Official Simplex Product Resources', url: 'https://www.simplexfire.com/resources' },
-      { label: 'Data Sheet Reference S4006-0001', url: null },
-    ],
-  },
-  {
-    id: 'simplex-4008-fire-alarm-control-panel',
-    slug: 'simplex-4008-fire-alarm-control-panel',
-    name: 'Simplex 4008 Fire Alarm Control Panel',
-    category: 'fire-detection-system',
-    subcategory: 'fire-alarm-panels',
-    brand: 'Simplex',
-    model: '4008',
-    shortDescription: 'Intelligent addressable fire alarm control panel for smaller facilities.',
-    description:
-      'The Simplex 4008 is an intelligent fire alarm control panel designed for smaller facilities requiring addressable fire detection, system monitoring, and integrated notification.',
-    image: placeholderImage('Simplex 4008'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Product Series', value: '4008' },
-      { label: 'Panel Type', value: 'Intelligent fire alarm control panel' },
-      { label: 'Initiating Architecture', value: 'Addressable / configuration dependent' },
-      { label: 'Notification', value: 'Conventional NAC' },
-      { label: 'Certification', value: 'UL 864; verify applicable listing' },
-      { label: 'Product Status', value: 'Confirm current availability' },
-    ],
-    features: [
-      'Intelligent fire alarm control',
-      'Addressable device management',
-      'Integrated alarm and trouble monitoring',
-      'Notification appliance circuit support',
-      'System programming and configuration',
-    ],
-    applications: [
-      'Small commercial buildings',
-      'Retail facilities',
-      'Offices',
-      'Educational facilities',
-      'Small industrial buildings',
-    ],
-    documents: [
-      { label: 'Official Simplex Product Resources', url: 'https://www.simplexfire.com/resources' },
-      { label: 'Data Sheet Reference S4008-0001', url: null },
-    ],
-  },
-  {
-    id: 'simplex-4007es-fire-alarm-control-panel',
-    slug: 'simplex-4007es-fire-alarm-control-panel',
-    name: 'Simplex 4007ES Fire Alarm Control Panel',
-    category: 'fire-detection-system',
-    subcategory: 'fire-alarm-panels',
-    brand: 'Simplex',
-    model: '4007ES',
-    shortDescription: 'Compact intelligent fire detection and control unit.',
-    description:
-      'The Simplex 4007ES is a compact fire detection and control unit designed for smaller facilities requiring intelligent fire detection, addressable device monitoring, and integrated notification capabilities.',
-    image: placeholderImage('Simplex 4007ES'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Product Series', value: '4007ES' },
-      { label: 'Panel Type', value: 'Hybrid / Addressable' },
-      { label: 'Initiating Architecture', value: 'Addressable and/or conventional, depending on model' },
-      { label: 'Communication', value: 'Simplex IDNet / IDNAC, model dependent' },
-      { label: 'Certification', value: 'UL 864; ULC listing varies by configuration' },
-      { label: 'Product Status', value: 'Verify current regional availability' },
-    ],
-    features: [
-      'Addressable fire detection',
-      'Hybrid conventional and addressable initiation options',
-      'Intelligent event monitoring',
-      'Addressable notification options',
-      'User-friendly operator interface',
-      'Network communication with compatible Simplex panels',
-    ],
-    applications: [
-      'Commercial buildings',
-      'Small industrial facilities',
-      'Educational institutions',
-      'Healthcare facilities',
-      'Retail and office buildings',
-    ],
-    documents: [
-      { label: 'Official Product Page', url: 'https://www.simplexfire.com/addressable-systems/4007es-fire-alarm-control-unit' },
-      { label: 'Data Sheet Reference S4007-0001', url: null },
-      { label: 'Addressable Notification Reference S4007-0002', url: null },
-    ],
-  },
-  {
-    id: 'simplex-4010-fire-alarm-control-panel',
-    slug: 'simplex-4010-fire-alarm-control-panel',
-    name: 'Simplex 4010 Fire Alarm Control Panel',
-    category: 'fire-detection-system',
-    subcategory: 'fire-alarm-panels',
-    brand: 'Simplex',
-    model: '4010',
-    shortDescription: 'Intelligent addressable fire alarm control panel for small to medium facilities.',
-    description:
-      'The Simplex 4010 is an intelligent fire alarm control panel designed for small to medium-sized facilities requiring addressable fire detection, event monitoring, and fire alarm notification.',
-    image: placeholderImage('Simplex 4010'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Product Series', value: '4010' },
-      { label: 'Panel Type', value: 'Addressable' },
-      { label: 'Initiating Architecture', value: 'Intelligent addressable' },
-      { label: 'Communication', value: 'Simplex IDNet, configuration dependent' },
-      { label: 'Notification', value: 'NAC' },
-      { label: 'Certification', value: 'UL 864; verify applicable listing' },
-      { label: 'Product Status', value: 'Legacy product family; confirm availability' },
-    ],
-    features: [
-      'Intelligent addressable fire detection',
-      'Addressable device monitoring',
-      'Fire alarm and supervisory event processing',
-      'System programming and configuration',
-      'Notification appliance circuit support',
-    ],
-    applications: [
-      'Commercial facilities',
-      'Educational buildings',
-      'Office buildings',
-      'Small industrial premises',
-      'Retail facilities',
-    ],
-    documents: [
-      { label: 'Official Simplex Product Resources', url: 'https://www.simplexfire.com/resources' },
-      { label: 'Data Sheet Reference S4010-0001', url: null },
-    ],
-  },
-  {
-    id: 'simplex-4010es-fire-alarm-control-panel',
-    slug: 'simplex-4010es-fire-alarm-control-panel',
-    name: 'Simplex 4010ES Fire Alarm Control Panel',
-    category: 'fire-detection-system',
-    subcategory: 'fire-alarm-panels',
-    brand: 'Simplex',
-    model: '4010ES',
-    shortDescription: 'Intelligent addressable fire alarm control unit for medium-sized facilities.',
-    description:
-      'The Simplex 4010ES is an intelligent addressable fire alarm control unit designed for medium-sized facilities requiring reliable fire detection, system monitoring, and flexible integration.',
-    image: placeholderImage('Simplex 4010ES'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Product Series', value: '4010ES' },
-      { label: 'Panel Type', value: 'Addressable' },
-      { label: 'Initiating Architecture', value: 'Addressable' },
-      { label: 'Communication', value: 'Simplex IDNet / IDNAC, configuration dependent' },
-      { label: 'Network Capability', value: 'Compatible with 4007ES and 4100ES' },
-      { label: 'Certification', value: 'UL 864; ULC listing varies by configuration' },
-      { label: 'Product Status', value: 'Confirm regional availability' },
-    ],
-    features: [
-      'Addressable fire detection and control',
-      'Intelligent device identification',
-      'Real-time alarm, supervisory, and trouble monitoring',
-      'Networkable system architecture',
-      'Flexible system configuration',
-      'Compatible with specified TrueAlarm sensors',
-      'Compatible with specified TrueAlert ES notification appliances',
-      'Optional releasing control configurations',
-    ],
-    applications: [
-      'Commercial buildings',
-      'Industrial facilities',
-      'Healthcare facilities',
-      'Educational institutions',
-      'Hotels and office buildings',
-    ],
-    documents: [
-      { label: 'Official Product Page', url: 'https://www.simplexfire.com/addressable-systems/4010es-fire-alarm-control-unit' },
-      { label: 'Data Sheet Reference S4010-0004', url: null },
-      { label: 'Additional Reference S4010-0006', url: null },
-    ],
-  },
-  {
-    id: 'simplex-4017es-fire-alarm-control-panel',
-    slug: 'simplex-4017es-fire-alarm-control-panel',
-    name: 'Simplex 4017ES Fire Alarm Control Panel',
-    category: 'fire-detection-system',
-    subcategory: 'fire-alarm-panels',
-    brand: 'Simplex',
-    model: '4017ES',
-    shortDescription: 'Addressable fire alarm control unit in the Foundation Series.',
-    description:
-      'The Simplex 4017ES is an addressable fire alarm control unit within the Simplex Foundation Series, designed for scalable fire detection and control applications.',
-    image: placeholderImage('Simplex 4017ES'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Product Series', value: '4017ES' },
-      { label: 'Panel Type', value: 'Addressable' },
-      { label: 'Initiating Architecture', value: 'Addressable' },
-      { label: 'Certification', value: 'Verify exact model listing' },
-      { label: 'Product Status', value: 'Verify current regional availability' },
-    ],
-    features: [
-      'Intelligent addressable fire detection',
-      'System-wide device monitoring',
-      'Fire alarm event processing',
-      'Flexible system configuration',
-      'Compatible Simplex communication architecture',
-      'Integration options subject to approved configuration',
-    ],
-    applications: [
-      'Commercial buildings',
-      'Industrial facilities',
-      'Institutional buildings',
-      'Office complexes',
-      'Multi-zone facilities',
-    ],
-    documents: [
-      { label: 'Official Simplex Addressable Systems', url: 'https://www.simplexfire.com/Addressable%20Systems' },
-      { label: 'Official Simplex Product Resources', url: 'https://www.simplexfire.com/resources' },
-    ],
-  },
-  {
-    id: 'simplex-4100u-fire-alarm-control-panel',
-    slug: 'simplex-4100u-fire-alarm-control-panel',
-    name: 'Simplex 4100U Fire Alarm Control Panel',
-    category: 'fire-detection-system',
-    subcategory: 'fire-alarm-panels',
-    brand: 'Simplex',
-    model: '4100U',
-    shortDescription: 'Intelligent addressable fire alarm control panel for medium to large facilities.',
-    description:
-      'The Simplex 4100U is an intelligent addressable fire alarm control panel designed for medium to large facilities requiring centralized fire detection, system monitoring, and integrated emergency notification.',
-    image: placeholderImage('Simplex 4100U'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Product Series', value: '4100U' },
-      { label: 'Panel Type', value: 'Addressable' },
-      { label: 'Initiating Architecture', value: 'Intelligent addressable' },
-      { label: 'Capacity', value: 'Up to 2,000 points, depending on configuration' },
-      { label: 'Communication', value: 'Simplex addressable communications' },
-      { label: 'Certification', value: 'UL 864; verify applicable listing' },
-      { label: 'Product Status', value: 'Legacy product family; confirm availability' },
-    ],
-    features: [
-      'Intelligent addressable fire detection',
-      'Modular system architecture',
-      'Network communication options',
-      'Integrated fire alarm and supervisory monitoring',
-      'Flexible notification and control capabilities',
-    ],
-    applications: [
-      'Large commercial buildings',
-      'Industrial facilities',
-      'Healthcare facilities',
-      'Educational campuses',
-      'Multi-building facilities',
-    ],
-    documents: [
-      { label: 'Official Simplex Product Resources', url: 'https://www.simplexfire.com/resources' },
-      { label: 'Additional Reference S4100-0031', url: null },
-    ],
-  },
-  {
-    id: 'simplex-4100es-fire-alarm-control-panel',
-    slug: 'simplex-4100es-fire-alarm-control-panel',
-    name: 'Simplex 4100ES Fire Alarm Control Panel',
-    category: 'fire-detection-system',
-    subcategory: 'fire-alarm-panels',
-    brand: 'Simplex',
-    model: '4100ES',
-    shortDescription: 'Scalable intelligent fire detection and control system for medium to large facilities.',
-    description:
-      'The Simplex 4100ES is a scalable intelligent fire detection and control system designed for medium to large facilities and complex multi-building environments.',
-    image: placeholderImage('Simplex 4100ES'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Product Series', value: '4100ES' },
-      { label: 'Panel Type', value: 'Addressable' },
-      { label: 'Initiating Architecture', value: 'Intelligent addressable' },
-      { label: 'Capacity', value: 'Up to approximately 3,000 points, configuration dependent' },
-      { label: 'Communication', value: 'Simplex IDNet / IDNAC, configuration dependent' },
-      { label: 'Network Capability', value: 'Simplex network architecture' },
-      { label: 'Certification', value: 'UL 864; ULC listing varies by configuration' },
-      { label: 'Product Status', value: 'Current product family; confirm regional availability' },
-    ],
-    features: [
-      'Intelligent addressable fire detection',
-      'Scalable modular architecture',
-      'Networkable system architecture',
-      'Real-time alarm, supervisory, and trouble monitoring',
-      'Flexible notification and emergency voice options',
-      'Compatible with specified Simplex TrueAlarm devices',
-      'Supports approved releasing applications',
-      'Optional touchscreen operator interface',
-    ],
-    applications: [
-      'Large commercial buildings',
-      'Industrial facilities',
-      'Healthcare complexes',
-      'Universities and campuses',
-      'Airports and transportation facilities',
-      'Multi-building industrial installations',
-    ],
-    documents: [
-      { label: 'Official Product Page', url: 'https://www.simplexfire.com/addressable-systems/4100es-fire-alarm-control-unit' },
-      { label: 'General Reference S4100-0031', url: null },
-      { label: 'Main Technical Datasheet S4100-1031', url: null },
-    ],
-  },
-  {
-    id: 'simplex-4100esi-fire-alarm-control-panel',
-    slug: 'simplex-4100esi-fire-alarm-control-panel',
-    name: 'Simplex 4100ESi Fire Alarm Control Panel',
-    category: 'fire-detection-system',
-    subcategory: 'fire-alarm-panels',
-    brand: 'Simplex',
-    model: '4100ESi',
-    shortDescription: 'Intelligent addressable fire detection and control system for international markets.',
-    description:
-      'The Simplex 4100ESi is an intelligent addressable fire detection and control system intended for specified international and Australian market applications.',
-    image: placeholderImage('Simplex 4100ESi'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Product Series', value: '4100ESi' },
-      { label: 'Panel Type', value: 'Addressable' },
-      { label: 'Initiating Architecture', value: 'Intelligent addressable' },
-      { label: 'Certification', value: 'Verify regional certification' },
-      { label: 'Product Status', value: 'Regional product; confirm availability in Bangladesh' },
-    ],
-    features: [
-      'Intelligent addressable fire detection',
-      'Modular system architecture',
-      'Configurable system capacity',
-      'Integrated event monitoring',
-      'Network communication options',
-      'Flexible notification and control capabilities',
-    ],
-    applications: [
-      'Commercial buildings',
-      'Industrial facilities',
-      'Healthcare facilities',
-      'Institutional buildings',
-      'Large commercial developments',
-    ],
-    documents: [
-      { label: 'Official Simplex Addressable Systems', url: 'https://www.simplexfire.com/Addressable%20Systems' },
-      { label: 'Official Simplex Product Resources', url: 'https://www.simplexfire.com/resources' },
-    ],
-  },
-  {
-    id: 'simplex-4010es-releasing-control-panel',
-    slug: 'simplex-4010es-releasing-control-panel',
-    name: 'Simplex 4010ES Releasing Control Panel',
-    category: 'fire-detection-system',
-    subcategory: 'fire-alarm-panels',
-    brand: 'Simplex',
-    model: '4010ES Releasing',
-    shortDescription: 'Addressable releasing control panel for fire suppression applications.',
-    description:
-      'The Simplex 4010ES releasing control configuration is designed for approved automatic extinguishing, deluge, and preaction sprinkler system applications.',
-    image: placeholderImage('Simplex 4010ES Releasing'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Product Series', value: '4010ES Releasing' },
-      { label: 'Panel Type', value: 'Addressable Releasing Control' },
-      { label: 'Initiating Architecture', value: 'Addressable' },
-      { label: 'Communication', value: 'Simplex addressable communications' },
-      { label: 'Certification', value: 'Verify exact releasing model listing' },
-      { label: 'Product Status', value: 'Verify current availability' },
-    ],
-    features: [
-      'Addressable fire detection',
-      'Releasing control functionality',
-      'Automatic extinguishing system interface',
-      'Deluge and preaction sprinkler control options',
-      'System event monitoring',
-      'Configurable suppression control logic',
-      'Supervisory and trouble monitoring',
-    ],
-    applications: [
-      'Industrial suppression systems',
-      'Electrical and control rooms',
-      'Special hazard facilities',
-      'Preaction sprinkler installations',
-      'Approved automatic extinguishing applications',
-    ],
-    documents: [
-      { label: 'Official Simplex Product Resources', url: 'https://www.simplexfire.com/resources' },
-      { label: 'Releasing Control Reference', url: 'https://www.simplexfire.com/addressable-systems/4010es-fire-alarm-control-unit' },
-    ],
-  },
-  {
-    id: 'simplex-truealarm-photoelectric-smoke-detector',
-    slug: 'simplex-truealarm-photoelectric-smoke-detector',
-    name: 'Simplex TrueAlarm Addressable Photoelectric Smoke Detector',
-    category: 'fire-detection-system',
-    subcategory: 'smoke-detectors',
-    brand: 'Simplex',
-    model: '4098 series',
-    shortDescription: 'Addressable photoelectric smoke detector with individual device identification.',
-    description:
-      'The Simplex TrueAlarm addressable photoelectric smoke detector is designed to provide early warning of fire by detecting smoke particles. It communicates with compatible Simplex fire alarm control panels to provide individual device identification and alarm monitoring.',
-    image: placeholderImage('Simplex TrueAlarm Smoke Detector'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Product Series', value: 'Simplex TrueAlarm' },
-      { label: 'Device Type', value: 'Addressable Photoelectric Smoke Sensor' },
-      { label: 'Model', value: '4098 series; exact model varies' },
-      { label: 'Detection Technology', value: 'Photoelectric' },
-      { label: 'Communication', value: 'Simplex addressable protocol; model dependent' },
-      { label: 'Panel Compatibility', value: 'Compatible Simplex addressable panels' },
-      { label: 'Product Status', value: 'Verify current availability' },
-    ],
-    features: [
-      'Intelligent addressable smoke detection',
-      'Individual detector identification',
-      'Real-time alarm and trouble monitoring',
-      'Programmable sensitivity',
-      'Drift compensation and maintenance alerts',
-      'Compatible with specified Simplex addressable bases',
-      'Supports system diagnostics and testing',
-    ],
-    applications: [
-      'Commercial buildings',
-      'Industrial facilities',
-      'Garment and textile factories',
-      'Healthcare facilities',
-      'Offices and educational buildings',
-    ],
-    documents: [
-      { label: 'Official Simplex Addressable Point Sensors', url: null },
-      { label: 'Simplex Technical Resources', url: 'https://www.simplexfire.com/resources' },
-    ],
-  },
-  {
-    id: 'simplex-electronic-heat-detector',
-    slug: 'simplex-electronic-heat-detector',
-    name: 'Simplex Electronic Heat Detector',
-    category: 'fire-detection-system',
-    subcategory: 'heat-detectors',
-    brand: 'Simplex',
-    model: '4098',
-    shortDescription: 'Thermistor-based electronic heat detector for fixed-temperature and rate-of-rise detection.',
-    description:
-      'The Simplex electronic heat detector uses thermistor-based temperature sensing to detect fixed temperature thresholds or rapid temperature increases, depending on the selected model.',
-    image: placeholderImage('Simplex Electronic Heat Detector'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Product Series', value: 'Simplex 4098' },
-      { label: 'Device Type', value: 'Electronic Heat Detector' },
-      { label: 'Model', value: '4098-9612, 4098-9613, 4098-9614, 4098-9615' },
-      { label: 'Detection Technology', value: 'Thermistor' },
-      { label: 'Fixed Temperature', value: '135°F (57°C) or 200°F (93°C)' },
-      { label: 'Rate-of-Rise', value: 'Available on selected models' },
-      { label: 'Communication', value: 'Conventional circuit or compatible base; model dependent' },
-      { label: 'Product Status', value: 'Verify current availability' },
-    ],
-    features: [
-      'Electronic thermistor-based temperature sensing',
-      'Fixed-temperature detection',
-      'Rate-of-rise detection options',
-      'Fast and consistent temperature response',
-      'Compatible with specified Simplex bases',
-      'Available in multiple temperature ratings',
-    ],
-    applications: [
-      'Industrial production areas',
-      'Kitchens and utility rooms',
-      'Mechanical rooms',
-      'Areas where smoke detection may be unsuitable',
-      'Warehouses and industrial facilities',
-    ],
-    documents: [
-      { label: 'Simplex Technical Resources', url: 'https://www.simplexfire.com/resources' },
-      { label: 'Datasheet Reference S4098-0014', url: null },
-      { label: 'Direct-connect heat detector reference S4098-0007', url: null },
-    ],
-  },
-  {
-    id: 'simplex-mx-multi-sensor-detector',
-    slug: 'simplex-mx-multi-sensor-detector',
-    name: 'Simplex MX Addressable Multi-Sensor Detector',
-    category: 'fire-detection-system',
-    subcategory: 'multi-sensor-detectors',
-    brand: 'Simplex',
-    model: 'MX series',
-    shortDescription: 'Addressable multi-sensor detector combining smoke and heat detection.',
-    description:
-      'The Simplex MX addressable multi-sensor detector combines multiple sensing technologies, such as smoke and heat detection, to provide intelligent fire detection for a variety of building environments.',
-    image: placeholderImage('Simplex MX Multi-Sensor Detector'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Product Series', value: 'Simplex MX' },
-      { label: 'Device Type', value: 'Addressable Multi-Sensor Detector' },
-      { label: 'Detection Technology', value: 'Smoke and heat' },
-      { label: 'Communication', value: 'Simplex MX addressable protocol' },
-      { label: 'Base Compatibility', value: 'Compatible Simplex MX bases' },
-      { label: 'Panel Compatibility', value: 'Compatible Simplex MX systems' },
-      { label: 'Product Status', value: 'Regional availability varies' },
-    ],
-    features: [
-      'Combined smoke and heat detection',
-      'Intelligent addressable technology',
-      'Individual device identification',
-      'Real-time alarm and trouble monitoring',
-      'Enhanced detection performance',
-      'Compatible with specified Simplex MX bases',
-      'Supports system diagnostics and maintenance',
-    ],
-    applications: [
-      'Commercial buildings',
-      'Industrial facilities',
-      'Garment and textile factories',
-      'Healthcare facilities',
-      'Hotels and institutional buildings',
-    ],
-    documents: [
-      { label: 'Official Simplex MX Addressable Point Sensors', url: null },
-      { label: 'Official Simplex MX Addressable Bases', url: null },
-      { label: 'Simplex Technical Resources', url: 'https://www.simplexfire.com/resources' },
-    ],
-  },
-  {
-    id: 'simplex-addressable-manual-call-point',
-    slug: 'simplex-addressable-manual-call-point',
-    name: 'Simplex Addressable Manual Call Point',
-    category: 'fire-detection-system',
-    subcategory: 'manual-call-points',
-    brand: 'Simplex',
-    model: '4099 / MX series',
-    shortDescription: 'Manually operated addressable fire alarm initiating device.',
-    description:
-      'The Simplex addressable manual call point is a manually operated fire alarm initiating device that allows occupants to activate the fire alarm system when a fire or emergency is identified.',
-    image: placeholderImage('Simplex Manual Call Point'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Product Series', value: 'Simplex 4099 / MX' },
-      { label: 'Device Type', value: 'Addressable Manual Call Point' },
-      { label: 'Model', value: 'Exact model varies by system' },
-      { label: 'Operation', value: 'Single-action or dual-action' },
-      { label: 'Communication', value: 'Simplex addressable protocol' },
-      { label: 'Mounting', value: 'Surface, flush, or semi-flush; model dependent' },
-      { label: 'Panel Compatibility', value: 'Compatible Simplex addressable panels' },
-      { label: 'Product Status', value: 'Verify regional availability' },
-    ],
-    features: [
-      'Manual fire alarm initiation',
-      'Addressable device identification',
-      'Clear visual activation indication',
-      'Resettable or replaceable operating mechanism, model dependent',
-      'Surface or flush mounting options',
-      'Compatible with specified Simplex addressable systems',
-      'Available in single-action and dual-action configurations',
-    ],
-    applications: [
-      'Commercial buildings',
-      'Industrial facilities',
-      'Garment and textile factories',
-      'Emergency exit routes',
-      'Staircases and escape corridors',
-      'Public and institutional buildings',
-    ],
-    documents: [
-      { label: 'Simplex Technical Resources', url: 'https://www.simplexfire.com/resources' },
-    ],
-  },
-  {
-    id: 'simplex-addressable-isolator-module',
-    slug: 'simplex-addressable-isolator-module',
-    name: 'Simplex Addressable Isolator Module',
-    category: 'fire-detection-system',
-    subcategory: 'input-output-modules',
-    brand: 'Simplex',
-    model: 'Confirm according to system and region',
-    shortDescription: 'Addressable loop isolator module for short-circuit fault isolation.',
-    description:
-      'A Simplex addressable isolator module helps protect the fire alarm communication loop by isolating a short-circuit fault on the wiring. It allows unaffected sections of the loop to continue communicating with the fire alarm control panel, subject to the system design and compatible device configuration.',
-    image: placeholderImage('Simplex Addressable Isolator Module'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Product Type', value: 'Addressable Loop Isolator Module' },
-      { label: 'Brand', value: 'Simplex' },
-      { label: 'Function', value: 'Short-circuit fault isolation' },
-      { label: 'System Compatibility', value: 'Compatible Simplex addressable fire alarm systems' },
-      { label: 'Model Number', value: 'Confirm according to the selected system and region' },
-      { label: 'Installation', value: 'Addressable loop, as specified by system design' },
-    ],
-    features: [
-      'Isolates short-circuit faults on the addressable communication loop',
-      'Helps maintain communication with unaffected loop devices',
-      'Supports fault isolation and system reliability',
-      'Designed for use with compatible Simplex addressable fire alarm systems',
-      'Can be installed at selected points in the loop according to the system design',
-      'Compact module design for fire alarm system installation',
-    ],
-    applications: [
-      'Commercial and industrial buildings',
-      'Garments and textile factories',
-      'Hospitals and healthcare facilities',
-      'Shopping malls and office buildings',
-      'Large addressable fire alarm installations',
-    ],
-    documents: [
-      { label: 'Product datasheet', url: null },
-      { label: 'Installation instructions', url: null },
-      { label: 'Compatibility documentation', url: null },
-    ],
-  },
-  {
-    id: 'simplex-4090-9116-idnet-isolator',
-    slug: 'simplex-4090-9116-idnet-isolator',
-    name: 'Simplex 4090-9116 Addressable IDNet Isolator',
-    category: 'fire-detection-system',
-    subcategory: 'input-output-modules',
-    brand: 'Simplex',
-    model: '4090-9116',
-    shortDescription: 'Addressable IDNet isolator for short-circuit fault isolation on Simplex IDNet loops.',
-    description:
-      'The Simplex 4090-9116 Addressable IDNet Isolator provides communication isolation on a Simplex IDNet addressable fire alarm loop. It automatically isolates a short-circuit fault and can also be manually activated from the compatible control unit to support troubleshooting and improve system integrity.',
-    image: placeholderImage('Simplex 4090-9116 IDNet Isolator'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Product Name', value: 'Addressable IDNet Isolator' },
-      { label: 'Brand', value: 'Simplex' },
-      { label: 'Model', value: '4090-9116' },
-      { label: 'Product Type', value: 'Addressable communication isolator' },
-      { label: 'Communication', value: 'Simplex IDNet' },
-      { label: 'Primary Function', value: 'Short-circuit isolation' },
-      { label: 'Operation', value: 'Automatic; manual control supported' },
-      { label: 'Compatibility', value: 'Compatible Simplex IDNet fire alarm systems' },
-    ],
-    features: [
-      'Short-circuit isolation on the IDNet communication loop',
-      'Automatic isolation when a short circuit is detected',
-      'Manual isolation capability from the compatible control unit',
-      'Helps maintain communication with unaffected loop sections',
-      'Supports system troubleshooting and loop integrity',
-      'Designed for compatible Simplex IDNet systems',
-    ],
-    applications: [
-      'Commercial and industrial buildings',
-      'Garments and textile factories',
-      'Hospitals and healthcare facilities',
-      'Shopping malls and office buildings',
-      'Large addressable fire alarm installations',
-    ],
-    documents: [
-      { label: 'Simplex official resources', url: 'https://www.simplexfire.com/resources' },
-      { label: 'Datasheet S4090-0002 — 4090-9116 Addressable IDNet Isolator', url: null },
-    ],
-  },
-  {
-    id: 'simplex-addressable-input-module',
-    slug: 'simplex-addressable-input-module',
-    name: 'Simplex Addressable Input Module',
-    category: 'fire-detection-system',
-    subcategory: 'input-output-modules',
-    brand: 'Simplex',
-    model: '4090-9001*',
-    shortDescription: 'Addressable input / monitor module for dry-contact monitoring.',
-    description:
-      'A Simplex addressable input module, also known as a monitor module, connects compatible external devices or dry-contact signals to an addressable fire alarm system. It enables the fire alarm control panel to monitor the status of connected equipment or initiating circuits.',
-    image: placeholderImage('Simplex Addressable Input Module'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Product Type', value: 'Addressable Input / Monitor Module' },
-      { label: 'Brand', value: 'Simplex' },
-      { label: 'Example Model', value: '4090-9001*' },
-      { label: 'Function', value: 'Monitors external contact or initiating circuit' },
-      { label: 'Communication', value: 'Compatible Simplex addressable system' },
-      { label: 'Input Type', value: 'Model-dependent' },
-      { label: 'Installation', value: 'According to manufacturer instructions and system design' },
-    ],
-    features: [
-      'Monitors external dry-contact inputs',
-      'Communicates input status to the compatible fire alarm control panel',
-      'Supports monitoring of auxiliary fire and safety systems',
-      'Provides addressable identification on compatible systems',
-      'Enables supervision of connected circuits, depending on model',
-      'Compact design for installation within approved enclosures',
-    ],
-    applications: [
-      'Sprinkler waterflow and valve supervisory monitoring',
-      'Fire pump status monitoring',
-      'Fire suppression system status',
-      'HVAC shutdown and other fire-safety interfaces',
-      'Third-party equipment status monitoring',
-    ],
-    documents: [
-      { label: 'Product datasheet', url: null },
-      { label: 'Installation instructions', url: null },
-      { label: 'Compatibility documentation', url: null },
-    ],
-  },
-  {
-    id: 'simplex-addressable-output-module',
-    slug: 'simplex-addressable-output-module',
-    name: 'Simplex Addressable Output Module',
-    category: 'fire-detection-system',
-    subcategory: 'input-output-modules',
-    brand: 'Simplex',
-    model: '4090-9002*',
-    shortDescription: 'Addressable output / control module for relay or supervised output.',
-    description:
-      'A Simplex addressable output module, also known as a control or relay module, allows a compatible fire alarm control panel to operate external equipment or control circuits in response to programmed fire alarm events.',
-    image: placeholderImage('Simplex Addressable Output Module'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Product Type', value: 'Addressable Output / Control Module' },
-      { label: 'Brand', value: 'Simplex' },
-      { label: 'Example Model', value: '4090-9002*' },
-      { label: 'Function', value: 'Controls external equipment or circuits' },
-      { label: 'Output Type', value: 'Model-dependent; relay or supervised output' },
-      { label: 'Communication', value: 'Compatible Simplex addressable system' },
-      { label: 'Installation', value: 'According to manufacturer instructions and system design' },
-    ],
-    features: [
-      'Provides addressable control of external equipment',
-      'Supports programmed fire alarm system actions',
-      'Can provide relay or supervised output functionality, depending on model',
-      'Enables integration with compatible building and fire-safety systems',
-      'Supports controlled operation of auxiliary equipment',
-      'Designed for compatible Simplex addressable systems',
-    ],
-    applications: [
-      'HVAC shutdown or control',
-      'Door-holder release',
-      'Fire and smoke control interfaces',
-      'Elevator recall interfaces',
-      'Fire suppression system interfaces',
-      'Auxiliary equipment control',
-    ],
-    documents: [
-      { label: 'Product datasheet', url: null },
-      { label: 'Installation instructions', url: null },
-      { label: 'Compatibility documentation', url: null },
-    ],
-  },
-  {
-    id: 'simplex-4090-9001-supervised-iam',
-    slug: 'simplex-4090-9001-supervised-iam',
-    name: 'Simplex 4090-9001 Supervised Individual Addressable Module',
-    category: 'fire-detection-system',
-    subcategory: 'input-output-modules',
-    brand: 'Simplex',
-    model: '4090-9001',
-    shortDescription: 'Supervised addressable input module monitoring normally open dry-contact devices.',
-    description:
-      'The Simplex 4090-9001 Supervised Individual Addressable Module (IAM) monitors normally open dry-contact devices and reports their status to a compatible Simplex fire alarm control panel. It receives power and communication through the addressable loop.',
-    image: placeholderImage('Simplex 4090-9001 Supervised IAM'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Product Type', value: 'Supervised Addressable Input Module' },
-      { label: 'Brand', value: 'Simplex' },
-      { label: 'Model', value: '4090-9001' },
-      { label: 'Communication', value: 'IDNet / MAPNET II, compatible systems' },
-      { label: 'Input', value: 'Normally open dry contact' },
-      { label: 'Circuit Class', value: 'Class B' },
-      { label: 'Maximum wiring distance to supervision resistor', value: 'Up to 500 ft (152 m), per datasheet' },
-      { label: 'Indicator', value: 'Status LED' },
-    ],
-    features: [
-      'Addressable monitoring of external dry-contact devices',
-      'Supervised Class B input circuit',
-      'Receives power and communication through a compatible IDNet or MAPNET II circuit',
-      'Thermoplastic housing with screw-terminal connections',
-      'Status-indicating LED',
-      'Supports location-specific device identification',
-    ],
-    applications: [
-      'Sprinkler waterflow switch monitoring',
-      'Valve supervisory switch monitoring',
-      'Fire pump status contacts',
-      'Fire suppression system monitoring',
-      'HVAC and other auxiliary fire-safety interfaces',
-    ],
-    documents: [
-      { label: 'Official Simplex datasheet S4090-0001', url: null },
-    ],
-  },
-  {
-    id: 'simplex-4090-5203-relay-iam',
-    slug: 'simplex-4090-5203-relay-iam',
-    name: 'Simplex 4090-5203 Relay IAM',
-    category: 'fire-detection-system',
-    subcategory: 'input-output-modules',
-    brand: 'Simplex',
-    model: '4090-5203',
-    shortDescription: 'Addressable relay output module for Simplex MX Technology systems.',
-    description:
-      'The Simplex 4090-5203 Relay IAM provides addressable relay control for compatible Simplex MX Technology systems. It allows the fire alarm control panel to operate external equipment through a relay contact.',
-    image: placeholderImage('Simplex 4090-5203 Relay IAM'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Product Type', value: 'Addressable Relay Output Module' },
-      { label: 'Brand', value: 'Simplex' },
-      { label: 'Model', value: '4090-5203' },
-      { label: 'Technology', value: 'MX Technology' },
-      { label: 'Output', value: 'Relay contact' },
-      { label: 'Contact Rating', value: '2 A at 24 VDC' },
-      { label: 'Compatibility', value: 'Compatible Simplex MX loop systems' },
-    ],
-    features: [
-      'Addressable relay control',
-      'Individually addressable on compatible MX loops',
-      'Relay contact rated 2 A at 24 VDC',
-      'Supports programmed control actions',
-      'Designed for compatible Simplex MX loop interface modules',
-      'Suitable for interfacing with auxiliary systems',
-    ],
-    applications: [
-      'HVAC shutdown or control',
-      'Door-holder release interfaces',
-      'Smoke-control system interfaces',
-      'Elevator-related control interfaces',
-      'Auxiliary fire-safety equipment control',
-    ],
-    documents: [
-      { label: 'Official Simplex datasheet S4090-0012', url: null },
-    ],
-  },
-  {
-    id: 'simplex-4090-5250-mx-multiple-io-module',
-    slug: 'simplex-4090-5250-mx-multiple-io-module',
-    name: 'Simplex 4090-5250 MX Multiple I/O Module',
-    category: 'fire-detection-system',
-    subcategory: 'input-output-modules',
-    brand: 'Simplex',
-    model: '4090-5250',
-    shortDescription: 'Combined input and output module with 3 Class B inputs and 2 Form C relay outputs.',
-    description:
-      'For projects requiring multiple monitored inputs and relay outputs, Simplex offers the 4090-5250 MX Multiple I/O Module combining input monitoring and relay output control in a single module.',
-    image: placeholderImage('Simplex 4090-5250 MX Multiple I/O Module'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Model', value: '4090-5250' },
-      { label: 'Inputs', value: '3 Class B inputs' },
-      { label: 'Outputs', value: '2 Form C relay outputs' },
-      { label: 'Technology', value: 'MX Technology' },
-      { label: 'Datasheet', value: 'S4090-0016' },
-    ],
-    features: [
-      'Combined input monitoring and relay output control',
-      '3 Class B supervised inputs',
-      '2 Form C relay outputs',
-      'MX Technology compatible',
-    ],
-    applications: [
-      'Projects requiring multiple monitored inputs and relay outputs',
-      'Auxiliary fire-safety equipment control',
-      'HVAC and door-holder interfaces',
-      'Fire suppression system interfaces',
-    ],
-    documents: [
-      { label: 'Datasheet S4090-0016', url: null },
-    ],
-  },
-  {
-    id: 'naffco-honeycomb-core-fire-rated-door',
-    slug: 'naffco-honeycomb-core-fire-rated-door',
-    name: 'NAFFCO Honeycomb Core Fire-Rated Door',
-    category: 'fire-rated-doors',
-    subcategory: 'steel-fire-doors',
-    brand: 'NAFFCO',
-    model: 'Honeycomb Core',
-    shortDescription: 'Steel fire door with honeycomb core for fire resistance and compartmentation.',
-    description:
-      'The NAFFCO Honeycomb Core Fire-Rated Door is a steel fire door designed to provide fire resistance and compartmentation in buildings. Its construction incorporates a honeycomb core within a steel door leaf, offering structural stability and a lightweight door configuration.',
-    image: placeholderImage('NAFFCO Honeycomb Core Fire-Rated Door'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Brand', value: 'NAFFCO' },
-      { label: 'Product Type', value: 'Honeycomb Core Fire-Rated Door' },
-      { label: 'Door Construction', value: 'Steel door leaf' },
-      { label: 'Core Material', value: 'Honeycomb core' },
-      { label: 'Fire Rating', value: 'Model and certification dependent' },
-      { label: 'Door Frame', value: 'Compatible fire-rated steel frame' },
-      { label: 'Hardware', value: 'Approved fire-rated hardware' },
-      { label: 'Certification', value: 'Verify applicable product certification' },
-      { label: 'Product Status', value: 'Confirm current availability' },
-    ],
-    features: [
-      'Steel door leaf construction',
-      'Honeycomb core infill',
-      'Fire-rated door assembly',
-      'Durable and rigid construction',
-      'Compatible with approved fire-rated hardware',
-      'Available in different configurations and finishes',
-    ],
-    applications: [
-      'Commercial buildings',
-      'Garments and textile factories',
-      'Industrial facilities',
-      'Shopping malls',
-      'Office buildings',
-      'Institutional buildings',
-    ],
-    documents: [
-      { label: 'Product Datasheet', url: null },
-      { label: 'Technical Catalogue', url: null },
-      { label: 'Installation Instructions', url: null },
-      { label: 'Fire Test Certificate', url: null },
-    ],
-  },
-  {
-    id: 'naffco-steel-stiffened-fire-rated-door',
-    slug: 'naffco-steel-stiffened-fire-rated-door',
-    name: 'NAFFCO Steel Stiffened Fire-Rated Door',
-    category: 'fire-rated-doors',
-    subcategory: 'steel-fire-doors',
-    brand: 'NAFFCO',
-    model: 'Steel Stiffened',
-    shortDescription: 'Reinforced steel fire door assembly for demanding environments.',
-    description:
-      'The NAFFCO Steel Stiffened Fire-Rated Door is designed for applications requiring a robust steel door assembly with fire-resistance performance. Its reinforced steel construction and suitable insulation materials provide structural strength and thermal protection as part of a certified doorset.',
-    image: placeholderImage('NAFFCO Steel Stiffened Fire-Rated Door'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Brand', value: 'NAFFCO' },
-      { label: 'Product Type', value: 'Steel Stiffened Fire-Rated Door' },
-      { label: 'Door Construction', value: 'Reinforced steel' },
-      { label: 'Core / Infill', value: 'Manufacturer-specified insulation' },
-      { label: 'Fire Rating', value: 'Model and certification dependent' },
-      { label: 'Door Frame', value: 'Compatible steel frame' },
-      { label: 'Hardware', value: 'Approved fire-rated hardware' },
-      { label: 'Certification', value: 'Verify applicable product certification' },
-      { label: 'Product Status', value: 'Confirm current availability' },
-    ],
-    features: [
-      'Reinforced steel door leaf construction',
-      'Steel stiffener arrangement',
-      'Insulation infill, where specified',
-      'Fire-rated door assembly',
-      'Durable construction for demanding environments',
-      'Compatible with approved fire-rated hardware',
-    ],
-    applications: [
-      'Industrial facilities',
-      'Manufacturing plants',
-      'Garments and textile factories',
-      'Commercial buildings',
-      'Utility rooms',
-      'Service and plant rooms',
-    ],
-    documents: [
-      { label: 'Product Datasheet', url: null },
-      { label: 'Technical Catalogue', url: null },
-      { label: 'Installation Instructions', url: null },
-      { label: 'Fire Test Certificate', url: null },
-    ],
-  },
-  {
-    id: 'naffco-glazed-fire-rated-door',
-    slug: 'naffco-glazed-fire-rated-door',
-    name: 'NAFFCO Glazed Fire-Rated Door',
-    category: 'fire-rated-doors',
-    subcategory: 'glazed-fire-doors',
-    brand: 'NAFFCO',
-    model: 'Glazed',
-    shortDescription: 'Fire-rated door with tested fire-resistant glazing for visibility and compartmentation.',
-    description:
-      'The NAFFCO Glazed Fire-Rated Door combines a fire-resistant door assembly with specially tested fire-rated glazing. It is designed to provide fire compartmentation while allowing visibility and natural light through the glazed section.',
-    image: placeholderImage('NAFFCO Glazed Fire-Rated Door'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Brand', value: 'NAFFCO' },
-      { label: 'Product Type', value: 'Glazed Fire-Rated Door' },
-      { label: 'Door Construction', value: 'Manufacturer-specified construction' },
-      { label: 'Glazing', value: 'Certified fire-resistant glass' },
-      { label: 'Fire Rating', value: 'Glazing and doorset certification dependent' },
-      { label: 'Frame Material', value: 'Manufacturer-specified frame' },
-      { label: 'Hardware', value: 'Approved fire-rated hardware' },
-      { label: 'Certification', value: 'Verify applicable glass and doorset certification' },
-      { label: 'Product Status', value: 'Confirm current availability' },
-    ],
-    features: [
-      'Fire-rated glazed door assembly',
-      'Specially tested fire-resistant glass',
-      'Steel or manufacturer-specified frame construction',
-      'Available with vision-panel configurations',
-      'Compatible with approved fire-rated hardware',
-      'Designed for visibility and fire compartmentation',
-    ],
-    applications: [
-      'Commercial buildings',
-      'Hospitals',
-      'Shopping malls',
-      'Office buildings',
-      'Educational facilities',
-      'Public circulation areas',
-    ],
-    documents: [
-      { label: 'Product Datasheet', url: null },
-      { label: 'Glazing Technical Specification', url: null },
-      { label: 'Installation Instructions', url: null },
-      { label: 'Fire Test Certificate', url: null },
-    ],
-  },
-  {
-    id: 'naffco-temperature-rise-rated-fire-door',
-    slug: 'naffco-temperature-rise-rated-fire-door',
-    name: 'NAFFCO Temperature Rise Rated Fire Door',
-    category: 'fire-rated-doors',
-    subcategory: 'steel-fire-doors',
-    brand: 'NAFFCO',
-    model: 'Temperature Rise Rated',
-    shortDescription: 'Fire door limiting temperature rise on the unexposed side.',
-    description:
-      'The NAFFCO Temperature Rise Rated Fire Door is designed to provide fire resistance while limiting the temperature increase on the unexposed side of the door during a specified fire test period. It is intended for applications where both fire containment and reduced heat transmission are important.',
-    image: placeholderImage('NAFFCO Temperature Rise Rated Fire Door'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Brand', value: 'NAFFCO' },
-      { label: 'Product Type', value: 'Temperature Rise Rated Fire Door' },
-      { label: 'Door Construction', value: 'Insulated fire-rated assembly' },
-      { label: 'Core Material', value: 'Manufacturer-specified insulation' },
-      { label: 'Fire Rating', value: 'Model and certification dependent' },
-      { label: 'Temperature Rise Rating', value: 'Verify tested classification' },
-      { label: 'Door Frame', value: 'Compatible certified frame' },
-      { label: 'Certification', value: 'Verify applicable test standard' },
-      { label: 'Product Status', value: 'Confirm current availability' },
-    ],
-    features: [
-      'Temperature-rise performance design',
-      'Insulated door construction',
-      'Fire-rated steel door assembly',
-      'Designed to limit heat transmission',
-      'Compatible with approved fire-rated hardware',
-      'Suitable for certified fire-door applications',
-    ],
-    applications: [
-      'Protected escape routes',
-      'Staircase enclosures',
-      'Commercial buildings',
-      'Educational facilities',
-      'Healthcare facilities',
-      'Industrial premises',
-    ],
-    documents: [
-      { label: 'Product Datasheet', url: null },
-      { label: 'Technical Catalogue', url: null },
-      { label: 'Temperature Rise Test Report', url: null },
-      { label: 'Installation Instructions', url: null },
-    ],
-  },
-  {
-    id: 'naffco-fire-rated-steel-door-frame',
-    slug: 'naffco-fire-rated-steel-door-frame',
-    name: 'NAFFCO Fire-Rated Steel Door Frame',
-    category: 'fire-rated-doors',
-    subcategory: 'fire-door-frames',
-    brand: 'NAFFCO',
-    model: 'Steel Frame',
-    shortDescription: 'Fire-rated steel frame assembly for compatible fire door leaves.',
-    description:
-      'The NAFFCO Fire-Rated Steel Door Frame is designed to form part of a compatible fire-rated doorset. It provides structural support for the door leaf and accommodates the required fire-rated hardware and sealing components.',
-    image: placeholderImage('NAFFCO Fire-Rated Steel Door Frame'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Brand', value: 'NAFFCO' },
-      { label: 'Product Type', value: 'Fire-Rated Steel Door Frame' },
-      { label: 'Material', value: 'Steel' },
-      { label: 'Configuration', value: 'Manufacturer-specified' },
-      { label: 'Fire Rating', value: 'Based on tested doorset assembly' },
-      { label: 'Hardware Preparation', value: 'Model dependent' },
-      { label: 'Finish', value: 'Manufacturer-specified' },
-      { label: 'Certification', value: 'Verify doorset certification' },
-      { label: 'Product Status', value: 'Confirm current availability' },
-    ],
-    features: [
-      'Steel frame construction',
-      'Designed for compatible fire-rated door leaves',
-      'Hardware preparation options',
-      'Suitable for certified doorset configurations',
-      'Compatible with specified fire and smoke seals',
-      'Available in manufacturer-specified dimensions',
-    ],
-    applications: [
-      'Commercial buildings',
-      'Industrial facilities',
-      'Staircase enclosures',
-      'Corridors and exit routes',
-      'Utility and service rooms',
-    ],
-    documents: [
-      { label: 'Product Datasheet', url: null },
-      { label: 'Frame Installation Details', url: null },
-      { label: 'Technical Catalogue', url: null },
-      { label: 'Fire Test Certificate', url: null },
-    ],
-  },
-  {
-    id: 'naffco-end-suction-fire-pump-nf-e',
-    slug: 'naffco-end-suction-fire-pump-nf-e',
-    name: 'NAFFCO End Suction Fire Pump NF-E',
-    category: 'fire-protection-system',
-    subcategory: 'fire-fighting-pumps',
-    brand: 'NAFFCO',
-    model: 'NF-E Series',
-    shortDescription: 'Horizontal end suction fire pump with NFPA 20 compliance for reliable water supply.',
-    description:
-      'NAFFCO End Suction Fire Pumps are designed to provide reliable fire protection water supply for commercial, industrial, and institutional facilities. Engineered in accordance with NFPA 20 performance requirements, these horizontal end suction pumps combine robust construction, dependable hydraulic performance, and ease of maintenance. Available with electric motor or diesel engine drives, the NF-E Series offers a comprehensive range of flow and pressure ratings to meet different fire protection system requirements.',
-    image: placeholderImage('NAFFCO End Suction Fire Pump'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Manufacturer', value: 'NAFFCO' },
-      { label: 'Product Series', value: 'NF-E' },
-      { label: 'Pump Type', value: 'Horizontal End Suction' },
-      { label: 'Flow Rate', value: '50–750 US GPM' },
-      { label: 'Pressure Rating', value: '3.4–15.4 bar' },
-      { label: 'Speed Rating', value: '2,900–3,550 RPM' },
-      { label: 'Driver Options', value: 'Electric Motor / Diesel Engine' },
-      { label: 'Design Standard', value: 'NFPA 20' },
-      { label: 'Testing', value: 'Hydrostatic & Operational Run Test' },
-      { label: 'Certification', value: 'UL and/or FM approved options' },
-    ],
-    features: [
-      'Performance characteristics in accordance with NFPA 20',
-      'UL and/or FM approved pump options, subject to specific model certification',
-      'Horizontal end suction pump configuration',
-      'Back pull-out casing design for simplified maintenance',
-      'Dynamically balanced, double-shrouded impeller',
-      'Grease-lubricated deep groove ball bearings',
-      'Factory hydrostatic testing and operational run testing',
-      'Electric motor and diesel engine drive options',
-      'Complete pump package with additional accessories as required',
-      'Engineering assistance, field start-up, and periodic maintenance support',
-    ],
-    applications: [
-      'Industrial manufacturing facilities',
-      'Ready-made garment (RMG) factories',
-      'Commercial and residential buildings',
-      'Warehouses and logistics facilities',
-      'Shopping malls and business complexes',
-      'Institutional and industrial fire protection systems',
-    ],
-    documents: [
-      { label: 'Product Datasheet', url: null },
-      { label: 'Installation Instructions', url: null },
-      { label: 'Compliance documentation', url: null },
-    ],
-  },
-  {
-    id: 'naffco-horizontal-split-case-fire-pump-nf-s',
-    slug: 'naffco-horizontal-split-case-fire-pump-nf-s',
-    name: 'NAFFCO Horizontal Split Case Fire Pump NF-S',
-    category: 'fire-protection-system',
-    subcategory: 'fire-fighting-pumps',
-    brand: 'NAFFCO',
-    model: 'NF-S Series',
-    shortDescription: 'High-capacity horizontal split case fire pump with NFPA 20 compliance.',
-    description:
-      'NAFFCO Horizontal Split Case Fire Pumps are designed for high-capacity fire protection applications requiring reliable water supply and consistent hydraulic performance. The NF-S Series combines robust mechanical construction, double-suction impeller technology, and high-performance hydraulic design to meet demanding fire protection requirements in accordance with NFPA 20. Available with electric motor or diesel engine drives, these pumps offer flow capacities ranging from 300 to 8,000 US GPM, making them suitable for large industrial facilities, manufacturing plants, commercial complexes, and other high-demand fire protection installations.',
-    image: placeholderImage('NAFFCO Horizontal Split Case Fire Pump'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Manufacturer', value: 'NAFFCO' },
-      { label: 'Product Series', value: 'NF-S' },
-      { label: 'Pump Type', value: 'Horizontal Split Case' },
-      { label: 'Flow Rate', value: '300–8,000 US GPM' },
-      { label: 'Pressure Rating', value: '5.4–33.3 bar' },
-      { label: 'Speed Rating', value: '1,470–3,550 RPM' },
-      { label: 'Impeller Type', value: 'Closed Double Suction' },
-      { label: 'Casing Design', value: 'Axially Split' },
-      { label: 'Driver Options', value: 'Electric Motor / Diesel Engine' },
-      { label: 'Design Standard', value: 'NFPA 20' },
-      { label: 'Impeller Balancing', value: 'ISO 1940-1' },
-      { label: 'Testing', value: 'Hydrostatic & Operational Run Test' },
-      { label: 'Certification', value: 'UL and/or FM approved options' },
-    ],
-    features: [
-      'Performance characteristics in accordance with NFPA 20',
-      'UL and/or FM approved pump options, subject to specific model certification',
-      'Horizontal split case pump design',
-      'Axially split casing for convenient rotor removal',
-      'Double-suction closed impeller design',
-      'Dynamically balanced impeller according to ISO 1940-1',
-      'Double volute construction for reduced radial forces in applicable high-head models',
-      'Replaceable casing wear rings',
-      'Grease-lubricated high-quality bearings on both sides',
-      'Factory hydrostatic testing facilities',
-      'Operational run testing in accordance with NFPA 20',
-      'Electric motor and diesel engine drive options',
-      'Complete engineering, fabrication, testing, and commissioning support',
-      'Additional accessories available as required',
-    ],
-    applications: [
-      'Large-scale RMG and textile manufacturing facilities',
-      'Industrial manufacturing plants',
-      'Power generation facilities',
-      'Large warehouses and logistics centres',
-      'Commercial and high-rise buildings',
-      'Shopping malls and commercial complexes',
-      'Marine and seawater-compatible fire protection applications (selected configurations)',
-    ],
-    documents: [
-      { label: 'Product Datasheet', url: null },
-      { label: 'Installation Instructions', url: null },
-      { label: 'Compliance documentation', url: null },
-    ],
-  },
-  {
-    id: 'naffco-vertical-turbine-fire-pump',
-    slug: 'naffco-vertical-turbine-fire-pump',
-    name: 'NAFFCO Vertical Turbine Fire Pump',
-    category: 'fire-protection-system',
-    subcategory: 'fire-fighting-pumps',
-    brand: 'NAFFCO',
-    model: 'Vertical Turbine Series',
-    shortDescription: 'Vertical turbine fire pump for underground water sources with NFPA 20 compliance.',
-    description:
-      'NAFFCO Vertical Turbine Fire Pumps are engineered for fire protection applications where water must be drawn from underground tanks, wells, reservoirs, or other water sources below the pump installation level. Designed for reliable operation and efficient hydraulic performance, these pumps are suitable for large industrial and commercial fire protection systems. The vertical turbine configuration features a multi-stage impeller arrangement, robust column assembly, and specially designed suction bell to ensure dependable water delivery under demanding fire protection conditions.',
-    image: placeholderImage('NAFFCO Vertical Turbine Fire Pump'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Manufacturer', value: 'NAFFCO' },
-      { label: 'Pump Type', value: 'Vertical Turbine' },
-      { label: 'Flow Rate', value: '50–6,000 US GPM' },
-      { label: 'Pressure Rating', value: '2.76–26 bar' },
-      { label: 'Speed Rating', value: '1,450–2,950 RPM' },
-      { label: 'Pump Configuration', value: 'Multi-Stage Vertical Turbine' },
-      { label: 'Impeller Balancing', value: 'ISO 1940-1' },
-      { label: 'Column Construction', value: 'Flanged Type' },
-      { label: 'Column Section Length', value: 'Maximum 10 ft per section' },
-      { label: 'Seawater Application', value: 'Optional materials for selected capacities' },
-      { label: 'Design Standard', value: 'Applicable NFPA 20 requirements' },
-    ],
-    features: [
-      'Designed for fire protection applications in accordance with applicable NFPA 20 requirements',
-      'Vertical turbine pump configuration',
-      'Multi-stage hydraulic design',
-      'Dynamically balanced impellers according to ISO 1940-1',
-      'Efficient suction bell and bowl assembly',
-      'Robust flanged column pipe construction',
-      'Precision-machined column connections',
-      'Smooth hydraulic passageways for efficient water flow',
-      'Suitable for underground water sources and deep water installations',
-      'Selected capacities available with optional seawater-compatible materials',
-      'Electric motor and diesel engine drive configurations, subject to model availability',
-    ],
-    applications: [
-      'Underground fire water storage tanks',
-      'Deep wells and borewell water sources',
-      'Industrial manufacturing facilities',
-      'RMG and textile factories',
-      'Power generation plants',
-      'Large commercial and industrial complexes',
-      'Marine and seawater fire protection applications (selected material configurations)',
-    ],
-    documents: [
-      { label: 'Product Datasheet', url: null },
-      { label: 'Installation Instructions', url: null },
-      { label: 'Compliance documentation', url: null },
-    ],
-  },
-  {
-    id: 'naffco-fire-pump-fuel-tank',
-    slug: 'naffco-fire-pump-fuel-tank',
-    name: 'NAFFCO Fire Pump Fuel Tank',
-    category: 'fire-protection-system',
-    subcategory: 'fire-fighting-pumps',
-    brand: 'NAFFCO',
-    model: 'Horizontal Cylindrical Series',
-    shortDescription: 'Carbon steel diesel fuel tank for fire pump systems with 50–9,000+ US gallon capacity options.',
-    description:
-      'NAFFCO Fire Pump Fuel Tanks are designed to provide reliable diesel fuel storage for diesel engine-driven fire pump systems. Manufactured using carbon steel construction and suitable welding processes, these tanks are engineered to support dependable fuel storage and supply for fire protection installations. Available in multiple capacities, the horizontal cylindrical tanks feature a robust structural design, elevated support legs, and essential fuel system fittings. Larger above-ground storage tank configurations are also available to accommodate different project requirements.',
-    image: placeholderImage('NAFFCO Fire Pump Fuel Tank'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Manufacturer', value: 'NAFFCO' },
-      { label: 'Product Type', value: 'Fire Pump Fuel Tank' },
-      { label: 'Tank Configuration', value: 'Horizontal Cylindrical' },
-      { label: 'Tank Material', value: 'Carbon Steel' },
-      { label: 'Material Standard', value: 'ASTM A36' },
-      { label: 'Welding Processes', value: 'GMAW / SMAW' },
-      { label: 'Support Leg Material', value: 'Carbon Steel Pipe' },
-      { label: 'Minimum Leg Height', value: '500 mm' },
-      { label: 'Standard Capacity Range', value: '50–750 US Gallons' },
-      { label: 'Large Capacity Range', value: '1,000–2,000 US Gallons' },
-      { label: 'Additional Availability', value: '9,000 US Gallons and above' },
-      { label: 'Optional Accessories', value: 'Pad Plate & Ladder' },
-    ],
-    features: [
-      'Horizontal cylindrical tank configuration',
-      'Carbon steel construction',
-      'Shell, dish head, and lifting lug manufactured from ASTM A36 carbon steel',
-      'GMAW and/or SMAW welding processes',
-      'Carbon steel pipe support legs',
-      'Minimum support leg height of 500 mm',
-      'Integrated fuel system fittings and connections',
-      'Multiple storage capacity options',
-      'Above-ground tank configurations available up to 9,000 US gallons and above',
-      'Optional pad plate and ladder for larger tank configurations',
-    ],
-    applications: [
-      'Diesel engine-driven fire pump systems',
-      'Industrial fire pump installations',
-      'RMG and textile manufacturing facilities',
-      'Commercial and industrial buildings',
-      'Warehouses and logistics facilities',
-      'Large-scale fire protection pump rooms',
-    ],
-    documents: [
-      { label: 'Product Datasheet', url: null },
-      { label: 'Installation Instructions', url: null },
-      { label: 'Compliance documentation', url: null },
-    ],
-  },
-  {
-    id: 'naffco-electric-motor-fire-pump-controller',
-    slug: 'naffco-electric-motor-fire-pump-controller',
-    name: 'NAFFCO Electric Motor Fire Pump Controller',
-    category: 'fire-protection-system',
-    subcategory: 'fire-fighting-pumps',
-    brand: 'NAFFCO',
-    model: 'NFY-DOM1 / NFY-SDM1 / NFY-SSM1 Series',
-    shortDescription: 'UL Listed and FM Approved microprocessor-based electric motor fire pump controller with DOL, Star-Delta, and Soft Starter options.',
-    description:
-      'NAFFCO Microprocessor-Based Electric Motor Fire Pump Controllers are designed to provide reliable, intelligent, and automatic control of electric motor-driven fire pump systems. Engineered for critical fire protection applications, these controllers combine advanced microprocessor technology with high-quality electrical components to ensure dependable pump starting, monitoring, and operational control. The controllers are UL Listed and FM Approved, subject to the applicable model and configuration, and are designed in accordance with relevant fire protection and electrical standards, including NFPA 20, UL 218, UL 508, NFPA 70, and applicable NEMA requirements. NAFFCO provides multiple starter configurations, enclosure options, and communication capabilities to accommodate different fire pump system requirements.',
-    image: placeholderImage('NAFFCO Electric Motor Fire Pump Controller'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Manufacturer', value: 'NAFFCO' },
-      { label: 'Product Type', value: 'Electric Motor Fire Pump Controller' },
-      { label: 'Controller Technology', value: 'Microprocessor-Based' },
-      { label: 'UL Listing', value: 'UL Listed – File No. EX15064' },
-      { label: 'FM Approval', value: 'FM Approved configurations' },
-      { label: 'Starter Types', value: 'DOL / Star-Delta / Soft Starter' },
-      { label: 'Model Numbers', value: 'NFY-DOM1 / NFY-SDM1 / NFY-SSM1' },
-      { label: 'Power Rating', value: '15–400 HP' },
-      { label: 'Voltage', value: '230 / 380 / 415 V AC (UL/FM)' },
-      { label: 'Additional Voltage', value: '480 V AC (UL)' },
-      { label: 'Frequency', value: '50 / 60 Hz' },
-      { label: 'Short-Circuit Rating', value: '100 kA' },
-      { label: 'Enclosure Options', value: 'NEMA 2 / NEMA 3 / NEMA 4 / NEMA 4X' },
-      { label: 'Communication', value: 'Optional MODBUS via RJ45' },
-    ],
-    features: [
-      'Microprocessor-based intelligent control system',
-      'UL Listed (UL File No. EX15064), as stated in manufacturer documentation',
-      'FM Approved configurations',
-      'Designed in accordance with NFPA 20 requirements',
-      'High-quality UL Listed and UL Recognized electrical components',
-      'UL Listed enclosure options',
-      'Multiple motor starting configurations',
-      'Automatic and manual fire pump control functionality',
-      'Advanced electrical monitoring and control capabilities',
-      'Optional MODBUS communication through RJ45 interface',
-      'Multiple enclosure protection options',
-      'Designed for reliable operation in critical fire protection applications',
-    ],
-    starterTypes: [
+    "id": "nesbd-co2-fire-suppression-125",
+    "slug": "co2-fire-suppression-system",
+    "name": "CO2 Fire Suppression System",
+    "category": "fire-protection-system",
+    "subcategory": "fire-suppression-systems",
+    "brand": "",
+    "model": "CO2",
+    "shortDescription": "CO2 fire suppression for special hazard protection.",
+    "description": "CO2 fire suppression system for special hazard applications where a non-conductive agent with no post-discharge residue is required. System design, occupancy safety, and approvals must be confirmed per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/co2_fire_protection_effective_clean_sustainable_f3b209b5d3cb3b6a647e39c9ed28e147.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Non-conductive agent",
+      "No residue (as described)",
+      "Special hazard protection"
+    ],
+    "applications": [
+      "Electrical/sensitive equipment hazards (as applicable)",
+      "Special hazard areas"
+    ],
+    "specifications": [
       {
-        name: 'Direct On Line (DOL) – NFY-DOM1',
-        description:
-          'Designed for direct motor starting by applying the supply voltage directly to the motor terminals.',
+        "label": "Agent",
+        "value": "CO2"
       },
       {
-        name: 'Star-Delta – NFY-SDM1',
-        description:
-          'Uses a star-delta starting arrangement to reduce motor starting current during the initial starting phase.',
+        "label": "Approvals (as listed by source)",
+        "value": "UL Listed, LPCB, VDS Approved (confirm per model/project)"
+      }
+    ],
+    "keywords": [
+      "CO2 suppression",
+      "fire suppression",
+      "special hazard"
+    ]
+  },
+  {
+    "id": "nesbd-fk-5-1-12-clean-agent-126",
+    "slug": "clean-agent-fire-suppression-fk-5-1-12",
+    "name": "Clean Agent Fire Suppression System FK-5-1-12",
+    "category": "fire-protection-system",
+    "subcategory": "fire-suppression-systems",
+    "brand": "Honeywell",
+    "model": "FK-5-1-12",
+    "shortDescription": "FK-5-1-12 clean agent fire suppression system.",
+    "description": "FK-5-1-12 (Novec 1230 type) clean agent fire suppression system for critical installations, as described by source. Complies with NFPA 2001 clean agent requirements as stated by source; confirm project design and approvals. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/clean_agent_fire_suppression_system_fk_5_1_12_77c739595b81f4fc37f195f6c8950da6.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Clean agent suppression",
+      "For critical installations (as listed)",
+      "No residue (typical for clean agent)"
+    ],
+    "applications": [
+      "Data centers",
+      "Control rooms",
+      "Telecom/critical facilities"
+    ],
+    "specifications": [
+      {
+        "label": "Agent",
+        "value": "FK-5-1-12"
       },
       {
-        name: 'Soft Starter – NFY-SSM1',
-        description:
-          'Utilizes electronic soft-start technology to provide controlled motor acceleration and reduce starting stress.',
-      },
+        "label": "Listing (as listed by source)",
+        "value": "UL Listed (confirm per system)"
+      }
     ],
-    enclosureOptions: [
-      { label: 'NEMA 2', description: 'General indoor enclosure protection' },
-      { label: 'NEMA 3', description: 'Protection against outdoor weather conditions' },
-      { label: 'NEMA 4', description: 'Protection against water and dust ingress' },
-      { label: 'NEMA 4X', description: 'Enhanced corrosion-resistant enclosure protection' },
-    ],
-    applications: [
-      'Electric motor-driven fire pump systems',
-      'Industrial manufacturing facilities',
-      'RMG and textile factories',
-      'Commercial and high-rise buildings',
-      'Warehouses and logistics facilities',
-      'Shopping malls and commercial complexes',
-      'Large-scale industrial fire protection installations',
-    ],
-    documents: [
-      { label: 'Product Datasheet', url: null },
-      { label: 'Installation Instructions', url: null },
-      { label: 'Compliance documentation', url: null },
-    ],
+    "keywords": [
+      "FK-5-1-12",
+      "Novec 1230",
+      "clean agent",
+      "fire suppression"
+    ]
   },
   {
-    id: 'naffco-diesel-engine-fire-pump-controller',
-    slug: 'naffco-diesel-engine-fire-pump-controller',
-    name: 'NAFFCO Diesel Engine Fire Pump Controller',
-    category: 'fire-protection-system',
-    subcategory: 'fire-fighting-pumps',
-    brand: 'NAFFCO',
-    model: 'Diesel Engine Controller Series',
-    shortDescription: 'UL Listed and FM Approved microprocessor-based diesel engine fire pump controller with factory wiring and testing.',
-    description:
-      'NAFFCO Diesel Engine Fire Pump Controllers are designed to provide reliable automatic and manual control of diesel engine-driven fire pump systems. Developed for critical fire protection applications, these controllers provide dependable engine starting control, electrical monitoring, and operational management to support fire pump system readiness. The controllers are UL Listed (UL File No. EX15064), as specified in the manufacturer documentation, and FM Approved configurations are available in accordance with applicable fire pump controller standards. Designed to operate with 12/24 V DC control systems and 110/220 V AC input supplies, these controllers are compatible with most diesel engines commonly used in firefighting applications. Each controller is completely wired, assembled, and factory-tested before shipment, making it ready for installation according to the manufacturer instructions.',
-    image: placeholderImage('NAFFCO Diesel Engine Fire Pump Controller'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Manufacturer', value: 'NAFFCO' },
-      { label: 'Product Type', value: 'Diesel Engine Fire Pump Controller' },
-      { label: 'Controller Category', value: 'Diesel Engine Driven' },
-      { label: 'UL Listing', value: 'UL Listed – File No. EX15064' },
-      { label: 'FM Approval', value: 'FM Approved configurations' },
-      { label: 'AC Input Voltage', value: '110 / 220 V AC' },
-      { label: 'DC Operating Voltage', value: '12 / 24 V DC' },
-      { label: 'Frequency', value: '50 / 60 Hz' },
-      { label: 'Engine Compatibility', value: 'Most diesel engines used in firefighting applications' },
-      { label: 'Electrical Components', value: 'UL Listed / UL Recognized' },
-      { label: 'Enclosure', value: 'UL Listed enclosure options' },
-      { label: 'Assembly', value: 'Factory Wired & Assembled' },
-      { label: 'Testing', value: 'Factory Tested Before Shipment' },
+    "id": "nesbd-hfc-227ea-clean-agent-127",
+    "slug": "clean-agent-fire-suppression-hfc-227ea",
+    "name": "Clean Agent Fire Suppression System HFC-227ea",
+    "category": "fire-protection-system",
+    "subcategory": "fire-suppression-systems",
+    "brand": "Honeywell",
+    "model": "HFC-227ea",
+    "shortDescription": "HFC-227ea clean agent fire suppression system.",
+    "description": "HFC-227ea (FM-200 type) clean agent fire suppression system for critical installations, as described by source. Confirm applicable standards, environmental requirements, and project approvals. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/clean_agent_fire_suppression_system_5f3dd4c9e5a6838b32dbc4b51131984a.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Clean agent suppression",
+      "For critical installations (as listed)"
     ],
-    features: [
-      'Microprocessor-based diesel engine fire pump control',
-      'UL Listed (UL File No. EX15064), subject to applicable model certification',
-      'FM Approved configurations',
-      'Designed in accordance with NFPA 20 requirements',
-      'Compatible with 12 V DC and 24 V DC diesel engine systems',
-      '110 V AC / 220 V AC input voltage options',
-      '50/60 Hz operating frequency',
-      'Compatible with most diesel engines used in firefighting applications',
-      'High-quality UL Listed and UL Recognized electrical components',
-      'UL Listed enclosure options',
-      'Completely wired and assembled at the factory',
-      'Factory-tested before shipment',
-      'Ready for installation according to manufacturer requirements',
+    "applications": [
+      "Data centers",
+      "Control rooms",
+      "Telecom/critical facilities"
     ],
-    applications: [
-      'Diesel engine-driven fire pump systems',
-      'Industrial fire protection installations',
-      'RMG and textile manufacturing facilities',
-      'Commercial and high-rise buildings',
-      'Warehouses and logistics facilities',
-      'Shopping malls and commercial complexes',
-      'Large-scale industrial fire protection systems',
-    ],
-    documents: [
-      { label: 'Product Datasheet', url: null },
-      { label: 'Installation Instructions', url: null },
-      { label: 'Compliance documentation', url: null },
-    ],
-  },
-  {
-    id: 'naffco-jockey-pump-controller',
-    slug: 'naffco-jockey-pump-controller',
-    name: 'NAFFCO Jockey Pump Controller',
-    category: 'fire-protection-system',
-    subcategory: 'fire-fighting-pumps',
-    brand: 'NAFFCO',
-    model: 'NFY-JDO1 / NFY-JSD1 / NFY-JDO1-M1 / NFY-JSD1-M1 Series',
-    shortDescription: 'UL Listed jockey pump controller for pressure maintenance with DOL and Star-Delta starting, standard and touchscreen (M1) configurations.',
-    description:
-      'NAFFCO UL Listed Jockey Pump Controllers are designed to provide automatic and manual control of jockey pump systems used in fire protection installations. These controllers maintain the required pressure within the fire protection piping network by controlling jockey pump operation in response to system pressure variations. Available in Direct On-Line (DOL) and Star-Delta starting configurations, the controllers feature electrical protection devices, pressure monitoring, operational indicators, and optional advanced touchscreen control functionality. The M1 series incorporates a touchscreen interface that allows operators to monitor operating parameters, configure settings, view alarms, and manage controller operation through an integrated control panel.',
-    image: placeholderImage('NAFFCO Jockey Pump Controller'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Manufacturer', value: 'NAFFCO' },
-      { label: 'Product Type', value: 'Jockey Pump Controller' },
-      { label: 'Certification', value: 'UL Listed configurations' },
-      { label: 'Controller Models', value: 'NFY-JDO1 / NFY-JSD1 / NFY-JDO1-M1 / NFY-JSD1-M1' },
-      { label: 'Starter Types', value: 'Direct On-Line / Star-Delta' },
-      { label: 'Standard Control', value: 'Hand-Off-Automatic' },
-      { label: 'Advanced Control', value: 'Touchscreen Interface (M1 Series)' },
-      { label: 'Motor Protection', value: 'Thermal & Short-Circuit Protection' },
-      { label: 'Pressure Monitoring', value: 'Adjustable Pressure Switch' },
-      { label: 'Run Monitoring', value: 'Pump Run Indicator' },
-      { label: 'Fault Monitoring', value: 'Pump Trip Indicator' },
-      { label: 'Timer Functions', value: 'Run Period Timer / Star-Delta Starting Timer' },
-      { label: 'Auxiliary Inputs', value: 'Up to 4 (M1 Series)' },
-      { label: 'Output Ports', value: 'Up to 3 (M1 Series)' },
-      { label: 'Security', value: 'Password Protection (M1 Series)' },
-    ],
-    features: [
-      'UL Listed jockey pump controller configurations',
-      'Direct On-Line (DOL) and Star-Delta starter options',
-      'Main disconnect switch with rotary handle',
-      'Motor starter or overload relay according to starter configuration',
-      'Thermal and short-circuit protection',
-      'Rated motor connectors',
-      'Circuit breaker protection for control and motor circuits',
-      'Adjustable pressure switch',
-      'Star-Delta starting timer for applicable models',
-      'Run period timer',
-      'Power ON / Healthy, Pump Run, and Pump Trip indicators',
-      'Hand-Off-Automatic (HOA) selector switch on standard configurations',
-      'Optional touchscreen control and monitoring interface',
-    ],
-    starterTypes: [
+    "specifications": [
       {
-        name: 'Direct On-Line (DOL) – NFY-JDO1 / NFY-JDO1-M1',
-        description:
-          'Designed for direct motor starting by applying the supply voltage directly to the motor terminals.',
+        "label": "Agent",
+        "value": "HFC-227ea"
       },
       {
-        name: 'Star-Delta – NFY-JSD1 / NFY-JSD1-M1',
-        description:
-          'Uses a star-delta starting arrangement to reduce motor starting current during the initial starting phase.',
+        "label": "Listing (as listed by source)",
+        "value": "UL Listed (confirm per system)"
+      }
+    ],
+    "keywords": [
+      "HFC-227ea",
+      "FM-200",
+      "clean agent",
+      "fire suppression"
+    ]
+  },
+  {
+    "id": "nesbd-inert-gas-system-201",
+    "slug": "inert-gas-fire-suppression-system",
+    "name": "Inert Gas Fire Suppression System",
+    "category": "fire-protection-system",
+    "subcategory": "fire-suppression-systems",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Inert gas fire suppression system for protected enclosures.",
+    "description": "Inert gas fire suppression system for total flooding applications, subject to enclosure integrity and project design. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/inert_gas_system_500fbd0a6cfca874645e94c0405091be.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Inert gas suppression",
+      "Total flooding application (as applicable)"
+    ],
+    "applications": [
+      "Protected enclosures",
+      "Critical rooms (project-specific)"
+    ],
+    "keywords": [
+      "inert gas",
+      "fire suppression"
+    ]
+  },
+  {
+    "id": "nesbd-fire-hose-rack-128",
+    "slug": "fire-hose-rack-assembly-ul-fm",
+    "name": "Fire Hose Rack Assembly (UL/FM Approved)",
+    "category": "fire-protection-system",
+    "subcategory": "fire-hydrant-accessories",
+    "brand": "NAFFCO",
+    "model": "NHR 38V/NHR 64V",
+    "shortDescription": "Fire hose rack assembly for Class II service.",
+    "description": "Fire hose rack assembly designed for controlling incipient fire by building occupant use, described to conform to NFPA 14 Class II service. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/fire_hose_rack_assembly_ul_fm_approved_40d171936bf3d0c2d6a75dd725b1f270.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Hose rack assembly",
+      "UL/FM approved (as listed by source)",
+      "Class II service (as described)"
+    ],
+    "applications": [
+      "Building hose stations",
+      "Standpipe systems"
+    ],
+    "specifications": [
+      {
+        "label": "Model (as listed)",
+        "value": "NHR 38V / NHR 64V"
+      }
+    ],
+    "keywords": [
+      "fire hose rack",
+      "hose rack assembly",
+      "UL FM"
+    ]
+  },
+  {
+    "id": "nesbd-double-jacket-fire-hose-129",
+    "slug": "double-jacket-fire-hose-ul-listed",
+    "name": "Double Jacket Fire Hose (UL Listed)",
+    "category": "fire-protection-system",
+    "subcategory": "fire-hydrant-accessories",
+    "brand": "",
+    "model": "",
+    "shortDescription": "UL listed double jacket fire hose.",
+    "description": "Double jacket fire hose, UL listed as stated by source. Confirm diameter, length, coupling, and listing for the project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/double_jacket_fire_hose_ul_listed_1774ab9ffa1b26d93d022bc657359641.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Double jacket construction",
+      "UL listed (as listed by source)"
+    ],
+    "applications": [
+      "Fire hose cabinets",
+      "Hydrant/standpipe use"
+    ],
+    "keywords": [
+      "double jacket fire hose",
+      "UL listed hose"
+    ]
+  },
+  {
+    "id": "nesbd-single-jacket-fire-hose-132",
+    "slug": "single-jacket-fire-hose-ul-listed",
+    "name": "Single Jacket Fire Hose (UL Listed)",
+    "category": "fire-protection-system",
+    "subcategory": "fire-hydrant-accessories",
+    "brand": "",
+    "model": "",
+    "shortDescription": "UL listed single jacket fire hose.",
+    "description": "Single jacket fire hose, UL listed as stated by source. Confirm diameter, length, coupling, and listing for the project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/single_jacket_fire_hose_ul_listed_64ab91c1ca01c4a8a47a8b08383c5ea2.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Single jacket construction",
+      "UL listed (as listed by source)"
+    ],
+    "applications": [
+      "Fire hose cabinets",
+      "Standpipe use"
+    ],
+    "keywords": [
+      "single jacket fire hose",
+      "UL listed hose"
+    ]
+  },
+  {
+    "id": "nesbd-british-standard-couplings-130",
+    "slug": "british-standard-couplings-kitemark-lpcb",
+    "name": "British Standard Couplings (Kitemark/LPCB Approved)",
+    "category": "fire-protection-system",
+    "subcategory": "fire-hydrant-accessories",
+    "brand": "",
+    "model": "",
+    "shortDescription": "British standard fire hose couplings.",
+    "description": "British Standard couplings, Kitemark/LPCB approved as stated by source. Confirm size and compatibility. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/british_standard_couplings_kitemark_lpcb_approved_d62f021ba700630f9d6c8d0bb7cb6cae.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "British Standard couplings",
+      "Kitemark/LPCB approved (as listed)"
+    ],
+    "applications": [
+      "Fire hose connections",
+      "Hydrant accessories"
+    ],
+    "keywords": [
+      "British Standard coupling",
+      "Kitemark",
+      "LPCB"
+    ]
+  },
+  {
+    "id": "nesbd-hand-held-branch-pipe-131",
+    "slug": "hand-held-branch-pipe-kitemark-lpcb",
+    "name": "Hand Held Branch Pipe (Kitemark/LPCB Approved)",
+    "category": "fire-protection-system",
+    "subcategory": "fire-hydrant-accessories",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Hand held branch pipe for fire hose lines.",
+    "description": "Hand held branch pipe/nozzle, Kitemark/LPCB approved as stated by source. Confirm inlet/jet type for the project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/hand_held_branch_pipe_kitemark_lpcb_approved_7a37f99ca0c896b9a6786fe99fb8e9b6.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Hand held branch pipe",
+      "Kitemark/LPCB approved (as listed)"
+    ],
+    "applications": [
+      "Fire hose lines",
+      "Hydrant cabinets"
+    ],
+    "keywords": [
+      "branch pipe",
+      "nozzle",
+      "Kitemark",
+      "LPCB"
+    ]
+  },
+  {
+    "id": "nesbd-oblique-landing-valve-flanged-133",
+    "slug": "oblique-landing-valve-flanged-inlet",
+    "name": "Oblique Landing Valve (Flanged Inlet)",
+    "category": "fire-protection-system",
+    "subcategory": "fire-hydrant-accessories",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Oblique landing valve with flanged inlet.",
+    "description": "Oblique landing valve with flanged inlet for fire hydrant/standpipe systems. Confirm size, standard, and approval. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/oblique_landing_valve_flanged_inlet_494c04dee8ab1e5194fecd43e0e39de4.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Oblique landing valve",
+      "Flanged inlet"
+    ],
+    "applications": [
+      "Landing valves",
+      "Standpipe systems"
+    ],
+    "keywords": [
+      "oblique landing valve",
+      "flanged inlet"
+    ]
+  },
+  {
+    "id": "nesbd-oblique-landing-valve-threaded-134",
+    "slug": "oblique-landing-valve-threaded-inlet",
+    "name": "Oblique Landing Valve (Threaded Inlet)",
+    "category": "fire-protection-system",
+    "subcategory": "fire-hydrant-accessories",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Oblique landing valve with threaded inlet.",
+    "description": "Oblique landing valve with threaded inlet for fire hydrant/standpipe systems. Confirm size, standard, and approval. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/oblique_landing_valve_threaded_inlet_dd59aaa004b3b0e7ce2a3890ed9a09d8.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Oblique landing valve",
+      "Threaded inlet"
+    ],
+    "applications": [
+      "Landing valves",
+      "Standpipe systems"
+    ],
+    "keywords": [
+      "oblique landing valve",
+      "threaded inlet"
+    ]
+  },
+  {
+    "id": "nesbd-6x4-breeching-inlet-200",
+    "slug": "6x4-way-breeching-inlet",
+    "name": "6\" x 4-Way Breeching Inlet",
+    "category": "fire-protection-system",
+    "subcategory": "fire-hydrant-accessories",
+    "brand": "",
+    "model": "",
+    "shortDescription": "6\" x 4-way breeching inlet for fire brigade connection.",
+    "description": "6 inch x 4-way breeching inlet for fire department connection to dry/wet riser or hydrant systems, subject to local authority requirements. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/6_x_4_way_breeching_inlet_5b6fd6d1e83330d8eddd4af0d38dcad6.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "4-way breeching inlet",
+      "Fire brigade connection"
+    ],
+    "applications": [
+      "Fire department connections",
+      "Riser systems"
+    ],
+    "keywords": [
+      "breeching inlet",
+      "fire brigade inlet",
+      "4-way"
+    ]
+  },
+  {
+    "id": "nesbd-pressure-reducing-valve-135",
+    "slug": "pressure-reducing-valve-flanged",
+    "name": "Pressure Reducing Valve (Flanged)",
+    "category": "fire-protection-system",
+    "subcategory": "fire-protection-valves",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Flanged pressure reducing valve for fire protection.",
+    "description": "Flanged pressure reducing valve for controlling pressure in fire protection/hydrant systems. Confirm pressure rating and listing. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/pressure_reducing_valve_flanged_fd0645dbadf5db71c3cdc8221b994e94.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Pressure reducing",
+      "Flanged connection"
+    ],
+    "applications": [
+      "Hydrant/standpipe pressure control",
+      "Fire protection systems"
+    ],
+    "keywords": [
+      "pressure reducing valve",
+      "PRV",
+      "flanged"
+    ]
+  },
+  {
+    "id": "nesbd-angle-hose-valve-136",
+    "slug": "angle-hose-valve-ul-listed",
+    "name": "Angle Hose Valve (UL Listed)",
+    "category": "fire-protection-system",
+    "subcategory": "fire-protection-valves",
+    "brand": "",
+    "model": "",
+    "shortDescription": "UL listed angle hose valve.",
+    "description": "Angle hose valve, UL listed as stated by source. Confirm size and connection type for the project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/angle_hose_valve_ul_listed_c14c292f863754603d1b640a41e4cc4a.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Angle hose valve",
+      "UL listed (as listed by source)"
+    ],
+    "applications": [
+      "Hose stations",
+      "Standpipe systems"
+    ],
+    "keywords": [
+      "angle hose valve",
+      "UL listed"
+    ]
+  },
+  {
+    "id": "nesbd-non-return-valve-137",
+    "slug": "non-return-valve-sd-nrv200cv",
+    "name": "Non Return Valve (Shield SD-NRV200CV)",
+    "category": "fire-protection-system",
+    "subcategory": "fire-protection-valves",
+    "brand": "Shield",
+    "model": "SD-NRV200CV",
+    "shortDescription": "UL/FM approved non return (swing check) valve.",
+    "description": "Shield non return valve model SD-NRV200CV, UL listed/FM approved as stated by source. Working pressure 200 psi; flange to ASME B16.1 Class 125; bolted bonnet; horizontal swing; renewable seat and disc. Confirm suitability for project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/non_return_valve_46d4509832d1f686e2ba9cb9a8902150.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Non return / swing check valve",
+      "UL listed and FM approved (as listed)",
+      "Working pressure 200 psi (as listed)"
+    ],
+    "applications": [
+      "Fire protection piping",
+      "Pump discharge/check service"
+    ],
+    "specifications": [
+      {
+        "label": "Model",
+        "value": "SD-NRV200CV"
       },
+      {
+        "label": "Working pressure (as listed)",
+        "value": "200 psi"
+      },
+      {
+        "label": "Connection",
+        "value": "Flange to ASME B16.1 Class 125"
+      }
     ],
-    applications: [
-      'Fire protection jockey pump systems',
-      'Industrial fire protection installations',
-      'RMG and textile factories',
-      'Commercial and high-rise buildings',
-      'Warehouses and logistics facilities',
-      'Shopping malls and commercial complexes',
-      'Industrial fire pump rooms',
+    "keywords": [
+      "non return valve",
+      "check valve",
+      "NRV",
+      "Shield",
+      "SD-NRV200CV"
+    ]
+  },
+  // ---- NESBD Fire Detection System (source: nesbd.com category, added factual listing) ----
+  {
+    "id": "nesbd-nfs-320e-142",
+    "slug": "notifier-nfs-320e",
+    "name": "NOTIFIER NFS-320E",
+    "category": "fire-detection-system",
+    "subcategory": "control-panels",
+    "brand": "NOTIFIER",
+    "model": "NFS-320E",
+    "shortDescription": "NOTIFIER NFS-320E fire alarm control panel.",
+    "description": "NOTIFIER NFS-320E fire alarm control panel as listed by source. Confirm loop/device capacity, approvals, and configuration per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/notifier_nfs_320e_1b83c543231b6403865bed7a9434a1a4.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Fire alarm control panel",
+      "NOTIFIER NFS-320E series (as listed)"
     ],
-    documents: [
-      { label: 'Product Datasheet', url: null },
-      { label: 'Installation Instructions', url: null },
-      { label: 'Compliance documentation', url: null },
+    "applications": [
+      "Addressable fire alarm systems",
+      "Commercial/industrial facilities"
     ],
+    "keywords": [
+      "NOTIFIER",
+      "NFS-320E",
+      "fire alarm control panel"
+    ]
   },
   {
-    id: 'firennet-plus-1127-series',
-    slug: 'firennet-plus-1127-series',
-    name: 'FireNET Plus 1127 Series',
-    category: 'fire-detection-system',
-    subcategory: 'fire-alarm-panels',
-    brand: 'FireNET Plus',
-    model: '1127 Series',
-    shortDescription: 'Intelligent addressable Fire Alarm Control Panel with 1–2 SLC loops, 127 devices per loop, UL 864 9th Edition Listed.',
-    description:
-      'The FireNET Plus 1127 Series is an intelligent addressable Fire Alarm Control Panel (FACP) designed to provide reliable fire detection, alarm monitoring, and system control for commercial, industrial, and institutional facilities. Available in 1-loop and 2-loop configurations, the panel supports up to 127 addressable devices per Signaling Line Circuit (SLC), including photoelectric smoke detectors, heat detectors, monitoring modules, and control modules. The system features programmable input/output functionality, advanced cause-and-effect programming, and comprehensive diagnostic capabilities. Its Windows-based Loop Explorer software provides installers with programming, configuration, and troubleshooting tools for efficient system commissioning and maintenance.',
-    image: placeholderImage('FireNET Plus 1127 Series'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Product', value: 'FireNET Plus 1127 Series' },
-      { label: 'Product Type', value: 'Intelligent Addressable Fire Alarm Control Panel' },
-      { label: 'Loop Configuration', value: '1–2 SLC Loops' },
-      { label: 'Addressable Points', value: '127 per SLC Loop' },
-      { label: 'Maximum SLC Wiring Length', value: '5,000 ft per Loop' },
-      { label: 'AC Input Voltage', value: '120/240 VAC' },
-      { label: 'Frequency', value: '50/60 Hz' },
-      { label: 'Power Supply', value: '5.25 A Regulated' },
-      { label: 'Auxiliary Power', value: '2 × 360 mA at 24 VDC' },
-      { label: 'LCD Display', value: '8 × 40 Characters' },
-      { label: 'Programmable NACs', value: '2' },
-      { label: 'Maximum NAC Output', value: '2.3 A per NAC' },
-      { label: 'Programmable Relays', value: '3 Form C' },
-      { label: 'Relay Rating', value: '1 A at 30 VDC' },
-      { label: 'Cause & Effect Programming', value: 'Up to 500 Commands' },
-      { label: 'Panel Networking', value: 'Up to 64 Panels' },
-      { label: 'Battery Capacity', value: 'Up to 60 Ah' },
-      { label: 'Standard Enclosure Battery Capacity', value: 'Up to 18 Ah' },
-      { label: 'Programming Software', value: 'Loop Explorer' },
-      { label: 'Available Colours', value: 'Red / Gray' },
-      { label: 'Certification', value: 'UL 864 9th Edition Listed' },
+    "id": "nesbd-nfs2-640e-143",
+    "slug": "notifier-nfs2-640e",
+    "name": "NOTIFIER NFS2-640E",
+    "category": "fire-detection-system",
+    "subcategory": "control-panels",
+    "brand": "NOTIFIER",
+    "model": "NFS2-640E",
+    "shortDescription": "NOTIFIER NFS2-640E fire alarm control panel.",
+    "description": "NOTIFIER NFS2-640E fire alarm control panel as listed by source. Confirm loop/device capacity, approvals, and configuration per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/notifier_nfs2_640e_2208f9879f8ca5fe6733db29ad521eb8.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Fire alarm control panel",
+      "NOTIFIER NFS2-640E series (as listed)"
     ],
-    features: [
-      'Intelligent analog-addressable fire alarm control system',
-      'Available in 1-loop and 2-loop configurations',
-      'Supports up to 127 addressable devices per SLC loop',
-      'Compatible with addressable smoke detectors, heat detectors, monitoring modules, and control modules',
-      'Switchable 120/240 VAC, 50/60 Hz power supply',
-      'Integrated regulated 5.25 A power supply',
-      'Programmable input and output modules',
-      'Day and night detector sensitivity settings',
-      'Programmable function and fire drill buttons',
-      'Advanced cause-and-effect programming',
-      'Windows-based Loop Explorer programming software',
-      'Network connectivity for up to 64 panels',
-      'Built-in alarm information and help screens',
-      'One-person walk-test functionality',
-      'UL 864 9th Edition Listed, as specified in manufacturer documentation',
+    "applications": [
+      "Addressable fire alarm systems",
+      "Commercial/industrial facilities"
     ],
-    applications: [
-      'Ready-made garment (RMG) and textile factories',
-      'Industrial manufacturing facilities',
-      'Commercial and high-rise buildings',
-      'Shopping malls and retail complexes',
-      'Warehouses and logistics centres',
-      'Educational institutions',
-      'Healthcare facilities',
-      'Office buildings and institutional premises',
-    ],
-    documents: [
-      { label: 'Product Datasheet', url: null },
-      { label: 'Installation Instructions', url: null },
-      { label: 'Compliance documentation', url: null },
-    ],
+    "keywords": [
+      "NOTIFIER",
+      "NFS2-640E",
+      "fire alarm control panel"
+    ]
   },
   {
-    id: 'firennet-fn-lcd-n-network-lcd-annunciator',
-    slug: 'firennet-fn-lcd-n-network-lcd-annunciator',
-    name: 'FireNET FN-LCD-N Network LCD Annunciator',
-    category: 'fire-detection-system',
-    subcategory: 'fire-alarm-panels',
-    brand: 'FireNET Plus',
-    model: 'FN-LCD-N',
-    shortDescription: 'Network LCD annunciator for FireNET panels with 8×40 character display, 4 relay outputs, and UL 864 9th Edition Listing.',
-    description:
-      'The FN-LCD-N Network LCD Annunciator provides remote fire alarm annunciation for FireNET panels. It features a large 320 character liquid crystal display (8 line x 40 character) allowing viewing of system status, LED indicators for Fire, Supervisory Alarm, Pre-Alarm, Fire Output Active, AC Power On, On Test, Panel Sounder Silenced, Delay Active, More Events, Point Bypassed, General Trouble, Power Trouble, System Trouble, and NAC Trouble. It offers the same controls as the FireNET fire panel including Reset, Panel Sounder Silence, Lamp Test, Alarm Silence, Re-sound Alarm, Fire Drill, Programmable Function, More Events, More Fire Events, Enter and Exit. Any or all panels can be routed to the FN-LCD-N, with each event category individually routable. It is powered by FireNET Aux 24VDC or UL fire listed Aux. 24VDC supply and includes a local piezo sounder for event notification.',
-    image: placeholderImage('FireNET FN-LCD-N Network LCD Annunciator'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Product Type', value: 'Network LCD Annunciator' },
-      { label: 'Brand', value: 'FireNET Plus' },
-      { label: 'Model', value: 'FN-LCD-N' },
-      { label: 'Display', value: '8 × 40 Character LCD (320 characters)' },
-      { label: 'Relay Outputs', value: '4 Relay Outputs (3 programmable Form C, 1 supervisory)' },
-      { label: 'Relay Rating', value: '1 A at 30 VDC' },
-      { label: 'Power Supply', value: 'FireNET Aux 24VDC or UL fire listed Aux. 24VDC supply' },
-      { label: 'Network', value: 'True network annunciator; any or all panels routable' },
-      { label: 'Event Routing', value: 'Individually routable per event category' },
-      { label: 'Controls', value: 'Reset, Sounder Silence, Lamp Test, Alarm Silence, Re-sound Alarm, Fire Drill, Programmable Function, Enter/Exit' },
-      { label: 'Indicators', value: 'LED indicators for fire, supervisory, pre-alarm, trouble, NAC trouble, and more' },
-      { label: 'Local Sounder', value: 'Built-in piezo sounder for event notification' },
-      { label: 'Access Control', value: 'User codes & firefighter key' },
-      { label: 'Colour Options', value: 'Red or Gray' },
-      { label: 'Certification', value: 'UL 864 9th Edition Listed' },
+    "id": "nesbd-cpu2-3030d-140",
+    "slug": "notifier-cpu2-3030d",
+    "name": "Notifier CPU2-3030D",
+    "category": "fire-detection-system",
+    "subcategory": "control-panels",
+    "brand": "NOTIFIER",
+    "model": "CPU2-3030D",
+    "shortDescription": "Notifier CPU2-3030D control module.",
+    "description": "Notifier CPU2-3030D central processing unit/module for compatible NOTIFIER systems as listed by source. Confirm compatibility and approvals per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/notifier_cpu2_3030d_7fd3c8c591533d837be5afdded40abc3.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "NOTIFIER CPU/module",
+      "For compatible NFS2-3030 systems (confirm)"
     ],
-    features: [
-      'Fire Drill button',
-      'Local piezo sounder for event notification',
-      'Supports user codes & firefighter key to enable access and controls',
-      'Powered by FireNET Aux 24VDC or UL fire listed Aux. 24VDC supply',
-      'Built-in help & alarm information screens',
-      '4 Relay Outputs: (3 programmable) Form C relays rated at 1 Amp at 30 VDC, 1 preprogrammed supervisory output',
-      'True network annunciator; any or all panels can be routed to the FN-LCD-N',
-      'Each event category can be individually routed to the FN-LCD-N',
-      'Available colors: red or gray',
-      'UL 864 9th Edition listed',
-      'Large 320 character liquid crystal display (8 line x 40 character) allows viewing of system status',
-      'LED indicators for Fire, Supervisory Alarm, Pre-Alarm, Fire Output Active, AC Power On, On Test, Panel Sounder Silenced, Delay Active, More Events, Point Bypassed, General Trouble, Power Trouble, System Trouble & NAC Trouble',
-      'Same controls as the FireNET fire panel (Reset, Panel Sounder Silence, Lamp Test, Alarm Silence, Re-sound Alarm, Fire Drill, Programmable Function, More Events, More Fire Events, Enter & Exit)',
-      'Programmable function (button) input',
-      'Configurable through keypad',
+    "applications": [
+      "Fire alarm control panels",
+      "System upgrades/spares (project-specific)"
     ],
-    applications: [
-      'Commercial and high-rise buildings',
-      'Industrial manufacturing facilities',
-      'Shopping malls and retail complexes',
-      'Warehouses and logistics centres',
-      'Educational institutions',
-      'Healthcare facilities',
-      'Office buildings and institutional premises',
-      'RMG and textile factories',
-    ],
-    documents: [
-      { label: 'Product Datasheet', url: null },
-      { label: 'Installation Instructions', url: null },
-      { label: 'Compliance documentation', url: null },
-    ],
+    "keywords": [
+      "NOTIFIER",
+      "CPU2-3030D"
+    ]
   },
   {
-    id: 'firennet-plus-remote-annunciator',
-    slug: 'firennet-plus-remote-annunciator',
-    name: 'FireNET Plus Remote Annunciator',
-    category: 'fire-detection-system',
-    subcategory: 'fire-alarm-panels',
-    brand: 'FireNET Plus',
-    model: 'Remote Annunciator / Repeater Panel',
-    shortDescription: 'UL 864 9th Edition Listed remote annunciator with 320-character LCD, 14 LED status indicators, and FireNET-compatible operational controls.',
-    description:
-      'The FireNET Plus Remote Annunciator is designed to provide remote monitoring and operational control of compatible FireNET fire alarm control panels. It provides a centralized visual interface for displaying system conditions, alarm events, supervisory signals, and fault notifications at locations away from the main fire alarm control panel. Featuring a large 320-character LCD display, comprehensive LED status indicators, and operational control buttons, the annunciator enables authorized personnel to monitor fire alarm system conditions and perform essential panel operations from a remote location.',
-    image: placeholderImage('FireNET Plus Remote Annunciator'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Product Series', value: 'FireNET Plus' },
-      { label: 'Product Type', value: 'Remote Annunciator / Repeater Panel' },
-      { label: 'Certification', value: 'UL 864 9th Edition Listed' },
-      { label: 'Display Type', value: 'Liquid Crystal Display (LCD)' },
-      { label: 'Display Resolution', value: '320 Characters' },
-      { label: 'Display Configuration', value: '8 Lines × 40 Characters' },
-      { label: 'LED Indicators', value: '14 Status Indicators' },
-      { label: 'Operational Controls', value: 'FireNET-Compatible Control Functions' },
-      { label: 'Programmable Input', value: 'Function Button' },
-      { label: 'Configuration', value: 'Keypad-Based' },
+    "id": "nesbd-fsp-951-144",
+    "slug": "notifier-fsp-951-smoke-detector",
+    "name": "FSP-951 Series Intelligent Photoelectric Smoke Detector",
+    "category": "fire-detection-system",
+    "subcategory": "smoke-detectors",
+    "brand": "NOTIFIER",
+    "model": "FSP-951",
+    "shortDescription": "Intelligent plug-in photoelectric smoke detector.",
+    "description": "NOTIFIER FSP-951 series intelligent plug-in photoelectric smoke detector as listed by source. Confirm base, protocol, and approvals per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/fsp_951_series_intelligent_plug_in_photoelectric_smoke_detectors_96d7f0ce95805407ce8012681bb67ce6.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Intelligent photoelectric smoke detection",
+      "Plug-in detector (as listed)"
     ],
-    ledIndicators: [
-      'Fire',
-      'Supervisory Alarm',
-      'Pre-Alarm',
-      'Fire Output Active',
-      'AC Power On',
-      'On Test',
-      'Panel Sounder Silenced',
-      'Delay Active',
-      'More Events',
-      'Point Bypassed',
-      'General Trouble',
-      'Power Trouble',
-      'System Trouble',
-      'NAC Trouble',
+    "applications": [
+      "Addressable fire alarm systems"
     ],
-    operationalControls: [
-      'Reset',
-      'Panel Sounder Silence',
-      'Lamp Test',
-      'Alarm Silence',
-      'Re-sound Alarm',
-      'Fire Drill',
-      'Programmable Function',
-      'More Events',
-      'More Fire Events',
-      'Enter',
-      'Exit',
-    ],
-    features: [
-      'UL 864 9th Edition Listed',
-      'Large 320-character LCD display',
-      '8-line × 40-character display configuration',
-      'Comprehensive LED status indication',
-      'Dedicated fire, supervisory, pre-alarm, and trouble indicators',
-      'Remote operational controls matching the FireNET fire alarm panel',
-      'Programmable function button',
-      'Keypad-based configuration',
-      'Real-time system status and event information display',
-    ],
-    applications: [
-      'Industrial manufacturing facilities',
-      'RMG and textile factories',
-      'Commercial and high-rise buildings',
-      'Shopping malls and commercial complexes',
-      'Warehouses and logistics facilities',
-      'Educational and institutional buildings',
-      'Facilities requiring remote fire alarm system monitoring',
-    ],
-    documents: [
-      { label: 'Product Datasheet', url: null },
-      { label: 'Installation Instructions', url: null },
-      { label: 'Compliance documentation', url: null },
-    ],
+    "keywords": [
+      "NOTIFIER",
+      "FSP-951",
+      "smoke detector"
+    ]
   },
   {
-    id: 'hochiki-acd-v-multi-criteria-sensor',
-    slug: 'hochiki-acd-v-multi-criteria-sensor',
-    name: 'ACD-V Multi-Criteria Smoke/Heat/CO Sensor',
-    category: 'fire-detection-system',
-    subcategory: 'multi-sensor-detectors',
-    brand: 'Hochiki',
-    model: 'ACD-V',
-    shortDescription: 'Intelligent addressable multi-criteria smoke/heat/CO sensor with 16 operational modes and 10-year CO sensor life.',
-    description:
-      'The ACD-V is an intelligent addressable multi-criteria fire detection sensor designed to detect fire conditions through photoelectric smoke, heat and carbon monoxide (CO) sensing technologies. Featuring advanced detection capabilities, configurable operating modes and Digital Communication Protocol (DCP), the ACD-V supports reliable fire detection while helping reduce unwanted alarms.',
-    image: placeholderImage('ACD-V Multi-Criteria Smoke/Heat/CO Sensor'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Manufacturer', value: 'Hochiki' },
-      { label: 'Product Type', value: 'Multi-Criteria Photoelectric Smoke/Heat/CO Sensor' },
-      { label: 'Detection Technologies', value: 'Photoelectric Smoke / Heat / Carbon Monoxide' },
-      { label: 'Communication', value: 'Digital Communication Protocol (DCP), addressable' },
-      { label: 'Operational Modes', value: '16 modes' },
-      { label: 'Heat Detection Range', value: '135°F–150°F' },
-      { label: 'CO Sensor Lifespan', value: '10 years' },
-      { label: 'Profile', value: 'Low-profile, 2.00 in. high including base' },
-      { label: 'Indicators', value: 'Two built-in power/alarm LEDs; programmable non-polling LEDs' },
-      { label: 'Addressing', value: 'Simple and reliable device addressing' },
-      { label: 'Compensation', value: 'Automatic sensor contamination compensation' },
-      { label: 'Security', value: 'Vandal-resistant security locking feature' },
+    "id": "nesbd-maple-fw106-139",
+    "slug": "maple-armor-fw106-addressable-panel",
+    "name": "Addressable Fire Alarm System (Maple Armor FW106)",
+    "category": "fire-detection-system",
+    "subcategory": "control-panels",
+    "brand": "Maple Armor",
+    "model": "FW106",
+    "shortDescription": "Maple Armor FW106 addressable fire alarm panel.",
+    "description": "Maple Armor FireWatcher FW106 addressable fire alarm control panel as listed by source. Source text indicates support for addressable signaling line circuits/devices; confirm exact capacity, voltage, approvals, and configuration per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/maple_armor_firewatcher_panel_106_supports_up_to_4_addressable_signaling_line_circuits_of_252_addressable_devicespoints_per_loop_wall_mount_red_color_120240v_df2cd2e399cb42bfded0e84609333799.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Addressable fire alarm control panel",
+      "Maple Armor FW106 (as listed)"
     ],
-    features: [
-      'Low-profile design – only 2.00 inches high, including the base',
-      'Simple and reliable device addressing',
-      'Supports 16 operational modes',
-      'Automatic compensation for sensor contamination',
-      'Noise-immune Digital Communication Protocol (DCP)',
-      'Interrupt-based communication for fast fire response',
-      'Two built-in power/alarm LEDs',
-      'Programmable non-polling LEDs',
-      'Non-directional smoke chamber',
-      'Adjustable heat detection range: 135°F–150°F',
-      'CO sensor lifespan: 10 years',
-      'Vandal-resistant security locking feature',
+    "applications": [
+      "Addressable fire alarm systems"
     ],
-    applications: [
-      'Commercial and office buildings',
-      'Industrial facilities',
-      'Manufacturing premises',
-      'Educational institutions',
-      'Healthcare facilities',
-      'Buildings requiring multi-criteria fire detection',
+    "specifications": [
+      {
+        "label": "Brand",
+        "value": "Maple Armor"
+      },
+      {
+        "label": "Model",
+        "value": "FW106"
+      }
     ],
-    documents: [
-      { label: 'Product Datasheet', url: null },
-      { label: 'Installation Instructions', url: null },
-      { label: 'Compliance documentation', url: null },
-    ],
+    "keywords": [
+      "Maple Armor",
+      "FW106",
+      "addressable fire alarm panel"
+    ]
   },
   {
-    id: 'hochiki-ace-v-multi-criteria-sensor',
-    slug: 'hochiki-ace-v-multi-criteria-sensor',
-    name: 'ACE-V Multi-Criteria Smoke/Heat Sensor',
-    category: 'fire-detection-system',
-    subcategory: 'multi-sensor-detectors',
-    brand: 'Hochiki',
-    model: 'ACE-V',
-    shortDescription: 'UL 268 7th Edition Listed multi-criteria photoelectric smoke/heat sensor with advanced nuisance alarm rejection.',
-    description:
-      'The ACE-V is an intelligent addressable multi-criteria photoelectric smoke and heat sensor designed to provide advanced fire detection. It evaluates multiple fire-related conditions to improve detection performance and help minimize unwanted alarms caused by cooking and other common nuisance sources. Its low-profile construction, wide-viewing-angle indicators and noise-immune DCP communication make it suitable for integration into compatible intelligent fire alarm systems.',
-    image: placeholderImage('ACE-V Multi-Criteria Smoke/Heat Sensor'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Manufacturer', value: 'Hochiki' },
-      { label: 'Product Type', value: 'Multi-Criteria Photoelectric Smoke/Heat Sensor' },
-      { label: 'Detection Technologies', value: 'Photoelectric Smoke / Heat' },
-      { label: 'Certification', value: 'UL 268 7th Edition Listed' },
-      { label: 'Communication', value: 'Noise-immune Digital Communication Protocol (DCP), addressable' },
-      { label: 'Profile', value: 'Low-profile construction' },
-      { label: 'Indicators', value: 'Wide-viewing-angle indicators' },
-      { label: 'Addressing', value: 'Simple and reliable device addressing' },
-      { label: 'Compensation', value: 'Automatic compensation for detector contamination' },
-      { label: 'Features', value: 'Interrupt-based communication for fast fire response; nuisance alarm rejection' },
+    "id": "nesbd-maple-addressable-panel-222",
+    "slug": "maple-armor-addressable-fire-alarm-panel",
+    "name": "Maple Armor Addressable Fire Alarm Control Panel",
+    "category": "fire-detection-system",
+    "subcategory": "control-panels",
+    "brand": "Maple Armor",
+    "model": "",
+    "shortDescription": "Maple Armor addressable fire alarm control panel.",
+    "description": "Maple Armor addressable fire alarm control panel as listed by source. Confirm model, capacity, and approvals per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/maple_armor_addressable_fire_alarm_control_panel_74c8e54bf0c06f611dd2d1471d29aa96.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Addressable fire alarm control panel"
     ],
-    features: [
-      'UL 268 7th Edition Listed',
-      'Advanced multi-criteria smoke detection',
-      'Photoelectric smoke and heat detection',
-      'Designed to resist unwanted alarms from cooking and other nuisance alarm sources',
-      'Wide-viewing-angle indicators for enhanced visibility',
-      'Simple and reliable device addressing',
-      'Automatic compensation for detector contamination',
-      'Noise-immune Digital Communication Protocol (DCP)',
-      'Interrupt-based communication for fast fire response',
+    "applications": [
+      "Addressable fire alarm systems"
     ],
-    applications: [
-      'Commercial buildings',
-      'Industrial facilities',
-      'Hotels and hospitality premises',
-      'Educational institutions',
-      'Offices and institutional buildings',
-      'Other facilities requiring intelligent addressable fire detection',
-    ],
-    documents: [
-      { label: 'Product Datasheet', url: null },
-      { label: 'Installation Instructions', url: null },
-      { label: 'Compliance documentation', url: null },
-    ],
+    "keywords": [
+      "Maple Armor",
+      "addressable panel"
+    ]
   },
   {
-    id: 'hochiki-atj-ea-heat-sensor',
-    slug: 'hochiki-atj-ea-heat-sensor',
-    name: 'ATJ-EA Intelligent Fixed Temperature / Rate-of-Rise Heat Sensor',
-    category: 'fire-detection-system',
-    subcategory: 'heat-detectors',
-    brand: 'Hochiki',
-    model: 'ATJ-EA',
-    shortDescription: 'Intelligent addressable heat sensor with fixed temperature and rate-of-rise detection, UL maximum spacing 70 ft.',
-    description:
-      'The ATJ-EA Intelligent Heat Sensor is designed to detect fire-related temperature conditions using fixed-temperature and rate-of-rise detection principles. It supports intelligent addressable fire alarm systems and provides adjustable temperature thresholds for different installation requirements. The sensor features reliable device addressing, automatic compensation for sensor contamination and noise-immune Digital Communication Protocol (DCP) for communication with compatible fire alarm control panels.',
-    image: placeholderImage('ATJ-EA Intelligent Fixed Temperature / Rate-of-Rise Heat Sensor'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Manufacturer', value: 'Hochiki' },
-      { label: 'Model', value: 'ATJ-EA' },
-      { label: 'Detector Type', value: 'Fixed Temperature / Rate-of-Rise Heat Sensor' },
-      { label: 'Rate-of-Rise Threshold', value: '15°F/min' },
-      { label: 'Adjustable Temperature Range (UL)', value: '135°F–190°F' },
-      { label: 'Actual Adjustable Temperature Range', value: '32°F–190°F' },
-      { label: 'UL Maximum Spacing', value: '70 feet' },
-      { label: 'Device Addressing', value: 'Intelligent addressable' },
-      { label: 'Communication Protocol', value: 'Digital Communication Protocol (DCP)' },
-      { label: 'Profile Height', value: '2.00 inches, including base' },
+    "id": "nesbd-maple-agent-release-panel-223",
+    "slug": "maple-armor-agent-release-fire-alarm-panel",
+    "name": "Maple Armor Agent Release & Fire Alarm Control Panel",
+    "category": "fire-detection-system",
+    "subcategory": "control-panels",
+    "brand": "Maple Armor",
+    "model": "",
+    "shortDescription": "Agent release and fire alarm control panel.",
+    "description": "Maple Armor agent release and fire alarm control panel as listed by source. Confirm releasing/service application, approvals, and configuration per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/maple_armor_agent_release_fire_alarm_control_panel_2acdce686e8d9ccaaf15a13aa45984a8.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Agent release and fire alarm functions (as listed)"
     ],
-    features: [
-      'Low-profile design – only 2.00 inches high, including the base',
-      'Simple and reliable device addressing',
-      'Automatic compensation for sensor contamination',
-      'Noise-immune Digital Communication Protocol (DCP)',
-      'Interrupt-based communication for fast fire response',
-      'Two built-in power/alarm LEDs',
-      'Programmable non-polling LEDs',
-      'Rate-of-rise temperature threshold: 15°F per minute',
-      'Adjustable temperature threshold: 135°F–190°F (UL)',
-      'Actual adjustable temperature range: 32°F–190°F',
-      'UL maximum spacing: 70 feet',
-      'Vandal-resistant security locking feature',
+    "applications": [
+      "Suppression releasing systems (project-specific)",
+      "Fire alarm systems"
     ],
-    applications: [
-      'Boiler and utility rooms',
-      'Mechanical and electrical rooms',
-      'Industrial production areas',
-      'Warehouses and storage facilities',
-      'Kitchens and food preparation areas',
-      'Locations where heat detection is more suitable than smoke detection',
-    ],
-    documents: [
-      { label: 'Product Datasheet', url: null },
-      { label: 'Installation Instructions', url: null },
-      { label: 'Compliance documentation', url: null },
-    ],
+    "keywords": [
+      "Maple Armor",
+      "agent release panel"
+    ]
   },
   {
-    id: 'hochiki-alo-v-smoke-detector',
-    slug: 'hochiki-alo-v-smoke-detector',
-    name: 'ALO-V Intelligent Analog Photoelectric Smoke Detector',
-    category: 'fire-detection-system',
-    subcategory: 'smoke-detectors',
-    brand: 'Hochiki',
-    model: 'ALO-V',
-    shortDescription: 'UL 268 7th Edition Listed photoelectric smoke detector with optical particulate identification and 360° visible status LED.',
-    description:
-      'The ALO-V Intelligent Analog Photoelectric Smoke Detector is designed for early smoke detection in intelligent fire alarm systems. It uses advanced optical particulate identification technology to support accurate smoke detection and help minimize unwanted alarms. Its low-profile construction, low standby current and 360-degree visible status LED make it suitable for a wide range of commercial and industrial fire detection applications.',
-    image: placeholderImage('ALO-V Intelligent Analog Photoelectric Smoke Detector'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Manufacturer', value: 'Hochiki' },
-      { label: 'Model', value: 'ALO-V' },
-      { label: 'Detector Type', value: 'Intelligent Analog Photoelectric Smoke Detector' },
-      { label: 'Detection Technology', value: 'Optical particulate identification' },
-      { label: 'Profile Height', value: '1.68 inches' },
-      { label: 'Standby Current', value: '400 µA' },
-      { label: 'Status Indicator', value: '360° visible LED' },
-      { label: 'Listing', value: 'UL 268 7th Edition' },
+    "id": "nesbd-potter-explosion-proof-pull-211",
+    "slug": "potter-explosion-proof-pull-station",
+    "name": "Potter Explosion Proof Pull Station",
+    "category": "fire-detection-system",
+    "subcategory": "manual-call-points",
+    "brand": "Potter",
+    "model": "",
+    "shortDescription": "Explosion proof manual pull station.",
+    "description": "Potter explosion proof pull station as listed by source. Confirm hazardous area rating, approvals, and compatibility per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/potter_explosion_proof_pull_station_5900b38a64a5283952d7ff97335ac666.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Manual pull station",
+      "Explosion proof (as listed)"
     ],
-    features: [
-      'UL 268 7th Edition Listed',
-      'Low-profile design – 1.68 inches high',
-      'False-alarm-resistant design',
-      'Non-directional smoke chamber',
-      'Advanced multi-criteria smoke detection',
-      'Optical particulate identification sensor',
-      'Early fire smoke detection',
-      'Low standby current: 400 µA',
-      '360-degree visibility of detector status LED',
+    "applications": [
+      "Hazardous/special areas (project-specific)"
     ],
-    applications: [
-      'Commercial and office buildings',
-      'Industrial facilities',
-      'Manufacturing premises',
-      'Shopping centres',
-      'Hotels and hospitality buildings',
-      'Educational institutions',
-    ],
-    documents: [
-      { label: 'Product Datasheet', url: null },
-      { label: 'Installation Instructions', url: null },
-      { label: 'Compliance documentation', url: null },
-    ],
+    "keywords": [
+      "Potter",
+      "explosion proof pull station"
+    ]
   },
   {
-    id: 'bosch-fae-3000-fire-alarm-panel',
-    slug: 'bosch-fae-3000-fire-alarm-panel',
-    name: 'BOSCH FAE 3000 Fire Alarm Control Panel',
-    category: 'fire-detection-system',
-    subcategory: 'fire-alarm-panels',
-    brand: 'BOSCH',
-    model: 'FAE 3000',
-    shortDescription: 'Intelligent addressable fire alarm control panel with modular expansion and network capability.',
-    description:
-      'The BOSCH FAE 3000 is an intelligent addressable fire alarm control panel designed for medium to large installations. It supports addressable detection devices, modular expansion, and networked panel configurations for scalable fire protection.',
-    image: placeholderImage('BOSCH FAE 3000 Fire Alarm Panel'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Manufacturer', value: 'BOSCH' },
-      { label: 'Product Type', value: 'Fire Alarm Control Panel' },
-      { label: 'Model', value: 'FAE 3000' },
-      { label: 'Detection Technology', value: 'Intelligent Addressable' },
-      { label: 'Expansion', value: 'Modular' },
-      { label: 'Networking', value: 'Network-capable panels' },
+    "id": "nesbd-potter-smoke-heat-combo-220",
+    "slug": "potter-photoelectric-smoke-heat-detector",
+    "name": "Potter Photoelectric Smoke/Heat Detector Combination",
+    "category": "fire-detection-system",
+    "subcategory": "multi-sensor-detectors",
+    "brand": "Potter",
+    "model": "",
+    "shortDescription": "Photoelectric smoke and heat combination detector.",
+    "description": "Potter photoelectric smoke/heat combination detector as listed by source. Confirm compatibility, protocol, and approvals per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/potter_photoelectric_smokeheat_detector_combination_55f7ae2bc2cc36cc2c3490b2c7783ddf.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Smoke and heat detection combination",
+      "Photoelectric technology (as listed)"
     ],
-    features: [
-      'Intelligent addressable fire detection',
-      'Modular expansion for scalable installations',
-      'Network capability for multiple panels',
-      'Addressable device support',
-      'Advanced alarm management',
+    "applications": [
+      "Fire detection systems"
     ],
-    applications: [
-      'Commercial and office buildings',
-      'Industrial facilities',
-      'Educational institutions',
-      'Healthcare facilities',
-      'Large-scale installations',
-    ],
-    documents: [
-      { label: 'Product Datasheet', url: null },
-      { label: 'Installation Instructions', url: null },
-      { label: 'Compliance documentation', url: null },
-    ],
+    "keywords": [
+      "Potter",
+      "smoke heat detector"
+    ]
   },
   {
-    id: 'bosch-detector-heat-ftd',
-    slug: 'bosch-detector-heat-ftd',
-    name: 'BOSCH Fixed Temperature Heat Detector',
-    category: 'fire-detection-system',
-    subcategory: 'heat-detectors',
-    brand: 'BOSCH',
-    model: 'FTD Heat Detector',
-    shortDescription: 'Addressable fixed-temperature heat detector for environments where smoke detection is unsuitable.',
-    description:
-      'The BOSCH Fixed Temperature Heat Detector provides reliable heat-based fire detection for kitchens, boiler rooms, and other environments where smoke detectors may cause nuisance alarms.',
-    image: placeholderImage('BOSCH Fixed Temperature Heat Detector'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Manufacturer', value: 'BOSCH' },
-      { label: 'Product Type', value: 'Heat Detector' },
-      { label: 'Model', value: 'FTD Heat Detector' },
-      { label: 'Detection Technology', value: 'Fixed Temperature' },
-      { label: 'Communication', value: 'Addressable' },
+    "id": "nesbd-conventional-beam-detector-122",
+    "slug": "optical-smoke-beam-detector-conventional",
+    "name": "Optical Smoke Beam Detector (Conventional)",
+    "category": "fire-detection-system",
+    "subcategory": "beam-detectors",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Optical smoke beam detector for conventional fire systems.",
+    "description": "Optical smoke beam detector for conventional fire systems as listed by source. Confirm range, mounting, and approvals per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/optical_smoke_beam_detector_for_conventional_fire_systems_ab3aa87c45c27d73ba35cb98fb58845b.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Beam smoke detection",
+      "For conventional fire systems (as listed)"
     ],
-    features: [
-      'Fixed temperature heat detection',
-      'Suitable for kitchens and boiler rooms',
-      'Addressable communication',
-      'Low-profile design',
-      'Reliable fire detection',
+    "applications": [
+      "Large open areas",
+      "Warehouses/atria (project-specific)"
     ],
-    applications: [
-      'Kitchens and food preparation areas',
-      'Boiler and utility rooms',
-      'Industrial production areas',
-      'Warehouses and storage facilities',
-    ],
-    documents: [
-      { label: 'Product Datasheet', url: null },
-      { label: 'Installation Instructions', url: null },
-      { label: 'Compliance documentation', url: null },
-    ],
+    "keywords": [
+      "beam detector",
+      "optical smoke beam",
+      "conventional"
+    ]
   },
   {
-    id: 'bosch-detector-smoke-photo',
-    slug: 'bosch-detector-smoke-photo',
-    name: 'BOSCH Photoelectric Smoke Detector',
-    category: 'fire-detection-system',
-    subcategory: 'smoke-detectors',
-    brand: 'BOSCH',
-    model: 'Photo Smoke Detector',
-    shortDescription: 'Addressable photoelectric smoke detector for early fire detection in commercial buildings.',
-    description:
-      'The BOSCH Photoelectric Smoke Detector uses optical sensing technology for early smoke detection, helping minimize nuisance alarms in commercial and office environments.',
-    image: placeholderImage('BOSCH Photoelectric Smoke Detector'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Manufacturer', value: 'BOSCH' },
-      { label: 'Product Type', value: 'Smoke Detector' },
-      { label: 'Model', value: 'Photo Smoke Detector' },
-      { label: 'Detection Technology', value: 'Photoelectric' },
-      { label: 'Communication', value: 'Addressable' },
+    "id": "nesbd-aw-cfp2166-173",
+    "slug": "aw-cfp2166-conventional-fire-alarm-panel",
+    "name": "AW-CFP2166 Conventional Fire Alarm Control Panel",
+    "category": "fire-detection-system",
+    "subcategory": "control-panels",
+    "brand": "",
+    "model": "AW-CFP2166",
+    "shortDescription": "Conventional fire alarm control panel.",
+    "description": "AW-CFP2166 conventional fire alarm control panel as listed by source. Confirm zones, outputs, and approvals per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/aw_cfp2166_conventional_fire_alarm_control_panel_7273e39011f68aa50c3d782a7aeb5b30.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Conventional fire alarm control panel"
     ],
-    features: [
-      'Photoelectric smoke detection',
-      'Early fire detection',
-      'Nuisance alarm resistance',
-      'Addressable communication',
-      'Commercial building suitability',
+    "applications": [
+      "Conventional fire alarm systems"
     ],
-    applications: [
-      'Commercial and office buildings',
-      'Hotels and hospitality premises',
-      'Educational institutions',
-      'Offices and institutional buildings',
-    ],
-    documents: [
-      { label: 'Product Datasheet', url: null },
-      { label: 'Installation Instructions', url: null },
-      { label: 'Compliance documentation', url: null },
-    ],
+    "keywords": [
+      "AW-CFP2166",
+      "conventional fire alarm panel"
+    ]
   },
   {
-    id: 'bosch-manual-call-point',
-    slug: 'bosch-manual-call-point',
-    name: 'BOSCH Manual Call Point',
-    category: 'fire-detection-system',
-    subcategory: 'manual-call-points',
-    brand: 'BOSCH',
-    model: 'MCP Manual Call Point',
-    shortDescription: 'Addressable manual call point for manual fire alarm activation.',
-    description:
-      'The BOSCH Manual Call Point allows building occupants to manually activate the fire alarm system. Designed for reliable operation in emergency situations with addressable communication.',
-    image: placeholderImage('BOSCH Manual Call Point'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Manufacturer', value: 'BOSCH' },
-      { label: 'Product Type', value: 'Manual Call Point' },
-      { label: 'Model', value: 'MCP Manual Call Point' },
-      { label: 'Activation', value: 'Manual break glass / push button' },
-      { label: 'Communication', value: 'Addressable' },
+    "id": "nesbd-l-series-horn-strobe-146",
+    "slug": "l-series-led-horn-strobe",
+    "name": "L-Series LED 2-Wire Wall-Mount Indoor Horn Strobe",
+    "category": "fire-detection-system",
+    "subcategory": "notification-devices",
+    "brand": "",
+    "model": "L-Series",
+    "shortDescription": "LED 2-wire wall-mount indoor horn strobe.",
+    "description": "L-Series LED 2-wire wall-mount indoor horn strobe as listed by source. Confirm voltage, candela settings, and approvals per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/l_series_led_2_wire_wall_mount_indoor_horn_strobe_2f8753052ca5e818f647d0aab2c57421.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Horn and strobe notification",
+      "LED 2-wire wall-mount (as listed)"
     ],
-    features: [
-      'Manual fire alarm activation',
-      'Addressable communication',
-      'Emergency operation',
-      'Wall-mount design',
-      'Reliable activation',
+    "applications": [
+      "Fire alarm notification"
     ],
-    applications: [
-      'Commercial buildings',
-      'Industrial facilities',
-      'Public buildings',
-      'Educational institutions',
-    ],
-    documents: [
-      { label: 'Product Datasheet', url: null },
-      { label: 'Installation Instructions', url: null },
-      { label: 'Compliance documentation', url: null },
-    ],
+    "keywords": [
+      "horn strobe",
+      "L-Series",
+      "notification"
+    ]
   },
   {
-    id: 'sffco-end-suction-fire-pump',
-    slug: 'sffco-end-suction-fire-pump',
-    name: 'SFFECO End Suction Fire Pump',
-    category: 'fire-protection-system',
-    subcategory: 'fire-fighting-pumps',
-    brand: 'SFFECO',
-    model: 'End Suction Series',
-    shortDescription: 'Horizontal end suction fire pump for fire protection water supply applications.',
-    description:
-      'The SFFECO End Suction Fire Pump is designed for fire protection water supply in commercial and industrial installations. Horizontal end suction configuration for reliable water delivery.',
-    image: placeholderImage('SFFECO End Suction Fire Pump'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Manufacturer', value: 'SFFECO' },
-      { label: 'Product Type', value: 'Fire Pump' },
-      { label: 'Model', value: 'End Suction Series' },
-      { label: 'Configuration', value: 'Horizontal End Suction' },
-      { label: 'Application', value: 'Fire Protection Water Supply' },
+    "id": "nesbd-addressable-repeater-166",
+    "slug": "addressable-repeater-nesbd",
+    "name": "Addressable Repeater",
+    "category": "fire-detection-system",
+    "subcategory": "addressable-modules",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Addressable repeater panel/module.",
+    "description": "Addressable repeater as listed by source. Confirm compatibility, display, and approvals per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/addressable_repeater_20f2f52f3b23af5ecbfec717eddf17b5.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Addressable repeater"
     ],
-    features: [
-      'Horizontal end suction configuration',
-      'Fire protection water supply',
-      'Commercial and industrial suitability',
-      'Reliable water delivery',
-      'Durable construction',
+    "applications": [
+      "Remote fire alarm indication",
+      "Addressable systems"
     ],
-    applications: [
-      'Commercial buildings',
-      'Industrial facilities',
-      'Fire pump rooms',
-      'Water supply systems',
+    "keywords": [
+      "addressable repeater"
+    ]
+  },
+  // ---- NESBD Passive Fire Protection / Doors & Hardware (source: nesbd.com category, added factual listing) ----
+  {
+    "id": "nesbd-automatic-fire-curtain-33",
+    "slug": "automatic-fire-curtain",
+    "name": "Automatic Fire Curtain",
+    "category": "fire-rated-doors",
+    "subcategory": "fire-smoke-curtains",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Automatic fire curtain for compartmentation/openings.",
+    "description": "Automatic fire curtain as listed by source. Confirm fire rating, size, controls, and approvals per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/automatic_fire_curtain_c0ffcc3534bfdea411ad62d95b4e4d05.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Automatic fire curtain",
+      "For opening/compartment protection (project-specific)"
     ],
-    documents: [
-      { label: 'Product Datasheet', url: null },
-      { label: 'Installation Instructions', url: null },
-      { label: 'Compliance documentation', url: null },
+    "applications": [
+      "Large openings",
+      "Fire/smoke compartmentation"
     ],
+    "keywords": [
+      "automatic fire curtain",
+      "fire curtain"
+    ]
   },
   {
-    id: 'sffco-fire-suppression-system',
-    slug: 'sffco-fire-suppression-system',
-    name: 'SFFECO Fire Suppression System',
-    category: 'fire-protection-system',
-    subcategory: 'fire-suppression-systems',
-    brand: 'SFFECO',
-    model: 'Suppression Series',
-    shortDescription: 'Clean agent fire suppression system for sensitive equipment and high-value assets.',
-    description:
-      'The SFFECO Fire Suppression System provides clean agent fire suppression for protecting sensitive equipment, server rooms, and high-value assets where water-based suppression is unsuitable.',
-    image: placeholderImage('SFFECO Fire Suppression System'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Manufacturer', value: 'SFFECO' },
-      { label: 'Product Type', value: 'Fire Suppression System' },
-      { label: 'Model', value: 'Suppression Series' },
-      { label: 'Agent Type', value: 'Clean Agent' },
-      { label: 'Application', value: 'Sensitive Equipment Protection' },
+    "id": "nesbd-single-push-rod-lock-34",
+    "slug": "single-push-rod-lock-gate-horizontal-push-bar",
+    "name": "Single Push Rod Lock Gate Horizontal Push Bar",
+    "category": "fire-rated-doors",
+    "subcategory": "fire-door-hardware",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Horizontal push bar / push rod lock hardware.",
+    "description": "Single push rod lock gate horizontal push bar as listed by source. Confirm door compatibility, rating, and approvals per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/single_push_rod_lock_gate_horizontal_push_bar_e836e60ed732af2413886a308b4678eb.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Horizontal push bar",
+      "Exit hardware (as applicable)"
     ],
-    features: [
-      'Clean agent fire suppression',
-      'Sensitive equipment protection',
-      'Server room suitability',
-      'Non-water-based suppression',
-      'Asset protection',
+    "applications": [
+      "Exit doors",
+      "Fire door hardware (project-specific)"
     ],
-    applications: [
-      'Server rooms and data centers',
-      'Control rooms',
-      'Electrical rooms',
-      'High-value asset areas',
-    ],
-    documents: [
-      { label: 'Product Datasheet', url: null },
-      { label: 'Installation Instructions', url: null },
-      { label: 'Compliance documentation', url: null },
-    ],
+    "keywords": [
+      "push bar",
+      "panic hardware",
+      "exit device"
+    ]
   },
   {
-    id: 'sffco-fire-extinguisher',
-    slug: 'sffco-fire-extinguisher',
-    name: 'SFFECO Fire Extinguisher',
-    category: 'fire-protection-system',
-    subcategory: 'fire-extinguishers',
-    brand: 'SFFECO',
-    model: 'Extinguisher Series',
-    shortDescription: 'Portable fire extinguisher for commercial and industrial fire safety.',
-    description:
-      'The SFFECO Fire Extinguisher provides portable fire suppression for early-stage fires in commercial, industrial, and institutional buildings.',
-    image: placeholderImage('SFFECO Fire Extinguisher'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Manufacturer', value: 'SFFECO' },
-      { label: 'Product Type', value: 'Fire Extinguisher' },
-      { label: 'Model', value: 'Extinguisher Series' },
-      { label: 'Type', value: 'Portable' },
-      { label: 'Application', value: 'Early-stage fire suppression' },
+    "id": "nesbd-security-doors-35",
+    "slug": "security-doors-passive",
+    "name": "Security Doors",
+    "category": "fire-rated-doors",
+    "subcategory": "steel-fire-doors",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Security doors as listed by source.",
+    "description": "Security doors as listed by source. Confirm fire rating, construction, and approvals per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/security_doors_cd9c20be640208f55487dfa6dca7753f.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Security door"
     ],
-    features: [
-      'Portable fire suppression',
-      'Early-stage fire response',
-      'Commercial and industrial suitability',
-      'Easy operation',
-      'Fire safety compliance',
+    "applications": [
+      "Access control/openings (project-specific)"
     ],
-    applications: [
-      'Commercial buildings',
-      'Industrial facilities',
-      'Office buildings',
-      'Warehouses',
-    ],
-    documents: [
-      { label: 'Product Datasheet', url: null },
-      { label: 'Installation Instructions', url: null },
-      { label: 'Compliance documentation', url: null },
-    ],
+    "keywords": [
+      "security door"
+    ]
   },
   {
-    id: 'sffco-fire-protection-valve',
-    slug: 'sffco-fire-protection-valve',
-    name: 'SFFECO Fire Protection Valve',
-    category: 'fire-protection-system',
-    subcategory: 'fire-protection-valves',
-    brand: 'SFFECO',
-    model: 'Valve Series',
-    shortDescription: 'Fire protection control valve for water-based fire suppression systems.',
-    description:
-      'The SFFECO Fire Protection Valve provides reliable flow control for water-based fire suppression systems including sprinkler and hydrant installations.',
-    image: placeholderImage('SFFECO Fire Protection Valve'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Manufacturer', value: 'SFFECO' },
-      { label: 'Product Type', value: 'Fire Protection Valve' },
-      { label: 'Model', value: 'Valve Series' },
-      { label: 'Application', value: 'Water-based fire suppression' },
-      { label: 'System Type', value: 'Sprinkler and hydrant' },
+    "id": "nesbd-naffco-door-closer-40",
+    "slug": "naffco-door-closer",
+    "name": "Naffco Door Closer",
+    "category": "fire-rated-doors",
+    "subcategory": "fire-door-hardware",
+    "brand": "NAFFCO",
+    "model": "",
+    "shortDescription": "Door closer for fire-rated doors.",
+    "description": "NAFFCO door closer as listed by source. Confirm size, mounting, and fire door approval per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/door_closer_4d167bcf83a7d72bb888b58d30ba39c6.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Door closer",
+      "NAFFCO brand (as listed)"
     ],
-    features: [
-      'Flow control for fire suppression',
-      'Sprinkler and hydrant systems',
-      'Reliable operation',
-      'Water-based suppression',
-      'Fire protection compliance',
+    "applications": [
+      "Fire-rated doors"
     ],
-    applications: [
-      'Sprinkler systems',
-      'Hydrant systems',
-      'Fire pump rooms',
-      'Water supply networks',
-    ],
-    documents: [
-      { label: 'Product Datasheet', url: null },
-      { label: 'Installation Instructions', url: null },
-      { label: 'Compliance documentation', url: null },
-    ],
+    "keywords": [
+      "NAFFCO",
+      "door closer"
+    ]
   },
   {
-    id: 'siemens-fire-alarm-panel',
-    slug: 'siemens-fire-alarm-panel',
-    name: 'SIEMENS Fire Alarm Control Panel',
-    category: 'fire-detection-system',
-    subcategory: 'fire-alarm-panels',
-    brand: 'SIEMENS',
-    model: 'Fire Panel Series',
-    shortDescription: 'Intelligent fire alarm control panel for building safety and fire detection.',
-    description:
-      'The SIEMENS Fire Alarm Control Panel provides intelligent fire detection and alarm management for commercial, industrial, and institutional buildings.',
-    image: placeholderImage('SIEMENS Fire Alarm Control Panel'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Manufacturer', value: 'SIEMENS' },
-      { label: 'Product Type', value: 'Fire Alarm Control Panel' },
-      { label: 'Model', value: 'Fire Panel Series' },
-      { label: 'Technology', value: 'Intelligent addressable' },
-      { label: 'Application', value: 'Building fire safety' },
+    "id": "nesbd-naffco-em-door-holder-147",
+    "slug": "naffco-electro-magnetic-door-holder",
+    "name": "Naffco Electro-Magnetic Door Holder",
+    "category": "fire-rated-doors",
+    "subcategory": "fire-door-hardware",
+    "brand": "NAFFCO",
+    "model": "",
+    "shortDescription": "Electro-magnetic door holder for fire doors.",
+    "description": "NAFFCO electro-magnetic door holder as listed by source. Confirm voltage, holding force, and fire alarm interface per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/electro_magnetic_door_holder_d24ade6331b9d32f03c924184ba8b460.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Electro-magnetic door holder"
     ],
-    features: [
-      'Intelligent fire detection',
-      'Alarm management',
-      'Building safety integration',
-      'Addressable device support',
-      'Commercial and industrial suitability',
+    "applications": [
+      "Fire doors",
+      "Hold-open/release interfaces"
     ],
-    applications: [
-      'Commercial buildings',
-      'Industrial facilities',
-      'Institutional buildings',
-      'Large complexes',
-    ],
-    documents: [
-      { label: 'Product Datasheet', url: null },
-      { label: 'Installation Instructions', url: null },
-      { label: 'Compliance documentation', url: null },
-    ],
+    "keywords": [
+      "NAFFCO",
+      "magnetic door holder"
+    ]
   },
   {
-    id: 'siemens-smoke-detector',
-    slug: 'siemens-smoke-detector',
-    name: 'SIEMENS Photoelectric Smoke Detector',
-    category: 'fire-detection-system',
-    subcategory: 'smoke-detectors',
-    brand: 'SIEMENS',
-    model: 'Photo Smoke Series',
-    shortDescription: 'Addressable photoelectric smoke detector for early fire detection.',
-    description:
-      'The SIEMENS Photoelectric Smoke Detector provides early smoke detection using optical sensing technology for commercial and institutional applications.',
-    image: placeholderImage('SIEMENS Photoelectric Smoke Detector'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Manufacturer', value: 'SIEMENS' },
-      { label: 'Product Type', value: 'Smoke Detector' },
-      { label: 'Model', value: 'Photo Smoke Series' },
-      { label: 'Detection Technology', value: 'Photoelectric' },
-      { label: 'Communication', value: 'Addressable' },
+    "id": "nesbd-kunshan-em-door-holder-148",
+    "slug": "kunshan-electro-magnetic-door-holder",
+    "name": "Kunshan Electro-Magnetic Door Holder",
+    "category": "fire-rated-doors",
+    "subcategory": "fire-door-hardware",
+    "brand": "Kunshan",
+    "model": "",
+    "shortDescription": "Electro-magnetic door holder for fire doors.",
+    "description": "Kunshan electro-magnetic door holder as listed by source. Confirm voltage, holding force, and fire alarm interface per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/electro_magnetic_door_holder_4ceec7e709a47cda331b814d11109912.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Electro-magnetic door holder"
     ],
-    features: [
-      'Photoelectric smoke detection',
-      'Early fire detection',
-      'Addressable communication',
-      'Commercial suitability',
-      'Nuisance alarm resistance',
+    "applications": [
+      "Fire doors",
+      "Hold-open/release interfaces"
     ],
-    applications: [
-      'Office buildings',
-      'Educational institutions',
-      'Healthcare facilities',
-      'Commercial complexes',
-    ],
-    documents: [
-      { label: 'Product Datasheet', url: null },
-      { label: 'Installation Instructions', url: null },
-      { label: 'Compliance documentation', url: null },
-    ],
+    "keywords": [
+      "Kunshan",
+      "magnetic door holder"
+    ]
   },
   {
-    id: 'siemens-heat-detector',
-    slug: 'siemens-heat-detector',
-    name: 'SIEMENS Heat Detector',
-    category: 'fire-detection-system',
-    subcategory: 'heat-detectors',
-    brand: 'SIEMENS',
-    model: 'Heat Series',
-    shortDescription: 'Addressable heat detector for kitchens and high-temperature environments.',
-    description:
-      'The SIEMENS Heat Detector provides reliable heat-based fire detection for kitchens, boiler rooms, and areas where smoke detection may cause nuisance alarms.',
-    image: placeholderImage('SIEMENS Heat Detector'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Manufacturer', value: 'SIEMENS' },
-      { label: 'Product Type', value: 'Heat Detector' },
-      { label: 'Model', value: 'Heat Series' },
-      { label: 'Detection Technology', value: 'Heat' },
-      { label: 'Communication', value: 'Addressable' },
+    "id": "nesbd-naffco-handle-lock-149",
+    "slug": "naffco-handle-lock",
+    "name": "Naffco Handle Lock",
+    "category": "fire-rated-doors",
+    "subcategory": "fire-door-hardware",
+    "brand": "NAFFCO",
+    "model": "",
+    "shortDescription": "Handle lock for fire-rated doors.",
+    "description": "NAFFCO handle lock as listed by source. Confirm door compatibility and fire door approval per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/naffco_handle_lock_3a9eed4fdcf57e206fe5eec1dc8b7819.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Handle lock"
     ],
-    features: [
-      'Heat-based fire detection',
-      'Kitchen and boiler room suitability',
-      'Addressable communication',
-      'Nuisance alarm resistance',
-      'Reliable operation',
+    "applications": [
+      "Fire-rated doors"
     ],
-    applications: [
-      'Kitchens',
-      'Boiler rooms',
-      'Industrial areas',
-      'Warehouses',
-    ],
-    documents: [
-      { label: 'Product Datasheet', url: null },
-      { label: 'Installation Instructions', url: null },
-      { label: 'Compliance documentation', url: null },
-    ],
+    "keywords": [
+      "NAFFCO",
+      "handle lock"
+    ]
   },
   {
-    id: 'siemens-multi-sensor-detector',
-    slug: 'siemens-multi-sensor-detector',
-    name: 'SIEMENS Multi-Sensor Detector',
-    category: 'fire-detection-system',
-    subcategory: 'multi-sensor-detectors',
-    brand: 'SIEMENS',
-    model: 'Multi-Sensor Series',
-    shortDescription: 'Intelligent multi-criteria detector combining smoke and heat sensing.',
-    description:
-      'The SIEMENS Multi-Sensor Detector combines smoke and heat sensing technologies for intelligent fire detection with reduced nuisance alarms.',
-    image: placeholderImage('SIEMENS Multi-Sensor Detector'),
-    availability: 'inquiry-required',
-    specifications: [
-      { label: 'Manufacturer', value: 'SIEMENS' },
-      { label: 'Product Type', value: 'Multi-Sensor Detector' },
-      { label: 'Model', value: 'Multi-Sensor Series' },
-      { label: 'Detection Technology', value: 'Smoke and Heat' },
-      { label: 'Communication', value: 'Addressable' },
+    "id": "nesbd-strong-chung-handle-lock-150",
+    "slug": "strong-chung-handle-lock",
+    "name": "Strong Chung Handle Lock",
+    "category": "fire-rated-doors",
+    "subcategory": "fire-door-hardware",
+    "brand": "Strong Chung",
+    "model": "",
+    "shortDescription": "Handle lock for doors.",
+    "description": "Strong Chung handle lock as listed by source. Confirm door compatibility and fire door approval per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/strong_chung_handle_lock_3276827f7623cc791abbf1c41d5784f6.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Handle lock"
     ],
-    features: [
-      'Multi-criteria detection',
-      'Smoke and heat sensing',
-      'Reduced nuisance alarms',
-      'Addressable communication',
-      'Intelligent detection',
+    "applications": [
+      "Doors (project-specific)"
     ],
-    applications: [
-      'Commercial buildings',
-      'Office buildings',
-      'Hotels',
-      'Educational institutions',
-    ],
-    documents: [
-      { label: 'Product Datasheet', url: null },
-      { label: 'Installation Instructions', url: null },
-      { label: 'Compliance documentation', url: null },
-    ],
+    "keywords": [
+      "Strong Chung",
+      "handle lock"
+    ]
   },
+  {
+    "id": "nesbd-door-co-ordinator-151",
+    "slug": "door-co-ordinator",
+    "name": "Door Co-Ordinator",
+    "category": "fire-rated-doors",
+    "subcategory": "fire-door-hardware",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Door coordinator for paired fire doors.",
+    "description": "Door coordinator as listed by source. Confirm compatibility with paired leaf doors and fire door listing per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/door_co_ordinator_b555f27fa4dae082fb7e07e4134dde5a.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Door coordinator"
+    ],
+    "applications": [
+      "Double-leaf fire doors"
+    ],
+    "keywords": [
+      "door coordinator"
+    ]
+  },
+  {
+    "id": "nesbd-hinges-screw-152",
+    "slug": "hinges-screw-fire-door",
+    "name": "Hinges & Screw",
+    "category": "fire-rated-doors",
+    "subcategory": "fire-door-hardware",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Hinges and screws for fire door assemblies.",
+    "description": "Hinges and screws as listed by source. Confirm size, material, and fire door approval per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/hinges_screw_00ff604e81fa9f692caad32750e0477b.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Hinges and screws"
+    ],
+    "applications": [
+      "Fire door assemblies"
+    ],
+    "keywords": [
+      "hinges",
+      "screw",
+      "fire door hardware"
+    ]
+  },
+  {
+    "id": "nesbd-royal-bolt-153",
+    "slug": "royal-bolt",
+    "name": "Royal Bolt",
+    "category": "fire-rated-doors",
+    "subcategory": "fire-door-hardware",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Bolt hardware as listed by source.",
+    "description": "Royal bolt as listed by source. Confirm door compatibility and application per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/royal_bolt_2f92c4767484c1b880201493453b92fa.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Bolt hardware"
+    ],
+    "applications": [
+      "Door hardware (project-specific)"
+    ],
+    "keywords": [
+      "royal bolt",
+      "door bolt"
+    ]
+  },
+  {
+    "id": "nesbd-vision-panel-154",
+    "slug": "vision-panel-fire-door",
+    "name": "Vision Panel",
+    "category": "fire-rated-doors",
+    "subcategory": "fire-door-frames",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Vision panel for fire-rated doors.",
+    "description": "Vision panel as listed by source. Confirm glazing rating, size, and fire door approval per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/vision_panel_47129e8775e46442bd61e08d039cf15d.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Vision panel/glazing opening (as applicable)"
+    ],
+    "applications": [
+      "Fire-rated doors"
+    ],
+    "keywords": [
+      "vision panel",
+      "fire door glazing"
+    ]
+  },
+  {
+    "id": "nesbd-naffco-fire-door-panic-bar-155",
+    "slug": "naffco-fire-door-panic-bar",
+    "name": "Naffco Fire Door Panic Bar",
+    "category": "fire-rated-doors",
+    "subcategory": "fire-door-hardware",
+    "brand": "NAFFCO",
+    "model": "",
+    "shortDescription": "Panic bar for fire doors.",
+    "description": "NAFFCO fire door panic bar as listed by source. Confirm door type, rating, and approvals per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/naffco_fire_door_panic_bar_ead7772c48c3015c0b5e7b1d0f333ab1.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Panic bar / exit device"
+    ],
+    "applications": [
+      "Emergency exit/fire doors"
+    ],
+    "keywords": [
+      "NAFFCO",
+      "panic bar",
+      "exit device"
+    ]
+  },
+  {
+    "id": "nesbd-surface-vertical-rod-panic-156",
+    "slug": "surface-vertical-rod-panic-bar-exit-device",
+    "name": "Surface Vertical Rod Panic Bar Exit Device",
+    "category": "fire-rated-doors",
+    "subcategory": "fire-door-hardware",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Surface vertical rod panic bar exit device.",
+    "description": "Surface vertical rod panic bar exit device as listed by source. Confirm door configuration and approvals per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/surface_vertical_rod_panic_bar_exit_device_b2600f1071b99b9b1213bf05c6b20297.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Surface vertical rod",
+      "Panic/exit device"
+    ],
+    "applications": [
+      "Double-leaf/exit doors (project-specific)"
+    ],
+    "keywords": [
+      "vertical rod panic bar",
+      "exit device"
+    ]
+  },
+  {
+    "id": "nesbd-double-panic-bar-naffco-157",
+    "slug": "fire-rated-double-panic-bar-naffco-door",
+    "name": "Fire Rated Double Panic Bar For Naffco Door",
+    "category": "fire-rated-doors",
+    "subcategory": "fire-door-hardware",
+    "brand": "NAFFCO",
+    "model": "",
+    "shortDescription": "Double panic bar for fire-rated NAFFCO doors.",
+    "description": "Fire rated double panic bar for NAFFCO door as listed by source. Confirm door compatibility, rating, and approvals per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/fire_rated_double_panic_bar_for_naffco_door_bb1420de1179ab88d24239dfa29bfd7d.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Double panic bar",
+      "For fire-rated doors (as listed)"
+    ],
+    "applications": [
+      "Double-leaf fire/exit doors"
+    ],
+    "keywords": [
+      "NAFFCO",
+      "double panic bar"
+    ]
+  },
+  {
+    "id": "nesbd-intumescent-firestop-sealant-207",
+    "slug": "intumescent-firestop-sealant",
+    "name": "Intumescent Firestop Sealant",
+    "category": "passive-fire-protection",
+    "subcategory": "firestop-sealants-mortars-collars",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Intumescent firestop sealant for penetration/joint sealing.",
+    "description": "Intumescent firestop sealant as listed by source. Confirm tested system, fire rating, and application details per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/intumescent_firestop_sealant_cbf31c7c7d51f8535bd33f639ec38fd6.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Intumescent firestop sealant"
+    ],
+    "applications": [
+      "Service penetrations",
+      "Firestop joints (tested systems)"
+    ],
+    "keywords": [
+      "intumescent sealant",
+      "firestop"
+    ]
+  },
+  {
+    "id": "nesbd-fire-barrier-caulk-208",
+    "slug": "fire-barrier-caulk",
+    "name": "Fire Barrier Caulk",
+    "category": "passive-fire-protection",
+    "subcategory": "firestop-sealants-mortars-collars",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Fire barrier caulk for firestop applications.",
+    "description": "Fire barrier caulk as listed by source. Confirm tested system and fire rating per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/fire_barrier_caulk_410e9e4cb8e50b34ff3078de273b0049.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Fire barrier caulk"
+    ],
+    "applications": [
+      "Firestop joints/penetrations (tested systems)"
+    ],
+    "keywords": [
+      "fire barrier caulk",
+      "firestop"
+    ]
+  },
+  {
+    "id": "nesbd-metacaulk-pipe-collars-209",
+    "slug": "metacaulk-intumescent-pipe-collars",
+    "name": "Metacaulk Intumescent Pipe Collars",
+    "category": "passive-fire-protection",
+    "subcategory": "firestop-sealants-mortars-collars",
+    "brand": "Metacaulk",
+    "model": "",
+    "shortDescription": "Intumescent pipe collars for plastic pipe penetrations.",
+    "description": "Metacaulk intumescent pipe collars as listed by source. Confirm pipe size, substrate, and tested system per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/metacaulk_intumescent_pipe_collars_f0e95b76b62179816f2cc8f3c00b2705.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Intumescent pipe collars"
+    ],
+    "applications": [
+      "Plastic pipe penetrations",
+      "Firestop systems"
+    ],
+    "keywords": [
+      "Metacaulk",
+      "pipe collar",
+      "intumescent"
+    ]
+  },
+  {
+    "id": "nesbd-frd-door-closer-ul-233",
+    "slug": "frd-door-closer-ul-listed",
+    "name": "FRD Door Closer (UL Listed)",
+    "category": "fire-rated-doors",
+    "subcategory": "fire-door-hardware",
+    "brand": "FRD",
+    "model": "",
+    "shortDescription": "UL listed door closer for fire-rated doors.",
+    "description": "FRD door closer, UL listed as stated by source. Confirm size, mounting, and fire door approval per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/frd_door_closer_ul_listed_561b5395b2c9b5c463a5acbe565e99de.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Door closer",
+      "UL listed (as listed by source)"
+    ],
+    "applications": [
+      "Fire-rated doors"
+    ],
+    "keywords": [
+      "FRD",
+      "door closer",
+      "UL listed"
+    ]
+  },
+  {
+    "id": "nesbd-smoke-seal-kilargo-243",
+    "slug": "smoke-seal-kilargo-ul-certified",
+    "name": "Smoke Seal (Kilargo, UL Certified)",
+    "category": "fire-rated-doors",
+    "subcategory": "fire-door-hardware",
+    "brand": "Kilargo",
+    "model": "",
+    "shortDescription": "Smoke seal for fire/smoke doors.",
+    "description": "Smoke seal, brand Kilargo, UL certified as stated by source. Confirm profile, door type, and tested listing per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/smoke_seal_brand_kilargo_ul_certified_7ad988d3a562b98fd3bbc9c8f9577e48.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Smoke seal",
+      "Kilargo brand (as listed)",
+      "UL certified (as listed)"
+    ],
+    "applications": [
+      "Fire/smoke doors"
+    ],
+    "keywords": [
+      "Kilargo",
+      "smoke seal",
+      "UL certified"
+    ]
+  },
+  {
+    "id": "nesbd-door-hinges-dd-244",
+    "slug": "door-hinges-dd",
+    "name": "Door Hinges (D&D)",
+    "category": "fire-rated-doors",
+    "subcategory": "fire-door-hardware",
+    "brand": "D&D",
+    "model": "",
+    "shortDescription": "Door hinges for fire door assemblies.",
+    "description": "Door hinges, brand D&D as listed by source. Confirm size, load, and fire door approval per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/door_hinges_brand_dd_53f010f860c68e0b5b4b544e8676c51d.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Door hinges",
+      "D&D brand (as listed)"
+    ],
+    "applications": [
+      "Fire door assemblies"
+    ],
+    "keywords": [
+      "D&D",
+      "door hinges"
+    ]
+  },
+  {
+    "id": "nesbd-likcoo-hinges-245",
+    "slug": "likcoo-hinges",
+    "name": "Likcoo Hinges",
+    "category": "fire-rated-doors",
+    "subcategory": "fire-door-hardware",
+    "brand": "Likcoo",
+    "model": "",
+    "shortDescription": "Hinges for door assemblies.",
+    "description": "Likcoo hinges as listed by source. Confirm size, load, and suitability for fire-rated doors per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/likcoo_hinges_db498c185edb60f6838469d5b479af50.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Hinges",
+      "Likcoo brand (as listed)"
+    ],
+    "applications": [
+      "Door assemblies (project-specific)"
+    ],
+    "keywords": [
+      "Likcoo",
+      "hinges"
+    ]
+  },
+  {
+    "id": "nesbd-door-magnet-zilly-246",
+    "slug": "door-magnet-zilly",
+    "name": "Door Magnet (Zilly)",
+    "category": "fire-rated-doors",
+    "subcategory": "fire-door-hardware",
+    "brand": "Zilly",
+    "model": "",
+    "shortDescription": "Door magnet hardware.",
+    "description": "Door magnet, brand Zilly as listed by source. Confirm application and fire alarm interface suitability per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/door_magnet_brand_zilly_9c32536160854ba8c3d1a91870c6227f.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Door magnet"
+    ],
+    "applications": [
+      "Door hold/release (project-specific)"
+    ],
+    "keywords": [
+      "Zilly",
+      "door magnet"
+    ]
+  },
+  {
+    "id": "nesbd-fire-door-pushbar-prowell-247",
+    "slug": "fire-door-pushbar-prowell",
+    "name": "Fire Door Pushbar (Prowell)",
+    "category": "fire-rated-doors",
+    "subcategory": "fire-door-hardware",
+    "brand": "Prowell",
+    "model": "",
+    "shortDescription": "Pushbar/exit device for fire doors.",
+    "description": "Fire door pushbar, brand Prowell as listed by source. Confirm door compatibility, rating, and approvals per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/fire_door_pushbar_brand_prowell_b7a63be724f2c19266fceb9552c3894d.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Pushbar / exit device"
+    ],
+    "applications": [
+      "Fire/exit doors"
+    ],
+    "keywords": [
+      "Prowell",
+      "pushbar",
+      "exit device"
+    ]
+  },
+  {
+    "id": "nesbd-local-made-fire-rated-door-248",
+    "slug": "local-made-fire-rated-door",
+    "name": "Locally Made Fire Rated Door",
+    "category": "fire-rated-doors",
+    "subcategory": "steel-fire-doors",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Fire rated door (locally made, as listed by source).",
+    "description": "Locally made fire rated door as listed by source. Fire rating, construction, hardware, and approvals must be confirmed per project and applicable authority requirements. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/local_made_fire_rated_door_2944615e33873aa606be594b47d54b96.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Fire rated door (as listed)",
+      "Confirm rating and approvals per project"
+    ],
+    "applications": [
+      "Fire-rated openings (project-specific)"
+    ],
+    "keywords": [
+      "fire rated door",
+      "local made"
+    ]
+  },
+  // ---- NESBD Electrical Safety (source: nesbd.com electrical system category, added factual fit-only listing) ----
+  {
+    "id": "nesbd-lightning-protection-system-lps-242",
+    "slug": "lightning-protection-system-lps",
+    "name": "Lightning Protection System (LPS)",
+    "category": "electrical-safety",
+    "subcategory": "lightning-protection-systems",
+    "brand": "",
+    "model": "LPS",
+    "shortDescription": "Lightning protection system components/solution (as listed).",
+    "description": "Lightning Protection System (LPS) as listed by source. Confirm components, standard (e.g., IEC/NFPA as applicable), earthing design, and approvals per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/lightning_protection_system_lps_a87832eb2e695c2e34513d154020f6a1.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Lightning protection system (as listed)"
+    ],
+    "applications": [
+      "Building lightning protection",
+      "Electrical safety systems (project-specific)"
+    ],
+    "keywords": [
+      "lightning protection system",
+      "LPS"
+    ]
+  },
+  // ---- NESBD Electrical System (source: nesbd.com electrical system category, added factual listing) ----
+  {
+    "id": "nesbd-air-compressor-001-15",
+    "slug": "air-compressor-001",
+    "name": "Air Compressor 001",
+    "category": "electrical-system",
+    "subcategory": "building-equipment",
+    "brand": "",
+    "model": "001",
+    "shortDescription": "Air compressor equipment (as listed by source).",
+    "description": "Air compressor as listed by source. Confirm capacity, pressure, motor, and application suitability per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/air_compressor_001_7194624fe6cbbfe17adcec36c716b981.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Air compressor (as listed)"
+    ],
+    "applications": [
+      "Compressed air systems (project-specific)"
+    ],
+    "keywords": [
+      "air compressor"
+    ]
+  },
+  {
+    "id": "nesbd-diesel-generator-17",
+    "slug": "diesel-generator",
+    "name": "Diesel Generator",
+    "category": "electrical-system",
+    "subcategory": "generators-power",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Diesel generator set (as listed by source).",
+    "description": "Diesel generator as listed by source. Confirm kVA/kW rating, voltage, phase, enclosure, and approvals per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/diesel_generator_cc19ae96d4dc154c0f2ac1fb1d27016c.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Diesel generator (as listed)"
+    ],
+    "applications": [
+      "Backup/prime power (project-specific)"
+    ],
+    "keywords": [
+      "diesel generator"
+    ]
+  },
+  {
+    "id": "nesbd-busbar-trunking-system-29",
+    "slug": "busbar-trunking-system",
+    "name": "Busbar Trunking System",
+    "category": "electrical-system",
+    "subcategory": "busbar-trunking",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Busbar trunking system (as listed by source).",
+    "description": "Busbar trunking system as listed by source. Confirm current rating, IP class, configuration, and approvals per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/busbar_trunking_system_e2401a41733ae4b1b2e7964d222a79d2.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Busbar trunking system"
+    ],
+    "applications": [
+      "Power distribution"
+    ],
+    "keywords": [
+      "busbar trunking"
+    ]
+  },
+  {
+    "id": "nesbd-circuit-breaker-30",
+    "slug": "circuit-breaker",
+    "name": "Circuit Breaker",
+    "category": "electrical-system",
+    "subcategory": "switchgear-panels",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Circuit breaker (as listed by source).",
+    "description": "Circuit breaker as listed by source. Confirm type, rating, breaking capacity, and approvals per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/circuit_breaker_c47758834f3c172ceec129756572dd64.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Circuit breaker"
+    ],
+    "applications": [
+      "Electrical protection/distribution"
+    ],
+    "keywords": [
+      "circuit breaker"
+    ]
+  },
+  {
+    "id": "nesbd-transformer-36",
+    "slug": "transformer",
+    "name": "Transformer",
+    "category": "electrical-system",
+    "subcategory": "transformers",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Electrical transformer (as listed by source).",
+    "description": "Transformer as listed by source. Confirm kVA rating, voltage, vector group, cooling, and approvals per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/sprinklers_ebc1699da70480b5fffa6e6c74c5eeca.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Transformer"
+    ],
+    "applications": [
+      "Power distribution"
+    ],
+    "keywords": [
+      "transformer"
+    ]
+  },
+  {
+    "id": "nesbd-magnetic-contactor-37",
+    "slug": "magnetic-contactor",
+    "name": "Magnetic Contactor",
+    "category": "electrical-system",
+    "subcategory": "switchgear-panels",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Magnetic contactor (as listed by source).",
+    "description": "Magnetic contactor as listed by source. Confirm current rating, coil voltage, and application per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/magnetic_contract_59504983343a17359b8eefb2bb39ec27.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Magnetic contactor"
+    ],
+    "applications": [
+      "Motor/control circuits (project-specific)"
+    ],
+    "keywords": [
+      "magnetic contactor"
+    ]
+  },
+  {
+    "id": "nesbd-mdb-board-44",
+    "slug": "mdb-board",
+    "name": "MDB Board",
+    "category": "electrical-system",
+    "subcategory": "switchgear-panels",
+    "brand": "",
+    "model": "MDB",
+    "shortDescription": "Main distribution board (as listed by source).",
+    "description": "MDB (Main Distribution Board) as listed by source. Confirm incomer/outgoing configuration, busbar rating, IP class, and approvals per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/mdb_board_29c56b8a213c1b88d6b00c196943ed85.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Main distribution board"
+    ],
+    "applications": [
+      "Electrical power distribution"
+    ],
+    "keywords": [
+      "MDB",
+      "main distribution board"
+    ]
+  },
+  {
+    "id": "nesbd-ht-switchgear-49",
+    "slug": "ht-switchgear",
+    "name": "HT Switchgear",
+    "category": "electrical-system",
+    "subcategory": "switchgear-panels",
+    "brand": "",
+    "model": "",
+    "shortDescription": "High tension switchgear (as listed by source).",
+    "description": "HT switchgear as listed by source. Confirm voltage class, configuration, protection, and approvals per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/ht_switchgear_b93fc45d02c53f0945484ca009e3b55d.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "HT switchgear"
+    ],
+    "applications": [
+      "Medium/high voltage distribution (project-specific)"
+    ],
+    "keywords": [
+      "HT switchgear",
+      "switchgear"
+    ]
+  },
+  {
+    "id": "nesbd-steam-boiler-54",
+    "slug": "steam-boiler",
+    "name": "Steam Boiler",
+    "category": "electrical-system",
+    "subcategory": "building-equipment",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Steam boiler (as listed by source).",
+    "description": "Steam boiler as listed by source. Confirm capacity, pressure, fuel, and safety approvals per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/steam_boiler_8b49eb75d68d641ec2d99da931614cb8.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Steam boiler"
+    ],
+    "applications": [
+      "Industrial/process steam (project-specific)"
+    ],
+    "keywords": [
+      "steam boiler"
+    ]
+  },
+  {
+    "id": "nesbd-tap-off-boxes-busbar-114",
+    "slug": "tap-off-boxes-busbar-trunking-system",
+    "name": "Tap-off Boxes Busbar Trunking System",
+    "category": "electrical-system",
+    "subcategory": "busbar-trunking",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Tap-off boxes for busbar trunking systems.",
+    "description": "Tap-off boxes for busbar trunking system as listed by source. Confirm rating, compatibility, and approvals per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/tap_off_boxes_busbar_trunking_system_b35b2ea69f71fc3755c2fccf0e78e9b8.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Tap-off boxes",
+      "Busbar trunking accessory"
+    ],
+    "applications": [
+      "Busbar power distribution"
+    ],
+    "keywords": [
+      "tap-off box",
+      "busbar trunking"
+    ]
+  },
+  {
+    "id": "nesbd-eae-lighting-busbar-115",
+    "slug": "eae-lighting-busbar-trunking-system",
+    "name": "EAE Lighting Busbar Trunking System",
+    "category": "electrical-system",
+    "subcategory": "busbar-trunking",
+    "brand": "EAE",
+    "model": "",
+    "shortDescription": "EAE lighting busbar trunking system.",
+    "description": "EAE lighting busbar trunking system as listed by source. Confirm rating, configuration, and approvals per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/eae_lighting_busbar_trunking_system_e5211fbd34626ff1905c2fbe9dfbf10b.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Lighting busbar trunking",
+      "EAE brand (as listed)"
+    ],
+    "applications": [
+      "Lighting power distribution"
+    ],
+    "keywords": [
+      "EAE",
+      "lighting busbar"
+    ]
+  },
+  {
+    "id": "nesbd-eae-power-busbar-systems-116",
+    "slug": "eae-power-busbar-trunking-systems",
+    "name": "EAE Power Busbar Trunking Systems",
+    "category": "electrical-system",
+    "subcategory": "busbar-trunking",
+    "brand": "EAE",
+    "model": "",
+    "shortDescription": "EAE power busbar trunking systems.",
+    "description": "EAE power busbar trunking systems as listed by source. Confirm rating, configuration, and approvals per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/eae_power_busbar_trunking_systems_efb584fad7b03e9092d3054b8c58529f.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Power busbar trunking",
+      "EAE brand (as listed)"
+    ],
+    "applications": [
+      "Power distribution"
+    ],
+    "keywords": [
+      "EAE",
+      "power busbar trunking"
+    ]
+  },
+  {
+    "id": "nesbd-eae-power-busbar-system-117",
+    "slug": "eae-power-busbar-trunking-system",
+    "name": "EAE Power Busbar Trunking System",
+    "category": "electrical-system",
+    "subcategory": "busbar-trunking",
+    "brand": "EAE",
+    "model": "",
+    "shortDescription": "EAE power busbar trunking system.",
+    "description": "EAE power busbar trunking system as listed by source. Confirm rating, configuration, and approvals per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/eae_power_busbar_trunking_system_c3d1f84655fda07b680ac5f78cdc8c1c.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Power busbar trunking",
+      "EAE brand (as listed)"
+    ],
+    "applications": [
+      "Power distribution"
+    ],
+    "keywords": [
+      "EAE",
+      "power busbar trunking"
+    ]
+  },
+  {
+    "id": "nesbd-eae-bbt-flexible-joint-118",
+    "slug": "eae-bbt-flexible-joint",
+    "name": "EAE BBT Flexible Joint",
+    "category": "electrical-system",
+    "subcategory": "busbar-trunking",
+    "brand": "EAE",
+    "model": "BBT",
+    "shortDescription": "Flexible joint for busbar trunking.",
+    "description": "EAE BBT flexible joint as listed by source. Confirm compatibility and rating per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/eae_bbt_flexible_joint_46fa6345efe577d95630760a7a26be20.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Flexible joint",
+      "Busbar trunking accessory"
+    ],
+    "applications": [
+      "Busbar trunking systems"
+    ],
+    "keywords": [
+      "EAE",
+      "BBT",
+      "flexible joint"
+    ]
+  },
+  {
+    "id": "nesbd-eae-busbar-elbow-119",
+    "slug": "eae-busbar-trunking-system-elbow",
+    "name": "EAE Busbar Trunking System Elbow",
+    "category": "electrical-system",
+    "subcategory": "busbar-trunking",
+    "brand": "EAE",
+    "model": "",
+    "shortDescription": "Elbow component for busbar trunking systems.",
+    "description": "EAE busbar trunking system elbow as listed by source. Confirm angle, rating, and compatibility per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/eae_busbar_trunking_system_elbow_9e7d85a1be047168f3b66ed107531d21.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Elbow component",
+      "Busbar trunking accessory"
+    ],
+    "applications": [
+      "Busbar trunking systems"
+    ],
+    "keywords": [
+      "EAE",
+      "busbar elbow"
+    ]
+  },
+  {
+    "id": "nesbd-eae-feeder-units-120",
+    "slug": "eae-busbar-trunking-system-feeder-units",
+    "name": "EAE Busbar Trunking System Feeder Units",
+    "category": "electrical-system",
+    "subcategory": "busbar-trunking",
+    "brand": "EAE",
+    "model": "",
+    "shortDescription": "Feeder units for busbar trunking systems.",
+    "description": "EAE busbar trunking system feeder units as listed by source. Confirm rating and compatibility per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/eae_busbar_trunking_system_feeder_units_0bf9be67d741d385d4d8e2c483ab6852.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Feeder units",
+      "Busbar trunking accessory"
+    ],
+    "applications": [
+      "Busbar trunking systems"
+    ],
+    "keywords": [
+      "EAE",
+      "feeder unit",
+      "busbar"
+    ]
+  },
+  {
+    "id": "nesbd-trolley-busbar-121",
+    "slug": "busbar-trunking-system-trolley-busbar",
+    "name": "Busbar Trunking System Trolley Busbar",
+    "category": "electrical-system",
+    "subcategory": "busbar-trunking",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Trolley busbar for busbar trunking systems.",
+    "description": "Trolley busbar for busbar trunking systems as listed by source. Confirm rating and application per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/busbar_trunking_system_trolley_busbar_9c489c19121cde37a1f67840b260b704.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Trolley busbar"
+    ],
+    "applications": [
+      "Busbar trunking systems"
+    ],
+    "keywords": [
+      "trolley busbar"
+    ]
+  },
+  {
+    "id": "nesbd-solar-panel-202",
+    "slug": "solar-panel",
+    "name": "Solar Panel",
+    "category": "electrical-system",
+    "subcategory": "solar-equipment",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Solar photovoltaic panel (as listed by source).",
+    "description": "Solar panel as listed by source. Confirm wattage, cell type, dimensions, and certifications per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/solar_panel_31f8d40aa3487d03be4f4c7c0719cd9b.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Solar PV panel"
+    ],
+    "applications": [
+      "Solar power systems"
+    ],
+    "keywords": [
+      "solar panel",
+      "PV module"
+    ]
+  },
+  {
+    "id": "nesbd-solar-inverter-203",
+    "slug": "solar-inverter",
+    "name": "Solar Inverter",
+    "category": "electrical-system",
+    "subcategory": "solar-equipment",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Solar inverter (as listed by source).",
+    "description": "Solar inverter as listed by source. Confirm capacity, phase, MPPT, and approvals per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/solar_inverter_f37e1c982f2f0522d8baaaac733fd49c.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Solar inverter"
+    ],
+    "applications": [
+      "Solar power systems"
+    ],
+    "keywords": [
+      "solar inverter"
+    ]
+  },
+  {
+    "id": "nesbd-solar-storage-204",
+    "slug": "solar-storage",
+    "name": "Solar Storage",
+    "category": "electrical-system",
+    "subcategory": "solar-equipment",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Solar energy storage (as listed by source).",
+    "description": "Solar storage as listed by source. Confirm capacity, chemistry, voltage, and approvals per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/solar_storage_1cdca1cd2f5fcdd8d39162ab8469592d.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Energy storage"
+    ],
+    "applications": [
+      "Solar power systems"
+    ],
+    "keywords": [
+      "solar storage",
+      "battery storage"
+    ]
+  },
+  {
+    "id": "nesbd-terrastreamer-205",
+    "slug": "terrastreamer-nesbd",
+    "name": "TerraStreamer",
+    "category": "electrical-system",
+    "subcategory": "generators-power",
+    "brand": "",
+    "model": "TerraStreamer",
+    "shortDescription": "TerraStreamer equipment (as listed by source).",
+    "description": "TerraStreamer as listed by source. Confirm product type, ratings, and application suitability per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/terrastreamer_b8f10541bcf4107682690eb2176994c1.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "TerraStreamer (as listed)"
+    ],
+    "applications": [
+      "Power/electrical systems (project-specific)"
+    ],
+    "keywords": [
+      "TerraStreamer"
+    ]
+  },
+  {
+    "id": "nesbd-lift-206",
+    "slug": "lift",
+    "name": "Lift",
+    "category": "electrical-system",
+    "subcategory": "building-equipment",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Lift/elevator equipment (as listed by source).",
+    "description": "Lift as listed by source. Confirm capacity, speed, configuration, and safety approvals per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/lift_f953231ca160d0a1d5a8267f10bb9934.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Lift/elevator (as listed)"
+    ],
+    "applications": [
+      "Building vertical transportation"
+    ],
+    "keywords": [
+      "lift",
+      "elevator"
+    ]
+  },
+  {
+    "id": "nesbd-three-phase-on-grid-solar-inverter-234",
+    "slug": "three-phase-on-grid-solar-inverter",
+    "name": "Three Phase On-Grid Solar Inverter",
+    "category": "electrical-system",
+    "subcategory": "solar-equipment",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Three phase on-grid solar inverter.",
+    "description": "Three phase on-grid solar inverter as listed by source. Confirm capacity, MPPT, grid code, and approvals per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/three_phase_on_grid_solar_inverter_74757b7165007b8b93270970e83c510f.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Three phase",
+      "On-grid solar inverter"
+    ],
+    "applications": [
+      "Grid-tied solar systems"
+    ],
+    "keywords": [
+      "on-grid inverter",
+      "three phase solar inverter"
+    ]
+  },
+  {
+    "id": "nesbd-crown-xavier-235",
+    "slug": "crown-xavier-15kw-3kw",
+    "name": "Crown Xavier 1.5KW – 3KW",
+    "category": "electrical-system",
+    "subcategory": "solar-equipment",
+    "brand": "Crown",
+    "model": "Xavier 1.5KW–3KW",
+    "shortDescription": "Crown Xavier 1.5KW–3KW solar/inverter equipment (as listed).",
+    "description": "Crown Xavier 1.5KW–3KW as listed by source. Confirm exact model, capacity, and application per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/crown_xavier_15kw_3kw_7762fc81070bdff2b91884d313b2430e.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Crown Xavier series (as listed)",
+      "1.5KW–3KW range (as listed)"
+    ],
+    "applications": [
+      "Solar/power systems (project-specific)"
+    ],
+    "keywords": [
+      "Crown Xavier",
+      "solar inverter"
+    ]
+  },
+  {
+    "id": "nesbd-hybrid-solar-inverter-236",
+    "slug": "hybrid-solar-inverter",
+    "name": "Hybrid Solar Inverter",
+    "category": "electrical-system",
+    "subcategory": "solar-equipment",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Hybrid solar inverter (as listed by source).",
+    "description": "Hybrid solar inverter as listed by source. Confirm capacity, battery compatibility, and approvals per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/hybrid_solar_inverter_4226c708c3f2afab79e95f4c2015704c.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Hybrid solar inverter"
+    ],
+    "applications": [
+      "Solar + storage systems"
+    ],
+    "keywords": [
+      "hybrid solar inverter"
+    ]
+  },
+  {
+    "id": "nesbd-solar-charge-controller-239",
+    "slug": "solar-charge-controller-10a-12v-lcd",
+    "name": "Solar Charge Controller 10A 12V Panel LCD Display",
+    "category": "electrical-system",
+    "subcategory": "solar-equipment",
+    "brand": "",
+    "model": "10A 12V",
+    "shortDescription": "Solar charge controller with LCD display (as listed).",
+    "description": "Solar charge controller 10A 12V panel LCD display as listed by source. Confirm ratings and compatibility per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/solar_charge_controller_10a_12v_panel_lcd_display_23983ce32597080d7deaa92261fd0154.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "10A 12V (as listed)",
+      "LCD display (as listed)"
+    ],
+    "applications": [
+      "Small solar systems"
+    ],
+    "keywords": [
+      "solar charge controller",
+      "10A 12V"
+    ]
+  },
+  {
+    "id": "nesbd-lithium-battery-240",
+    "slug": "lithium-battery-12v-24v-48v",
+    "name": "Lithium Battery 12V/24V/48V",
+    "category": "electrical-system",
+    "subcategory": "solar-equipment",
+    "brand": "",
+    "model": "12V/24V/48V",
+    "shortDescription": "Lithium battery (12V/24V/48V, as listed).",
+    "description": "Lithium battery 12V/24V/48V as listed by source. Confirm capacity (Ah/kWh), chemistry, BMS, and approvals per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/lithium_battery_12v24v48v_0d2ff968c0e769428ed7b0602390b300.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Lithium battery",
+      "12V/24V/48V options (as listed)"
+    ],
+    "applications": [
+      "Solar/storage systems (project-specific)"
+    ],
+    "keywords": [
+      "lithium battery",
+      "12V 24V 48V"
+    ]
+  },
+  // ---- NESBD Industrial Safety Equipment (source: nesbd.com category, ALL items added, factual listing) ----
+  {
+    "id": "nesbd-fire-safety-hand-gloves-14",
+    "slug": "fire-safety-hand-gloves",
+    "name": "Fire Safety Hand Gloves",
+    "category": "industrial-safety-equipment",
+    "subcategory": "ppe-safety-wear",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Fire safety hand gloves (as listed).",
+    "description": "Fire safety hand gloves as listed by source. Confirm material, rating, size, and applicable safety standards per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/fire_safety_hand_gloves_a2c9dd7a1ad029d3fe525528d46c50b5.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Fire safety gloves"
+    ],
+    "applications": [
+      "Industrial/fire safety PPE"
+    ],
+    "keywords": [
+      "fire safety gloves"
+    ]
+  },
+  {
+    "id": "nesbd-fire-retardant-uniform-52",
+    "slug": "fire-retardant-uniform",
+    "name": "Fire-Retardant Uniform",
+    "category": "industrial-safety-equipment",
+    "subcategory": "ppe-safety-wear",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Fire-retardant uniform (as listed).",
+    "description": "Fire-retardant uniform as listed by source. Confirm fabric, rating, sizing, and applicable standards per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/fire_retardant_unifrom_3adc0c38d73f8611e69eba88e82aa30f.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Fire-retardant uniform"
+    ],
+    "applications": [
+      "Industrial/fire safety PPE"
+    ],
+    "keywords": [
+      "fire retardant uniform",
+      "FR clothing"
+    ]
+  },
+  {
+    "id": "nesbd-fire-safety-suit-53",
+    "slug": "fire-safety-suit",
+    "name": "Fire Safety Suit",
+    "category": "industrial-safety-equipment",
+    "subcategory": "ppe-safety-wear",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Fire safety suit (as listed).",
+    "description": "Fire safety suit as listed by source. Confirm protection level, materials, and applicable standards per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/fire_safety_suit_6f86f27899621146b0042c6961653cd8.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Fire safety suit"
+    ],
+    "applications": [
+      "Firefighting/industrial safety (project-specific)"
+    ],
+    "keywords": [
+      "fire safety suit"
+    ]
+  },
+  {
+    "id": "nesbd-safety-helmet-67",
+    "slug": "safety-helmet",
+    "name": "Safety Helmet",
+    "category": "industrial-safety-equipment",
+    "subcategory": "ppe-safety-wear",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Safety helmet (as listed).",
+    "description": "Safety helmet as listed by source. Confirm impact rating, color/options, and applicable standards per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/safety_helmet_b4cb8bc5302871b73416725ccb4cb304.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Safety helmet"
+    ],
+    "applications": [
+      "Industrial/site safety PPE"
+    ],
+    "keywords": [
+      "safety helmet"
+    ]
+  },
+  {
+    "id": "nesbd-safety-goggles-68",
+    "slug": "safety-goggles",
+    "name": "Safety Goggles",
+    "category": "industrial-safety-equipment",
+    "subcategory": "ppe-safety-wear",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Safety goggles (as listed).",
+    "description": "Safety goggles as listed by source. Confirm lens/protection type and applicable standards per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/safety_goggles_f403a70cdf3b710667700329d69097a6.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Safety goggles"
+    ],
+    "applications": [
+      "Eye protection PPE"
+    ],
+    "keywords": [
+      "safety goggles"
+    ]
+  },
+  {
+    "id": "nesbd-safety-shoes-69",
+    "slug": "safety-shoes",
+    "name": "Safety Shoes",
+    "category": "industrial-safety-equipment",
+    "subcategory": "ppe-safety-wear",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Safety shoes (as listed).",
+    "description": "Safety shoes as listed by source. Confirm toe protection, sole type, size, and applicable standards per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/safety_shoes_c8179ed1fc6f0b676e2f435c13de2ca8.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Safety shoes"
+    ],
+    "applications": [
+      "Industrial/site safety PPE"
+    ],
+    "keywords": [
+      "safety shoes"
+    ]
+  },
+  {
+    "id": "nesbd-fire-extinguisher-safety-70",
+    "slug": "fire-extinguisher-industrial-safety",
+    "name": "Fire Extinguisher",
+    "category": "industrial-safety-equipment",
+    "subcategory": "fire-safety-tools",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Fire extinguisher (as listed).",
+    "description": "Fire extinguisher as listed by source. Confirm agent type, capacity, rating, and approvals per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/fire_extinguisher_8bf2f2f150caf6d11f8eb1c8b39cd333.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Fire extinguisher"
+    ],
+    "applications": [
+      "First-aid firefighting"
+    ],
+    "keywords": [
+      "fire extinguisher"
+    ]
+  },
+  {
+    "id": "nesbd-fire-emergency-escape-mask-71",
+    "slug": "fire-emergency-escape-mask",
+    "name": "Fire Emergency Escape Mask",
+    "category": "industrial-safety-equipment",
+    "subcategory": "rescue-safety-equipment",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Fire emergency escape mask (as listed).",
+    "description": "Fire emergency escape mask as listed by source. Confirm duration, filtration/protection, and approvals per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/fire_emergency_escape_mask_e0eab2bd6335b09e4c1f92e4bbef83ae.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Emergency escape mask"
+    ],
+    "applications": [
+      "Emergency evacuation/smoke escape"
+    ],
+    "keywords": [
+      "escape mask",
+      "fire emergency mask"
+    ]
+  },
+  {
+    "id": "nesbd-fire-beater-72",
+    "slug": "fire-beater",
+    "name": "Fire Beater",
+    "category": "industrial-safety-equipment",
+    "subcategory": "fire-safety-tools",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Fire beater (as listed).",
+    "description": "Fire beater as listed by source. Confirm material and application per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/fire_beater_da85fcaf1e188e4190eb782f42980d9a.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Fire beater tool"
+    ],
+    "applications": [
+      "Grass/incipient fire response (as applicable)"
+    ],
+    "keywords": [
+      "fire beater"
+    ]
+  },
+  {
+    "id": "nesbd-fire-bucket-73",
+    "slug": "fire-bucket",
+    "name": "Fire Bucket",
+    "category": "industrial-safety-equipment",
+    "subcategory": "fire-safety-tools",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Fire bucket (as listed).",
+    "description": "Fire bucket as listed by source. Confirm size, material, and mounting/use per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/fire_bucket_215c518b8e7a13cf0c01401af743c0ad.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Fire bucket"
+    ],
+    "applications": [
+      "Fire point equipment"
+    ],
+    "keywords": [
+      "fire bucket"
+    ]
+  },
+  {
+    "id": "nesbd-fire-axe-74",
+    "slug": "fire-axe",
+    "name": "Fire Axe",
+    "category": "industrial-safety-equipment",
+    "subcategory": "fire-safety-tools",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Fire axe (as listed).",
+    "description": "Fire axe as listed by source. Confirm size/material and use requirements per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/fire_axe_47fb2ba312b6b00ae7e52bf5927f43c8.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Fire axe"
+    ],
+    "applications": [
+      "Fire/rescue equipment points"
+    ],
+    "keywords": [
+      "fire axe"
+    ]
+  },
+  {
+    "id": "nesbd-exit-sign-75",
+    "slug": "exit-sign",
+    "name": "Exit Sign",
+    "category": "industrial-safety-equipment",
+    "subcategory": "emergency-signage-lighting",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Exit sign (as listed).",
+    "description": "Exit sign as listed by source. Confirm legend, illumination type, power source, and approvals per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/exit_sign_94b553ec064c5d6acffa328bcc447f7d.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Exit sign"
+    ],
+    "applications": [
+      "Emergency egress signage"
+    ],
+    "keywords": [
+      "exit sign"
+    ]
+  },
+  {
+    "id": "nesbd-breathing-apparatus-181",
+    "slug": "breathing-apparatus-ship-baking",
+    "name": "Breathing Apparatus (Ship Baking)",
+    "category": "industrial-safety-equipment",
+    "subcategory": "rescue-safety-equipment",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Breathing apparatus (as listed).",
+    "description": "Breathing apparatus as listed by source. Confirm type, cylinder duration, and approvals per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/breathing_apparatus_ship_baking_fc6cf5dd6d91eb9dfead8b946f8b2a50.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Breathing apparatus"
+    ],
+    "applications": [
+      "Rescue/confined or hazardous atmosphere (project-specific)"
+    ],
+    "keywords": [
+      "breathing apparatus",
+      "SCBA"
+    ]
+  },
+  {
+    "id": "nesbd-fire-equipment-box-182",
+    "slug": "fire-equipment-box-42x63",
+    "name": "Fire Equipment Box (42\"x63\")",
+    "category": "industrial-safety-equipment",
+    "subcategory": "fire-safety-tools",
+    "brand": "",
+    "model": "42\"x63\"",
+    "shortDescription": "Fire equipment box (as listed).",
+    "description": "Fire equipment box 42\"x63\" as listed by source. Confirm construction, mounting, and contents per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/fire_equipment_box_42x63_266a3c6c6c512c4dd4ada153a1222dc6.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Fire equipment box"
+    ],
+    "applications": [
+      "Fire point storage"
+    ],
+    "keywords": [
+      "fire equipment box"
+    ]
+  },
+  {
+    "id": "nesbd-fire-hook-183",
+    "slug": "fire-hook",
+    "name": "Fire Hook",
+    "category": "industrial-safety-equipment",
+    "subcategory": "fire-safety-tools",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Fire hook (as listed).",
+    "description": "Fire hook as listed by source. Confirm size and material per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/fire_hook_b9767fd327f7dedaef3daebbcc3746ce.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Fire hook"
+    ],
+    "applications": [
+      "Fire/rescue tools"
+    ],
+    "keywords": [
+      "fire hook"
+    ]
+  },
+  {
+    "id": "nesbd-fire-belcha-184",
+    "slug": "fire-belcha",
+    "name": "Fire Belcha",
+    "category": "industrial-safety-equipment",
+    "subcategory": "fire-safety-tools",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Fire belcha/shovel tool (as listed).",
+    "description": "Fire belcha as listed by source. Confirm size and material per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/fire_belcha_b64bf3d715bc779bc58b8c9f5e4cc422.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Fire belcha/shovel"
+    ],
+    "applications": [
+      "Fire/rescue tools"
+    ],
+    "keywords": [
+      "fire belcha",
+      "fire shovel"
+    ]
+  },
+  {
+    "id": "nesbd-lock-cutter-185",
+    "slug": "lock-cutter",
+    "name": "Lock Cutter",
+    "category": "industrial-safety-equipment",
+    "subcategory": "fire-safety-tools",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Lock cutter (as listed).",
+    "description": "Lock cutter as listed by source. Confirm size and cutting capacity per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/lock_cutter_7b5e73d69829fb43f66c33b14bd41efb.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Lock cutter"
+    ],
+    "applications": [
+      "Rescue/emergency access tools"
+    ],
+    "keywords": [
+      "lock cutter"
+    ]
+  },
+  {
+    "id": "nesbd-fire-blanket-186",
+    "slug": "fire-blanket",
+    "name": "Fire Blanket",
+    "category": "industrial-safety-equipment",
+    "subcategory": "fire-safety-tools",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Fire blanket (as listed).",
+    "description": "Fire blanket as listed by source. Confirm size, material, and approvals per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/fire_blanket_518dd3ee3ba95950517242f602e41003.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Fire blanket"
+    ],
+    "applications": [
+      "Kitchen/small fire response"
+    ],
+    "keywords": [
+      "fire blanket"
+    ]
+  },
+  {
+    "id": "nesbd-fire-stretcher-187",
+    "slug": "fire-stretcher-100-kg",
+    "name": "Fire Stretcher (100 Kg)",
+    "category": "industrial-safety-equipment",
+    "subcategory": "rescue-safety-equipment",
+    "brand": "",
+    "model": "100 Kg",
+    "shortDescription": "Fire stretcher, 100 kg capacity (as listed).",
+    "description": "Fire stretcher (100 kg) as listed by source. Confirm construction and capacity per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/fire_stretcher_100_kg_1b4a31957b78edb4a3add414624bd18e.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Fire stretcher",
+      "100 kg capacity (as listed)"
+    ],
+    "applications": [
+      "Rescue/evacuation"
+    ],
+    "keywords": [
+      "fire stretcher"
+    ]
+  },
+  {
+    "id": "nesbd-direction-exit-light-188",
+    "slug": "direction-exit-light",
+    "name": "Direction Exit Light",
+    "category": "industrial-safety-equipment",
+    "subcategory": "emergency-signage-lighting",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Directional exit light (as listed).",
+    "description": "Direction exit light as listed by source. Confirm legend, illumination, power source, and approvals per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/direction_exit_light_6038884d0a95af38af194a659cd9d8d6.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Directional exit light"
+    ],
+    "applications": [
+      "Emergency egress lighting/signage"
+    ],
+    "keywords": [
+      "direction exit light",
+      "exit light"
+    ]
+  },
+  {
+    "id": "nesbd-fire-stop-189",
+    "slug": "fire-stop",
+    "name": "Fire Stop",
+    "category": "industrial-safety-equipment",
+    "subcategory": "fire-safety-tools",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Fire stop product (as listed).",
+    "description": "Fire stop as listed by source. Confirm product type, tested system, and fire rating per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/fire_stop_3de32bcd3abdd4208efcf1b1e1e1f722.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Fire stop (as listed)"
+    ],
+    "applications": [
+      "Fire stopping (project-specific, confirm tested system)"
+    ],
+    "keywords": [
+      "fire stop"
+    ]
+  },
+  {
+    "id": "nesbd-runner-super-safety-shoe-190",
+    "slug": "runner-super-safety-shoe",
+    "name": "Runner Super Safety Shoe",
+    "category": "industrial-safety-equipment",
+    "subcategory": "ppe-safety-wear",
+    "brand": "Runner",
+    "model": "Super",
+    "shortDescription": "Safety shoe (as listed).",
+    "description": "Runner Super safety shoe as listed by source. Confirm size, protection, and applicable standards per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/runner_super_safety_shoe_b3b1a0cb2490c0dc75915a4551417257.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Safety shoe",
+      "Runner brand (as listed)"
+    ],
+    "applications": [
+      "Industrial/site PPE"
+    ],
+    "keywords": [
+      "Runner",
+      "safety shoe"
+    ]
+  },
+  {
+    "id": "nesbd-fire-proof-gum-boot-191",
+    "slug": "fire-proof-safety-gum-boot",
+    "name": "Fire Proof Safety Gum Boot (High Temperature Resistant, Waterproof)",
+    "category": "industrial-safety-equipment",
+    "subcategory": "ppe-safety-wear",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Fire proof safety gum boot (as listed).",
+    "description": "Fire proof safety gum boot, high temperature resistant and waterproof as listed by source. Confirm temperature rating, size, and applicable standards per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/fire_proof_safety_gum_boot_rubber_high_temperature_resistant_waterproof_shoes_194cfb321f488200886c6d47a8de9386.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Gum boot",
+      "High temperature resistant/waterproof (as listed)"
+    ],
+    "applications": [
+      "Industrial/fire safety PPE"
+    ],
+    "keywords": [
+      "fire proof gum boot",
+      "safety boot"
+    ]
+  },
+  {
+    "id": "nesbd-manila-rope-192",
+    "slug": "manila-rope",
+    "name": "Manila Rope",
+    "category": "industrial-safety-equipment",
+    "subcategory": "rescue-safety-equipment",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Manila rope (as listed).",
+    "description": "Manila rope as listed by source. Confirm diameter, length, and load/use suitability per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/manila_rope_a448fb60f7eb0f00d4d025fa0caa2721.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Manila rope"
+    ],
+    "applications": [
+      "Rescue/general safety use (project-specific)"
+    ],
+    "keywords": [
+      "manila rope"
+    ]
+  },
+  {
+    "id": "nesbd-emergency-fog-light-193",
+    "slug": "emergency-fog-light",
+    "name": "Emergency Fog Light",
+    "category": "industrial-safety-equipment",
+    "subcategory": "emergency-signage-lighting",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Emergency fog light (as listed).",
+    "description": "Emergency fog light as listed by source. Confirm power, mounting, and application per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/emergency_fog_light_dafb0ff4657654ca8439ca8b88fccf8d.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Emergency fog light"
+    ],
+    "applications": [
+      "Emergency lighting (project-specific)"
+    ],
+    "keywords": [
+      "emergency fog light"
+    ]
+  },
+  {
+    "id": "nesbd-auto-fire-extinguisher-6kg-194",
+    "slug": "auto-fire-extinguisher-6kg",
+    "name": "Auto Fire Extinguisher 6kg",
+    "category": "industrial-safety-equipment",
+    "subcategory": "fire-safety-tools",
+    "brand": "",
+    "model": "6kg",
+    "shortDescription": "Automatic fire extinguisher, 6kg (as listed).",
+    "description": "Auto fire extinguisher 6kg as listed by source. Confirm agent type, activation method, rating, and approvals per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/auto_fire_extinguisher_6kg_f56e5ac714169a4303cc0c5f52b8d59a.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Automatic fire extinguisher",
+      "6kg (as listed)"
+    ],
+    "applications": [
+      "Local automatic fire suppression (project-specific)"
+    ],
+    "keywords": [
+      "auto fire extinguisher",
+      "6kg"
+    ]
+  },
+  {
+    "id": "nesbd-fire-extinguisher-trolley-195",
+    "slug": "fire-extinguisher-trolley-stand-with-wheels",
+    "name": "Fire Extinguisher Trolley Stand with Wheels",
+    "category": "industrial-safety-equipment",
+    "subcategory": "fire-safety-tools",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Trolley stand with wheels for fire extinguishers.",
+    "description": "Fire extinguisher trolley stand with wheels as listed by source. Confirm capacity and compatibility per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/fire_extinguisher_trolley_stand_with_wheels_85e1daac9caeb846f84204fab88128df.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Trolley stand with wheels"
+    ],
+    "applications": [
+      "Fire extinguisher handling/storage"
+    ],
+    "keywords": [
+      "extinguisher trolley"
+    ]
+  },
+  {
+    "id": "nesbd-emergency-eye-wash-station-241",
+    "slug": "emergency-eye-wash-station",
+    "name": "Emergency Eye Wash Station",
+    "category": "industrial-safety-equipment",
+    "subcategory": "rescue-safety-equipment",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Emergency eye wash station (as listed).",
+    "description": "Emergency eye wash station as listed by source. Confirm flow, installation type, and applicable safety standards per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/emergency_eye_wash_station_protect_vision_save_lives_dbca71fd708f4d93773c7590b02a6bc5.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Emergency eye wash station"
+    ],
+    "applications": [
+      "Chemical/industrial safety areas"
+    ],
+    "keywords": [
+      "eye wash station",
+      "emergency eyewash"
+    ]
+  },
+  // ---- NESBD Industrial Automation (source: nesbd.com category, ALL 22 items added, factual listing) ----
+  {
+    "id": "nesbd-plc-system-16",
+    "slug": "plc-system",
+    "name": "PLC System",
+    "category": "industrial-automation",
+    "subcategory": "plc-hmi-controllers",
+    "brand": "",
+    "model": "",
+    "shortDescription": "PLC system (as listed by source).",
+    "description": "PLC system as listed by source. Confirm CPU, I/O, communication, and application requirements per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/electronics_system_ab2d31c6e7936a6eaf808cb931ea22f8.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "PLC system"
+    ],
+    "applications": [
+      "Industrial automation/control"
+    ],
+    "keywords": [
+      "PLC system"
+    ]
+  },
+  {
+    "id": "nesbd-setex-controller-55",
+    "slug": "setex-controller",
+    "name": "SETEX Controller",
+    "category": "industrial-automation",
+    "subcategory": "plc-hmi-controllers",
+    "brand": "SETEX",
+    "model": "",
+    "shortDescription": "SETEX controller (as listed).",
+    "description": "SETEX controller as listed by source. Confirm model, inputs/outputs, and application per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/electronics_system_39705a0edb8e49437471cee8d38f1acf.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "SETEX controller"
+    ],
+    "applications": [
+      "Process/textile automation (project-specific)"
+    ],
+    "keywords": [
+      "SETEX",
+      "controller"
+    ]
+  },
+  {
+    "id": "nesbd-frequency-drive-abb-56",
+    "slug": "frequency-drive-abb",
+    "name": "Frequency Drive ABB",
+    "category": "industrial-automation",
+    "subcategory": "variable-frequency-drives",
+    "brand": "ABB",
+    "model": "",
+    "shortDescription": "ABB variable frequency drive (as listed).",
+    "description": "ABB frequency drive as listed by source. Confirm power rating, voltage, and motor/application compatibility per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/frequency_drive_abb_1795c9174bfd81f4cbf7d5a67ed03178.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Variable frequency drive",
+      "ABB brand (as listed)"
+    ],
+    "applications": [
+      "Motor speed control"
+    ],
+    "keywords": [
+      "ABB",
+      "VFD",
+      "frequency drive"
+    ]
+  },
+  {
+    "id": "nesbd-frequency-drive-yaskawa-57",
+    "slug": "frequency-drive-yaskawa",
+    "name": "Frequency Drive Yaskawa",
+    "category": "industrial-automation",
+    "subcategory": "variable-frequency-drives",
+    "brand": "Yaskawa",
+    "model": "",
+    "shortDescription": "Yaskawa variable frequency drive (as listed).",
+    "description": "Yaskawa frequency drive as listed by source. Confirm power rating, voltage, and motor/application compatibility per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/frequency_drive_yaskawa_bb1eaaedae54d8ba6a20b5d08046b231.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Variable frequency drive",
+      "Yaskawa brand (as listed)"
+    ],
+    "applications": [
+      "Motor speed control"
+    ],
+    "keywords": [
+      "Yaskawa",
+      "VFD",
+      "frequency drive"
+    ]
+  },
+  {
+    "id": "nesbd-ls-frequency-drive-58",
+    "slug": "ls-frequency-drive",
+    "name": "LS Frequency Drive",
+    "category": "industrial-automation",
+    "subcategory": "variable-frequency-drives",
+    "brand": "LS",
+    "model": "",
+    "shortDescription": "LS variable frequency drive (as listed).",
+    "description": "LS frequency drive as listed by source. Confirm power rating, voltage, and motor/application compatibility per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/single_two_stage_reciprocating_air_compressor_3d46fa51fbd250bfc20c1cf37a0db020.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Variable frequency drive",
+      "LS brand (as listed)"
+    ],
+    "applications": [
+      "Motor speed control"
+    ],
+    "keywords": [
+      "LS",
+      "VFD",
+      "frequency drive"
+    ]
+  },
+  {
+    "id": "nesbd-weishaupt-stepping-motor-62",
+    "slug": "weishaupt-gas-air-stepping-motor",
+    "name": "Weishaupt Gas & Air Stepping Motor",
+    "category": "industrial-automation",
+    "subcategory": "instrumentation-controls",
+    "brand": "Weishaupt",
+    "model": "",
+    "shortDescription": "Weishaupt gas & air stepping motor (as listed).",
+    "description": "Weishaupt gas & air stepping motor as listed by source. Confirm compatibility with burner/controller and application per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/weishaupt_gas_air_stepping_motor_2119d8ff52212d547d064c89e7eb858f.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Gas & air stepping motor",
+      "Weishaupt brand (as listed)"
+    ],
+    "applications": [
+      "Burner control systems (project-specific)"
+    ],
+    "keywords": [
+      "Weishaupt",
+      "stepping motor"
+    ]
+  },
+  {
+    "id": "nesbd-allen-bradley-plc-63",
+    "slug": "allen-bradley-plc",
+    "name": "Allen-Bradley PLC",
+    "category": "industrial-automation",
+    "subcategory": "plc-hmi-controllers",
+    "brand": "Allen-Bradley",
+    "model": "",
+    "shortDescription": "Allen-Bradley PLC (as listed).",
+    "description": "Allen-Bradley PLC as listed by source. Confirm family/model, I/O, and communication requirements per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/allen_bradley_plc_11441e5b5b1f6c77036ec36069ec3733.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "PLC",
+      "Allen-Bradley brand (as listed)"
+    ],
+    "applications": [
+      "Industrial automation/control"
+    ],
+    "keywords": [
+      "Allen-Bradley",
+      "PLC"
+    ]
+  },
+  {
+    "id": "nesbd-weishaupt-wfm-25-64",
+    "slug": "weishaupt-burner-controller-wfm-25",
+    "name": "Weishaupt Burner Controller WFM 25",
+    "category": "industrial-automation",
+    "subcategory": "instrumentation-controls",
+    "brand": "Weishaupt",
+    "model": "WFM 25",
+    "shortDescription": "Weishaupt burner controller WFM 25 (as listed).",
+    "description": "Weishaupt burner controller WFM 25 as listed by source. Confirm compatibility and application per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/weishaupt_burner_controller_wfm_25_1a775535250e84c33d67dd4f96419346.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Burner controller",
+      "WFM 25 (as listed)"
+    ],
+    "applications": [
+      "Burner control systems"
+    ],
+    "keywords": [
+      "Weishaupt",
+      "WFM 25",
+      "burner controller"
+    ]
+  },
+  {
+    "id": "nesbd-sisen-flow-meter-65",
+    "slug": "sisen-electromagnetic-flow-meter",
+    "name": "SISEN Electromagnetic Flow Meter",
+    "category": "industrial-automation",
+    "subcategory": "sensors-transmitters",
+    "brand": "SISEN",
+    "model": "",
+    "shortDescription": "Electromagnetic flow meter (as listed).",
+    "description": "SISEN electromagnetic flow meter as listed by source. Confirm line size, accuracy, output, and application per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/electromagnetic_flow_meter_a0bad65f3a0d45a545b29e58915e5927.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Electromagnetic flow meter"
+    ],
+    "applications": [
+      "Flow measurement (project-specific)"
+    ],
+    "keywords": [
+      "SISEN",
+      "electromagnetic flow meter"
+    ]
+  },
+  {
+    "id": "nesbd-ls-plc-66",
+    "slug": "ls-plc",
+    "name": "LS PLC",
+    "category": "industrial-automation",
+    "subcategory": "plc-hmi-controllers",
+    "brand": "LS",
+    "model": "",
+    "shortDescription": "LS PLC (as listed).",
+    "description": "LS PLC as listed by source. Confirm model, I/O, and communication requirements per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/ls_plc_6672535b3bbd3efe17a90cbfe522dad6.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "PLC",
+      "LS brand (as listed)"
+    ],
+    "applications": [
+      "Industrial automation/control"
+    ],
+    "keywords": [
+      "LS",
+      "PLC"
+    ]
+  },
+  {
+    "id": "nesbd-ls-hmi-85",
+    "slug": "ls-hmi",
+    "name": "LS HMI",
+    "category": "industrial-automation",
+    "subcategory": "plc-hmi-controllers",
+    "brand": "LS",
+    "model": "",
+    "shortDescription": "LS HMI (as listed).",
+    "description": "LS HMI as listed by source. Confirm screen size, communication, and application per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/ls_hmi_49e7bcd82086a497bcd56974f0360abf.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "HMI",
+      "LS brand (as listed)"
+    ],
+    "applications": [
+      "Operator interface/automation"
+    ],
+    "keywords": [
+      "LS",
+      "HMI"
+    ]
+  },
+  {
+    "id": "nesbd-centering-sensors-101",
+    "slug": "centering-sensors",
+    "name": "Centering Sensors",
+    "category": "industrial-automation",
+    "subcategory": "sensors-transmitters",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Centering sensors (as listed).",
+    "description": "Centering sensors as listed by source. Confirm sensing type, range, and application per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/centering_sensors_b34632eea43f275dea3fab7286ba9217.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Centering sensors"
+    ],
+    "applications": [
+      "Machine/web guiding (project-specific)"
+    ],
+    "keywords": [
+      "centering sensors"
+    ]
+  },
+  {
+    "id": "nesbd-photocell-stenter-edge-guider-102",
+    "slug": "photocell-stenter-edge-guider",
+    "name": "Photocell Stenter Edge Guider",
+    "category": "industrial-automation",
+    "subcategory": "sensors-transmitters",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Photocell stenter edge guider (as listed).",
+    "description": "Photocell stenter edge guider as listed by source. Confirm compatibility and application per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/photocell_stenter_edge_guider_ba74ab3a87e3d0bf9d3c0443629b795f.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Photocell edge guider"
+    ],
+    "applications": [
+      "Stenter/edge guiding (project-specific)"
+    ],
+    "keywords": [
+      "photocell",
+      "edge guider",
+      "stenter"
+    ]
+  },
+  {
+    "id": "nesbd-proximity-sensors-103",
+    "slug": "proximity-sensors-103",
+    "name": "Proximity Sensors",
+    "category": "industrial-automation",
+    "subcategory": "sensors-transmitters",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Proximity sensors (as listed).",
+    "description": "Proximity sensors as listed by source. Confirm sensing type, range, output, and application per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/proximity_sensors_815cf2e6475025e3392e776f8148ab5e.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Proximity sensors"
+    ],
+    "applications": [
+      "Industrial sensing/automation"
+    ],
+    "keywords": [
+      "proximity sensors"
+    ]
+  },
+  {
+    "id": "nesbd-proximity-sensors-104",
+    "slug": "proximity-sensors-104",
+    "name": "Proximity Sensors",
+    "category": "industrial-automation",
+    "subcategory": "sensors-transmitters",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Proximity sensors (as listed).",
+    "description": "Proximity sensors as listed by source. Confirm sensing type, range, output, and application per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/proximity_sensors_54e2238adb21a4850a61b50402362143.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Proximity sensors"
+    ],
+    "applications": [
+      "Industrial sensing/automation"
+    ],
+    "keywords": [
+      "proximity sensors"
+    ]
+  },
+  {
+    "id": "nesbd-pressure-transmitter-106",
+    "slug": "pressure-transmitter-transducer",
+    "name": "Pressure Transmitter Transducer",
+    "category": "industrial-automation",
+    "subcategory": "sensors-transmitters",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Pressure transmitter/transducer (as listed).",
+    "description": "Pressure transmitter transducer as listed by source. Confirm range, output signal, process connection, and application per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/pressure_transmitter_transducer_174f5ffb0ebe2dd0b620620b2e0a478d.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Pressure transmitter/transducer"
+    ],
+    "applications": [
+      "Pressure measurement/control"
+    ],
+    "keywords": [
+      "pressure transmitter",
+      "transducer"
+    ]
+  },
+  {
+    "id": "nesbd-integrative-temperature-transmitter-107",
+    "slug": "integrative-temperature-transmitter",
+    "name": "Integrative Temperature Transmitter",
+    "category": "industrial-automation",
+    "subcategory": "sensors-transmitters",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Integrative temperature transmitter (as listed).",
+    "description": "Integrative temperature transmitter as listed by source. Confirm range, sensor type, output, and application per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/integrative_temperature_transmitter_8b9a0f4ab0a20f8b441434b8033043ca.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Temperature transmitter"
+    ],
+    "applications": [
+      "Temperature measurement/control"
+    ],
+    "keywords": [
+      "temperature transmitter"
+    ]
+  },
+  {
+    "id": "nesbd-water-level-sensor-108",
+    "slug": "water-level-sensor",
+    "name": "Water Level Sensor",
+    "category": "industrial-automation",
+    "subcategory": "sensors-transmitters",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Water level sensor (as listed).",
+    "description": "Water level sensor as listed by source. Confirm sensing method, range, and application per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/water_level_sensor_b8b180167c2f28d2c253011768d6d3a2.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Water level sensor"
+    ],
+    "applications": [
+      "Level monitoring/control"
+    ],
+    "keywords": [
+      "water level sensor"
+    ]
+  },
+  {
+    "id": "nesbd-magnetic-level-sensor-stainless-109",
+    "slug": "magnetic-level-sensor-stainless",
+    "name": "Magnetic Level Sensor Stainless",
+    "category": "industrial-automation",
+    "subcategory": "sensors-transmitters",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Stainless magnetic level sensor (as listed).",
+    "description": "Magnetic level sensor (stainless) as listed by source. Confirm range, material, and application per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/magnetic_level_sensor_stainless_acd4a908ed1e3a345006c1d0c12865b3.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Magnetic level sensor",
+      "Stainless (as listed)"
+    ],
+    "applications": [
+      "Level monitoring/control"
+    ],
+    "keywords": [
+      "magnetic level sensor",
+      "stainless"
+    ]
+  },
+  {
+    "id": "nesbd-electro-pneumatic-positioner-110",
+    "slug": "electro-pneumatic-positioner",
+    "name": "Electro Pneumatic Positioner",
+    "category": "industrial-automation",
+    "subcategory": "instrumentation-controls",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Electro-pneumatic positioner (as listed).",
+    "description": "Electro pneumatic positioner as listed by source. Confirm valve compatibility, signal, and application per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/electro_pneumatic_positioner_b9959883c8459ef6a5bd4b2de9efbbe6.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Electro-pneumatic positioner"
+    ],
+    "applications": [
+      "Control valve positioning"
+    ],
+    "keywords": [
+      "electro pneumatic positioner",
+      "valve positioner"
+    ]
+  },
+  {
+    "id": "nesbd-vaisala-temp-humidity-111",
+    "slug": "vaisala-temperature-humidity-sensors",
+    "name": "Vaisala Temperature and Humidity Sensors",
+    "category": "industrial-automation",
+    "subcategory": "sensors-transmitters",
+    "brand": "Vaisala",
+    "model": "",
+    "shortDescription": "Vaisala temperature and humidity sensors (as listed).",
+    "description": "Vaisala temperature and humidity sensors as listed by source. Confirm model, range, output, and application per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/vaisala_temperature_and_humidity_sensors_2785b4db89c0e2f10f20cf6454cbad31.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Temperature and humidity sensors",
+      "Vaisala brand (as listed)"
+    ],
+    "applications": [
+      "Environmental monitoring/control"
+    ],
+    "keywords": [
+      "Vaisala",
+      "temperature humidity sensor"
+    ]
+  },
+  {
+    "id": "nesbd-weishaupt-wg-display-231",
+    "slug": "weishaupt-wg-display-with-keypad-660300",
+    "name": "Weishaupt WG Display with Keypad 660300",
+    "category": "industrial-automation",
+    "subcategory": "instrumentation-controls",
+    "brand": "Weishaupt",
+    "model": "660300",
+    "shortDescription": "Weishaupt WG display with keypad (as listed).",
+    "description": "Weishaupt WG display with keypad 660300 as listed by source. Confirm compatibility and application per project. (Source: nesbd.com)",
+    "image": "https://www.nesbd.com/images/products/weishaupt_wg_display_with_keypad_660300_3775e6fee882f31f25255bb050b54a47.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "WG display with keypad",
+      "Model 660300 (as listed)"
+    ],
+    "applications": [
+      "Burner/control interface (project-specific)"
+    ],
+    "keywords": [
+      "Weishaupt",
+      "WG display",
+      "660300"
+    ]
+  },
+  // ---- PTEL Fire Detection System (source: ptel.com.bd category, factual listing) ----
+  {
+    "id": "ptel-triga-series",
+    "slug": "triga-series",
+    "name": "TRIGA Series",
+    "category": "fire-detection-system",
+    "subcategory": "fire-alarm-panels",
+    "brand": "",
+    "model": "",
+    "shortDescription": "TRIGA Series (as listed by source).",
+    "description": "TRIGA Series as listed by source (ptel.com.bd fire detection category). Confirm specifications, model details, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/triga-series.png",
+    "availability": "inquiry-required",
+    "features": [
+      "TRIGA Series"
+    ],
+    "applications": [
+      "Fire detection and alarm systems (project-specific)"
+    ],
+    "keywords": [
+      "triga",
+      "series"
+    ]
+  },
+  {
+    "id": "ptel-neo-series-fire-protection-panels",
+    "slug": "neo-series-fire-protection-panels",
+    "name": "NEO Series Fire Protection Panels",
+    "category": "fire-detection-system",
+    "subcategory": "fire-alarm-panels",
+    "brand": "",
+    "model": "",
+    "shortDescription": "NEO Series Fire Protection Panels (as listed by source).",
+    "description": "NEO Series Fire Protection Panels as listed by source (ptel.com.bd fire detection category). Confirm specifications, model details, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/neo-series.png",
+    "availability": "inquiry-required",
+    "features": [
+      "NEO Series Fire Protection Panels"
+    ],
+    "applications": [
+      "Fire detection and alarm systems (project-specific)"
+    ],
+    "keywords": [
+      "neo",
+      "series",
+      "fire",
+      "protection",
+      "panels"
+    ]
+  },
+  {
+    "id": "ptel-omega-series-fire-protection-panels",
+    "slug": "omega-series-fire-protection-panels",
+    "name": "OMEGA Series Fire Protection Panels",
+    "category": "fire-detection-system",
+    "subcategory": "fire-alarm-panels",
+    "brand": "",
+    "model": "",
+    "shortDescription": "OMEGA Series Fire Protection Panels (as listed by source).",
+    "description": "OMEGA Series Fire Protection Panels as listed by source (ptel.com.bd fire detection category). Confirm specifications, model details, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/omega-series-panels.png",
+    "availability": "inquiry-required",
+    "features": [
+      "OMEGA Series Fire Protection Panels"
+    ],
+    "applications": [
+      "Fire detection and alarm systems (project-specific)"
+    ],
+    "keywords": [
+      "omega",
+      "series",
+      "fire",
+      "protection",
+      "panels"
+    ]
+  },
+  {
+    "id": "ptel-aura-series-fire-protection-panels",
+    "slug": "aura-series-fire-protection-panels",
+    "name": "AURA Series Fire Protection Panels",
+    "category": "fire-detection-system",
+    "subcategory": "fire-alarm-panels",
+    "brand": "",
+    "model": "",
+    "shortDescription": "AURA Series Fire Protection Panels (as listed by source).",
+    "description": "AURA Series Fire Protection Panels as listed by source (ptel.com.bd fire detection category). Confirm specifications, model details, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/aura-series-fire-protection-panels.png",
+    "availability": "inquiry-required",
+    "features": [
+      "AURA Series Fire Protection Panels"
+    ],
+    "applications": [
+      "Fire detection and alarm systems (project-specific)"
+    ],
+    "keywords": [
+      "aura",
+      "series",
+      "fire",
+      "protection",
+      "panels"
+    ]
+  },
+  {
+    "id": "ptel-simplex-johnson-controls",
+    "slug": "simplex-johnson-controls",
+    "name": "SIMPLEX (Johnson Controls)",
+    "category": "fire-detection-system",
+    "subcategory": "fire-alarm-panels",
+    "brand": "",
+    "model": "",
+    "shortDescription": "SIMPLEX (Johnson Controls) (as listed by source).",
+    "description": "SIMPLEX (Johnson Controls) as listed by source (ptel.com.bd fire detection category). Confirm specifications, model details, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/simplex-johnson-controls.png",
+    "availability": "inquiry-required",
+    "features": [
+      "SIMPLEX (Johnson Controls)"
+    ],
+    "applications": [
+      "Fire detection and alarm systems (project-specific)"
+    ],
+    "keywords": [
+      "simplex",
+      "johnson",
+      "controls"
+    ]
+  },
+  {
+    "id": "ptel-gas-extinguishing-control-panel",
+    "slug": "gas-extinguishing-control-panel",
+    "name": "Gas Extinguishing Control Panel",
+    "category": "fire-detection-system",
+    "subcategory": "fire-alarm-panels",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Gas Extinguishing Control Panel (as listed by source).",
+    "description": "Gas Extinguishing Control Panel as listed by source (ptel.com.bd fire detection category). Confirm specifications, model details, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/gas-extinguishing-control-panel.png",
+    "availability": "inquiry-required",
+    "features": [
+      "Gas Extinguishing Control Panel"
+    ],
+    "applications": [
+      "Fire detection and alarm systems (project-specific)"
+    ],
+    "keywords": [
+      "gas",
+      "extinguishing",
+      "control",
+      "panel"
+    ]
+  },
+  {
+    "id": "ptel-tr-photo-w-triga",
+    "slug": "tr-photo-w-triga",
+    "name": "TR-PHOTO-W-TRIGA",
+    "category": "fire-detection-system",
+    "subcategory": "smoke-detectors",
+    "brand": "",
+    "model": "",
+    "shortDescription": "TR-PHOTO-W-TRIGA (as listed by source).",
+    "description": "TR-PHOTO-W-TRIGA as listed by source (ptel.com.bd fire detection category). Confirm specifications, model details, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/tr-photo-w-triga.png",
+    "availability": "inquiry-required",
+    "features": [
+      "TR-PHOTO-W-TRIGA"
+    ],
+    "applications": [
+      "Fire detection and alarm systems (project-specific)"
+    ],
+    "keywords": [
+      "tr",
+      "photo",
+      "w",
+      "triga"
+    ]
+  },
+  {
+    "id": "ptel-s-a-shield",
+    "slug": "s-a-shield",
+    "name": "S-A4011 (SHIELD)",
+    "category": "fire-detection-system",
+    "subcategory": "smoke-detectors",
+    "brand": "",
+    "model": "",
+    "shortDescription": "S-A4011 (SHIELD) (as listed by source).",
+    "description": "S-A4011 (SHIELD) as listed by source (ptel.com.bd fire detection category). Confirm specifications, model details, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/s-a4011-shield.png",
+    "availability": "inquiry-required",
+    "features": [
+      "S-A4011 (SHIELD)"
+    ],
+    "applications": [
+      "Fire detection and alarm systems (project-specific)"
+    ],
+    "keywords": [
+      "s",
+      "a4011",
+      "shield"
+    ]
+  },
+  {
+    "id": "ptel-simplex-simplex",
+    "slug": "simplex-simplex",
+    "name": "Simplex 4098-9714 (SIMPLEX)",
+    "category": "fire-detection-system",
+    "subcategory": "smoke-detectors",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Simplex 4098-9714 (SIMPLEX) (as listed by source).",
+    "description": "Simplex 4098-9714 (SIMPLEX) as listed by source (ptel.com.bd fire detection category). Confirm specifications, model details, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/simplex-4098-9714-simplex.png",
+    "availability": "inquiry-required",
+    "features": [
+      "Simplex 4098-9714 (SIMPLEX)"
+    ],
+    "applications": [
+      "Fire detection and alarm systems (project-specific)"
+    ],
+    "keywords": [
+      "simplex",
+      "4098",
+      "9714",
+      "simplex"
+    ]
+  },
+  {
+    "id": "ptel-tr-heat-ror-w-triga",
+    "slug": "tr-heat-ror-w-triga",
+    "name": "TR-HEAT-ROR-W - TRIGA",
+    "category": "fire-detection-system",
+    "subcategory": "heat-detectors",
+    "brand": "",
+    "model": "",
+    "shortDescription": "TR-HEAT-ROR-W - TRIGA (as listed by source).",
+    "description": "TR-HEAT-ROR-W - TRIGA as listed by source (ptel.com.bd fire detection category). Confirm specifications, model details, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/tr-heat-ror-w-triga.png",
+    "availability": "inquiry-required",
+    "features": [
+      "TR-HEAT-ROR-W - TRIGA"
+    ],
+    "applications": [
+      "Fire detection and alarm systems (project-specific)"
+    ],
+    "keywords": [
+      "tr",
+      "heat",
+      "ror",
+      "w",
+      "triga"
+    ]
+  },
+  {
+    "id": "ptel-s-a-shield-heat-detectors",
+    "slug": "s-a-shield-heat-detectors",
+    "name": "S-A4013 (SHIELD) Heat Detectors",
+    "category": "fire-detection-system",
+    "subcategory": "heat-detectors",
+    "brand": "",
+    "model": "",
+    "shortDescription": "S-A4013 (SHIELD) Heat Detectors (as listed by source).",
+    "description": "S-A4013 (SHIELD) Heat Detectors as listed by source (ptel.com.bd fire detection category). Confirm specifications, model details, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/s-a4013-shield.png",
+    "availability": "inquiry-required",
+    "features": [
+      "S-A4013 (SHIELD) Heat Detectors"
+    ],
+    "applications": [
+      "Fire detection and alarm systems (project-specific)"
+    ],
+    "keywords": [
+      "s",
+      "a4013",
+      "shield",
+      "heat",
+      "detectors"
+    ]
+  },
+  {
+    "id": "ptel-simplex-simplex-heat-detector",
+    "slug": "simplex-simplex-heat-detector",
+    "name": "Simplex 4098-9733 (SIMPLEX) Heat Detector",
+    "category": "fire-detection-system",
+    "subcategory": "heat-detectors",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Simplex 4098-9733 (SIMPLEX) Heat Detector (as listed by source).",
+    "description": "Simplex 4098-9733 (SIMPLEX) Heat Detector as listed by source (ptel.com.bd fire detection category). Confirm specifications, model details, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/simplex-4098-9733-simplex.png",
+    "availability": "inquiry-required",
+    "features": [
+      "Simplex 4098-9733 (SIMPLEX) Heat Detector"
+    ],
+    "applications": [
+      "Fire detection and alarm systems (project-specific)"
+    ],
+    "keywords": [
+      "simplex",
+      "4098",
+      "9733",
+      "simplex",
+      "heat",
+      "detector"
+    ]
+  },
+  {
+    "id": "ptel-tr-photo-t-w-triga-triga",
+    "slug": "tr-photo-t-w-triga-triga",
+    "name": "TR-PHOTO-T-W - TRIGA (TRIGA)",
+    "category": "fire-detection-system",
+    "subcategory": "multi-sensor-detectors",
+    "brand": "",
+    "model": "",
+    "shortDescription": "TR-PHOTO-T-W - TRIGA (TRIGA) (as listed by source).",
+    "description": "TR-PHOTO-T-W - TRIGA (TRIGA) as listed by source (ptel.com.bd fire detection category). Confirm specifications, model details, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/tr-photo-t-w-triga-triga.png",
+    "availability": "inquiry-required",
+    "features": [
+      "TR-PHOTO-T-W - TRIGA (TRIGA)"
+    ],
+    "applications": [
+      "Fire detection and alarm systems (project-specific)"
+    ],
+    "keywords": [
+      "tr",
+      "photo",
+      "t",
+      "w",
+      "triga",
+      "triga"
+    ]
+  },
+  {
+    "id": "ptel-s-a-shield-multi-detector",
+    "slug": "s-a-shield-multi-detector",
+    "name": "S-A4012 (SHIELD) Multi Detector",
+    "category": "fire-detection-system",
+    "subcategory": "multi-sensor-detectors",
+    "brand": "",
+    "model": "",
+    "shortDescription": "S-A4012 (SHIELD) Multi Detector (as listed by source).",
+    "description": "S-A4012 (SHIELD) Multi Detector as listed by source (ptel.com.bd fire detection category). Confirm specifications, model details, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/s-a4012-shield.png",
+    "availability": "inquiry-required",
+    "features": [
+      "S-A4012 (SHIELD) Multi Detector"
+    ],
+    "applications": [
+      "Fire detection and alarm systems (project-specific)"
+    ],
+    "keywords": [
+      "s",
+      "a4012",
+      "shield",
+      "multi",
+      "detector"
+    ]
+  },
+  {
+    "id": "ptel-tr-pull-sa-triga-triga",
+    "slug": "tr-pull-sa-triga-triga",
+    "name": "TR-PULL-SA-TRIGA (TRIGA)",
+    "category": "fire-detection-system",
+    "subcategory": "manual-call-points",
+    "brand": "",
+    "model": "",
+    "shortDescription": "TR-PULL-SA-TRIGA (TRIGA) (as listed by source).",
+    "description": "TR-PULL-SA-TRIGA (TRIGA) as listed by source (ptel.com.bd fire detection category). Confirm specifications, model details, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/tr-pull-sa-triga-triga.png",
+    "availability": "inquiry-required",
+    "features": [
+      "TR-PULL-SA-TRIGA (TRIGA)"
+    ],
+    "applications": [
+      "Fire detection and alarm systems (project-specific)"
+    ],
+    "keywords": [
+      "tr",
+      "pull",
+      "sa",
+      "triga",
+      "triga"
+    ]
+  },
+  {
+    "id": "ptel-s-a-shield-manual-call-point",
+    "slug": "s-a-shield-manual-call-point",
+    "name": "S-A4061 (SHIELD) Manual Call Point",
+    "category": "fire-detection-system",
+    "subcategory": "manual-call-points",
+    "brand": "",
+    "model": "",
+    "shortDescription": "S-A4061 (SHIELD) Manual Call Point (as listed by source).",
+    "description": "S-A4061 (SHIELD) Manual Call Point as listed by source (ptel.com.bd fire detection category). Confirm specifications, model details, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/s-a4061-shield.png",
+    "availability": "inquiry-required",
+    "features": [
+      "S-A4061 (SHIELD) Manual Call Point"
+    ],
+    "applications": [
+      "Fire detection and alarm systems (project-specific)"
+    ],
+    "keywords": [
+      "s",
+      "a4061",
+      "shield",
+      "manual",
+      "call",
+      "point"
+    ]
+  },
+  {
+    "id": "ptel-simplex-simplex-manual-call-point",
+    "slug": "simplex-simplex-manual-call-point",
+    "name": "Simplex 4099-9006 (SIMPLEX) Manual Call Point",
+    "category": "fire-detection-system",
+    "subcategory": "manual-call-points",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Simplex 4099-9006 (SIMPLEX) Manual Call Point (as listed by source).",
+    "description": "Simplex 4099-9006 (SIMPLEX) Manual Call Point as listed by source (ptel.com.bd fire detection category). Confirm specifications, model details, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/1759726478-simplex-4099-9006-simplex-breakglass.png",
+    "availability": "inquiry-required",
+    "features": [
+      "Simplex 4099-9006 (SIMPLEX) Manual Call Point"
+    ],
+    "applications": [
+      "Fire detection and alarm systems (project-specific)"
+    ],
+    "keywords": [
+      "simplex",
+      "4099",
+      "9006",
+      "simplex",
+      "manual",
+      "call",
+      "point"
+    ]
+  },
+  {
+    "id": "ptel-tr-hrl-triga",
+    "slug": "tr-hrl-triga",
+    "name": "TR-HRL-TRIGA",
+    "category": "fire-detection-system",
+    "subcategory": "sounders-notification",
+    "brand": "",
+    "model": "",
+    "shortDescription": "TR-HRL-TRIGA (as listed by source).",
+    "description": "TR-HRL-TRIGA as listed by source (ptel.com.bd fire detection category). Confirm specifications, model details, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/tr-hrl-triga.png",
+    "availability": "inquiry-required",
+    "features": [
+      "TR-HRL-TRIGA"
+    ],
+    "applications": [
+      "Fire detection and alarm systems (project-specific)"
+    ],
+    "keywords": [
+      "tr",
+      "hrl",
+      "triga"
+    ]
+  },
+  {
+    "id": "ptel-s-c-shield-sounder",
+    "slug": "s-c-shield-sounder",
+    "name": "S-C8055 (SHIELD) Sounder",
+    "category": "fire-detection-system",
+    "subcategory": "sounders-notification",
+    "brand": "",
+    "model": "",
+    "shortDescription": "S-C8055 (SHIELD) Sounder (as listed by source).",
+    "description": "S-C8055 (SHIELD) Sounder as listed by source (ptel.com.bd fire detection category). Confirm specifications, model details, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/s-c8055-shield.png",
+    "availability": "inquiry-required",
+    "features": [
+      "S-C8055 (SHIELD) Sounder"
+    ],
+    "applications": [
+      "Fire detection and alarm systems (project-specific)"
+    ],
+    "keywords": [
+      "s",
+      "c8055",
+      "shield",
+      "sounder"
+    ]
+  },
+  {
+    "id": "ptel-sounder-simplex",
+    "slug": "sounder-simplex",
+    "name": "SOUNDER (SIMPLEX)",
+    "category": "fire-detection-system",
+    "subcategory": "sounders-notification",
+    "brand": "",
+    "model": "",
+    "shortDescription": "SOUNDER (SIMPLEX) (as listed by source).",
+    "description": "SOUNDER (SIMPLEX) as listed by source (ptel.com.bd fire detection category). Confirm specifications, model details, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/sounder-simplex.png",
+    "availability": "inquiry-required",
+    "features": [
+      "SOUNDER (SIMPLEX)"
+    ],
+    "applications": [
+      "Fire detection and alarm systems (project-specific)"
+    ],
+    "keywords": [
+      "sounder",
+      "simplex"
+    ]
+  },
+  {
+    "id": "ptel-tr-prl-triga-sounder-with-flasher",
+    "slug": "tr-prl-triga-sounder-with-flasher",
+    "name": "TR-P2RL - TRIGA SOUNDER WITH FLASHER",
+    "category": "fire-detection-system",
+    "subcategory": "sounders-notification",
+    "brand": "",
+    "model": "",
+    "shortDescription": "TR-P2RL - TRIGA SOUNDER WITH FLASHER (as listed by source).",
+    "description": "TR-P2RL - TRIGA SOUNDER WITH FLASHER as listed by source (ptel.com.bd fire detection category). Confirm specifications, model details, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/tr-p2rl-triga.png",
+    "availability": "inquiry-required",
+    "features": [
+      "TR-P2RL - TRIGA SOUNDER WITH FLASHER"
+    ],
+    "applications": [
+      "Fire detection and alarm systems (project-specific)"
+    ],
+    "keywords": [
+      "tr",
+      "p2rl",
+      "triga",
+      "sounder",
+      "with",
+      "flasher"
+    ]
+  },
+  {
+    "id": "ptel-wall-mounted-outdoor-triga",
+    "slug": "wall-mounted-outdoor-triga",
+    "name": "WALL MOUNTED-OUTDOOR (TRIGA)",
+    "category": "fire-detection-system",
+    "subcategory": "sounders-notification",
+    "brand": "",
+    "model": "",
+    "shortDescription": "WALL MOUNTED-OUTDOOR (TRIGA) (as listed by source).",
+    "description": "WALL MOUNTED-OUTDOOR (TRIGA) as listed by source (ptel.com.bd fire detection category). Confirm specifications, model details, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/wall-mounted-outdoor-triga.png",
+    "availability": "inquiry-required",
+    "features": [
+      "WALL MOUNTED-OUTDOOR (TRIGA)"
+    ],
+    "applications": [
+      "Fire detection and alarm systems (project-specific)"
+    ],
+    "keywords": [
+      "wall",
+      "mounted",
+      "outdoor",
+      "triga"
+    ]
+  },
+  {
+    "id": "ptel-triga-ceiling-mounted-fire-alarm",
+    "slug": "triga-ceiling-mounted-fire-alarm",
+    "name": "TRIGA Ceiling Mounted Fire Alarm",
+    "category": "fire-detection-system",
+    "subcategory": "sounders-notification",
+    "brand": "",
+    "model": "",
+    "shortDescription": "TRIGA Ceiling Mounted Fire Alarm (as listed by source).",
+    "description": "TRIGA Ceiling Mounted Fire Alarm as listed by source (ptel.com.bd fire detection category). Confirm specifications, model details, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/ceiling-mounted-triga-1.png",
+    "availability": "inquiry-required",
+    "features": [
+      "TRIGA Ceiling Mounted Fire Alarm"
+    ],
+    "applications": [
+      "Fire detection and alarm systems (project-specific)"
+    ],
+    "keywords": [
+      "triga",
+      "ceiling",
+      "mounted",
+      "fire",
+      "alarm"
+    ]
+  },
+  {
+    "id": "ptel-simplex-wall-horn-strobe",
+    "slug": "simplex-wall-horn-strobe",
+    "name": "Simplex 4906-9127 Wall Horn Strobe",
+    "category": "fire-detection-system",
+    "subcategory": "sounders-notification",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Simplex 4906-9127 Wall Horn Strobe (as listed by source).",
+    "description": "Simplex 4906-9127 Wall Horn Strobe as listed by source (ptel.com.bd fire detection category). Confirm specifications, model details, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/simplex-4906-9127-wall-horn-strobe.png",
+    "availability": "inquiry-required",
+    "features": [
+      "Simplex 4906-9127 Wall Horn Strobe"
+    ],
+    "applications": [
+      "Fire detection and alarm systems (project-specific)"
+    ],
+    "keywords": [
+      "simplex",
+      "4906",
+      "9127",
+      "wall",
+      "horn",
+      "strobe"
+    ]
+  },
+  {
+    "id": "ptel-shield-sounder-flasher",
+    "slug": "shield-sounder-flasher",
+    "name": "SHIELD Sounder & Flasher",
+    "category": "fire-detection-system",
+    "subcategory": "sounders-notification",
+    "brand": "",
+    "model": "",
+    "shortDescription": "SHIELD Sounder & Flasher (as listed by source).",
+    "description": "SHIELD Sounder & Flasher as listed by source (ptel.com.bd fire detection category). Confirm specifications, model details, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/shield-sounder-flasher.png",
+    "availability": "inquiry-required",
+    "features": [
+      "SHIELD Sounder & Flasher"
+    ],
+    "applications": [
+      "Fire detection and alarm systems (project-specific)"
+    ],
+    "keywords": [
+      "shield",
+      "sounder",
+      "flasher"
+    ]
+  },
+  {
+    "id": "ptel-tr-relay-triga",
+    "slug": "tr-relay-triga",
+    "name": "TR-RELAY-TRIGA",
+    "category": "fire-detection-system",
+    "subcategory": "input-output-modules",
+    "brand": "",
+    "model": "",
+    "shortDescription": "TR-RELAY-TRIGA (as listed by source).",
+    "description": "TR-RELAY-TRIGA as listed by source (ptel.com.bd fire detection category). Confirm specifications, model details, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/tr-relay-triga.png",
+    "availability": "inquiry-required",
+    "features": [
+      "TR-RELAY-TRIGA"
+    ],
+    "applications": [
+      "Fire detection and alarm systems (project-specific)"
+    ],
+    "keywords": [
+      "tr",
+      "relay",
+      "triga"
+    ]
+  },
+  {
+    "id": "ptel-tr-monitor-triga",
+    "slug": "tr-monitor-triga",
+    "name": "TR-MONITOR-TRIGA",
+    "category": "fire-detection-system",
+    "subcategory": "input-output-modules",
+    "brand": "",
+    "model": "",
+    "shortDescription": "TR-MONITOR-TRIGA (as listed by source).",
+    "description": "TR-MONITOR-TRIGA as listed by source (ptel.com.bd fire detection category). Confirm specifications, model details, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/tr-monitor-triga.png",
+    "availability": "inquiry-required",
+    "features": [
+      "TR-MONITOR-TRIGA"
+    ],
+    "applications": [
+      "Fire detection and alarm systems (project-specific)"
+    ],
+    "keywords": [
+      "tr",
+      "monitor",
+      "triga"
+    ]
+  },
+  {
+    "id": "ptel-s-a-shield-inputoutput-module",
+    "slug": "s-a-shield-inputoutput-module",
+    "name": "S-A4045 (SHIELD) Input/Output Module",
+    "category": "fire-detection-system",
+    "subcategory": "input-output-modules",
+    "brand": "",
+    "model": "",
+    "shortDescription": "S-A4045 (SHIELD) Input/Output Module (as listed by source).",
+    "description": "S-A4045 (SHIELD) Input/Output Module as listed by source (ptel.com.bd fire detection category). Confirm specifications, model details, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/inputoutput-module.png",
+    "availability": "inquiry-required",
+    "features": [
+      "S-A4045 (SHIELD) Input/Output Module"
+    ],
+    "applications": [
+      "Fire detection and alarm systems (project-specific)"
+    ],
+    "keywords": [
+      "s",
+      "a4045",
+      "shield",
+      "input",
+      "output",
+      "module"
+    ]
+  },
+  {
+    "id": "ptel-simplex",
+    "slug": "simplex",
+    "name": "Simplex-4090-9002",
+    "category": "fire-detection-system",
+    "subcategory": "input-output-modules",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Simplex-4090-9002 (as listed by source).",
+    "description": "Simplex-4090-9002 as listed by source (ptel.com.bd fire detection category). Confirm specifications, model details, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/simplex-4090-9002-simplex-1.png",
+    "availability": "inquiry-required",
+    "features": [
+      "Simplex-4090-9002"
+    ],
+    "applications": [
+      "Fire detection and alarm systems (project-specific)"
+    ],
+    "keywords": [
+      "simplex",
+      "4090",
+      "9002"
+    ]
+  },
+  {
+    "id": "ptel-s-a-shield-control-output-module",
+    "slug": "s-a-shield-control-output-module",
+    "name": "S-A4042 (SHIELD) Control Output Module",
+    "category": "fire-detection-system",
+    "subcategory": "input-output-modules",
+    "brand": "",
+    "model": "",
+    "shortDescription": "S-A4042 (SHIELD) Control Output Module (as listed by source).",
+    "description": "S-A4042 (SHIELD) Control Output Module as listed by source (ptel.com.bd fire detection category). Confirm specifications, model details, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/s-a4042-shield.png",
+    "availability": "inquiry-required",
+    "features": [
+      "S-A4042 (SHIELD) Control Output Module"
+    ],
+    "applications": [
+      "Fire detection and alarm systems (project-specific)"
+    ],
+    "keywords": [
+      "s",
+      "a4042",
+      "shield",
+      "control",
+      "output",
+      "module"
+    ]
+  },
+  {
+    "id": "ptel-control-panel",
+    "slug": "control-panel",
+    "name": "CONTROL PANEL",
+    "category": "fire-detection-system",
+    "subcategory": "fire-alarm-panels",
+    "brand": "",
+    "model": "",
+    "shortDescription": "CONTROL PANEL (as listed by source).",
+    "description": "CONTROL PANEL as listed by source (ptel.com.bd fire detection category). Confirm specifications, model details, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/control-panel.png",
+    "availability": "inquiry-required",
+    "features": [
+      "CONTROL PANEL"
+    ],
+    "applications": [
+      "Fire detection and alarm systems (project-specific)"
+    ],
+    "keywords": [
+      "control",
+      "panel"
+    ]
+  },
+  {
+    "id": "ptel-neo-series-control-panel",
+    "slug": "neo-series-control-panel",
+    "name": "NEO SERIES-CONTROL PANEL",
+    "category": "fire-detection-system",
+    "subcategory": "fire-alarm-panels",
+    "brand": "",
+    "model": "",
+    "shortDescription": "NEO SERIES-CONTROL PANEL (as listed by source).",
+    "description": "NEO SERIES-CONTROL PANEL as listed by source (ptel.com.bd fire detection category). Confirm specifications, model details, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/neo-series-control-panel.png",
+    "availability": "inquiry-required",
+    "features": [
+      "NEO SERIES-CONTROL PANEL"
+    ],
+    "applications": [
+      "Fire detection and alarm systems (project-specific)"
+    ],
+    "keywords": [
+      "neo",
+      "series",
+      "control",
+      "panel"
+    ]
+  },
+  {
+    "id": "ptel-omega-series-control-panel",
+    "slug": "omega-series-control-panel",
+    "name": "OMEGA SERIES-CONTROL PANEL",
+    "category": "fire-detection-system",
+    "subcategory": "fire-alarm-panels",
+    "brand": "",
+    "model": "",
+    "shortDescription": "OMEGA SERIES-CONTROL PANEL (as listed by source).",
+    "description": "OMEGA SERIES-CONTROL PANEL as listed by source (ptel.com.bd fire detection category). Confirm specifications, model details, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/omega-series-control-panel.png",
+    "availability": "inquiry-required",
+    "features": [
+      "OMEGA SERIES-CONTROL PANEL"
+    ],
+    "applications": [
+      "Fire detection and alarm systems (project-specific)"
+    ],
+    "keywords": [
+      "omega",
+      "series",
+      "control",
+      "panel"
+    ]
+  },
+  {
+    "id": "ptel-aura-sereis-control-panel",
+    "slug": "aura-sereis-control-panel",
+    "name": "AURA SEREIS-CONTROL PANEL",
+    "category": "fire-detection-system",
+    "subcategory": "fire-alarm-panels",
+    "brand": "",
+    "model": "",
+    "shortDescription": "AURA SEREIS-CONTROL PANEL (as listed by source).",
+    "description": "AURA SEREIS-CONTROL PANEL as listed by source (ptel.com.bd fire detection category). Confirm specifications, model details, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/aura-sereis-control-panel.png",
+    "availability": "inquiry-required",
+    "features": [
+      "AURA SEREIS-CONTROL PANEL"
+    ],
+    "applications": [
+      "Fire detection and alarm systems (project-specific)"
+    ],
+    "keywords": [
+      "aura",
+      "sereis",
+      "control",
+      "panel"
+    ]
+  },
+  {
+    "id": "ptel-lpcb-cfds",
+    "slug": "lpcb-cfds",
+    "name": "LPCB CFDS",
+    "category": "fire-detection-system",
+    "subcategory": "fire-alarm-panels",
+    "brand": "",
+    "model": "",
+    "shortDescription": "LPCB CFDS (as listed by source).",
+    "description": "LPCB CFDS as listed by source (ptel.com.bd fire detection category). Confirm specifications, model details, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/lpcb-cfds.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "LPCB CFDS"
+    ],
+    "applications": [
+      "Fire detection and alarm systems (project-specific)"
+    ],
+    "keywords": [
+      "lpcb",
+      "cfds"
+    ]
+  },
+  {
+    "id": "ptel-control-panel-second",
+    "slug": "control-panel-second",
+    "name": "CONTROL PANEL Second",
+    "category": "fire-detection-system",
+    "subcategory": "fire-alarm-panels",
+    "brand": "",
+    "model": "",
+    "shortDescription": "CONTROL PANEL Second (as listed by source).",
+    "description": "CONTROL PANEL Second as listed by source (ptel.com.bd fire detection category). Confirm specifications, model details, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/control-panel-second.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "CONTROL PANEL Second"
+    ],
+    "applications": [
+      "Fire detection and alarm systems (project-specific)"
+    ],
+    "keywords": [
+      "control",
+      "panel",
+      "second"
+    ]
+  },
+  {
+    "id": "ptel-smoke-detector",
+    "slug": "smoke-detector",
+    "name": "SMOKE DETECTOR",
+    "category": "fire-detection-system",
+    "subcategory": "smoke-detectors",
+    "brand": "",
+    "model": "",
+    "shortDescription": "SMOKE DETECTOR (as listed by source).",
+    "description": "SMOKE DETECTOR as listed by source (ptel.com.bd fire detection category). Confirm specifications, model details, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/smoke-detector.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "SMOKE DETECTOR"
+    ],
+    "applications": [
+      "Fire detection and alarm systems (project-specific)"
+    ],
+    "keywords": [
+      "smoke",
+      "detector"
+    ]
+  },
+  {
+    "id": "ptel-smoke-detector-second",
+    "slug": "smoke-detector-second",
+    "name": "SMOKE DETECTOR Second",
+    "category": "fire-detection-system",
+    "subcategory": "smoke-detectors",
+    "brand": "",
+    "model": "",
+    "shortDescription": "SMOKE DETECTOR Second (as listed by source).",
+    "description": "SMOKE DETECTOR Second as listed by source (ptel.com.bd fire detection category). Confirm specifications, model details, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/smoke-detector-second.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "SMOKE DETECTOR Second"
+    ],
+    "applications": [
+      "Fire detection and alarm systems (project-specific)"
+    ],
+    "keywords": [
+      "smoke",
+      "detector",
+      "second"
+    ]
+  },
+  {
+    "id": "ptel-heat-detector",
+    "slug": "heat-detector",
+    "name": "HEAT DETECTOR",
+    "category": "fire-detection-system",
+    "subcategory": "heat-detectors",
+    "brand": "",
+    "model": "",
+    "shortDescription": "HEAT DETECTOR (as listed by source).",
+    "description": "HEAT DETECTOR as listed by source (ptel.com.bd fire detection category). Confirm specifications, model details, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/heat-detector.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "HEAT DETECTOR"
+    ],
+    "applications": [
+      "Fire detection and alarm systems (project-specific)"
+    ],
+    "keywords": [
+      "heat",
+      "detector"
+    ]
+  },
+  {
+    "id": "ptel-smoke-detector-third",
+    "slug": "smoke-detector-third",
+    "name": "SMOKE DETECTOR Third",
+    "category": "fire-detection-system",
+    "subcategory": "smoke-detectors",
+    "brand": "",
+    "model": "",
+    "shortDescription": "SMOKE DETECTOR Third (as listed by source).",
+    "description": "SMOKE DETECTOR Third as listed by source (ptel.com.bd fire detection category). Confirm specifications, model details, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/smoke-detector-third.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "SMOKE DETECTOR Third"
+    ],
+    "applications": [
+      "Fire detection and alarm systems (project-specific)"
+    ],
+    "keywords": [
+      "smoke",
+      "detector",
+      "third"
+    ]
+  },
+  {
+    "id": "ptel-heat-detector-third",
+    "slug": "heat-detector-third",
+    "name": "HEAT DETECTOR Third",
+    "category": "fire-detection-system",
+    "subcategory": "heat-detectors",
+    "brand": "",
+    "model": "",
+    "shortDescription": "HEAT DETECTOR Third (as listed by source).",
+    "description": "HEAT DETECTOR Third as listed by source (ptel.com.bd fire detection category). Confirm specifications, model details, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/heat-detector-third.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "HEAT DETECTOR Third"
+    ],
+    "applications": [
+      "Fire detection and alarm systems (project-specific)"
+    ],
+    "keywords": [
+      "heat",
+      "detector",
+      "third"
+    ]
+  },
+  {
+    "id": "ptel-multi-detector",
+    "slug": "multi-detector",
+    "name": "MULTI DETECTOR",
+    "category": "fire-detection-system",
+    "subcategory": "multi-sensor-detectors",
+    "brand": "",
+    "model": "",
+    "shortDescription": "MULTI DETECTOR (as listed by source).",
+    "description": "MULTI DETECTOR as listed by source (ptel.com.bd fire detection category). Confirm specifications, model details, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/multi-detector.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "MULTI DETECTOR"
+    ],
+    "applications": [
+      "Fire detection and alarm systems (project-specific)"
+    ],
+    "keywords": [
+      "multi",
+      "detector"
+    ]
+  },
+  {
+    "id": "ptel-beam-detector",
+    "slug": "beam-detector",
+    "name": "BEAM DETECTOR",
+    "category": "fire-detection-system",
+    "subcategory": "multi-sensor-detectors",
+    "brand": "",
+    "model": "",
+    "shortDescription": "BEAM DETECTOR (as listed by source).",
+    "description": "BEAM DETECTOR as listed by source (ptel.com.bd fire detection category). Confirm specifications, model details, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/beam-detector.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "BEAM DETECTOR"
+    ],
+    "applications": [
+      "Fire detection and alarm systems (project-specific)"
+    ],
+    "keywords": [
+      "beam",
+      "detector"
+    ]
+  },
+  {
+    "id": "ptel-heat-detector-second",
+    "slug": "heat-detector-second",
+    "name": "HEAT DETECTOR Second",
+    "category": "fire-detection-system",
+    "subcategory": "heat-detectors",
+    "brand": "",
+    "model": "",
+    "shortDescription": "HEAT DETECTOR Second (as listed by source).",
+    "description": "HEAT DETECTOR Second as listed by source (ptel.com.bd fire detection category). Confirm specifications, model details, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/heat-detector-second.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "HEAT DETECTOR Second"
+    ],
+    "applications": [
+      "Fire detection and alarm systems (project-specific)"
+    ],
+    "keywords": [
+      "heat",
+      "detector",
+      "second"
+    ]
+  },
+  {
+    "id": "ptel-manual-call-point",
+    "slug": "manual-call-point",
+    "name": "MANUAL CALL POINT",
+    "category": "fire-detection-system",
+    "subcategory": "manual-call-points",
+    "brand": "",
+    "model": "",
+    "shortDescription": "MANUAL CALL POINT (as listed by source).",
+    "description": "MANUAL CALL POINT as listed by source (ptel.com.bd fire detection category). Confirm specifications, model details, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/manual-call-point.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "MANUAL CALL POINT"
+    ],
+    "applications": [
+      "Fire detection and alarm systems (project-specific)"
+    ],
+    "keywords": [
+      "manual",
+      "call",
+      "point"
+    ]
+  },
+  {
+    "id": "ptel-battery-operatedoptical-smoke-detector",
+    "slug": "battery-operatedoptical-smoke-detector",
+    "name": "BATTERY OPERATED/OPTICAL SMOKE DETECTOR",
+    "category": "fire-detection-system",
+    "subcategory": "smoke-detectors",
+    "brand": "",
+    "model": "",
+    "shortDescription": "BATTERY OPERATED/OPTICAL SMOKE DETECTOR (as listed by source).",
+    "description": "BATTERY OPERATED/OPTICAL SMOKE DETECTOR as listed by source (ptel.com.bd fire detection category). Confirm specifications, model details, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/battery-operatedoptical-smoke-detector.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "BATTERY OPERATED/OPTICAL SMOKE DETECTOR"
+    ],
+    "applications": [
+      "Fire detection and alarm systems (project-specific)"
+    ],
+    "keywords": [
+      "battery",
+      "operated",
+      "optical",
+      "smoke",
+      "detector"
+    ]
+  },
+  {
+    "id": "ptel-multi-detector-second",
+    "slug": "multi-detector-second",
+    "name": "MULTI DETECTOR Second",
+    "category": "fire-detection-system",
+    "subcategory": "multi-sensor-detectors",
+    "brand": "",
+    "model": "",
+    "shortDescription": "MULTI DETECTOR Second (as listed by source).",
+    "description": "MULTI DETECTOR Second as listed by source (ptel.com.bd fire detection category). Confirm specifications, model details, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/multi-detector-second.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "MULTI DETECTOR Second"
+    ],
+    "applications": [
+      "Fire detection and alarm systems (project-specific)"
+    ],
+    "keywords": [
+      "multi",
+      "detector",
+      "second"
+    ]
+  },
+  {
+    "id": "ptel-manual-call-point-second",
+    "slug": "manual-call-point-second",
+    "name": "MANUAL CALL POINT Second",
+    "category": "fire-detection-system",
+    "subcategory": "manual-call-points",
+    "brand": "",
+    "model": "",
+    "shortDescription": "MANUAL CALL POINT Second (as listed by source).",
+    "description": "MANUAL CALL POINT Second as listed by source (ptel.com.bd fire detection category). Confirm specifications, model details, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/manual-call-point-second.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "MANUAL CALL POINT Second"
+    ],
+    "applications": [
+      "Fire detection and alarm systems (project-specific)"
+    ],
+    "keywords": [
+      "manual",
+      "call",
+      "point",
+      "second"
+    ]
+  },
+  {
+    "id": "ptel-multi-detector-third",
+    "slug": "multi-detector-third",
+    "name": "MULTI DETECTOR Third",
+    "category": "fire-detection-system",
+    "subcategory": "multi-sensor-detectors",
+    "brand": "",
+    "model": "",
+    "shortDescription": "MULTI DETECTOR Third (as listed by source).",
+    "description": "MULTI DETECTOR Third as listed by source (ptel.com.bd fire detection category). Confirm specifications, model details, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/multi-detector-third.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "MULTI DETECTOR Third"
+    ],
+    "applications": [
+      "Fire detection and alarm systems (project-specific)"
+    ],
+    "keywords": [
+      "multi",
+      "detector",
+      "third"
+    ]
+  },
+  {
+    "id": "ptel-horn-with-strobe",
+    "slug": "horn-with-strobe",
+    "name": "HORN WITH STROBE",
+    "category": "fire-detection-system",
+    "subcategory": "sounders-notification",
+    "brand": "",
+    "model": "",
+    "shortDescription": "HORN WITH STROBE (as listed by source).",
+    "description": "HORN WITH STROBE as listed by source (ptel.com.bd fire detection category). Confirm specifications, model details, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/horn-with-strobe.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "HORN WITH STROBE"
+    ],
+    "applications": [
+      "Fire detection and alarm systems (project-specific)"
+    ],
+    "keywords": [
+      "horn",
+      "with",
+      "strobe"
+    ]
+  },
+  {
+    "id": "ptel-sounder",
+    "slug": "sounder",
+    "name": "SOUNDER",
+    "category": "fire-detection-system",
+    "subcategory": "sounders-notification",
+    "brand": "",
+    "model": "",
+    "shortDescription": "SOUNDER (as listed by source).",
+    "description": "SOUNDER as listed by source (ptel.com.bd fire detection category). Confirm specifications, model details, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/sounder.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "SOUNDER"
+    ],
+    "applications": [
+      "Fire detection and alarm systems (project-specific)"
+    ],
+    "keywords": [
+      "sounder"
+    ]
+  },
+  {
+    "id": "ptel-inputmodule",
+    "slug": "inputmodule",
+    "name": "INPUT/MODULE",
+    "category": "fire-detection-system",
+    "subcategory": "input-output-modules",
+    "brand": "",
+    "model": "",
+    "shortDescription": "INPUT/MODULE (as listed by source).",
+    "description": "INPUT/MODULE as listed by source (ptel.com.bd fire detection category). Confirm specifications, model details, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/inputmodule.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "INPUT/MODULE"
+    ],
+    "applications": [
+      "Fire detection and alarm systems (project-specific)"
+    ],
+    "keywords": [
+      "input",
+      "module"
+    ]
+  },
+  {
+    "id": "ptel-output-module",
+    "slug": "output-module",
+    "name": "OUTPUT MODULE",
+    "category": "fire-detection-system",
+    "subcategory": "input-output-modules",
+    "brand": "",
+    "model": "",
+    "shortDescription": "OUTPUT MODULE (as listed by source).",
+    "description": "OUTPUT MODULE as listed by source (ptel.com.bd fire detection category). Confirm specifications, model details, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/output-module.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "OUTPUT MODULE"
+    ],
+    "applications": [
+      "Fire detection and alarm systems (project-specific)"
+    ],
+    "keywords": [
+      "output",
+      "module"
+    ]
+  },
+  {
+    "id": "ptel-manual-call-point-third",
+    "slug": "manual-call-point-third",
+    "name": "MANUAL CALL POINT Third",
+    "category": "fire-detection-system",
+    "subcategory": "manual-call-points",
+    "brand": "",
+    "model": "",
+    "shortDescription": "MANUAL CALL POINT Third (as listed by source).",
+    "description": "MANUAL CALL POINT Third as listed by source (ptel.com.bd fire detection category). Confirm specifications, model details, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/manual-call-point-third.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "MANUAL CALL POINT Third"
+    ],
+    "applications": [
+      "Fire detection and alarm systems (project-specific)"
+    ],
+    "keywords": [
+      "manual",
+      "call",
+      "point",
+      "third"
+    ]
+  },
+  {
+    "id": "ptel-isolator-module-second",
+    "slug": "isolator-module-second",
+    "name": "ISOLATOR MODULE Second",
+    "category": "fire-detection-system",
+    "subcategory": "input-output-modules",
+    "brand": "",
+    "model": "",
+    "shortDescription": "ISOLATOR MODULE Second (as listed by source).",
+    "description": "ISOLATOR MODULE Second as listed by source (ptel.com.bd fire detection category). Confirm specifications, model details, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/isolator-module-second.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "ISOLATOR MODULE Second"
+    ],
+    "applications": [
+      "Fire detection and alarm systems (project-specific)"
+    ],
+    "keywords": [
+      "isolator",
+      "module",
+      "second"
+    ]
+  },
+  {
+    "id": "ptel-horn-with-strobe-second",
+    "slug": "horn-with-strobe-second",
+    "name": "HORN WITH STROBE Second",
+    "category": "fire-detection-system",
+    "subcategory": "sounders-notification",
+    "brand": "",
+    "model": "",
+    "shortDescription": "HORN WITH STROBE Second (as listed by source).",
+    "description": "HORN WITH STROBE Second as listed by source (ptel.com.bd fire detection category). Confirm specifications, model details, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/horn-with-strobe-second.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "HORN WITH STROBE Second"
+    ],
+    "applications": [
+      "Fire detection and alarm systems (project-specific)"
+    ],
+    "keywords": [
+      "horn",
+      "with",
+      "strobe",
+      "second"
+    ]
+  },
+  {
+    "id": "ptel-sounder-second",
+    "slug": "sounder-second",
+    "name": "SOUNDER Second",
+    "category": "fire-detection-system",
+    "subcategory": "sounders-notification",
+    "brand": "",
+    "model": "",
+    "shortDescription": "SOUNDER Second (as listed by source).",
+    "description": "SOUNDER Second as listed by source (ptel.com.bd fire detection category). Confirm specifications, model details, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/sounder-second.png",
+    "availability": "inquiry-required",
+    "features": [
+      "SOUNDER Second"
+    ],
+    "applications": [
+      "Fire detection and alarm systems (project-specific)"
+    ],
+    "keywords": [
+      "sounder",
+      "second"
+    ]
+  },
+  {
+    "id": "ptel-horn-with-strobe-third",
+    "slug": "horn-with-strobe-third",
+    "name": "HORN WITH STROBE Third",
+    "category": "fire-detection-system",
+    "subcategory": "sounders-notification",
+    "brand": "",
+    "model": "",
+    "shortDescription": "HORN WITH STROBE Third (as listed by source).",
+    "description": "HORN WITH STROBE Third as listed by source (ptel.com.bd fire detection category). Confirm specifications, model details, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/horn-with-strobe-third.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "HORN WITH STROBE Third"
+    ],
+    "applications": [
+      "Fire detection and alarm systems (project-specific)"
+    ],
+    "keywords": [
+      "horn",
+      "with",
+      "strobe",
+      "third"
+    ]
+  },
+  {
+    "id": "ptel-fire-alarm-cable",
+    "slug": "fire-alarm-cable",
+    "name": "FIRE ALARM CABLE",
+    "category": "fire-detection-system",
+    "subcategory": "fire-alarm-cables",
+    "brand": "",
+    "model": "",
+    "shortDescription": "FIRE ALARM CABLE (as listed by source).",
+    "description": "FIRE ALARM CABLE as listed by source (ptel.com.bd fire detection category). Confirm specifications, model details, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/fire-alarm-cable.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "FIRE ALARM CABLE"
+    ],
+    "applications": [
+      "Fire detection and alarm systems (project-specific)"
+    ],
+    "keywords": [
+      "fire",
+      "alarm",
+      "cable"
+    ]
+  },
+  {
+    "id": "ptel-output-module-second",
+    "slug": "output-module-second",
+    "name": "OUTPUT MODULE Second",
+    "category": "fire-detection-system",
+    "subcategory": "input-output-modules",
+    "brand": "",
+    "model": "",
+    "shortDescription": "OUTPUT MODULE Second (as listed by source).",
+    "description": "OUTPUT MODULE Second as listed by source (ptel.com.bd fire detection category). Confirm specifications, model details, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/output-module-second.png",
+    "availability": "inquiry-required",
+    "features": [
+      "OUTPUT MODULE Second"
+    ],
+    "applications": [
+      "Fire detection and alarm systems (project-specific)"
+    ],
+    "keywords": [
+      "output",
+      "module",
+      "second"
+    ]
+  },
+  {
+    "id": "ptel-horn-with-strobe-wall",
+    "slug": "horn-with-strobe-wall",
+    "name": "HORN WITH STROBE(WALL)",
+    "category": "fire-detection-system",
+    "subcategory": "sounders-notification",
+    "brand": "",
+    "model": "",
+    "shortDescription": "HORN WITH STROBE(WALL) (as listed by source).",
+    "description": "HORN WITH STROBE(WALL) as listed by source (ptel.com.bd fire detection category). Confirm specifications, model details, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/horn-with-strobe-wall.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "HORN WITH STROBE(WALL)"
+    ],
+    "applications": [
+      "Fire detection and alarm systems (project-specific)"
+    ],
+    "keywords": [
+      "horn",
+      "with",
+      "strobe",
+      "wall"
+    ]
+  },
+  {
+    "id": "ptel-sounder-third",
+    "slug": "sounder-third",
+    "name": "SOUNDER Third",
+    "category": "fire-detection-system",
+    "subcategory": "sounders-notification",
+    "brand": "",
+    "model": "",
+    "shortDescription": "SOUNDER Third (as listed by source).",
+    "description": "SOUNDER Third as listed by source (ptel.com.bd fire detection category). Confirm specifications, model details, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/sounder-third.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "SOUNDER Third"
+    ],
+    "applications": [
+      "Fire detection and alarm systems (project-specific)"
+    ],
+    "keywords": [
+      "sounder",
+      "third"
+    ]
+  },
+  {
+    "id": "ptel-simplex-4099-9006-simplex-breakglass",
+    "slug": "simplex-4099-9006-simplex-breakglass",
+    "name": "Simplex 4099-9006 (SIMPLEX)-BREAKGLASS",
+    "category": "fire-detection-system",
+    "subcategory": "manual-call-points",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Simplex 4099-9006 (SIMPLEX)-BREAKGLASS (as listed by source).",
+    "description": "Simplex 4099-9006 (SIMPLEX)-BREAKGLASS as listed by source (ptel.com.bd fire detection category). Confirm specifications, model details, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/simplex-4099-9006-simplex-breakglass.png",
+    "availability": "inquiry-required",
+    "features": [
+      "Simplex 4099-9006 (SIMPLEX)-BREAKGLASS"
+    ],
+    "applications": [
+      "Fire detection and alarm systems (project-specific)"
+    ],
+    "keywords": [
+      "simplex",
+      "4099",
+      "9006",
+      "simplex",
+      "breakglass"
+    ]
+  },
+  {
+    "id": "ptel-alpha-5000-shield",
+    "slug": "alpha-5000-shield",
+    "name": "ALPHA 5000 (SHIELD)",
+    "category": "fire-detection-system",
+    "subcategory": "fire-alarm-panels",
+    "brand": "",
+    "model": "",
+    "shortDescription": "ALPHA 5000 (SHIELD) (as listed by source).",
+    "description": "ALPHA 5000 (SHIELD) as listed by source (ptel.com.bd fire detection category). Confirm specifications, model details, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/alpha-5000-shield.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "ALPHA 5000 (SHIELD)"
+    ],
+    "applications": [
+      "Fire detection and alarm systems (project-specific)"
+    ],
+    "keywords": [
+      "alpha",
+      "5000",
+      "shield"
+    ]
+  },
+  {
+    "id": "ptel-output-module-third",
+    "slug": "output-module-third",
+    "name": "OUTPUT MODULE Third",
+    "category": "fire-detection-system",
+    "subcategory": "input-output-modules",
+    "brand": "",
+    "model": "",
+    "shortDescription": "OUTPUT MODULE Third (as listed by source).",
+    "description": "OUTPUT MODULE Third as listed by source (ptel.com.bd fire detection category). Confirm specifications, model details, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/output-module-third.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "OUTPUT MODULE Third"
+    ],
+    "applications": [
+      "Fire detection and alarm systems (project-specific)"
+    ],
+    "keywords": [
+      "output",
+      "module",
+      "third"
+    ]
+  },
+  {
+    "id": "ptel-s-a4045-shield",
+    "slug": "s-a4045-shield",
+    "name": "S-A4045 (SHIELD)",
+    "category": "fire-detection-system",
+    "subcategory": "input-output-modules",
+    "brand": "",
+    "model": "",
+    "shortDescription": "S-A4045 (SHIELD) (as listed by source).",
+    "description": "S-A4045 (SHIELD) as listed by source (ptel.com.bd fire detection category). Confirm specifications, model details, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/s-a4045-shield.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "S-A4045 (SHIELD)"
+    ],
+    "applications": [
+      "Fire detection and alarm systems (project-specific)"
+    ],
+    "keywords": [
+      "s",
+      "a4045",
+      "shield"
+    ]
+  },
+  {
+    "id": "ptel-simplex-4090-9002-simplex",
+    "slug": "simplex-4090-9002-simplex",
+    "name": "Simplex-4090-9002 (SIMPLEX)",
+    "category": "fire-detection-system",
+    "subcategory": "input-output-modules",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Simplex-4090-9002 (SIMPLEX) (as listed by source).",
+    "description": "Simplex-4090-9002 (SIMPLEX) as listed by source (ptel.com.bd fire detection category). Confirm specifications, model details, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/simplex-4090-9002-simplex.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Simplex-4090-9002 (SIMPLEX)"
+    ],
+    "applications": [
+      "Fire detection and alarm systems (project-specific)"
+    ],
+    "keywords": [
+      "simplex",
+      "4090",
+      "9002",
+      "simplex"
+    ]
+  },
+  {
+    "id": "ptel-alpha-1000-shield",
+    "slug": "alpha-1000-shield",
+    "name": "ALPHA 1000 (SHIELD)",
+    "category": "fire-detection-system",
+    "subcategory": "fire-alarm-panels",
+    "brand": "",
+    "model": "",
+    "shortDescription": "ALPHA 1000 (SHIELD) (as listed by source).",
+    "description": "ALPHA 1000 (SHIELD) as listed by source (ptel.com.bd fire detection category). Confirm specifications, model details, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/alpha-1000-shield.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "ALPHA 1000 (SHIELD)"
+    ],
+    "applications": [
+      "Fire detection and alarm systems (project-specific)"
+    ],
+    "keywords": [
+      "alpha",
+      "1000",
+      "shield"
+    ]
+  },
+  {
+    "id": "ptel-digital-lhd-cable",
+    "slug": "digital-lhd-cable",
+    "name": "DIGITAL LHD CABLE",
+    "category": "fire-detection-system",
+    "subcategory": "fire-alarm-cables",
+    "brand": "",
+    "model": "",
+    "shortDescription": "DIGITAL LHD CABLE (as listed by source).",
+    "description": "DIGITAL LHD CABLE as listed by source (ptel.com.bd fire detection category). Confirm specifications, model details, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/digital-lhd-cable.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "DIGITAL LHD CABLE"
+    ],
+    "applications": [
+      "Fire detection and alarm systems (project-specific)"
+    ],
+    "keywords": [
+      "digital",
+      "lhd",
+      "cable"
+    ]
+  },
+  {
+    "id": "ptel-chinese-brand",
+    "slug": "chinese-brand",
+    "name": "CHINESE BRAND",
+    "category": "fire-detection-system",
+    "subcategory": "fire-alarm-panels",
+    "brand": "",
+    "model": "",
+    "shortDescription": "CHINESE BRAND (as listed by source).",
+    "description": "CHINESE BRAND as listed by source (ptel.com.bd fire detection category). Confirm specifications, model details, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/chinese-brand.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "CHINESE BRAND"
+    ],
+    "applications": [
+      "Fire detection and alarm systems (project-specific)"
+    ],
+    "keywords": [
+      "chinese",
+      "brand"
+    ]
+  },
+  {
+    "id": "ptel-isolator-module",
+    "slug": "isolator-module",
+    "name": "ISOLATOR MODULE",
+    "category": "fire-detection-system",
+    "subcategory": "input-output-modules",
+    "brand": "",
+    "model": "",
+    "shortDescription": "ISOLATOR MODULE (as listed by source).",
+    "description": "ISOLATOR MODULE as listed by source (ptel.com.bd fire detection category). Confirm specifications, model details, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/isolator-module.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "ISOLATOR MODULE"
+    ],
+    "applications": [
+      "Fire detection and alarm systems (project-specific)"
+    ],
+    "keywords": [
+      "isolator",
+      "module"
+    ]
+  },
+  {
+    "id": "ptel-input-module",
+    "slug": "input-module",
+    "name": "INPUT MODULE",
+    "category": "fire-detection-system",
+    "subcategory": "input-output-modules",
+    "brand": "",
+    "model": "",
+    "shortDescription": "INPUT MODULE (as listed by source).",
+    "description": "INPUT MODULE as listed by source (ptel.com.bd fire detection category). Confirm specifications, model details, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/input-module.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "INPUT MODULE"
+    ],
+    "applications": [
+      "Fire detection and alarm systems (project-specific)"
+    ],
+    "keywords": [
+      "input",
+      "module"
+    ]
+  },
+  {
+    "id": "ptel-extinguishing-control-panel",
+    "slug": "extinguishing-control-panel",
+    "name": "EXTINGUISHING CONTROL PANEL",
+    "category": "fire-detection-system",
+    "subcategory": "fire-alarm-panels",
+    "brand": "",
+    "model": "",
+    "shortDescription": "EXTINGUISHING CONTROL PANEL (as listed by source).",
+    "description": "EXTINGUISHING CONTROL PANEL as listed by source (ptel.com.bd fire detection category). Confirm specifications, model details, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/extinguishing-control-panel.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "EXTINGUISHING CONTROL PANEL"
+    ],
+    "applications": [
+      "Fire detection and alarm systems (project-specific)"
+    ],
+    "keywords": [
+      "extinguishing",
+      "control",
+      "panel"
+    ]
+  },
+  {
+    "id": "ptel-isolator-module-third",
+    "slug": "isolator-module-third",
+    "name": "ISOLATOR MODULE Third",
+    "category": "fire-detection-system",
+    "subcategory": "input-output-modules",
+    "brand": "",
+    "model": "",
+    "shortDescription": "ISOLATOR MODULE Third (as listed by source).",
+    "description": "ISOLATOR MODULE Third as listed by source (ptel.com.bd fire detection category). Confirm specifications, model details, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/isolator-module-third.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "ISOLATOR MODULE Third"
+    ],
+    "applications": [
+      "Fire detection and alarm systems (project-specific)"
+    ],
+    "keywords": [
+      "isolator",
+      "module",
+      "third"
+    ]
+  },
+  {
+    "id": "ptel-duct-detector",
+    "slug": "duct-detector",
+    "name": "DUCT DETECTOR",
+    "category": "fire-detection-system",
+    "subcategory": "smoke-detectors",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Duct smoke detector for HVAC/fire alarm duct applications (confirm model and approvals).",
+    "description": "DUCT DETECTOR as listed by source (ptel.com.bd). The public product page provides limited technical detail; confirm detector model, sampling tube/duct size compatibility, approvals/listings, and fire alarm interface requirements per project. (Source: ptel.com.bd/product/duct-detector)",
+    "image": "https://ptel.com.bd/storage/product/676291ab1910f_product_5984.png",
+    "availability": "inquiry-required",
+    "features": [
+      "Duct smoke detection (as listed by source)",
+      "Confirm model, duct compatibility, approvals, and interface per project"
+    ],
+    "applications": [
+      "HVAC duct smoke detection (project-specific)",
+      "Fire detection and alarm systems (project-specific)"
+    ],
+    "keywords": [
+      "duct",
+      "detector",
+      "smoke detector",
+      "HVAC",
+      "fire alarm"
+    ]
+  },
+  {
+    "id": "ptel-input-module-second",
+    "slug": "input-module-second",
+    "name": "INPUT MODULE Second",
+    "category": "fire-detection-system",
+    "subcategory": "input-output-modules",
+    "brand": "",
+    "model": "",
+    "shortDescription": "INPUT MODULE Second (as listed by source).",
+    "description": "INPUT MODULE Second as listed by source (ptel.com.bd fire detection category). Confirm specifications, model details, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/input-module-second.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "INPUT MODULE Second"
+    ],
+    "applications": [
+      "Fire detection and alarm systems (project-specific)"
+    ],
+    "keywords": [
+      "input",
+      "module",
+      "second"
+    ]
+  },
+  {
+    "id": "ptel-repeater-panel",
+    "slug": "repeater-panel",
+    "name": "REPEATER PANEL",
+    "category": "fire-detection-system",
+    "subcategory": "fire-alarm-panels",
+    "brand": "",
+    "model": "",
+    "shortDescription": "REPEATER PANEL (as listed by source).",
+    "description": "REPEATER PANEL as listed by source (ptel.com.bd fire detection category). Confirm specifications, model details, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/repeater-panel.png",
+    "availability": "inquiry-required",
+    "features": [
+      "REPEATER PANEL"
+    ],
+    "applications": [
+      "Fire detection and alarm systems (project-specific)"
+    ],
+    "keywords": [
+      "repeater",
+      "panel"
+    ]
+  },
+  {
+    "id": "ptel-repeater-panel-second",
+    "slug": "repeater-panel-second",
+    "name": "Repeater Panel Second",
+    "category": "fire-detection-system",
+    "subcategory": "fire-alarm-panels",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Repeater Panel Second (as listed by source).",
+    "description": "Repeater Panel Second as listed by source (ptel.com.bd fire detection category). Confirm specifications, model details, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/repeater-panel-second.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Repeater Panel Second"
+    ],
+    "applications": [
+      "Fire detection and alarm systems (project-specific)"
+    ],
+    "keywords": [
+      "repeater",
+      "panel",
+      "second"
+    ]
+  },
+  // ---- PTEL Fire Protection System (source: ptel.com.bd category, factual listing) ----
+  {
+    "id": "ptel-3gk-abc-dry-powder-kg-fire-extinguisher",
+    "slug": "3gk-abc-dry-powder-kg-fire-extinguisher",
+    "name": "ABC Dry Powder (3 KG) Fire Extinguisher",
+    "category": "fire-protection-system",
+    "subcategory": "fire-extinguishers",
+    "brand": "",
+    "model": "",
+    "shortDescription": "ABC Dry Powder (3 KG) Fire Extinguisher (as listed by source).",
+    "description": "ABC Dry Powder (3 KG) Fire Extinguisher as listed by source (ptel.com.bd fire protection category). Confirm specifications, ratings, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/1758434933-abc-dry-powder-fire-extinguisher-5kg-ptel.png",
+    "availability": "inquiry-required",
+    "features": [
+      "ABC Dry Powder (3 KG) Fire Extinguisher"
+    ],
+    "applications": [
+      "Fire protection systems (project-specific)"
+    ],
+    "keywords": [
+      "abc",
+      "dry",
+      "powder",
+      "3",
+      "kg",
+      "fire",
+      "extinguisher"
+    ]
+  },
+  {
+    "id": "ptel-5-kg-abcd-dry-powder-fire-extinguisher",
+    "slug": "5-kg-abcd-dry-powder-fire-extinguisher",
+    "name": "ABCD Dry Powder (5 KG) Fire Extinguisher",
+    "category": "fire-protection-system",
+    "subcategory": "fire-extinguishers",
+    "brand": "",
+    "model": "",
+    "shortDescription": "ABCD Dry Powder (5 KG) Fire Extinguisher (as listed by source).",
+    "description": "ABCD Dry Powder (5 KG) Fire Extinguisher as listed by source (ptel.com.bd fire protection category). Confirm specifications, ratings, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/abc-dry-powder-fire-extinguisher-5kg-ptel.png",
+    "availability": "inquiry-required",
+    "features": [
+      "ABCD Dry Powder (5 KG) Fire Extinguisher"
+    ],
+    "applications": [
+      "Fire protection systems (project-specific)"
+    ],
+    "keywords": [
+      "abcd",
+      "dry",
+      "powder",
+      "5",
+      "kg",
+      "fire",
+      "extinguisher"
+    ]
+  },
+  {
+    "id": "ptel-10-kg-abc-dry-powder-fire-extinguisher",
+    "slug": "10-kg-abc-dry-powder-fire-extinguisher",
+    "name": "ABC Dry Powder (10KG) Fire Extinguisher",
+    "category": "fire-protection-system",
+    "subcategory": "fire-extinguishers",
+    "brand": "",
+    "model": "",
+    "shortDescription": "ABC Dry Powder (10KG) Fire Extinguisher (as listed by source).",
+    "description": "ABC Dry Powder (10KG) Fire Extinguisher as listed by source (ptel.com.bd fire protection category). Confirm specifications, ratings, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/1758434711-abc-dry-powder-fire-extinguisher-5kg-ptel.png",
+    "availability": "inquiry-required",
+    "features": [
+      "ABC Dry Powder (10KG) Fire Extinguisher"
+    ],
+    "applications": [
+      "Fire protection systems (project-specific)"
+    ],
+    "keywords": [
+      "abc",
+      "dry",
+      "powder",
+      "10kg",
+      "fire",
+      "extinguisher"
+    ]
+  },
+  {
+    "id": "ptel-25-kg-abc-dry-powder-fire-extinguisher-trolley-type",
+    "slug": "25-kg-abc-dry-powder-fire-extinguisher-trolley-type",
+    "name": "25 KG ABC Dry Powder Fire Extinguisher (Trolley Type)",
+    "category": "fire-protection-system",
+    "subcategory": "fire-extinguishers",
+    "brand": "",
+    "model": "",
+    "shortDescription": "25 KG ABC Dry Powder Fire Extinguisher (Trolley Type) (as listed by source).",
+    "description": "25 KG ABC Dry Powder Fire Extinguisher (Trolley Type) as listed by source (ptel.com.bd fire protection category). Confirm specifications, ratings, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/abc-dry-powder-25-kg-fire-extinguisher.png",
+    "availability": "inquiry-required",
+    "features": [
+      "25 KG ABC Dry Powder Fire Extinguisher (Trolley Type)"
+    ],
+    "applications": [
+      "Fire protection systems (project-specific)"
+    ],
+    "keywords": [
+      "25",
+      "kg",
+      "abc",
+      "dry",
+      "powder",
+      "fire",
+      "extinguisher",
+      "trolley"
+    ]
+  },
+  {
+    "id": "ptel-50-kg-abcd-kg-fire-extinguisher",
+    "slug": "50-kg-abcd-kg-fire-extinguisher",
+    "name": "ABCD 50 KG Fire Extinguisher",
+    "category": "fire-protection-system",
+    "subcategory": "fire-extinguishers",
+    "brand": "",
+    "model": "",
+    "shortDescription": "ABCD 50 KG Fire Extinguisher (as listed by source).",
+    "description": "ABCD 50 KG Fire Extinguisher as listed by source (ptel.com.bd fire protection category). Confirm specifications, ratings, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/1758456235-abc-dry-powder-25-kg-fire-extinguisher.png",
+    "availability": "inquiry-required",
+    "features": [
+      "ABCD 50 KG Fire Extinguisher"
+    ],
+    "applications": [
+      "Fire protection systems (project-specific)"
+    ],
+    "keywords": [
+      "abcd",
+      "50",
+      "kg",
+      "fire",
+      "extinguisher"
+    ]
+  },
+  {
+    "id": "ptel-horizontal-split-case-fire-pumps",
+    "slug": "horizontal-split-case-fire-pumps",
+    "name": "Horizontal Split Case Fire Pumps",
+    "category": "fire-protection-system",
+    "subcategory": "fire-fighting-pumps",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Horizontal Split Case Fire Pumps (as listed by source).",
+    "description": "Horizontal Split Case Fire Pumps as listed by source (ptel.com.bd fire protection category). Confirm specifications, ratings, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/horizontal-split-case-fire-pump.png",
+    "availability": "inquiry-required",
+    "features": [
+      "Horizontal Split Case Fire Pumps"
+    ],
+    "applications": [
+      "Fire protection systems (project-specific)"
+    ],
+    "keywords": [
+      "horizontal",
+      "split",
+      "case",
+      "fire",
+      "pumps"
+    ]
+  },
+  {
+    "id": "ptel-kitchen-hood-fire-protection",
+    "slug": "kitchen-hood-fire-protection",
+    "name": "Kitchen Hood Fire Protection",
+    "category": "fire-protection-system",
+    "subcategory": "fire-suppression-systems",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Kitchen Hood Fire Protection (as listed by source).",
+    "description": "Kitchen Hood Fire Protection as listed by source (ptel.com.bd fire protection category). Confirm specifications, ratings, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/kitchenwhood-fire-protection.jfif",
+    "availability": "inquiry-required",
+    "features": [
+      "Kitchen Hood Fire Protection"
+    ],
+    "applications": [
+      "Fire protection systems (project-specific)"
+    ],
+    "keywords": [
+      "kitchen",
+      "hood",
+      "fire",
+      "protection"
+    ]
+  },
+  {
+    "id": "ptel-fire-smoke-damper",
+    "slug": "fire-smoke-damper",
+    "name": "Fire & Smoke Damper",
+    "category": "fire-protection-system",
+    "subcategory": "fire-protection-valves",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Fire & Smoke Damper (as listed by source).",
+    "description": "Fire & Smoke Damper as listed by source (ptel.com.bd fire protection category). Confirm specifications, ratings, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/fire-smoke-dampers.png",
+    "availability": "inquiry-required",
+    "features": [
+      "Fire & Smoke Damper"
+    ],
+    "applications": [
+      "Fire protection systems (project-specific)"
+    ],
+    "keywords": [
+      "fire",
+      "smoke",
+      "damper"
+    ]
+  },
+  {
+    "id": "ptel-volume-control-damper",
+    "slug": "volume-control-damper",
+    "name": "Volume Control Damper",
+    "category": "fire-protection-system",
+    "subcategory": "fire-protection-valves",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Volume Control Damper (as listed by source).",
+    "description": "Volume Control Damper as listed by source (ptel.com.bd fire protection category). Confirm specifications, ratings, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/1759635061-fire-smoke-dampers.png",
+    "availability": "inquiry-required",
+    "features": [
+      "Volume Control Damper"
+    ],
+    "applications": [
+      "Fire protection systems (project-specific)"
+    ],
+    "keywords": [
+      "volume",
+      "control",
+      "damper"
+    ]
+  },
+  {
+    "id": "ptel-building-safety-tuf-panel",
+    "slug": "building-safety-tuf-panel",
+    "name": "Building Safety Tuf Panel",
+    "category": "fire-protection-system",
+    "subcategory": "fire-protection-valves",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Building Safety Tuf Panel (as listed by source).",
+    "description": "Building Safety Tuf Panel as listed by source (ptel.com.bd fire protection category). Confirm specifications, ratings, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/building-safety-tuf-panel-systems-in-bangladesh.png",
+    "availability": "inquiry-required",
+    "features": [
+      "Building Safety Tuf Panel"
+    ],
+    "applications": [
+      "Fire protection systems (project-specific)"
+    ],
+    "keywords": [
+      "building",
+      "safety",
+      "tuf",
+      "panel"
+    ]
+  },
+  {
+    "id": "ptel-trimoterm-fireproof-panels",
+    "slug": "trimoterm-fireproof-panels",
+    "name": "Trimoterm Fireproof Panels",
+    "category": "fire-protection-system",
+    "subcategory": "fire-protection-valves",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Trimoterm Fireproof Panels (as listed by source).",
+    "description": "Trimoterm Fireproof Panels as listed by source (ptel.com.bd fire protection category). Confirm specifications, ratings, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/trimoterm-fireproof-panels.png",
+    "availability": "inquiry-required",
+    "features": [
+      "Trimoterm Fireproof Panels"
+    ],
+    "applications": [
+      "Fire protection systems (project-specific)"
+    ],
+    "keywords": [
+      "trimoterm",
+      "fireproof",
+      "panels"
+    ]
+  },
+  {
+    "id": "ptel-fire-hose-reels-kitemark-lpcb-approved",
+    "slug": "fire-hose-reels-kitemark-lpcb-approved",
+    "name": "Fire Hose Reels (Kitemark LPCB Approved)",
+    "category": "fire-protection-system",
+    "subcategory": "fire-hydrant-accessories",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Fire Hose Reels (Kitemark LPCB Approved) (as listed by source).",
+    "description": "Fire Hose Reels (Kitemark LPCB Approved) as listed by source (ptel.com.bd fire protection category). Confirm specifications, ratings, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/fire-hose-reels-kitemark-lpcb-approved.jfif",
+    "availability": "inquiry-required",
+    "features": [
+      "Fire Hose Reels (Kitemark LPCB Approved)"
+    ],
+    "applications": [
+      "Fire protection systems (project-specific)"
+    ],
+    "keywords": [
+      "fire",
+      "hose",
+      "reels",
+      "kitemark",
+      "lpcb",
+      "approved"
+    ]
+  },
+  {
+    "id": "ptel-naffco-mm-hose-pipe-nozzle-ul-listed",
+    "slug": "naffco-mm-hose-pipe-nozzle-ul-listed",
+    "name": "NAFFCO 65mm Hose Pipe & Nozzle UL Listed",
+    "category": "fire-protection-system",
+    "subcategory": "fire-hydrant-accessories",
+    "brand": "",
+    "model": "",
+    "shortDescription": "NAFFCO 65mm Hose Pipe & Nozzle UL Listed (as listed by source).",
+    "description": "NAFFCO 65mm Hose Pipe & Nozzle UL Listed as listed by source (ptel.com.bd fire protection category). Confirm specifications, ratings, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/naffco-65mm-hose-pipe-nozzle-model-nf-fh65sd-fn65.jfif",
+    "availability": "inquiry-required",
+    "features": [
+      "NAFFCO 65mm Hose Pipe & Nozzle UL Listed"
+    ],
+    "applications": [
+      "Fire protection systems (project-specific)"
+    ],
+    "keywords": [
+      "naffco",
+      "65mm",
+      "hose",
+      "pipe",
+      "nozzle",
+      "ul",
+      "listed"
+    ]
+  },
+  {
+    "id": "ptel-shield-y-strainer-sd-ysff-d-sd-ysgg-d",
+    "slug": "shield-y-strainer-sd-ysff-d-sd-ysgg-d",
+    "name": "SHIELD Y Strainer - SD-YS300FF-D / SD-YS300GG-D",
+    "category": "fire-protection-system",
+    "subcategory": "fire-protection-valves",
+    "brand": "",
+    "model": "",
+    "shortDescription": "SHIELD Y Strainer - SD-YS300FF-D / SD-YS300GG-D (as listed by source).",
+    "description": "SHIELD Y Strainer - SD-YS300FF-D / SD-YS300GG-D as listed by source (ptel.com.bd fire protection category). Confirm specifications, ratings, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/shield-y-strainer-sd-ys300ff-d-sd-ys300gg-d.png",
+    "availability": "inquiry-required",
+    "features": [
+      "SHIELD Y Strainer - SD-YS300FF-D / SD-YS300GG-D"
+    ],
+    "applications": [
+      "Fire protection systems (project-specific)"
+    ],
+    "keywords": [
+      "shield",
+      "y",
+      "strainer",
+      "sd",
+      "ys300ff",
+      "d",
+      "sd",
+      "ys300gg"
+    ]
+  },
+  {
+    "id": "ptel-l-pump-casing-relief-valve-ul-listed-fm-approved",
+    "slug": "l-pump-casing-relief-valve-ul-listed-fm-approved",
+    "name": "55L-60 Pump Casing Relief Valve UL Listed & FM Approved",
+    "category": "fire-protection-system",
+    "subcategory": "fire-fighting-pumps",
+    "brand": "",
+    "model": "",
+    "shortDescription": "55L-60 Pump Casing Relief Valve UL Listed & FM Approved (as listed by source).",
+    "description": "55L-60 Pump Casing Relief Valve UL Listed & FM Approved as listed by source (ptel.com.bd fire protection category). Confirm specifications, ratings, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/55l-60-pump-casing-relief-valve-ul-listed-fm-approved.png",
+    "availability": "inquiry-required",
+    "features": [
+      "55L-60 Pump Casing Relief Valve UL Listed & FM Approved"
+    ],
+    "applications": [
+      "Fire protection systems (project-specific)"
+    ],
+    "keywords": [
+      "55l",
+      "60",
+      "pump",
+      "casing",
+      "relief",
+      "valve",
+      "ul",
+      "listed"
+    ]
+  },
+  {
+    "id": "ptel-cla-val-pressure-reducing-valve-g-globe-a-angle",
+    "slug": "cla-val-pressure-reducing-valve-g-globe-a-angle",
+    "name": "Cla-Val Pressure Reducing Valve - 90G-21 Globe & 90A-21 Angle",
+    "category": "fire-protection-system",
+    "subcategory": "fire-protection-valves",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Cla-Val Pressure Reducing Valve - 90G-21 Globe & 90A-21 Angle (as listed by source).",
+    "description": "Cla-Val Pressure Reducing Valve - 90G-21 Globe & 90A-21 Angle as listed by source (ptel.com.bd fire protection category). Confirm specifications, ratings, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/cla-val-pressure-reducing-valve-90g-21-globe-90a-21-angle.png",
+    "availability": "inquiry-required",
+    "features": [
+      "Cla-Val Pressure Reducing Valve - 90G-21 Globe & 90A-21 Angle"
+    ],
+    "applications": [
+      "Fire protection systems (project-specific)"
+    ],
+    "keywords": [
+      "cla",
+      "val",
+      "pressure",
+      "reducing",
+      "valve",
+      "90g",
+      "21",
+      "globe"
+    ]
+  },
+  {
+    "id": "ptel-cla-val-pressure-relief-valve-model-b-kg-b-kg",
+    "slug": "cla-val-pressure-relief-valve-model-b-kg-b-kg",
+    "name": "Cla-Val Pressure Relief Valve - Model 50B-4KG1 & 2050B-4KG1",
+    "category": "fire-protection-system",
+    "subcategory": "fire-protection-valves",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Cla-Val Pressure Relief Valve - Model 50B-4KG1 & 2050B-4KG1 (as listed by source).",
+    "description": "Cla-Val Pressure Relief Valve - Model 50B-4KG1 & 2050B-4KG1 as listed by source (ptel.com.bd fire protection category). Confirm specifications, ratings, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/cla-val-pressure-relief-valve-model-50b-4kg1-2050b-4kg1.png",
+    "availability": "inquiry-required",
+    "features": [
+      "Cla-Val Pressure Relief Valve - Model 50B-4KG1 & 2050B-4KG1"
+    ],
+    "applications": [
+      "Fire protection systems (project-specific)"
+    ],
+    "keywords": [
+      "cla",
+      "val",
+      "pressure",
+      "relief",
+      "valve",
+      "model",
+      "50b",
+      "4kg1"
+    ]
+  },
+  {
+    "id": "ptel-end-suction-fire-pump",
+    "slug": "end-suction-fire-pump",
+    "name": "End Suction Fire Pump",
+    "category": "fire-protection-system",
+    "subcategory": "fire-fighting-pumps",
+    "brand": "NAFFCO (authorized distributor stated by source)",
+    "model": "",
+    "shortDescription": "End suction fire pump for NFPA 20 fire pump applications (confirm duty point).",
+    "description": "End Suction Fire Pump as listed by source (PTEL). The source states performance characteristics as per NFPA 20, operation run test as per NFPA 20, horizontal end suction pumps for capacities up to 750 USGPM (as listed), and electric motor or diesel engine drive options. Confirm flow, pressure, speed, driver, controller, and approvals per project. (Source: ptel.com.bd/product/end-suction-fire-pump)",
+    "image": "https://ptel.com.bd/storage/product/end-suction-fire-pump.png",
+    "availability": "inquiry-required",
+    "features": [
+      "Performance characteristics as per NFPA 20 (as stated by source)",
+      "Operation run test as per NFPA 20 (as stated by source)",
+      "Horizontal end suction pumps for capacities up to 750 USGPM (as listed)",
+      "Electric motor drive or diesel engine drive options (as listed)"
+    ],
+    "specifications": [
+      { "label": "Flow rate (source range)", "value": "50 – 2500 US GPM** (as listed; confirm duty point)" },
+      { "label": "Pressure ratings (source range)", "value": "3.4 – 15.4 BAR** (as listed; confirm)" },
+      { "label": "Speed ratings (source range)", "value": "2900 – 3550 RPM** (as listed; confirm)" }
+    ],
+    "applications": [
+      "Fire pump systems (project-specific)",
+      "Commercial and industrial fire protection (NFPA 20 confirmation required)"
+    ],
+    "keywords": [
+      "end suction",
+      "fire pump",
+      "NFPA 20",
+      "NAFFCO"
+    ]
+  },
+  {
+    "id": "ptel-vertical-turbine-fire-pump",
+    "slug": "vertical-turbine-fire-pump",
+    "name": "Vertical Turbine Fire Pump",
+    "category": "fire-protection-system",
+    "subcategory": "fire-fighting-pumps",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Vertical Turbine Fire Pump (as listed by source).",
+    "description": "Vertical Turbine Fire Pump as listed by source (ptel.com.bd fire protection category). Confirm specifications, ratings, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/certified-vertical-turbine-fire-pump.png",
+    "availability": "inquiry-required",
+    "features": [
+      "Vertical Turbine Fire Pump"
+    ],
+    "applications": [
+      "Fire protection systems (project-specific)"
+    ],
+    "keywords": [
+      "vertical",
+      "turbine",
+      "fire",
+      "pump"
+    ]
+  },
+  {
+    "id": "ptel-ms-pipe-shield",
+    "slug": "ms-pipe-shield",
+    "name": "MS PIPE (SHIELD)",
+    "category": "fire-protection-system",
+    "subcategory": "pipes-fittings-accessories",
+    "brand": "",
+    "model": "",
+    "shortDescription": "MS PIPE (SHIELD) (as listed by source).",
+    "description": "MS PIPE (SHIELD) as listed by source (ptel.com.bd fire protection category). Confirm specifications, ratings, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/ms-pipe-shield.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "MS PIPE (SHIELD)"
+    ],
+    "applications": [
+      "Fire protection systems (project-specific)"
+    ],
+    "keywords": [
+      "ms",
+      "pipe",
+      "shield"
+    ]
+  },
+  {
+    "id": "ptel-threaded-fittings",
+    "slug": "threaded-fittings",
+    "name": "THREADED FITTINGS",
+    "category": "fire-protection-system",
+    "subcategory": "pipes-fittings-accessories",
+    "brand": "",
+    "model": "",
+    "shortDescription": "THREADED FITTINGS (as listed by source).",
+    "description": "THREADED FITTINGS as listed by source (ptel.com.bd fire protection category). Confirm specifications, ratings, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/threaded-fittings.png",
+    "availability": "inquiry-required",
+    "features": [
+      "THREADED FITTINGS"
+    ],
+    "applications": [
+      "Fire protection systems (project-specific)"
+    ],
+    "keywords": [
+      "threaded",
+      "fittings"
+    ]
+  },
+  {
+    "id": "ptel-grooved-fittings",
+    "slug": "grooved-fittings",
+    "name": "GROOVED FITTINGS",
+    "category": "fire-protection-system",
+    "subcategory": "pipes-fittings-accessories",
+    "brand": "",
+    "model": "",
+    "shortDescription": "GROOVED FITTINGS (as listed by source).",
+    "description": "GROOVED FITTINGS as listed by source (ptel.com.bd fire protection category). Confirm specifications, ratings, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/grooved-fittings.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "GROOVED FITTINGS"
+    ],
+    "applications": [
+      "Fire protection systems (project-specific)"
+    ],
+    "keywords": [
+      "grooved",
+      "fittings"
+    ]
+  },
+  {
+    "id": "ptel-welded-fittings-flanges",
+    "slug": "welded-fittings-flanges",
+    "name": "WELDED FITTINGS & FLANGES",
+    "category": "fire-protection-system",
+    "subcategory": "pipes-fittings-accessories",
+    "brand": "",
+    "model": "",
+    "shortDescription": "WELDED FITTINGS & FLANGES (as listed by source).",
+    "description": "WELDED FITTINGS & FLANGES as listed by source (ptel.com.bd fire protection category). Confirm specifications, ratings, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/welded-fittings-flanges.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "WELDED FITTINGS & FLANGES"
+    ],
+    "applications": [
+      "Fire protection systems (project-specific)"
+    ],
+    "keywords": [
+      "welded",
+      "fittings",
+      "flanges"
+    ]
+  },
+  {
+    "id": "ptel-pipe-support-accessories",
+    "slug": "pipe-support-accessories",
+    "name": "PIPE SUPPORT & ACCESSORIES",
+    "category": "fire-protection-system",
+    "subcategory": "pipes-fittings-accessories",
+    "brand": "",
+    "model": "",
+    "shortDescription": "PIPE SUPPORT & ACCESSORIES (as listed by source).",
+    "description": "PIPE SUPPORT & ACCESSORIES as listed by source (ptel.com.bd fire protection category). Confirm specifications, ratings, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/pipe-support-accessories.png",
+    "availability": "inquiry-required",
+    "features": [
+      "PIPE SUPPORT & ACCESSORIES"
+    ],
+    "applications": [
+      "Fire protection systems (project-specific)"
+    ],
+    "keywords": [
+      "pipe",
+      "support",
+      "accessories"
+    ]
+  },
+  {
+    "id": "ptel-flexible-expansion-joints",
+    "slug": "flexible-expansion-joints",
+    "name": "FLEXIBLE EXPANSION JOINTS",
+    "category": "fire-protection-system",
+    "subcategory": "pipes-fittings-accessories",
+    "brand": "",
+    "model": "",
+    "shortDescription": "FLEXIBLE EXPANSION JOINTS (as listed by source).",
+    "description": "FLEXIBLE EXPANSION JOINTS as listed by source (ptel.com.bd fire protection category). Confirm specifications, ratings, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/flexible-expansion-joints.png",
+    "availability": "inquiry-required",
+    "features": [
+      "FLEXIBLE EXPANSION JOINTS"
+    ],
+    "applications": [
+      "Fire protection systems (project-specific)"
+    ],
+    "keywords": [
+      "flexible",
+      "expansion",
+      "joints"
+    ]
+  },
+  {
+    "id": "ptel-sprinkler-drop",
+    "slug": "sprinkler-drop",
+    "name": "SPRINKLER DROP",
+    "category": "fire-protection-system",
+    "subcategory": "fire-sprinkler-systems",
+    "brand": "",
+    "model": "",
+    "shortDescription": "SPRINKLER DROP (as listed by source).",
+    "description": "SPRINKLER DROP as listed by source (ptel.com.bd fire protection category). Confirm specifications, ratings, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/sprinkler-drop.png",
+    "availability": "inquiry-required",
+    "features": [
+      "SPRINKLER DROP"
+    ],
+    "applications": [
+      "Fire protection systems (project-specific)"
+    ],
+    "keywords": [
+      "sprinkler",
+      "drop"
+    ]
+  },
+  {
+    "id": "ptel-fm200",
+    "slug": "fm200",
+    "name": "FM200",
+    "category": "fire-protection-system",
+    "subcategory": "fire-suppression-systems",
+    "brand": "",
+    "model": "",
+    "shortDescription": "FM200 (as listed by source).",
+    "description": "FM200 as listed by source (ptel.com.bd fire protection category). Confirm specifications, ratings, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/fm200.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "FM200"
+    ],
+    "applications": [
+      "Fire protection systems (project-specific)"
+    ],
+    "keywords": [
+      "fm200"
+    ]
+  },
+  {
+    "id": "ptel-novec1230",
+    "slug": "novec1230",
+    "name": "NOVEC1230",
+    "category": "fire-protection-system",
+    "subcategory": "fire-suppression-systems",
+    "brand": "",
+    "model": "",
+    "shortDescription": "NOVEC1230 (as listed by source).",
+    "description": "NOVEC1230 as listed by source (ptel.com.bd fire protection category). Confirm specifications, ratings, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/novec1230.png",
+    "availability": "inquiry-required",
+    "features": [
+      "NOVEC1230"
+    ],
+    "applications": [
+      "Fire protection systems (project-specific)"
+    ],
+    "keywords": [
+      "novec1230"
+    ]
+  },
+  {
+    "id": "ptel-inert-gas",
+    "slug": "inert-gas",
+    "name": "INERT GAS",
+    "category": "fire-protection-system",
+    "subcategory": "fire-suppression-systems",
+    "brand": "",
+    "model": "",
+    "shortDescription": "INERT GAS (as listed by source).",
+    "description": "INERT GAS as listed by source (ptel.com.bd fire protection category). Confirm specifications, ratings, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/inert-gas.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "INERT GAS"
+    ],
+    "applications": [
+      "Fire protection systems (project-specific)"
+    ],
+    "keywords": [
+      "inert",
+      "gas"
+    ]
+  },
+  {
+    "id": "ptel-foam-suppression-system",
+    "slug": "foam-suppression-system",
+    "name": "FOAM SUPPRESSION SYSTEM",
+    "category": "fire-protection-system",
+    "subcategory": "fire-suppression-systems",
+    "brand": "",
+    "model": "",
+    "shortDescription": "FOAM SUPPRESSION SYSTEM (as listed by source).",
+    "description": "FOAM SUPPRESSION SYSTEM as listed by source (ptel.com.bd fire protection category). Confirm specifications, ratings, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/foam-suppression-system.png",
+    "availability": "inquiry-required",
+    "features": [
+      "FOAM SUPPRESSION SYSTEM"
+    ],
+    "applications": [
+      "Fire protection systems (project-specific)"
+    ],
+    "keywords": [
+      "foam",
+      "suppression",
+      "system"
+    ]
+  },
+  {
+    "id": "ptel-powder-based-ext",
+    "slug": "powder-based-ext",
+    "name": "POWDER BASED EXT.",
+    "category": "fire-protection-system",
+    "subcategory": "fire-extinguishers",
+    "brand": "",
+    "model": "",
+    "shortDescription": "POWDER BASED EXT. (as listed by source).",
+    "description": "POWDER BASED EXT. as listed by source (ptel.com.bd fire protection category). Confirm specifications, ratings, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/powder-based-ext.png",
+    "availability": "inquiry-required",
+    "features": [
+      "POWDER BASED EXT."
+    ],
+    "applications": [
+      "Fire protection systems (project-specific)"
+    ],
+    "keywords": [
+      "powder",
+      "based",
+      "ext"
+    ]
+  },
+  {
+    "id": "ptel-wet-chemical-fire-suppression",
+    "slug": "wet-chemical-fire-suppression",
+    "name": "WET CHEMICAL FIRE SUPPRESSION",
+    "category": "fire-protection-system",
+    "subcategory": "fire-suppression-systems",
+    "brand": "",
+    "model": "",
+    "shortDescription": "WET CHEMICAL FIRE SUPPRESSION (as listed by source).",
+    "description": "WET CHEMICAL FIRE SUPPRESSION as listed by source (ptel.com.bd fire protection category). Confirm specifications, ratings, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/wet-chemical-fire-suppression.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "WET CHEMICAL FIRE SUPPRESSION"
+    ],
+    "applications": [
+      "Fire protection systems (project-specific)"
+    ],
+    "keywords": [
+      "wet",
+      "chemical",
+      "fire",
+      "suppression"
+    ]
+  },
+  {
+    "id": "ptel-kf-56-upright-pendent-recessed-pendent",
+    "slug": "kf-56-upright-pendent-recessed-pendent",
+    "name": "KF 5.6 - UPRIGHT, PENDENT & RECESSED PENDENT",
+    "category": "fire-protection-system",
+    "subcategory": "fire-protection-valves",
+    "brand": "",
+    "model": "",
+    "shortDescription": "KF 5.6 - UPRIGHT, PENDENT & RECESSED PENDENT (as listed by source).",
+    "description": "KF 5.6 - UPRIGHT, PENDENT & RECESSED PENDENT as listed by source (ptel.com.bd fire protection category). Confirm specifications, ratings, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/kf-56-upright-pendent-recessed-pendent.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "KF 5.6 - UPRIGHT, PENDENT & RECESSED PENDENT"
+    ],
+    "applications": [
+      "Fire protection systems (project-specific)"
+    ],
+    "keywords": [
+      "kf",
+      "5",
+      "6",
+      "upright",
+      "pendent",
+      "recessed",
+      "pendent"
+    ]
+  },
+  {
+    "id": "ptel-kf-8-upright-pendent-recessed-pendent",
+    "slug": "kf-8-upright-pendent-recessed-pendent",
+    "name": "KF 8 - UPRIGHT, PENDENT & RECESSED PENDENT",
+    "category": "fire-protection-system",
+    "subcategory": "fire-protection-valves",
+    "brand": "",
+    "model": "",
+    "shortDescription": "KF 8 - UPRIGHT, PENDENT & RECESSED PENDENT (as listed by source).",
+    "description": "KF 8 - UPRIGHT, PENDENT & RECESSED PENDENT as listed by source (ptel.com.bd fire protection category). Confirm specifications, ratings, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/kf-8-upright-pendent-recessed-pendent.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "KF 8 - UPRIGHT, PENDENT & RECESSED PENDENT"
+    ],
+    "applications": [
+      "Fire protection systems (project-specific)"
+    ],
+    "keywords": [
+      "kf",
+      "8",
+      "upright",
+      "pendent",
+      "recessed",
+      "pendent"
+    ]
+  },
+  {
+    "id": "ptel-quick-response-sprinklers",
+    "slug": "quick-response-sprinklers",
+    "name": "QUICK RESPONSE SPRINKLERS",
+    "category": "fire-protection-system",
+    "subcategory": "fire-sprinkler-systems",
+    "brand": "",
+    "model": "",
+    "shortDescription": "QUICK RESPONSE SPRINKLERS (as listed by source).",
+    "description": "QUICK RESPONSE SPRINKLERS as listed by source (ptel.com.bd fire protection category). Confirm specifications, ratings, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/quick-response-sprinklers.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "QUICK RESPONSE SPRINKLERS"
+    ],
+    "applications": [
+      "Fire protection systems (project-specific)"
+    ],
+    "keywords": [
+      "quick",
+      "response",
+      "sprinklers"
+    ]
+  },
+  {
+    "id": "ptel-sidewall-sprinkler-kf-56",
+    "slug": "sidewall-sprinkler-kf-56",
+    "name": "SIDEWALL SPRINKLER (KF 5.6)",
+    "category": "fire-protection-system",
+    "subcategory": "fire-sprinkler-systems",
+    "brand": "",
+    "model": "",
+    "shortDescription": "SIDEWALL SPRINKLER (KF 5.6) (as listed by source).",
+    "description": "SIDEWALL SPRINKLER (KF 5.6) as listed by source (ptel.com.bd fire protection category). Confirm specifications, ratings, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/sidewall-sprinkler-kf-56.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "SIDEWALL SPRINKLER (KF 5.6)"
+    ],
+    "applications": [
+      "Fire protection systems (project-specific)"
+    ],
+    "keywords": [
+      "sidewall",
+      "sprinkler",
+      "kf",
+      "5",
+      "6"
+    ]
+  },
+  {
+    "id": "ptel-sidewall-sprinkler-kf-8",
+    "slug": "sidewall-sprinkler-kf-8",
+    "name": "SIDEWALL SPRINKLER (KF 8)",
+    "category": "fire-protection-system",
+    "subcategory": "fire-sprinkler-systems",
+    "brand": "",
+    "model": "",
+    "shortDescription": "SIDEWALL SPRINKLER (KF 8) (as listed by source).",
+    "description": "SIDEWALL SPRINKLER (KF 8) as listed by source (ptel.com.bd fire protection category). Confirm specifications, ratings, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/sidewall-sprinkler-kf-8.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "SIDEWALL SPRINKLER (KF 8)"
+    ],
+    "applications": [
+      "Fire protection systems (project-specific)"
+    ],
+    "keywords": [
+      "sidewall",
+      "sprinkler",
+      "kf",
+      "8"
+    ]
+  },
+  {
+    "id": "ptel-sidewall-sprinkler-extended-coverage",
+    "slug": "sidewall-sprinkler-extended-coverage",
+    "name": "SIDEWALL SPRINKLER EXTENDED COVERAGE",
+    "category": "fire-protection-system",
+    "subcategory": "fire-sprinkler-systems",
+    "brand": "",
+    "model": "",
+    "shortDescription": "SIDEWALL SPRINKLER EXTENDED COVERAGE (as listed by source).",
+    "description": "SIDEWALL SPRINKLER EXTENDED COVERAGE as listed by source (ptel.com.bd fire protection category). Confirm specifications, ratings, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/sidewall-sprinkler-extended-coverage.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "SIDEWALL SPRINKLER EXTENDED COVERAGE"
+    ],
+    "applications": [
+      "Fire protection systems (project-specific)"
+    ],
+    "keywords": [
+      "sidewall",
+      "sprinkler",
+      "extended",
+      "coverage"
+    ]
+  },
+  {
+    "id": "ptel-vertical-sidewall-sprinkler",
+    "slug": "vertical-sidewall-sprinkler",
+    "name": "VERTICAL SIDEWALL SPRINKLER",
+    "category": "fire-protection-system",
+    "subcategory": "fire-sprinkler-systems",
+    "brand": "",
+    "model": "",
+    "shortDescription": "VERTICAL SIDEWALL SPRINKLER (as listed by source).",
+    "description": "VERTICAL SIDEWALL SPRINKLER as listed by source (ptel.com.bd fire protection category). Confirm specifications, ratings, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/vertical-sidewall-sprinkler.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "VERTICAL SIDEWALL SPRINKLER"
+    ],
+    "applications": [
+      "Fire protection systems (project-specific)"
+    ],
+    "keywords": [
+      "vertical",
+      "sidewall",
+      "sprinkler"
+    ]
+  },
+  {
+    "id": "ptel-concealed-sprinkler",
+    "slug": "concealed-sprinkler",
+    "name": "CONCEALED SPRINKLER",
+    "category": "fire-protection-system",
+    "subcategory": "fire-sprinkler-systems",
+    "brand": "",
+    "model": "",
+    "shortDescription": "CONCEALED SPRINKLER (as listed by source).",
+    "description": "CONCEALED SPRINKLER as listed by source (ptel.com.bd fire protection category). Confirm specifications, ratings, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/concealed-sprinkler.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "CONCEALED SPRINKLER"
+    ],
+    "applications": [
+      "Fire protection systems (project-specific)"
+    ],
+    "keywords": [
+      "concealed",
+      "sprinkler"
+    ]
+  },
+  {
+    "id": "ptel-flat-spray-sprinkler",
+    "slug": "flat-spray-sprinkler",
+    "name": "FLAT SPRAY SPRINKLER",
+    "category": "fire-protection-system",
+    "subcategory": "fire-sprinkler-systems",
+    "brand": "",
+    "model": "",
+    "shortDescription": "FLAT SPRAY SPRINKLER (as listed by source).",
+    "description": "FLAT SPRAY SPRINKLER as listed by source (ptel.com.bd fire protection category). Confirm specifications, ratings, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/flat-spray-sprinkler.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "FLAT SPRAY SPRINKLER"
+    ],
+    "applications": [
+      "Fire protection systems (project-specific)"
+    ],
+    "keywords": [
+      "flat",
+      "spray",
+      "sprinkler"
+    ]
+  },
+  {
+    "id": "ptel-elo-spray-sprinkler",
+    "slug": "elo-spray-sprinkler",
+    "name": "ELO-SPRAY SPRINKLER",
+    "category": "fire-protection-system",
+    "subcategory": "fire-sprinkler-systems",
+    "brand": "",
+    "model": "SD-5160 / SD-5165 (as listed)",
+    "shortDescription": "ELO upright spray sprinkler, brass finish, K-160 (confirm temperature rating).",
+    "description": "ELO-SPRAY SPRINKLER as listed by source (PTEL). Source page shows ELO upright style, brass finish, K-factor 160, nominal thread size 3/4\" (20 mm), minimum operation pressure 7 PSI (48 kPa), and temperature ratings 68°C and 79°C for models SD-5160 / SD-5165. Confirm exact model, response, approvals, and project suitability. (Source: ptel.com.bd/product/elo-spray-sprinkler)",
+    "image": "https://ptel.com.bd/storage/product/elo-spray-sprinkler.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "ELO upright style (as listed by source)",
+      "Brass finish (as listed by source)",
+      "K-factor K-160 (as listed by source)",
+      "Standard response shown on source page — confirm listing details"
+    ],
+    "specifications": [
+      { "label": "Model", "value": "SD-5160, SD-5165 (as listed)" },
+      { "label": "Style", "value": "ELO Upright" },
+      { "label": "Finish", "value": "Brass" },
+      { "label": "K factor", "value": "K-160" },
+      { "label": "Temperature rating", "value": "68°C and 79°C (as listed)" },
+      { "label": "Nominal thread size", "value": "3/4\" NPT (20 mm)" },
+      { "label": "Min. operation pressure", "value": "7 PSI (48 kPa)" }
+    ],
+    "applications": [
+      "Fire sprinkler systems (project-specific)",
+      "Spray sprinkler applications — confirm coverage/listing per design"
+    ],
+    "keywords": [
+      "elo spray sprinkler",
+      "SD-5160",
+      "SD-5165",
+      "K160",
+      "upright sprinkler"
+    ]
+  },
+  {
+    "id": "ptel-elo-spray-sprinkler-k115",
+    "slug": "elo-spray-sprinkler-k115",
+    "name": "ELO-SPRAY SPRINKLER- K115",
+    "category": "fire-protection-system",
+    "subcategory": "fire-sprinkler-systems",
+    "brand": "",
+    "model": "SD-5115 / SD-5125, K-115 (as listed)",
+    "shortDescription": "ELO upright spray sprinkler, brass finish, K-115 (confirm temperature rating).",
+    "description": "ELO-SPRAY SPRINKLER K115 as listed by source (PTEL). Source page shows upright style, brass finish, K-factor 115, nominal thread size 1/2\" NPT (15 mm), minimum operation pressure 7 PSI (48 kPa), and temperature ratings 68°C and 79°C for models SD-5115 / SD-5125. Confirm exact model, response, approvals, and project suitability. (Source: ptel.com.bd/product/elo-spray-sprinkler-k115)",
+    "image": "https://ptel.com.bd/storage/product/elo-spray-sprinkler-k115.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Upright style (as listed by source)",
+      "Brass finish (as listed by source)",
+      "K-factor K-115 (as listed by source)",
+      "Standard response shown on source page — confirm listing details"
+    ],
+    "specifications": [
+      { "label": "Model", "value": "SD-5115, SD-5125 (as listed)" },
+      { "label": "Style", "value": "Upright" },
+      { "label": "Finish", "value": "Brass" },
+      { "label": "K factor", "value": "K-115" },
+      { "label": "Temperature rating", "value": "68°C and 79°C (as listed)" },
+      { "label": "Nominal thread size", "value": "1/2\" NPT (15 mm)" },
+      { "label": "Min. operation pressure", "value": "7 PSI (48 kPa)" }
+    ],
+    "applications": [
+      "Fire sprinkler systems (project-specific)",
+      "Spray sprinkler applications — confirm coverage/listing per design"
+    ],
+    "keywords": [
+      "elo spray sprinkler",
+      "K115",
+      "SD-5115",
+      "SD-5125",
+      "upright sprinkler"
+    ]
+  },
+  {
+    "id": "ptel-sprinkler-cover-plate-recessed",
+    "slug": "sprinkler-cover-plate-recessed",
+    "name": "SPRINKLER COVER PLATE RECESSED",
+    "category": "fire-protection-system",
+    "subcategory": "fire-sprinkler-systems",
+    "brand": "",
+    "model": "",
+    "shortDescription": "SPRINKLER COVER PLATE RECESSED (as listed by source).",
+    "description": "SPRINKLER COVER PLATE RECESSED as listed by source (ptel.com.bd fire protection category). Confirm specifications, ratings, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/sprinkler-cover-plate-recessed.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "SPRINKLER COVER PLATE RECESSED"
+    ],
+    "applications": [
+      "Fire protection systems (project-specific)"
+    ],
+    "keywords": [
+      "sprinkler",
+      "cover",
+      "plate",
+      "recessed"
+    ]
+  },
+  {
+    "id": "ptel-k-factor-112gxlo-series",
+    "slug": "k-factor-112gxlo-series",
+    "name": "K FACTOR 11.2(GXLO Series)",
+    "category": "fire-protection-system",
+    "subcategory": "fire-protection-valves",
+    "brand": "",
+    "model": "",
+    "shortDescription": "K FACTOR 11.2(GXLO Series) (as listed by source).",
+    "description": "K FACTOR 11.2(GXLO Series) as listed by source (ptel.com.bd fire protection category). Confirm specifications, ratings, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/k-factor-112gxlo-series.png",
+    "availability": "inquiry-required",
+    "features": [
+      "K FACTOR 11.2(GXLO Series)"
+    ],
+    "applications": [
+      "Fire protection systems (project-specific)"
+    ],
+    "keywords": [
+      "k",
+      "factor",
+      "11",
+      "2",
+      "gxlo",
+      "series"
+    ]
+  },
+  {
+    "id": "ptel-conventional-sprinkler",
+    "slug": "conventional-sprinkler",
+    "name": "CONVENTIONAL SPRINKLER",
+    "category": "fire-protection-system",
+    "subcategory": "fire-sprinkler-systems",
+    "brand": "",
+    "model": "",
+    "shortDescription": "CONVENTIONAL SPRINKLER (as listed by source).",
+    "description": "CONVENTIONAL SPRINKLER as listed by source (ptel.com.bd fire protection category). Confirm specifications, ratings, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/conventional-sprinkler.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "CONVENTIONAL SPRINKLER"
+    ],
+    "applications": [
+      "Fire protection systems (project-specific)"
+    ],
+    "keywords": [
+      "conventional",
+      "sprinkler"
+    ]
+  },
+  {
+    "id": "ptel-y-strainer",
+    "slug": "y-strainer",
+    "name": "Y-STRAINER",
+    "category": "fire-protection-system",
+    "subcategory": "fire-protection-valves",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Y-STRAINER (as listed by source).",
+    "description": "Y-STRAINER as listed by source (ptel.com.bd fire protection category). Confirm specifications, ratings, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/y-strainer.png",
+    "availability": "inquiry-required",
+    "features": [
+      "Y-STRAINER"
+    ],
+    "applications": [
+      "Fire protection systems (project-specific)"
+    ],
+    "keywords": [
+      "y",
+      "strainer"
+    ]
+  },
+  {
+    "id": "ptel-os-y-gate-valve",
+    "slug": "os-y-gate-valve",
+    "name": "OS & Y GATE VALVE",
+    "category": "fire-protection-system",
+    "subcategory": "fire-protection-valves",
+    "brand": "",
+    "model": "",
+    "shortDescription": "OS & Y GATE VALVE (as listed by source).",
+    "description": "OS & Y GATE VALVE as listed by source (ptel.com.bd fire protection category). Confirm specifications, ratings, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/os-y-gate-valve.png",
+    "availability": "inquiry-required",
+    "features": [
+      "OS & Y GATE VALVE"
+    ],
+    "applications": [
+      "Fire protection systems (project-specific)"
+    ],
+    "keywords": [
+      "os",
+      "y",
+      "gate",
+      "valve"
+    ]
+  },
+  {
+    "id": "ptel-check-valve-nrv",
+    "slug": "check-valve-nrv",
+    "name": "Check Valve (NRV)",
+    "category": "fire-protection-system",
+    "subcategory": "fire-protection-valves",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Check Valve (NRV) (as listed by source).",
+    "description": "Check Valve (NRV) as listed by source (ptel.com.bd fire protection category). Confirm specifications, ratings, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/check-valve-nrv.png",
+    "availability": "inquiry-required",
+    "features": [
+      "Check Valve (NRV)"
+    ],
+    "applications": [
+      "Fire protection systems (project-specific)"
+    ],
+    "keywords": [
+      "check",
+      "valve",
+      "nrv"
+    ]
+  },
+  {
+    "id": "ptel-flexible-rubber-expansion-joint",
+    "slug": "flexible-rubber-expansion-joint",
+    "name": "Flexible Rubber Expansion Joint",
+    "category": "fire-protection-system",
+    "subcategory": "fire-protection-valves",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Flexible Rubber Expansion Joint (as listed by source).",
+    "description": "Flexible Rubber Expansion Joint as listed by source (ptel.com.bd fire protection category). Confirm specifications, ratings, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/flexible-rubber-expansion-joint.png",
+    "availability": "inquiry-required",
+    "features": [
+      "Flexible Rubber Expansion Joint"
+    ],
+    "applications": [
+      "Fire protection systems (project-specific)"
+    ],
+    "keywords": [
+      "flexible",
+      "rubber",
+      "expansion",
+      "joint"
+    ]
+  },
+  {
+    "id": "ptel-waste-cone",
+    "slug": "waste-cone",
+    "name": "Waste Cone",
+    "category": "fire-protection-system",
+    "subcategory": "fire-protection-valves",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Waste Cone (as listed by source).",
+    "description": "Waste Cone as listed by source (ptel.com.bd fire protection category). Confirm specifications, ratings, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/waste-cone.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Waste Cone"
+    ],
+    "applications": [
+      "Fire protection systems (project-specific)"
+    ],
+    "keywords": [
+      "waste",
+      "cone"
+    ]
+  },
+  {
+    "id": "ptel-pressure-relief-valve",
+    "slug": "pressure-relief-valve",
+    "name": "Pressure Relief Valve",
+    "category": "fire-protection-system",
+    "subcategory": "fire-protection-valves",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Pressure Relief Valve (as listed by source).",
+    "description": "Pressure Relief Valve as listed by source (ptel.com.bd fire protection category). Confirm specifications, ratings, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/prv-pressure-relief-valve.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Pressure Relief Valve"
+    ],
+    "applications": [
+      "Fire protection systems (project-specific)"
+    ],
+    "keywords": [
+      "pressure",
+      "relief",
+      "valve"
+    ]
+  },
+  {
+    "id": "ptel-flow-meter",
+    "slug": "flow-meter",
+    "name": "Flow Meter",
+    "category": "fire-protection-system",
+    "subcategory": "fire-protection-valves",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Flow Meter (as listed by source).",
+    "description": "Flow Meter as listed by source (ptel.com.bd fire protection category). Confirm specifications, ratings, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/flow-meter.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Flow Meter"
+    ],
+    "applications": [
+      "Fire protection systems (project-specific)"
+    ],
+    "keywords": [
+      "flow",
+      "meter"
+    ]
+  },
+  {
+    "id": "ptel-tamper-supervisory-switch",
+    "slug": "tamper-supervisory-switch",
+    "name": "Tamper Supervisory Switch",
+    "category": "fire-protection-system",
+    "subcategory": "fire-protection-valves",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Tamper Supervisory Switch (as listed by source).",
+    "description": "Tamper Supervisory Switch as listed by source (ptel.com.bd fire protection category). Confirm specifications, ratings, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/tamper-supervisory-switch.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Tamper Supervisory Switch"
+    ],
+    "applications": [
+      "Fire protection systems (project-specific)"
+    ],
+    "keywords": [
+      "tamper",
+      "supervisory",
+      "switch"
+    ]
+  },
+  {
+    "id": "ptel-water-flow-switch",
+    "slug": "water-flow-switch",
+    "name": "Water Flow Switch",
+    "category": "fire-protection-system",
+    "subcategory": "fire-protection-valves",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Water Flow Switch (as listed by source).",
+    "description": "Water Flow Switch as listed by source (ptel.com.bd fire protection category). Confirm specifications, ratings, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/water-flow-switch.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Water Flow Switch"
+    ],
+    "applications": [
+      "Fire protection systems (project-specific)"
+    ],
+    "keywords": [
+      "water",
+      "flow",
+      "switch"
+    ]
+  },
+  {
+    "id": "ptel-zone-control-valve",
+    "slug": "zone-control-valve",
+    "name": "ZONE CONTROL VALVE",
+    "category": "fire-protection-system",
+    "subcategory": "fire-protection-valves",
+    "brand": "",
+    "model": "",
+    "shortDescription": "ZONE CONTROL VALVE (as listed by source).",
+    "description": "ZONE CONTROL VALVE as listed by source (ptel.com.bd fire protection category). Confirm specifications, ratings, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/zone-control-valve.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "ZONE CONTROL VALVE"
+    ],
+    "applications": [
+      "Fire protection systems (project-specific)"
+    ],
+    "keywords": [
+      "zone",
+      "control",
+      "valve"
+    ]
+  },
+  {
+    "id": "ptel-alarm-check-valve-assembly",
+    "slug": "alarm-check-valve-assembly",
+    "name": "ALARM CHECK VALVE ASSEMBLY",
+    "category": "fire-protection-system",
+    "subcategory": "fire-protection-valves",
+    "brand": "",
+    "model": "",
+    "shortDescription": "ALARM CHECK VALVE ASSEMBLY (as listed by source).",
+    "description": "ALARM CHECK VALVE ASSEMBLY as listed by source (ptel.com.bd fire protection category). Confirm specifications, ratings, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/alarm-check-valve-assembly.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "ALARM CHECK VALVE ASSEMBLY"
+    ],
+    "applications": [
+      "Fire protection systems (project-specific)"
+    ],
+    "keywords": [
+      "alarm",
+      "check",
+      "valve",
+      "assembly"
+    ]
+  },
+  {
+    "id": "ptel-pressure-gauge",
+    "slug": "pressure-gauge",
+    "name": "Pressure Gauge",
+    "category": "fire-protection-system",
+    "subcategory": "fire-protection-valves",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Pressure Gauge (as listed by source).",
+    "description": "Pressure Gauge as listed by source (ptel.com.bd fire protection category). Confirm specifications, ratings, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/pressure-gauge.png",
+    "availability": "inquiry-required",
+    "features": [
+      "Pressure Gauge"
+    ],
+    "applications": [
+      "Fire protection systems (project-specific)"
+    ],
+    "keywords": [
+      "pressure",
+      "gauge"
+    ]
+  },
+  {
+    "id": "ptel-auto-air-vent",
+    "slug": "auto-air-vent",
+    "name": "Auto Air Vent",
+    "category": "fire-protection-system",
+    "subcategory": "fire-protection-valves",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Auto Air Vent (as listed by source).",
+    "description": "Auto Air Vent as listed by source (ptel.com.bd fire protection category). Confirm specifications, ratings, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/auto-air-vent.png",
+    "availability": "inquiry-required",
+    "features": [
+      "Auto Air Vent"
+    ],
+    "applications": [
+      "Fire protection systems (project-specific)"
+    ],
+    "keywords": [
+      "auto",
+      "air",
+      "vent"
+    ]
+  },
+  {
+    "id": "ptel-ball-valve",
+    "slug": "ball-valve",
+    "name": "Ball Valve",
+    "category": "fire-protection-system",
+    "subcategory": "fire-protection-valves",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Ball Valve (as listed by source).",
+    "description": "Ball Valve as listed by source (ptel.com.bd fire protection category). Confirm specifications, ratings, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/ball-valve.png",
+    "availability": "inquiry-required",
+    "features": [
+      "Ball Valve"
+    ],
+    "applications": [
+      "Fire protection systems (project-specific)"
+    ],
+    "keywords": [
+      "ball",
+      "valve"
+    ]
+  },
+  {
+    "id": "ptel-landing-valve",
+    "slug": "landing-valve",
+    "name": "Landing Valve",
+    "category": "fire-protection-system",
+    "subcategory": "fire-hydrant-accessories",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Landing Valve (as listed by source).",
+    "description": "Landing Valve as listed by source (ptel.com.bd fire protection category). Confirm specifications, ratings, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/landing-valve.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Landing Valve"
+    ],
+    "applications": [
+      "Fire protection systems (project-specific)"
+    ],
+    "keywords": [
+      "landing",
+      "valve"
+    ]
+  },
+  {
+    "id": "ptel-hose-pipe-assembly",
+    "slug": "hose-pipe-assembly",
+    "name": "Hose Pipe Assembly",
+    "category": "fire-protection-system",
+    "subcategory": "fire-hydrant-accessories",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Hose Pipe Assembly (as listed by source).",
+    "description": "Hose Pipe Assembly as listed by source (ptel.com.bd fire protection category). Confirm specifications, ratings, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/hose-pipe-assembly-40-mm.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Hose Pipe Assembly"
+    ],
+    "applications": [
+      "Fire protection systems (project-specific)"
+    ],
+    "keywords": [
+      "hose",
+      "pipe",
+      "assembly"
+    ]
+  },
+  {
+    "id": "ptel-fire-hose-cabinet",
+    "slug": "fire-hose-cabinet",
+    "name": "Fire Hose Cabinet",
+    "category": "fire-protection-system",
+    "subcategory": "fire-hydrant-accessories",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Fire Hose Cabinet (as listed by source).",
+    "description": "Fire Hose Cabinet as listed by source (ptel.com.bd fire protection category). Confirm specifications, ratings, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/fire-hose-cabinet.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Fire Hose Cabinet"
+    ],
+    "applications": [
+      "Fire protection systems (project-specific)"
+    ],
+    "keywords": [
+      "fire",
+      "hose",
+      "cabinet"
+    ]
+  },
+  {
+    "id": "ptel-2-way-breaching-inlet-fire-brigade-connection",
+    "slug": "2-way-breaching-inlet-fire-brigade-connection",
+    "name": "2 WAY BREACHING INLET (FIRE BRIGADE CONNECTION)",
+    "category": "fire-protection-system",
+    "subcategory": "fire-hydrant-accessories",
+    "brand": "",
+    "model": "",
+    "shortDescription": "2 WAY BREACHING INLET (FIRE BRIGADE CONNECTION) (as listed by source).",
+    "description": "2 WAY BREACHING INLET (FIRE BRIGADE CONNECTION) as listed by source (ptel.com.bd fire protection category). Confirm specifications, ratings, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/2-way-breaching-inlet-fire-brigade-connection.png",
+    "availability": "inquiry-required",
+    "features": [
+      "2 WAY BREACHING INLET (FIRE BRIGADE CONNECTION)"
+    ],
+    "applications": [
+      "Fire protection systems (project-specific)"
+    ],
+    "keywords": [
+      "2",
+      "way",
+      "breaching",
+      "inlet",
+      "fire",
+      "brigade",
+      "connection"
+    ]
+  },
+  {
+    "id": "ptel-4-way-breaching-inlet",
+    "slug": "4-way-breaching-inlet",
+    "name": "4 WAY BREACHING INLET",
+    "category": "fire-protection-system",
+    "subcategory": "fire-hydrant-accessories",
+    "brand": "",
+    "model": "",
+    "shortDescription": "4 WAY BREACHING INLET (as listed by source).",
+    "description": "4 WAY BREACHING INLET as listed by source (ptel.com.bd fire protection category). Confirm specifications, ratings, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/4-way-breaching-inlet.png",
+    "availability": "inquiry-required",
+    "features": [
+      "4 WAY BREACHING INLET"
+    ],
+    "applications": [
+      "Fire protection systems (project-specific)"
+    ],
+    "keywords": [
+      "4",
+      "way",
+      "breaching",
+      "inlet"
+    ]
+  },
+  {
+    "id": "ptel-pillar-hydrant-wet-type",
+    "slug": "pillar-hydrant-wet-type",
+    "name": "PILLAR HYDRANT (WET TYPE)",
+    "category": "fire-protection-system",
+    "subcategory": "fire-hydrant-accessories",
+    "brand": "",
+    "model": "",
+    "shortDescription": "PILLAR HYDRANT (WET TYPE) (as listed by source).",
+    "description": "PILLAR HYDRANT (WET TYPE) as listed by source (ptel.com.bd fire protection category). Confirm specifications, ratings, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/pillar-hydrant-wet-type.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "PILLAR HYDRANT (WET TYPE)"
+    ],
+    "applications": [
+      "Fire protection systems (project-specific)"
+    ],
+    "keywords": [
+      "pillar",
+      "hydrant",
+      "wet",
+      "type"
+    ]
+  },
+  {
+    "id": "ptel-hose-pipe-assembly-65mm",
+    "slug": "hose-pipe-assembly-65mm",
+    "name": "HOSE PIPE ASSEMBLY (65MM)",
+    "category": "fire-protection-system",
+    "subcategory": "fire-hydrant-accessories",
+    "brand": "",
+    "model": "",
+    "shortDescription": "HOSE PIPE ASSEMBLY (65MM) (as listed by source).",
+    "description": "HOSE PIPE ASSEMBLY (65MM) as listed by source (ptel.com.bd fire protection category). Confirm specifications, ratings, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/hose-pipe-assembly-65mm.png",
+    "availability": "inquiry-required",
+    "features": [
+      "HOSE PIPE ASSEMBLY (65MM)"
+    ],
+    "applications": [
+      "Fire protection systems (project-specific)"
+    ],
+    "keywords": [
+      "hose",
+      "pipe",
+      "assembly",
+      "65mm"
+    ]
+  },
+  {
+    "id": "ptel-self-standing-hose-cabinet",
+    "slug": "self-standing-hose-cabinet",
+    "name": "SELF STANDING HOSE CABINET",
+    "category": "fire-protection-system",
+    "subcategory": "fire-hydrant-accessories",
+    "brand": "",
+    "model": "",
+    "shortDescription": "SELF STANDING HOSE CABINET (as listed by source).",
+    "description": "SELF STANDING HOSE CABINET as listed by source (ptel.com.bd fire protection category). Confirm specifications, ratings, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/self-standing-hose-cabinet.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "SELF STANDING HOSE CABINET"
+    ],
+    "applications": [
+      "Fire protection systems (project-specific)"
+    ],
+    "keywords": [
+      "self",
+      "standing",
+      "hose",
+      "cabinet"
+    ]
+  },
+  {
+    "id": "ptel-pressure-switch",
+    "slug": "pressure-switch",
+    "name": "PRESSURE SWITCH",
+    "category": "fire-protection-system",
+    "subcategory": "fire-protection-valves",
+    "brand": "",
+    "model": "",
+    "shortDescription": "PRESSURE SWITCH (as listed by source).",
+    "description": "PRESSURE SWITCH as listed by source (ptel.com.bd fire protection category). Confirm specifications, ratings, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/pressure-switch.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "PRESSURE SWITCH"
+    ],
+    "applications": [
+      "Fire protection systems (project-specific)"
+    ],
+    "keywords": [
+      "pressure",
+      "switch"
+    ]
+  },
+  {
+    "id": "ptel-diesel-engine",
+    "slug": "diesel-engine",
+    "name": "Diesel Engine",
+    "category": "fire-protection-system",
+    "subcategory": "fire-protection-valves",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Diesel Engine (as listed by source).",
+    "description": "Diesel Engine as listed by source (ptel.com.bd fire protection category). Confirm specifications, ratings, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/diesel-engine.png",
+    "availability": "inquiry-required",
+    "features": [
+      "Diesel Engine"
+    ],
+    "applications": [
+      "Fire protection systems (project-specific)"
+    ],
+    "keywords": [
+      "diesel",
+      "engine"
+    ]
+  },
+  {
+    "id": "ptel-electrical-motor",
+    "slug": "electrical-motor",
+    "name": "Electrical Motor",
+    "category": "fire-protection-system",
+    "subcategory": "fire-fighting-pumps",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Electrical motor for fire pump applications (confirm HP, voltage, and speed).",
+    "description": "Electrical Motor for fire pump applications as listed by source (PTEL). The source states reliable, NFPA-compliant fire pump motors with 50/60 Hz options, 1.15 service factor, 50°C ambient rating, IP55 protection, and UL file reference as shown on the source page. Confirm exact frame, output, voltage, speed, mounting, and certification for the pump package per project. (Source: ptel.com.bd/product/electrical-motor)",
+    "image": "https://ptel.com.bd/storage/product/electrical-motor.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "50 & 60 Hz (as listed by source)",
+      "1.15 service factor (as listed by source)",
+      "50°C ambient temperature rating (as listed by source)",
+      "IP55 degree of protection (as listed by source)",
+      "UL file reference shown on source page — confirm exact certification"
+    ],
+    "specifications": [
+      { "label": "Rated output (source range)", "value": "10 HP – 500 HP (as listed; confirm selection)" },
+      { "label": "Frequency", "value": "50 & 60 Hz (as listed)" },
+      { "label": "Example voltages", "value": "380–415 V (50 Hz) / 208–575 V options shown (60 Hz) — confirm per project" },
+      { "label": "Example speeds", "value": "2923–2980 RPM (50 Hz) & 3506–3575 RPM (60 Hz) shown for one range; 1460–1780 RPM range also shown — confirm" }
+    ],
+    "applications": [
+      "Fire pump motor drive (project-specific)",
+      "Industrial and commercial fire protection pump packages"
+    ],
+    "keywords": [
+      "electrical motor",
+      "fire pump motor",
+      "NFPA",
+      "IP55"
+    ]
+  },
+  {
+    "id": "ptel-diesel-fire-pump-controllers",
+    "slug": "diesel-fire-pump-controllers",
+    "name": "Diesel Fire Pump Controllers",
+    "category": "fire-protection-system",
+    "subcategory": "fire-fighting-pumps",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Diesel Fire Pump Controllers (as listed by source).",
+    "description": "Diesel Fire Pump Controllers as listed by source (ptel.com.bd fire protection category). Confirm specifications, ratings, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/diesel-fire-pump-controllers.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Diesel Fire Pump Controllers"
+    ],
+    "applications": [
+      "Fire protection systems (project-specific)"
+    ],
+    "keywords": [
+      "diesel",
+      "fire",
+      "pump",
+      "controllers"
+    ]
+  },
+  {
+    "id": "ptel-auto-air-vent-second",
+    "slug": "auto-air-vent-second",
+    "name": "AUTO AIR VENT Second",
+    "category": "fire-protection-system",
+    "subcategory": "fire-protection-valves",
+    "brand": "",
+    "model": "",
+    "shortDescription": "AUTO AIR VENT Second (as listed by source).",
+    "description": "AUTO AIR VENT Second as listed by source (ptel.com.bd fire protection category). Confirm specifications, ratings, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/auto-air-vent-second.png",
+    "availability": "inquiry-required",
+    "features": [
+      "AUTO AIR VENT Second"
+    ],
+    "applications": [
+      "Fire protection systems (project-specific)"
+    ],
+    "keywords": [
+      "auto",
+      "air",
+      "vent",
+      "second"
+    ]
+  },
+  {
+    "id": "ptel-electric-fire-pump-controllers",
+    "slug": "electric-fire-pump-controllers",
+    "name": "Electric Fire Pump Controllers",
+    "category": "fire-protection-system",
+    "subcategory": "fire-fighting-pumps",
+    "brand": "",
+    "model": "NFY-DOM1 (as listed)",
+    "shortDescription": "NFPA-compliant electric fire pump controllers (select by HP/voltage per project).",
+    "description": "Electric Fire Pump Controllers as listed by source (PTEL). The source states NFPA-compliant controllers for industrial and commercial fire safety systems and shows NFY-DOM1 Direct On Line ratings by motor power, voltage, frequency, and circuit rating. Confirm exact controller type, enclosure, approvals, and pump package requirements per project. (Source: ptel.com.bd/product/electric-fire-pump-controllers)",
+    "image": "https://ptel.com.bd/storage/product/electric-fire-pump-controllers.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "NFPA-compliant (as stated by source)",
+      "NFY-DOM1 Direct On Line type shown by source",
+      "Industrial and commercial fire safety application (as stated by source)"
+    ],
+    "specifications": [
+      { "label": "Source type", "value": "NFY-DOM1 - Direct On Line (as listed)" },
+      { "label": "Rated voltage", "value": "380–415 V (as listed)" },
+      { "label": "Frequency", "value": "50 / 60 Hz (as listed)" },
+      { "label": "Example ratings (source table)", "value": "15 HP / 27 A / 100 kA; 20 HP / 34 A / 100 kA; 25 HP / 44 A / 100 kA; 30 HP / 51 A / 100 kA; 40 HP / 66 A / 100 kA; 50 HP / 83 A / 100 kA; 75 HP / 128 A / 100 kA; 100 HP / 165 A / 100 kA — confirm exact selection" }
+    ],
+    "applications": [
+      "Electric fire pump control (project-specific)",
+      "Industrial and commercial fire protection systems"
+    ],
+    "keywords": [
+      "electric",
+      "fire pump",
+      "controller",
+      "NFPA",
+      "NFY-DOM1"
+    ]
+  },
+  {
+    "id": "ptel-jockey-pump-controllers",
+    "slug": "jockey-pump-controllers",
+    "name": "Jockey Pump Controllers",
+    "category": "fire-protection-system",
+    "subcategory": "fire-fighting-pumps",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Jockey Pump Controllers (as listed by source).",
+    "description": "Jockey Pump Controllers as listed by source (ptel.com.bd fire protection category). Confirm specifications, ratings, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/jockey-pump-controllers.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Jockey Pump Controllers"
+    ],
+    "applications": [
+      "Fire protection systems (project-specific)"
+    ],
+    "keywords": [
+      "jockey",
+      "pump",
+      "controllers"
+    ]
+  },
+  {
+    "id": "ptel-fuel-tank",
+    "slug": "fuel-tank",
+    "name": "FUEL TANK",
+    "category": "fire-protection-system",
+    "subcategory": "fire-fighting-pumps",
+    "brand": "",
+    "model": "",
+    "shortDescription": "FUEL TANK (as listed by source).",
+    "description": "FUEL TANK as listed by source (ptel.com.bd fire protection category). Confirm specifications, ratings, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/fuel-tank.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "FUEL TANK"
+    ],
+    "applications": [
+      "Fire protection systems (project-specific)"
+    ],
+    "keywords": [
+      "fuel",
+      "tank"
+    ]
+  },
+  {
+    "id": "ptel-pressure-reducing-valve",
+    "slug": "pressure-reducing-valve",
+    "name": "Pressure Reducing Valve",
+    "category": "fire-protection-system",
+    "subcategory": "fire-protection-valves",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Pressure Reducing Valve (as listed by source).",
+    "description": "Pressure Reducing Valve as listed by source (ptel.com.bd fire protection category). Confirm specifications, ratings, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/pressure-reducing-valve.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Pressure Reducing Valve"
+    ],
+    "applications": [
+      "Fire protection systems (project-specific)"
+    ],
+    "keywords": [
+      "pressure",
+      "reducing",
+      "valve"
+    ]
+  },
+  {
+    "id": "ptel-casing-relief-valve",
+    "slug": "casing-relief-valve",
+    "name": "Casing Relief Valve",
+    "category": "fire-protection-system",
+    "subcategory": "fire-fighting-pumps",
+    "brand": "",
+    "model": "",
+    "shortDescription": "Casing Relief Valve (as listed by source).",
+    "description": "Casing Relief Valve as listed by source (ptel.com.bd fire protection category). Confirm specifications, ratings, approvals, and suitability per project.",
+    "image": "https://ptel.com.bd/storage/product/casing-relief-valve.jpg",
+    "availability": "inquiry-required",
+    "features": [
+      "Casing Relief Valve"
+    ],
+    "applications": [
+      "Fire protection systems (project-specific)"
+    ],
+    "keywords": [
+      "casing",
+      "relief",
+      "valve"
+    ]
+  }
 ]
 
-/* ------------------------------------------------------------------ */
 /*  Helper functions                                                  */
 /* ------------------------------------------------------------------ */
 

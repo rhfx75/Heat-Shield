@@ -1,0 +1,17 @@
+{
+  "source": 13,
+  "generated480": 13,
+  "generated960": 13,
+  "missing": [],
+  "failed": [],
+  "trimDisabled": [
+    "/images/products/fire-protection/patterson-vef-200.webp",
+    "/images/products/fire-protection/tyco-tp-100.jpg",
+    "/images/products/fire-protection/naffco-fhe-6.jpg",
+    "/images/products/fire-protection/naffco-fce-2.jpg",
+    "/images/products/fire-protection/naffco-fce-5.webp",
+    "/images/products/fire-protection/3m-fm-200.webp",
+    "/images/products/fire-detection/hochiki-esp.jpg"
+  ],
+  "skipped": 0
+}

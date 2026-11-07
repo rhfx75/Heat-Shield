@@ -1,0 +1,117 @@
+id,name,field,oldValue,newValue,evidence,confidence,method,sourceRef,needsReview
+ptel-alpha-1000-shield,ALPHA 1000 (SHIELD),brand,,Shield,"brand ""SHIELD"" in name parens",high,name-brand,product.name,false
+ptel-alpha-5000-shield,ALPHA 5000 (SHIELD),brand,,Shield,"brand ""SHIELD"" in name parens",high,name-brand,product.name,false
+ptel-ms-pipe-shield,MS PIPE (SHIELD),brand,,Shield,"brand ""SHIELD"" in name parens",high,name-brand,product.name,false
+ptel-naffco-mm-hose-pipe-nozzle-ul-listed,NAFFCO 65mm Hose Pipe & Nozzle UL Listed,brand,,NAFFCO,"known brand ""NAFFCO"" as whole word in name",high,name-brand,product.name,false
+ptel-s-a-shield,S-A4011 (SHIELD),brand,,Shield,"brand ""SHIELD"" in name parens",high,name-brand,product.name,false
+ptel-s-a-shield-multi-detector,S-A4012 (SHIELD) Multi Detector,brand,,Shield,"known brand ""Shield"" as whole word in name",high,name-brand,product.name,false
+ptel-s-a-shield-heat-detectors,S-A4013 (SHIELD) Heat Detectors,brand,,Shield,"known brand ""Shield"" as whole word in name",high,name-brand,product.name,false
+ptel-s-a-shield-control-output-module,S-A4042 (SHIELD) Control Output Module,brand,,Shield,"known brand ""Shield"" as whole word in name",high,name-brand,product.name,false
+ptel-s-a4045-shield,S-A4045 (SHIELD),brand,,Shield,"brand ""SHIELD"" in name parens",high,name-brand,product.name,false
+ptel-s-a-shield-inputoutput-module,S-A4045 (SHIELD) Input/Output Module,brand,,Shield,"known brand ""Shield"" as whole word in name",high,name-brand,product.name,false
+ptel-s-a-shield-manual-call-point,S-A4061 (SHIELD) Manual Call Point,brand,,Shield,"known brand ""Shield"" as whole word in name",high,name-brand,product.name,false
+ptel-s-c-shield-sounder,S-C8055 (SHIELD) Sounder,brand,,Shield,"known brand ""Shield"" as whole word in name",high,name-brand,product.name,false
+ptel-shield-sounder-flasher,SHIELD Sounder & Flasher,brand,,Shield,"known brand ""Shield"" as whole word in name",high,name-brand,product.name,false
+ptel-shield-y-strainer-sd-ysff-d-sd-ysgg-d,SHIELD Y Strainer - SD-YS300FF-D / SD-YS300GG-D,brand,,Shield,"known brand ""Shield"" as whole word in name",high,name-brand,product.name,false
+ptel-2-way-breaching-inlet-fire-brigade-connection,2 WAY BREACHING INLET (FIRE BRIGADE CONNECTION),displayName,,2 Way Breaching Inlet (Fire Brigade Connection),ALL CAPS name -> displayName sentence case; acronyms/codes best-effort preserved (needs review),medium,name-brand,,true
+ptel-4-way-breaching-inlet,4 WAY BREACHING INLET,displayName,,4 Way Breaching Inlet,ALL CAPS name -> displayName sentence case; acronyms/codes best-effort preserved (needs review),medium,name-brand,,true
+ptel-l-pump-casing-relief-valve-ul-listed-fm-approved,55L-60 Pump Casing Relief Valve UL Listed & FM Approved,model,,55L-60,"single letters+digits token in name: ""55L-60""",medium,name-model,product.name,true
+nesbd-6x4-breeching-inlet-200,"6"" x 4-Way Breeching Inlet",model,,4-Way,"single letters+digits token in name: ""4-Way""",medium,name-model,product.name,true
+ptel-10-kg-abc-dry-powder-fire-extinguisher,ABC Dry Powder (10KG) Fire Extinguisher,model,,10KG,"single letters+digits token in name: ""10KG""",medium,name-model,product.name,true
+ptel-alarm-check-valve-assembly,ALARM CHECK VALVE ASSEMBLY,displayName,,Alarm Check Valve Assembly,ALL CAPS name -> displayName sentence case; acronyms/codes best-effort preserved (needs review),medium,name-brand,,true
+ptel-alpha-1000-shield,ALPHA 1000 (SHIELD),displayName,,Alpha 1000 (Shield),ALL CAPS name -> displayName sentence case; acronyms/codes best-effort preserved (needs review),medium,name-brand,,true
+ptel-alpha-5000-shield,ALPHA 5000 (SHIELD),displayName,,Alpha 5000 (Shield),ALL CAPS name -> displayName sentence case; acronyms/codes best-effort preserved (needs review),medium,name-brand,,true
+ptel-aura-sereis-control-panel,AURA SEREIS-CONTROL PANEL,displayName,,Aura Sereis-Control Panel,ALL CAPS name -> displayName sentence case; acronyms/codes best-effort preserved (needs review),medium,name-brand,,true
+ptel-aura-series-fire-protection-panels,AURA Series Fire Protection Panels,model,,Fire,"token after Model/Series in name: ""Fire""",medium,name-model,product.name,true
+ptel-battery-operatedoptical-smoke-detector,BATTERY OPERATED/OPTICAL SMOKE DETECTOR,displayName,,Battery Operated/Optical Smoke Detector,ALL CAPS name -> displayName sentence case; acronyms/codes best-effort preserved (needs review),medium,name-brand,,true
+ptel-beam-detector,BEAM DETECTOR,displayName,,Beam Detector,ALL CAPS name -> displayName sentence case; acronyms/codes best-effort preserved (needs review),medium,name-brand,,true
+ptel-chinese-brand,CHINESE BRAND,displayName,,Chinese Brand,ALL CAPS name -> displayName sentence case; acronyms/codes best-effort preserved (needs review),medium,name-brand,,true
+ptel-cla-val-pressure-relief-valve-model-b-kg-b-kg,Cla-Val Pressure Relief Valve - Model 50B-4KG1 & 2050B-4KG1,model,,50B-4KG1,"token after Model/Series in name: ""50B-4KG1""",medium,name-model,product.name,true
+ptel-concealed-sprinkler,CONCEALED SPRINKLER,displayName,,Concealed Sprinkler,ALL CAPS name -> displayName sentence case; acronyms/codes best-effort preserved (needs review),medium,name-brand,,true
+ptel-control-panel,CONTROL PANEL,displayName,,Control Panel,ALL CAPS name -> displayName sentence case; acronyms/codes best-effort preserved (needs review),medium,name-brand,,true
+ptel-conventional-sprinkler,CONVENTIONAL SPRINKLER,displayName,,Conventional Sprinkler,ALL CAPS name -> displayName sentence case; acronyms/codes best-effort preserved (needs review),medium,name-brand,,true
+ptel-digital-lhd-cable,DIGITAL LHD CABLE,displayName,,Digital Lhd Cable,ALL CAPS name -> displayName sentence case; acronyms/codes best-effort preserved (needs review),medium,name-brand,,true
+ptel-duct-detector,DUCT DETECTOR,displayName,,Duct Detector,ALL CAPS name -> displayName sentence case; acronyms/codes best-effort preserved (needs review),medium,name-brand,,true
+ptel-elo-spray-sprinkler,ELO-SPRAY SPRINKLER,displayName,,Elo-Spray Sprinkler,ALL CAPS name -> displayName sentence case; acronyms/codes best-effort preserved (needs review),medium,name-brand,,true
+ptel-elo-spray-sprinkler-k115,ELO-SPRAY SPRINKLER- K115,displayName,,Elo-Spray Sprinkler- K115,ALL CAPS name -> displayName sentence case; acronyms/codes best-effort preserved (needs review),medium,name-brand,,true
+ptel-extinguishing-control-panel,EXTINGUISHING CONTROL PANEL,displayName,,Extinguishing Control Panel,ALL CAPS name -> displayName sentence case; acronyms/codes best-effort preserved (needs review),medium,name-brand,,true
+ptel-fire-alarm-cable,FIRE ALARM CABLE,displayName,,Fire Alarm Cable,ALL CAPS name -> displayName sentence case; acronyms/codes best-effort preserved (needs review),medium,name-brand,,true
+ptel-flat-spray-sprinkler,FLAT SPRAY SPRINKLER,displayName,,Flat Spray Sprinkler,ALL CAPS name -> displayName sentence case; acronyms/codes best-effort preserved (needs review),medium,name-brand,,true
+ptel-flexible-expansion-joints,FLEXIBLE EXPANSION JOINTS,displayName,,Flexible Expansion Joints,ALL CAPS name -> displayName sentence case; acronyms/codes best-effort preserved (needs review),medium,name-brand,,true
+ptel-fm200,FM200,model,,FM200,"single letters+digits token in name: ""FM200""",medium,name-model,product.name,true
+ptel-foam-suppression-system,FOAM SUPPRESSION SYSTEM,displayName,,Foam Suppression System,ALL CAPS name -> displayName sentence case; acronyms/codes best-effort preserved (needs review),medium,name-brand,,true
+ptel-fuel-tank,FUEL TANK,displayName,,Fuel Tank,ALL CAPS name -> displayName sentence case; acronyms/codes best-effort preserved (needs review),medium,name-brand,,true
+ptel-grooved-fittings,GROOVED FITTINGS,displayName,,Grooved Fittings,ALL CAPS name -> displayName sentence case; acronyms/codes best-effort preserved (needs review),medium,name-brand,,true
+ptel-heat-detector,HEAT DETECTOR,displayName,,Heat Detector,ALL CAPS name -> displayName sentence case; acronyms/codes best-effort preserved (needs review),medium,name-brand,,true
+ptel-horn-with-strobe,HORN WITH STROBE,displayName,,Horn With Strobe,ALL CAPS name -> displayName sentence case; acronyms/codes best-effort preserved (needs review),medium,name-brand,,true
+ptel-horn-with-strobe-wall,HORN WITH STROBE(WALL),displayName,,Horn With Strobe(Wall),ALL CAPS name -> displayName sentence case; acronyms/codes best-effort preserved (needs review),medium,name-brand,,true
+ptel-hose-pipe-assembly-65mm,HOSE PIPE ASSEMBLY (65MM),displayName,,Hose Pipe Assembly (65mm),ALL CAPS name -> displayName sentence case; acronyms/codes best-effort preserved (needs review),medium,name-brand,,true
+ptel-hose-pipe-assembly-65mm,HOSE PIPE ASSEMBLY (65MM),model,,65MM,"single letters+digits token in name: ""65MM""",medium,name-model,product.name,true
+ptel-inert-gas,INERT GAS,displayName,,Inert Gas,ALL CAPS name -> displayName sentence case; acronyms/codes best-effort preserved (needs review),medium,name-brand,,true
+ptel-input-module,INPUT MODULE,displayName,,Input Module,ALL CAPS name -> displayName sentence case; acronyms/codes best-effort preserved (needs review),medium,name-brand,,true
+ptel-inputmodule,INPUT/MODULE,displayName,,Input/Module,ALL CAPS name -> displayName sentence case; acronyms/codes best-effort preserved (needs review),medium,name-brand,,true
+ptel-isolator-module,ISOLATOR MODULE,displayName,,Isolator Module,ALL CAPS name -> displayName sentence case; acronyms/codes best-effort preserved (needs review),medium,name-brand,,true
+ptel-kf-56-upright-pendent-recessed-pendent,"KF 5.6 - UPRIGHT, PENDENT & RECESSED PENDENT",displayName,,"Kf 5.6 - Upright, Pendent & Recessed Pendent",ALL CAPS name -> displayName sentence case; acronyms/codes best-effort preserved (needs review),medium,name-brand,,true
+ptel-kf-8-upright-pendent-recessed-pendent,"KF 8 - UPRIGHT, PENDENT & RECESSED PENDENT",displayName,,"Kf 8 - Upright, Pendent & Recessed Pendent",ALL CAPS name -> displayName sentence case; acronyms/codes best-effort preserved (needs review),medium,name-brand,,true
+ptel-lpcb-cfds,LPCB CFDS,displayName,,LPCB Cfds,ALL CAPS name -> displayName sentence case; acronyms/codes best-effort preserved (needs review),medium,name-brand,,true
+nesbd-ls-hmi-85,LS HMI,displayName,,Ls HMI,ALL CAPS name -> displayName sentence case; acronyms/codes best-effort preserved (needs review),medium,name-brand,,true
+nesbd-ls-plc-66,LS PLC,displayName,,Ls PLC,ALL CAPS name -> displayName sentence case; acronyms/codes best-effort preserved (needs review),medium,name-brand,,true
+ptel-manual-call-point,MANUAL CALL POINT,displayName,,Manual Call Point,ALL CAPS name -> displayName sentence case; acronyms/codes best-effort preserved (needs review),medium,name-brand,,true
+ptel-ms-pipe-shield,MS PIPE (SHIELD),displayName,,Ms Pipe (Shield),ALL CAPS name -> displayName sentence case; acronyms/codes best-effort preserved (needs review),medium,name-brand,,true
+ptel-multi-detector,MULTI DETECTOR,displayName,,Multi Detector,ALL CAPS name -> displayName sentence case; acronyms/codes best-effort preserved (needs review),medium,name-brand,,true
+ptel-naffco-mm-hose-pipe-nozzle-ul-listed,NAFFCO 65mm Hose Pipe & Nozzle UL Listed,model,,65mm,"single letters+digits token in name: ""65mm""",medium,name-model,product.name,true
+ptel-neo-series-fire-protection-panels,NEO Series Fire Protection Panels,model,,Fire,"token after Model/Series in name: ""Fire""",medium,name-model,product.name,true
+ptel-neo-series-control-panel,NEO SERIES-CONTROL PANEL,displayName,,Neo Series-Control Panel,ALL CAPS name -> displayName sentence case; acronyms/codes best-effort preserved (needs review),medium,name-brand,,true
+ptel-neo-series-control-panel,NEO SERIES-CONTROL PANEL,model,,CONTROL,"token after Model/Series in name: ""CONTROL""",medium,name-model,product.name,true
+nesbd-nfs-320e-142,NOTIFIER NFS-320E,displayName,,Notifier Nfs-320e,ALL CAPS name -> displayName sentence case; acronyms/codes best-effort preserved (needs review),medium,name-brand,,true
+nesbd-nfs2-640e-143,NOTIFIER NFS2-640E,displayName,,Notifier Nfs2-640e,ALL CAPS name -> displayName sentence case; acronyms/codes best-effort preserved (needs review),medium,name-brand,,true
+ptel-novec1230,NOVEC1230,displayName,,Novec1230,ALL CAPS name -> displayName sentence case; acronyms/codes best-effort preserved (needs review),medium,name-brand,,true
+ptel-novec1230,NOVEC1230,model,,NOVEC1230,"single letters+digits token in name: ""NOVEC1230""",medium,name-model,product.name,true
+ptel-omega-series-fire-protection-panels,OMEGA Series Fire Protection Panels,model,,Fire,"token after Model/Series in name: ""Fire""",medium,name-model,product.name,true
+ptel-omega-series-control-panel,OMEGA SERIES-CONTROL PANEL,displayName,,Omega Series-Control Panel,ALL CAPS name -> displayName sentence case; acronyms/codes best-effort preserved (needs review),medium,name-brand,,true
+ptel-omega-series-control-panel,OMEGA SERIES-CONTROL PANEL,model,,CONTROL,"token after Model/Series in name: ""CONTROL""",medium,name-model,product.name,true
+ptel-os-y-gate-valve,OS & Y GATE VALVE,displayName,,Os & Y Gate Valve,ALL CAPS name -> displayName sentence case; acronyms/codes best-effort preserved (needs review),medium,name-brand,,true
+ptel-output-module,OUTPUT MODULE,displayName,,Output Module,ALL CAPS name -> displayName sentence case; acronyms/codes best-effort preserved (needs review),medium,name-brand,,true
+ptel-pillar-hydrant-wet-type,PILLAR HYDRANT (WET TYPE),displayName,,Pillar Hydrant (Wet Type),ALL CAPS name -> displayName sentence case; acronyms/codes best-effort preserved (needs review),medium,name-brand,,true
+ptel-pipe-support-accessories,PIPE SUPPORT & ACCESSORIES,displayName,,Pipe Support & Accessories,ALL CAPS name -> displayName sentence case; acronyms/codes best-effort preserved (needs review),medium,name-brand,,true
+ptel-powder-based-ext,POWDER BASED EXT.,displayName,,Powder Based Ext.,ALL CAPS name -> displayName sentence case; acronyms/codes best-effort preserved (needs review),medium,name-brand,,true
+ptel-pressure-switch,PRESSURE SWITCH,displayName,,Pressure Switch,ALL CAPS name -> displayName sentence case; acronyms/codes best-effort preserved (needs review),medium,name-brand,,true
+ptel-quick-response-sprinklers,QUICK RESPONSE SPRINKLERS,displayName,,Quick Response Sprinklers,ALL CAPS name -> displayName sentence case; acronyms/codes best-effort preserved (needs review),medium,name-brand,,true
+ptel-repeater-panel,REPEATER PANEL,displayName,,Repeater Panel,ALL CAPS name -> displayName sentence case; acronyms/codes best-effort preserved (needs review),medium,name-brand,,true
+ptel-s-a-shield,S-A4011 (SHIELD),displayName,,S-A4011 (Shield),ALL CAPS name -> displayName sentence case; acronyms/codes best-effort preserved (needs review),medium,name-brand,,true
+ptel-s-a-shield,S-A4011 (SHIELD),model,,S-A4011,"single letters+digits token in name: ""S-A4011""",medium,name-model,product.name,true
+ptel-s-a-shield-multi-detector,S-A4012 (SHIELD) Multi Detector,model,,S-A4012,"single letters+digits token in name: ""S-A4012""",medium,name-model,product.name,true
+ptel-s-a-shield-heat-detectors,S-A4013 (SHIELD) Heat Detectors,model,,S-A4013,"single letters+digits token in name: ""S-A4013""",medium,name-model,product.name,true
+ptel-s-a-shield-control-output-module,S-A4042 (SHIELD) Control Output Module,model,,S-A4042,"single letters+digits token in name: ""S-A4042""",medium,name-model,product.name,true
+ptel-s-a4045-shield,S-A4045 (SHIELD),displayName,,S-A4045 (Shield),ALL CAPS name -> displayName sentence case; acronyms/codes best-effort preserved (needs review),medium,name-brand,,true
+ptel-s-a4045-shield,S-A4045 (SHIELD),model,,S-A4045,"single letters+digits token in name: ""S-A4045""",medium,name-model,product.name,true
+ptel-s-a-shield-inputoutput-module,S-A4045 (SHIELD) Input/Output Module,model,,S-A4045,"single letters+digits token in name: ""S-A4045""",medium,name-model,product.name,true
+ptel-s-a-shield-manual-call-point,S-A4061 (SHIELD) Manual Call Point,model,,S-A4061,"single letters+digits token in name: ""S-A4061""",medium,name-model,product.name,true
+ptel-s-c-shield-sounder,S-C8055 (SHIELD) Sounder,model,,S-C8055,"single letters+digits token in name: ""S-C8055""",medium,name-model,product.name,true
+ptel-self-standing-hose-cabinet,SELF STANDING HOSE CABINET,displayName,,Self Standing Hose Cabinet,ALL CAPS name -> displayName sentence case; acronyms/codes best-effort preserved (needs review),medium,name-brand,,true
+ptel-sidewall-sprinkler-kf-56,SIDEWALL SPRINKLER (KF 5.6),displayName,,Sidewall Sprinkler (Kf 5.6),ALL CAPS name -> displayName sentence case; acronyms/codes best-effort preserved (needs review),medium,name-brand,,true
+ptel-sidewall-sprinkler-kf-8,SIDEWALL SPRINKLER (KF 8),displayName,,Sidewall Sprinkler (Kf 8),ALL CAPS name -> displayName sentence case; acronyms/codes best-effort preserved (needs review),medium,name-brand,,true
+ptel-sidewall-sprinkler-extended-coverage,SIDEWALL SPRINKLER EXTENDED COVERAGE,displayName,,Sidewall Sprinkler Extended Coverage,ALL CAPS name -> displayName sentence case; acronyms/codes best-effort preserved (needs review),medium,name-brand,,true
+ptel-simplex,Simplex-4090-9002,model,,Simplex-4090-9002,"single letters+digits token in name: ""Simplex-4090-9002""",medium,name-model,product.name,true
+ptel-simplex-4090-9002-simplex,Simplex-4090-9002 (SIMPLEX),model,,Simplex-4090-9002,"single letters+digits token in name: ""Simplex-4090-9002""",medium,name-model,product.name,true
+ptel-smoke-detector,SMOKE DETECTOR,displayName,,Smoke Detector,ALL CAPS name -> displayName sentence case; acronyms/codes best-effort preserved (needs review),medium,name-brand,,true
+ptel-sounder,SOUNDER,displayName,,Sounder,ALL CAPS name -> displayName sentence case; acronyms/codes best-effort preserved (needs review),medium,name-brand,,true
+ptel-sounder-simplex,SOUNDER (SIMPLEX),displayName,,Sounder (Simplex),ALL CAPS name -> displayName sentence case; acronyms/codes best-effort preserved (needs review),medium,name-brand,,true
+ptel-sprinkler-cover-plate-recessed,SPRINKLER COVER PLATE RECESSED,displayName,,Sprinkler Cover Plate Recessed,ALL CAPS name -> displayName sentence case; acronyms/codes best-effort preserved (needs review),medium,name-brand,,true
+ptel-sprinkler-drop,SPRINKLER DROP,displayName,,Sprinkler Drop,ALL CAPS name -> displayName sentence case; acronyms/codes best-effort preserved (needs review),medium,name-brand,,true
+ptel-threaded-fittings,THREADED FITTINGS,displayName,,Threaded Fittings,ALL CAPS name -> displayName sentence case; acronyms/codes best-effort preserved (needs review),medium,name-brand,,true
+ptel-tr-heat-ror-w-triga,TR-HEAT-ROR-W - TRIGA,displayName,,TR-Heat-Ror-W - Triga,ALL CAPS name -> displayName sentence case; acronyms/codes best-effort preserved (needs review),medium,name-brand,,true
+ptel-tr-hrl-triga,TR-HRL-TRIGA,displayName,,TR-Hrl-Triga,ALL CAPS name -> displayName sentence case; acronyms/codes best-effort preserved (needs review),medium,name-brand,,true
+ptel-tr-monitor-triga,TR-MONITOR-TRIGA,displayName,,TR-Monitor-Triga,ALL CAPS name -> displayName sentence case; acronyms/codes best-effort preserved (needs review),medium,name-brand,,true
+ptel-tr-prl-triga-sounder-with-flasher,TR-P2RL - TRIGA SOUNDER WITH FLASHER,displayName,,TR-P2rl - Triga Sounder With Flasher,ALL CAPS name -> displayName sentence case; acronyms/codes best-effort preserved (needs review),medium,name-brand,,true
+ptel-tr-prl-triga-sounder-with-flasher,TR-P2RL - TRIGA SOUNDER WITH FLASHER,model,,TR-P2RL,"single letters+digits token in name: ""TR-P2RL""",medium,name-model,product.name,true
+ptel-tr-photo-t-w-triga-triga,TR-PHOTO-T-W - TRIGA (TRIGA),displayName,,TR-Photo-T-W - Triga (Triga),ALL CAPS name -> displayName sentence case; acronyms/codes best-effort preserved (needs review),medium,name-brand,,true
+ptel-tr-photo-w-triga,TR-PHOTO-W-TRIGA,displayName,,TR-Photo-W-Triga,ALL CAPS name -> displayName sentence case; acronyms/codes best-effort preserved (needs review),medium,name-brand,,true
+ptel-tr-pull-sa-triga-triga,TR-PULL-SA-TRIGA (TRIGA),displayName,,TR-Pull-SA-Triga (Triga),ALL CAPS name -> displayName sentence case; acronyms/codes best-effort preserved (needs review),medium,name-brand,,true
+ptel-tr-relay-triga,TR-RELAY-TRIGA,displayName,,TR-Relay-Triga,ALL CAPS name -> displayName sentence case; acronyms/codes best-effort preserved (needs review),medium,name-brand,,true
+ptel-vertical-sidewall-sprinkler,VERTICAL SIDEWALL SPRINKLER,displayName,,Vertical Sidewall Sprinkler,ALL CAPS name -> displayName sentence case; acronyms/codes best-effort preserved (needs review),medium,name-brand,,true
+ptel-wall-mounted-outdoor-triga,WALL MOUNTED-OUTDOOR (TRIGA),displayName,,Wall Mounted-Outdoor (Triga),ALL CAPS name -> displayName sentence case; acronyms/codes best-effort preserved (needs review),medium,name-brand,,true
+ptel-welded-fittings-flanges,WELDED FITTINGS & FLANGES,displayName,,Welded Fittings & Flanges,ALL CAPS name -> displayName sentence case; acronyms/codes best-effort preserved (needs review),medium,name-brand,,true
+ptel-wet-chemical-fire-suppression,WET CHEMICAL FIRE SUPPRESSION,displayName,,Wet Chemical Fire Suppression,ALL CAPS name -> displayName sentence case; acronyms/codes best-effort preserved (needs review),medium,name-brand,,true
+ptel-y-strainer,Y-STRAINER,displayName,,Y-Strainer,ALL CAPS name -> displayName sentence case; acronyms/codes best-effort preserved (needs review),medium,name-brand,,true
+ptel-zone-control-valve,ZONE CONTROL VALVE,displayName,,Zone Control Valve,ALL CAPS name -> displayName sentence case; acronyms/codes best-effort preserved (needs review),medium,name-brand,,true
