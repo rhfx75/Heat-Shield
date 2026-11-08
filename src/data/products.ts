@@ -1,4 +1,4 @@
-import {
+﻿import {
   ShieldCheck,
   ShowerHead,
   Droplets,
@@ -53,6 +53,7 @@ export interface ProductDocument {
 }
 
 export interface Product {
+  dataSource?: string
   id: string
   slug: string
   name: string
@@ -2627,18 +2628,18 @@ export const products: Product[] = [
   {
     "id": "nesbd-crown-xavier-235",
     "slug": "crown-xavier-15kw-3kw",
-    "name": "Crown Xavier 1.5KW – 3KW",
+    "name": "Crown Xavier 1.5KW â€“ 3KW",
     "category": "electrical-system",
     "subcategory": "solar-equipment",
     "brand": "Crown",
-    "model": "Xavier 1.5KW–3KW",
-    "shortDescription": "Crown Xavier 1.5KW–3KW solar/inverter equipment (as listed).",
-    "description": "Crown Xavier 1.5KW–3KW as listed by source. Confirm exact model, capacity, and application per project. (Source: nesbd.com)",
+    "model": "Xavier 1.5KWâ€“3KW",
+    "shortDescription": "Crown Xavier 1.5KWâ€“3KW solar/inverter equipment (as listed).",
+    "description": "Crown Xavier 1.5KWâ€“3KW as listed by source. Confirm exact model, capacity, and application per project. (Source: nesbd.com)",
     "image": "https://www.nesbd.com/images/products/crown_xavier_15kw_3kw_7762fc81070bdff2b91884d313b2430e.jpg",
     "availability": "inquiry-required",
     "features": [
       "Crown Xavier series (as listed)",
-      "1.5KW–3KW range (as listed)"
+      "1.5KWâ€“3KW range (as listed)"
     ],
     "applications": [
       "Solar/power systems (project-specific)"
@@ -6261,9 +6262,9 @@ export const products: Product[] = [
       "Electric motor drive or diesel engine drive options (as listed)"
     ],
     "specifications": [
-      { "label": "Flow rate (source range)", "value": "50 – 2500 US GPM** (as listed; confirm duty point)" },
-      { "label": "Pressure ratings (source range)", "value": "3.4 – 15.4 BAR** (as listed; confirm)" },
-      { "label": "Speed ratings (source range)", "value": "2900 – 3550 RPM** (as listed; confirm)" }
+      { "label": "Flow rate (source range)", "value": "50 â€“ 2500 US GPM** (as listed; confirm duty point)" },
+      { "label": "Pressure ratings (source range)", "value": "3.4 â€“ 15.4 BAR** (as listed; confirm)" },
+      { "label": "Speed ratings (source range)", "value": "2900 â€“ 3550 RPM** (as listed; confirm)" }
     ],
     "applications": [
       "Fire pump systems (project-specific)",
@@ -6841,27 +6842,27 @@ export const products: Product[] = [
     "brand": "",
     "model": "SD-5160 / SD-5165 (as listed)",
     "shortDescription": "ELO upright spray sprinkler, brass finish, K-160 (confirm temperature rating).",
-    "description": "ELO-SPRAY SPRINKLER as listed by source (PTEL). Source page shows ELO upright style, brass finish, K-factor 160, nominal thread size 3/4\" (20 mm), minimum operation pressure 7 PSI (48 kPa), and temperature ratings 68°C and 79°C for models SD-5160 / SD-5165. Confirm exact model, response, approvals, and project suitability. (Source: ptel.com.bd/product/elo-spray-sprinkler)",
+    "description": "ELO-SPRAY SPRINKLER as listed by source (PTEL). Source page shows ELO upright style, brass finish, K-factor 160, nominal thread size 3/4\" (20 mm), minimum operation pressure 7 PSI (48 kPa), and temperature ratings 68Â°C and 79Â°C for models SD-5160 / SD-5165. Confirm exact model, response, approvals, and project suitability. (Source: ptel.com.bd/product/elo-spray-sprinkler)",
     "image": "https://ptel.com.bd/storage/product/elo-spray-sprinkler.jpg",
     "availability": "inquiry-required",
     "features": [
       "ELO upright style (as listed by source)",
       "Brass finish (as listed by source)",
       "K-factor K-160 (as listed by source)",
-      "Standard response shown on source page — confirm listing details"
+      "Standard response shown on source page â€” confirm listing details"
     ],
     "specifications": [
       { "label": "Model", "value": "SD-5160, SD-5165 (as listed)" },
       { "label": "Style", "value": "ELO Upright" },
       { "label": "Finish", "value": "Brass" },
       { "label": "K factor", "value": "K-160" },
-      { "label": "Temperature rating", "value": "68°C and 79°C (as listed)" },
+      { "label": "Temperature rating", "value": "68Â°C and 79Â°C (as listed)" },
       { "label": "Nominal thread size", "value": "3/4\" NPT (20 mm)" },
       { "label": "Min. operation pressure", "value": "7 PSI (48 kPa)" }
     ],
     "applications": [
       "Fire sprinkler systems (project-specific)",
-      "Spray sprinkler applications — confirm coverage/listing per design"
+      "Spray sprinkler applications â€” confirm coverage/listing per design"
     ],
     "keywords": [
       "elo spray sprinkler",
@@ -6880,27 +6881,27 @@ export const products: Product[] = [
     "brand": "",
     "model": "SD-5115 / SD-5125, K-115 (as listed)",
     "shortDescription": "ELO upright spray sprinkler, brass finish, K-115 (confirm temperature rating).",
-    "description": "ELO-SPRAY SPRINKLER K115 as listed by source (PTEL). Source page shows upright style, brass finish, K-factor 115, nominal thread size 1/2\" NPT (15 mm), minimum operation pressure 7 PSI (48 kPa), and temperature ratings 68°C and 79°C for models SD-5115 / SD-5125. Confirm exact model, response, approvals, and project suitability. (Source: ptel.com.bd/product/elo-spray-sprinkler-k115)",
+    "description": "ELO-SPRAY SPRINKLER K115 as listed by source (PTEL). Source page shows upright style, brass finish, K-factor 115, nominal thread size 1/2\" NPT (15 mm), minimum operation pressure 7 PSI (48 kPa), and temperature ratings 68Â°C and 79Â°C for models SD-5115 / SD-5125. Confirm exact model, response, approvals, and project suitability. (Source: ptel.com.bd/product/elo-spray-sprinkler-k115)",
     "image": "https://ptel.com.bd/storage/product/elo-spray-sprinkler-k115.jpg",
     "availability": "inquiry-required",
     "features": [
       "Upright style (as listed by source)",
       "Brass finish (as listed by source)",
       "K-factor K-115 (as listed by source)",
-      "Standard response shown on source page — confirm listing details"
+      "Standard response shown on source page â€” confirm listing details"
     ],
     "specifications": [
       { "label": "Model", "value": "SD-5115, SD-5125 (as listed)" },
       { "label": "Style", "value": "Upright" },
       { "label": "Finish", "value": "Brass" },
       { "label": "K factor", "value": "K-115" },
-      { "label": "Temperature rating", "value": "68°C and 79°C (as listed)" },
+      { "label": "Temperature rating", "value": "68Â°C and 79Â°C (as listed)" },
       { "label": "Nominal thread size", "value": "1/2\" NPT (15 mm)" },
       { "label": "Min. operation pressure", "value": "7 PSI (48 kPa)" }
     ],
     "applications": [
       "Fire sprinkler systems (project-specific)",
-      "Spray sprinkler applications — confirm coverage/listing per design"
+      "Spray sprinkler applications â€” confirm coverage/listing per design"
     ],
     "keywords": [
       "elo spray sprinkler",
@@ -7573,21 +7574,21 @@ export const products: Product[] = [
     "brand": "",
     "model": "",
     "shortDescription": "Electrical motor for fire pump applications (confirm HP, voltage, and speed).",
-    "description": "Electrical Motor for fire pump applications as listed by source (PTEL). The source states reliable, NFPA-compliant fire pump motors with 50/60 Hz options, 1.15 service factor, 50°C ambient rating, IP55 protection, and UL file reference as shown on the source page. Confirm exact frame, output, voltage, speed, mounting, and certification for the pump package per project. (Source: ptel.com.bd/product/electrical-motor)",
+    "description": "Electrical Motor for fire pump applications as listed by source (PTEL). The source states reliable, NFPA-compliant fire pump motors with 50/60 Hz options, 1.15 service factor, 50Â°C ambient rating, IP55 protection, and UL file reference as shown on the source page. Confirm exact frame, output, voltage, speed, mounting, and certification for the pump package per project. (Source: ptel.com.bd/product/electrical-motor)",
     "image": "https://ptel.com.bd/storage/product/electrical-motor.jpg",
     "availability": "inquiry-required",
     "features": [
       "50 & 60 Hz (as listed by source)",
       "1.15 service factor (as listed by source)",
-      "50°C ambient temperature rating (as listed by source)",
+      "50Â°C ambient temperature rating (as listed by source)",
       "IP55 degree of protection (as listed by source)",
-      "UL file reference shown on source page — confirm exact certification"
+      "UL file reference shown on source page â€” confirm exact certification"
     ],
     "specifications": [
-      { "label": "Rated output (source range)", "value": "10 HP – 500 HP (as listed; confirm selection)" },
+      { "label": "Rated output (source range)", "value": "10 HP â€“ 500 HP (as listed; confirm selection)" },
       { "label": "Frequency", "value": "50 & 60 Hz (as listed)" },
-      { "label": "Example voltages", "value": "380–415 V (50 Hz) / 208–575 V options shown (60 Hz) — confirm per project" },
-      { "label": "Example speeds", "value": "2923–2980 RPM (50 Hz) & 3506–3575 RPM (60 Hz) shown for one range; 1460–1780 RPM range also shown — confirm" }
+      { "label": "Example voltages", "value": "380â€“415 V (50 Hz) / 208â€“575 V options shown (60 Hz) â€” confirm per project" },
+      { "label": "Example speeds", "value": "2923â€“2980 RPM (50 Hz) & 3506â€“3575 RPM (60 Hz) shown for one range; 1460â€“1780 RPM range also shown â€” confirm" }
     ],
     "applications": [
       "Fire pump motor drive (project-specific)",
@@ -7669,9 +7670,9 @@ export const products: Product[] = [
     ],
     "specifications": [
       { "label": "Source type", "value": "NFY-DOM1 - Direct On Line (as listed)" },
-      { "label": "Rated voltage", "value": "380–415 V (as listed)" },
+      { "label": "Rated voltage", "value": "380â€“415 V (as listed)" },
       { "label": "Frequency", "value": "50 / 60 Hz (as listed)" },
-      { "label": "Example ratings (source table)", "value": "15 HP / 27 A / 100 kA; 20 HP / 34 A / 100 kA; 25 HP / 44 A / 100 kA; 30 HP / 51 A / 100 kA; 40 HP / 66 A / 100 kA; 50 HP / 83 A / 100 kA; 75 HP / 128 A / 100 kA; 100 HP / 165 A / 100 kA — confirm exact selection" }
+      { "label": "Example ratings (source table)", "value": "15 HP / 27 A / 100 kA; 20 HP / 34 A / 100 kA; 25 HP / 44 A / 100 kA; 30 HP / 51 A / 100 kA; 40 HP / 66 A / 100 kA; 50 HP / 83 A / 100 kA; 75 HP / 128 A / 100 kA; 100 HP / 165 A / 100 kA â€” confirm exact selection" }
     ],
     "applications": [
       "Electric fire pump control (project-specific)",
@@ -9349,3 +9350,4 @@ export function productImageOriginal(product: Pick<Product, 'image'> | { image?:
   if (s.startsWith('data:') || s.startsWith('blob:') || /^https?:\/\//i.test(s)) return s;
   return s.startsWith('/') ? s : `/${s}`;
 }
+
