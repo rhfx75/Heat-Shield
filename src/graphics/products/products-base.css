@@ -126,10 +126,16 @@
 .hse-pr-empty p,.hse-pr-loading p{color:var(--pr-mute);margin:8px auto 0;max-width:56ch}
 .hse-pr-empty-actions{margin-top:14px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
 .hse-pr-more{display:flex;justify-content:center;margin-top:20px}
-.hse-pr-modal-back{position:fixed;inset:0;z-index:90;background:rgba(1,28,70,.46);padding:16px;overflow:auto}
-.hse-pr-modal{max-width:720px;margin:clamp(8px,3vh,24px) auto;background:var(--pr-surface);border-radius:var(--pr-r-lg);padding:18px;color:var(--pr-ink);border:1px solid var(--pr-line);box-shadow:var(--pr-shadow-lg)}
-.hse-pr-modal-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:10px}
+.hse-pr-modal-back{position:fixed;inset:0;z-index:90;background:rgba(1,28,70,.46);padding:16px;overflow:auto;overscroll-behavior:contain}
+.hse-pr-modal{max-width:720px;margin:clamp(8px,3vh,24px) auto;background:var(--pr-surface);border-radius:var(--pr-r-lg);padding:18px;color:var(--pr-ink);border:1px solid var(--pr-line);box-shadow:var(--pr-shadow-lg);max-height:calc(100dvh - 32px);overflow:auto}
+.hse-pr-modal-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:10px;position:sticky;top:-18px;background:var(--pr-surface);padding:4px 0 10px;z-index:1}
 .hse-pr-modal h2{font:700 1.2rem/1.2 Montserrat,sans-serif;color:var(--pr-blue)}
+@media (max-width:640px){
+  .hse-pr-modal-back{padding:0}
+  .hse-pr-modal{max-width:none;margin:0;min-height:100dvh;max-height:none;border-radius:0;padding:16px 16px calc(20px + env(safe-area-inset-bottom,0px))}
+  .hse-pr-modal-head{top:-16px}
+  .inquiry-grid{grid-template-columns:1fr !important}
+}
 .hse-pr-drawer-back{position:fixed;inset:0;z-index:80;background:rgba(1,28,70,.42);opacity:0;pointer-events:none;transition:opacity .18s ease}
 .hse-pr-drawer-back.is-open{opacity:1;pointer-events:auto}
 .hse-pr-drawer{position:fixed;inset:0 0 0 auto;z-index:81;width:min(92vw,380px);max-width:100%;background:#fff;border-left:1px solid var(--pr-line);box-shadow:-18px 0 40px rgba(10,30,63,.16);transform:translateX(102%);transition:transform .2s ease;display:flex;flex-direction:column}

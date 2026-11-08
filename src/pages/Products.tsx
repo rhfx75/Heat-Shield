@@ -285,9 +285,11 @@ export function Products({ category: initialCategory }: { category?: string }) {
                 <h2>Get Quote</h2>
                 <p style={{ margin: '4px 0 0', color: 'var(--pr-mute)', fontSize: 14 }}>{quote.name}</p>
               </div>
-              <button type="button" className="hse-pr-btn" onClick={() => setQuote(null)}>Close</button>
+              <button type="button" className="hse-pr-btn" onClick={() => setQuote(null)} style={{minHeight:44,minWidth:44}}>Close</button>
             </div>
-            <ProductInquiryForm initialProductName={quote.name} initialProductModel={quote.model} />
+            <div style={{overflowWrap:'anywhere'}}>
+              <ProductInquiryForm initialProductName={quote.name} initialProductModel={quote.model} />
+            </div>
           </div>
         </div>
       ) : null}
