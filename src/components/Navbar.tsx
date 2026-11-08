@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, useMemo } from 'react'
+import { useState, useEffect, useCallback, useMemo, useRef } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
 import { Menu, X, Phone, MessageCircle, Mail } from 'lucide-react'
@@ -20,6 +20,8 @@ export function Navbar() {
   const location = useLocation()
   const pathname = location.pathname
   const [isOpen, setIsOpen] = useState(false)
+  const hamburgerRef = useRef<HTMLButtonElement>(null)
+  const closeRef = useRef<HTMLButtonElement>(null)
 
   const activeKey = useMemo(() => {
     if (pathname === '/') return 'Home'
@@ -31,11 +33,20 @@ export function Navbar() {
   const closeAll = useCallback(() => { closeDrawer() }, [closeDrawer])
 
   useEffect(() => {
+    if (!isOpen) return
+    const prev = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape' && isOpen) closeDrawer()
+      if (e.key === 'Escape') closeDrawer()
     }
     document.addEventListener('keydown', onKey)
-    return () => document.removeEventListener('keydown', onKey)
+    const t = window.setTimeout(() => closeRef.current?.focus(), 0)
+    return () => {
+      document.body.style.overflow = prev
+      document.removeEventListener('keydown', onKey)
+      window.clearTimeout(t)
+      hamburgerRef.current?.focus()
+    }
   }, [isOpen, closeDrawer])
 
   return (
@@ -78,6 +89,7 @@ export function Navbar() {
             <Link to="/contact" className="hse-header-btn hse-header-btn--quote" onClick={closeAll}>Get a Quote</Link>
             <a href={whatsappLink()} target="_blank" rel="noopener noreferrer" className="hse-header-btn hse-header-btn--wa" aria-label={`Contact ${company.name} on WhatsApp`}><MessageCircle aria-hidden="true" />WhatsApp</a>
             <button
+              ref={hamburgerRef}
               type="button"
               className="hse-navbar__hamburger"
               onClick={() => setIsOpen(true)}
@@ -105,7 +117,7 @@ export function Navbar() {
             >
               <div className="hse-drawer__head">
                 <span className="hse-drawer__title">Menu</span>
-                <button type="button" className="hse-drawer__close" onClick={closeDrawer} aria-label="Close menu"><X aria-hidden="true" /></button>
+                <button ref={closeRef} type="button" className="hse-drawer__close" onClick={closeDrawer} aria-label="Close menu"><X aria-hidden="true" /></button>
               </div>
               <div className="hse-drawer__links">
                 {NAV_ITEMS.map((item) => (

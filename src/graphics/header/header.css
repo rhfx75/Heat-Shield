@@ -10,7 +10,7 @@ html{scroll-padding-top:var(--header-h)}
 .hse-topbar__contact{display:flex;align-items:center;gap:20px;flex:0 0 auto}
 .hse-topbar__link{color:#fff;text-decoration:none;white-space:nowrap}
 .hse-topbar__link:hover{text-decoration:underline;text-underline-offset:3px}
-.hse-navbar{position:sticky;top:0;z-index:1000;height:var(--hse-navbar-h);background:#ffffff;border-bottom:1px solid #dde3ee;display:flex;align-items:center}
+.hse-navbar{position:sticky;top:0;z-index:1000;height:var(--hse-navbar-h);background:#ffffff;border-bottom:1px solid #dde3ee;display:flex;align-items:center;padding-top:env(safe-area-inset-top,0px)}
 .hse-navbar__inner{display:flex;align-items:center;justify-content:space-between;gap:20px;height:100%}
 .hse-navbar__brand{display:flex;align-items:center;flex:0 0 auto;min-width:0}
 .hse-navbar__logo{height:56px;width:auto;max-width:100%;object-fit:contain;display:block;border:0;box-shadow:none;background:transparent}
