@@ -3,7 +3,7 @@
 import { useForm } from 'react-hook-form'
 import { Button } from './ui/Button'
 import { Mail, Phone, Send } from 'lucide-react'
-import { CONTACT, whatsappWithText } from '../config/contact'
+import { CONTACT, QUOTE_WHATSAPP_TEXT } from '../config/contact'
 
 interface ContactFormValues {
   fullName: string
@@ -74,7 +74,7 @@ export function ContactForm() {
           <input
             {...register('phone', { required: 'Phone number is required' })}
             type="tel"
-            placeholder={CONTACT.phones[0].display}
+            placeholder="+880 1XXX-XXXXXX"
             className={`w-full px-4 py-3 rounded-md border text-sm focus:outline-none focus:ring-2 focus:ring-hse-blue-600 focus:border-hse-blue-600 focus-visible:ring-hse-blue-600 focus:border-transparent transition-colors ${errors.phone ? 'border-hse-red-600' : 'border-hse-border'}`}
           />
           {errors.phone && <p className="text-xs text-hse-red-600">{errors.phone.message}</p>}
@@ -104,18 +104,18 @@ export function ContactForm() {
         {errors.message && <p className="text-xs text-hse-red-600">{errors.message.message}</p>}
       </div>
       <div className="pt-4">
-        <Button type="submit" variant="primary" className="w-full py-4" disabled={isSubmitting}>
-          <Send className="w-4 h-4 mr-2" />Submit Inquiry
+        <Button type="submit" variant="primary" className="w-full py-4 text-[15px] font-semibold normal-case tracking-normal shadow-[0_4px_12px_rgba(230,58,46,.25)] hover:shadow-[0_6px_16px_rgba(230,58,46,.35)] hover:brightness-100 hover:translate-y-0 focus-visible:ring-[#0b4fc4] focus-visible:ring-offset-2" style={{ background: '#e63a2e', textTransform: 'none', letterSpacing: 'normal' }} disabled={isSubmitting}>
+          <Send className="w-4 h-4 mr-2" aria-hidden="true" />Send inquiry
         </Button>
       </div>
       <div className="mt-8 border-t border-hse-border pt-6">
-        <h3 className="text-sm font-bold text-hse-blue-900 uppercase tracking-wider mb-6">Or Reach Us Directly</h3>
+        <h3 className="text-sm font-bold text-hse-blue-900 mb-6">Or reach us directly</h3>
         <div className="space-y-4">
-          <a href={whatsappWithText('Hello, I would like to discuss my requirements.')} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 w-full" aria-label={`Contact ${CONTACT.company} on WhatsApp`}>
+          <a href={`${CONTACT.whatsapp}?text=${encodeURIComponent(QUOTE_WHATSAPP_TEXT)}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 w-full" aria-label={`Contact ${CONTACT.company} on WhatsApp for a quote`}>
             <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-[#25D366] flex items-center justify-center text-white"><span className="text-sm">WA</span></div>
             <div>
-              <div className="text-sm font-semibold text-hse-blue-900">WhatsApp</div>
-              <div className="text-xs text-hse-muted" style={{whiteSpace:'nowrap'}}>{CONTACT.phones[0].display}</div>
+              <div className="text-sm font-semibold text-hse-blue-900">WhatsApp (get a quote)</div>
+              <div className="text-xs text-hse-muted" style={{whiteSpace:'nowrap'}}>+880 9658-586140</div>
             </div>
           </a>
           {CONTACT.phones.map((p) => (

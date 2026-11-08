@@ -4,16 +4,17 @@ interface SectionTitleProps {
   title: string
   subtitle?: string
   className?: string
+  uppercase?: boolean
 }
 
-export function SectionTitle({ title, subtitle, className }: SectionTitleProps) {
+export function SectionTitle({ title, subtitle, className, uppercase = true }: SectionTitleProps) {
   return (
     <div className={`mb-12 text-center ${className ?? ''}`}>
       <motion.h2
         initial={{ opacity: 1, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="font-heading text-[28px] md:text-[40px] font-bold uppercase text-hse-blue-900 mb-3 tracking-tight leading-[1.15]"
+        className={`font-heading text-[28px] md:text-[40px] font-bold ${uppercase ? 'uppercase tracking-tight' : ''} text-hse-blue-900 mb-3 leading-[1.15]`}
       >
         {title}
       </motion.h2>
