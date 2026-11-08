@@ -41,10 +41,10 @@ export function Contact() {
               </div>
               <div className="p-6 rounded-xl border border-[#12805c]/30 bg-[#12805c]/10">
                 <div className="flex items-start gap-3 mb-3"><MessageCircle className="w-5 h-5 text-[#12805c] mt-0.5 flex-shrink-0" /><h4 className="font-bold text-hse-primary">WhatsApp (get a quote)</h4></div>
-                <a href={whatsappQuoteLink()} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center min-h-[44px] px-4 rounded-lg bg-[#12805c] text-white text-sm font-semibold" aria-label={`WhatsApp ${CONTACT.company} to get a quote`}>Message on WhatsApp · +880 9658-586140</a>
+                <a href={whatsappQuoteLink()} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center min-h-[48px] px-4 py-3 rounded-lg bg-[#12805c] text-white text-base font-semibold text-center" aria-label={`WhatsApp ${CONTACT.company} to get a quote`}>Message on WhatsApp · +880 9658-586140</a>
               </div>
               <div className="rounded-xl border border-hse-border overflow-hidden bg-white">
-                <iframe title="Heat Shield Engineering location — 90 Gulshan Badda Link Rd, Dhaka 1212" loading="lazy" src={`https://www.google.com/maps?q=${encodeURIComponent('90 Gulshan Badda Link Rd, Dhaka 1212, Bangladesh')}&output=embed`} style={{width:'100%',height:260,border:0,display:'block'}} referrerPolicy="no-referrer-when-downgrade" />
+                <iframe title="Heat Shield Engineering location — 90 Gulshan Badda Link Rd, Dhaka 1212" loading="lazy" src={`https://www.google.com/maps?q=${encodeURIComponent('90 Gulshan Badda Link Rd, Dhaka 1212, Bangladesh')}&output=embed`} style={{width:'100%',maxWidth:'100%',height:260,border:0,display:'block'}} referrerPolicy="no-referrer-when-downgrade" />
               </div>
             </div>
           </div>
