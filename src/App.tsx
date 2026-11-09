@@ -15,6 +15,7 @@ const Brands = lazy(() => import('./pages/Brands').then((m) => ({ default: m.Bra
 const BrandDetail = lazy(() => import('./pages/BrandDetail').then((m) => ({ default: m.BrandDetail })))
 const Resources = lazy(() => import('./pages/Resources').then((m) => ({ default: m.Resources })))
 const Contact = lazy(() => import('./pages/Contact').then((m) => ({ default: m.Contact })))
+const NotFound = lazy(() => import('./pages/NotFound').then((m) => ({ default: m.NotFound })))
 const StandardsPage = lazy(() => import('./pages/Standards/StandardsPage'))
 
 function RouteFallback() {
@@ -48,6 +49,7 @@ function App() {
           <Route path="brands/:id" element={<Suspense fallback={<RouteFallback />}><BrandDetail /></Suspense>} />
           <Route path="resources" element={<Suspense fallback={<RouteFallback />}><Resources /></Suspense>} />
           <Route path="contact" element={<Suspense fallback={<RouteFallback />}><Contact /></Suspense>} />
+          <Route path="*" element={<Suspense fallback={<RouteFallback />}><NotFound /></Suspense>} />
         </Route>
       </Routes>
     </BrowserRouter>
